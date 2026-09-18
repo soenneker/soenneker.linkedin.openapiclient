@@ -1,0 +1,152 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "LMS API  SiteUp",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/adAccountUsers": {
+      "get": {
+        "summary": "Fetch the Authenticated User's Ad Accounts",
+        "operationId": "FetchTheAuthenticatedUserSAdAccounts",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/organizationAcls": {
+      "get": {
+        "summary": "Fetch the Authenticated User's Organization Roles",
+        "operationId": "FetchTheAuthenticatedUserSOrganizationRoles",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adAccounts/{sponsoredaccount_id}": {
+      "get": {
+        "summary": "Fetch the Ad Account by ID",
+        "operationId": "FetchTheAdAccountByID",
+        "parameters": [
+          {
+            "name": "sponsoredaccount_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "authorizationHeader": {
+        "type": "apiKey",
+        "description": "Authorization header inferred from the Postman collection.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

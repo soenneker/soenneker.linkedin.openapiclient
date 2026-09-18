@@ -1,0 +1,469 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "LinkedIn Live Events",
+    "description": "Use the Live Events API to stream and manage Live Events with your LinkedIn network.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/v2/me": {
+      "get": {
+        "summary": "/me",
+        "operationId": "Me3",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/contentAccess/(entity:(member:urn%3Ali%3Aperson%3A{abcde}),featureType:LIVE_VIDEO)": {
+      "get": {
+        "summary": "/contentAccess",
+        "operationId": "ContentAccess3",
+        "parameters": [
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/liveAssetActions": {
+      "post": {
+        "summary": "/liveAssetActions end",
+        "operationId": "LiveAssetActionsEnd4",
+        "parameters": [
+          {
+            "name": "action",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "asset"
+                ],
+                "type": "object",
+                "properties": {
+                  "asset": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/assets/{abcde12345}": {
+      "get": {
+        "summary": "/assets?projection=(recipes) get",
+        "operationId": "AssetsProjectionRecipesGet2",
+        "parameters": [
+          {
+            "name": "abcde12345",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projection",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/ugcPosts": {
+      "post": {
+        "summary": "/ugcPosts",
+        "operationId": "UgcPosts3",
+        "parameters": [
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/organizationAcls": {
+      "get": {
+        "summary": "/organizationAcls",
+        "operationId": "OrganizationAcls2",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projection",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/contentAccess/(entity:(company:urn%3Ali%3Aorganization%3A{12345}),admin:(member:urn%3Ali%3Aperson%3A{abcde}),featureType:LIVE_VIDEO)": {
+      "get": {
+        "summary": "/contentAccess",
+        "operationId": "ContentAccess4",
+        "parameters": [
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/liveVideos": {
+      "get": {
+        "summary": "/liveVideos?q=author",
+        "operationId": "LiveVideosQAuthor2",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "author",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "/liveVideos",
+        "operationId": "LiveVideos3",
+        "parameters": [
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "author",
+                  "scheduledAt",
+                  "announcementImage",
+                  "name"
+                ],
+                "type": "object",
+                "properties": {
+                  "author": {
+                    "required": [
+                      "organization"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "organization": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "scheduledAt": {
+                    "type": "integer"
+                  },
+                  "announcementImage": {
+                    "required": [
+                      "media",
+                      "title"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "media": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "required": [
+                          "text",
+                          "inferredLocale"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "text": {
+                            "type": "string"
+                          },
+                          "inferredLocale": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/assets": {
+      "post": {
+        "summary": "/assets (optional announcement image)",
+        "operationId": "AssetsOptionalAnnouncementImage2",
+        "parameters": [
+          {
+            "name": "action",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "registerUploadRequest"
+                ],
+                "type": "object",
+                "properties": {
+                  "registerUploadRequest": {
+                    "required": [
+                      "recipes",
+                      "owner",
+                      "serviceRelationships"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "recipes": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "owner": {
+                        "type": "string"
+                      },
+                      "serviceRelationships": {
+                        "type": "array",
+                        "items": {
+                          "required": [
+                            "relationshipType",
+                            "identifier"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "relationshipType": {
+                              "type": "string"
+                            },
+                            "identifier": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/liveVideos/{123456789}": {
+      "post": {
+        "summary": "/liveVideos",
+        "operationId": "LiveVideos4",
+        "parameters": [
+          {
+            "name": "123456789",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "patch"
+                ],
+                "type": "object",
+                "properties": {
+                  "patch": {
+                    "required": [
+                      "$set"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "$set": {
+                        "required": [
+                          "liveVideoAsset"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "liveVideoAsset": {
+                            "required": [
+                              "media"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "media": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

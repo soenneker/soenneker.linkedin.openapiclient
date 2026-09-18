@@ -1,0 +1,255 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Learning Activity Reports",
+    "description": "We are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.\n\nThe 2 main uses for the externalized LinkedIn Learning APIs are for Learning Content and Learning Activity Reports.\n\n*Access to LinkedIn Learning APIs is available to members of our* [*Partner Program*](https://learning.linkedin.com/partners) *and organizations that have purchased LinkedIn Learning site licenses.*\n\nOverview: [https://docs.microsoft.com/en-us/linkedin/learning/overview/](https://docs.microsoft.com/en-us/linkedin/learning/overview/)\n\n* * *\n\nUse this collection with the **LinkedIn Learning Solutions** environment\n\n* * *",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.linkedin.com"
+    }
+  ],
+  "paths": {
+    "/v2/learningActivityReports": {
+      "get": {
+        "summary": "Learning Activity Reports",
+        "description": "Learning Activity Reports API\n\nThis resource represents LinkedIn Learning activity reports like course completions, seconds of content viewed and learner logins. You can use these methods to aggregate activity data by account, group, individual or content.\n\nDocumentation: [https://docs.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#definitions](https://docs.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#definitionsParameters)\n\n*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*",
+        "operationId": "LearningActivityReports",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "startedAt",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "timeOffset.unit",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "timeOffset.duration",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "aggregationCriteria.primary",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "aggregationCriteria.secondary",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contentSource",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy.engagementMetricType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy.engagementMetricQualifier",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locale.language",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "assetType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contentSource",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "referer",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "elements",
+                    "paging"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "latestDataAt",
+                          "activities",
+                          "learnerDetails"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "latestDataAt": {
+                            "type": "integer"
+                          },
+                          "activities": {
+                            "type": "array",
+                            "items": {
+                              "required": [
+                                "engagementType",
+                                "engagementValue",
+                                "engagementMetricQualifier",
+                                "firstEngagedAt",
+                                "lastEngagedAt"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "engagementType": {
+                                  "type": "string"
+                                },
+                                "engagementValue": {
+                                  "type": "integer"
+                                },
+                                "engagementMetricQualifier": {
+                                  "type": "string"
+                                },
+                                "firstEngagedAt": {
+                                  "type": "integer"
+                                },
+                                "lastEngagedAt": {
+                                  "type": "integer"
+                                }
+                              }
+                            }
+                          },
+                          "learnerDetails": {
+                            "required": [
+                              "entity"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "entity": {
+                                "required": [
+                                  "accountUrn"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "accountUrn": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "paging": {
+                      "required": [
+                        "total",
+                        "count",
+                        "start",
+                        "links"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "total": {
+                          "type": "integer"
+                        },
+                        "count": {
+                          "type": "integer"
+                        },
+                        "start": {
+                          "type": "integer"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "required": [
+                              "rel",
+                              "href",
+                              "type"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "rel": {
+                                "type": "string"
+                              },
+                              "href": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

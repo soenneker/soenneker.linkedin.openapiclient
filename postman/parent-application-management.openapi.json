@@ -1,0 +1,143 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Parent Application Management",
+    "description": "We are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.\n\nLinkedIn's Provisioning APIs allow partners to create and configure developer applications on behalf of their customers. This is an initial step to manage and enable customer integrations. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api) for more information.  \nEnsure that you select Partner Application Management environment while executing use cases.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.linkedin.com"
+    }
+  ],
+  "paths": {
+    "/v2/provisionedApplications": {
+      "post": {
+        "summary": "Provision Child Application",
+        "description": "Use this API Endpoint when partner wants to create a child application for any of mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#create-application) for more information.",
+        "operationId": "ProvisionChildApplication",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "description",
+                  "name",
+                  "uniqueForeignId",
+                  "oauth2AuthorizedCallbackUrls",
+                  "validJsSdkDomains"
+                ],
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "uniqueForeignId": {
+                    "type": "string"
+                  },
+                  "oauth2AuthorizedCallbackUrls": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "validJsSdkDomains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get Child Application",
+        "description": "Use this API Endpoint when partner wants to fetch a child application for any of our mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#get-application) for more information.",
+        "operationId": "GetChildApplication",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uniqueForeignId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/provisionedApplications/%7Bcustomer_application_urn%7D": {
+      "post": {
+        "summary": "Update OAuth2.0 Authorized CallBack URL for Child Application",
+        "description": "Use this API Endpoint when partner wants to update OAuth2.0 Authorized CallBack URL for child application for any of mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#update-application) for more information.",
+        "operationId": "UpdateOAuth20AuthorizedCallBackURLForChildApplication",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "patch"
+                ],
+                "type": "object",
+                "properties": {
+                  "patch": {
+                    "required": [
+                      "$set"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "$set": {
+                        "required": [
+                          "oauth2AuthorizedCallbackUrls"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "oauth2AuthorizedCallbackUrls": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

@@ -1,0 +1,829 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Conversions API",
+    "description": "**See the** [Getting Access](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/conversions/getting-access-conversions) guide **on how to apply.**\n\n[LinkedIn's Conversion API](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api) is a conversion tracking tool that creates a direct connection between marketing data from an advertiser’s server and LinkedIn. This API enables advertisers to measure the performance of their LinkedIn marketing campaigns no matter where the conversion happens and use this data to power campaign optimization.\n\nThis collection aims to focus on the new Conversions API and should be used with the **conversions-env-versioning** environment.\n\nThere are two conditions for successful calls:\n\n(1) Scope permissions for [3-legged Oauth](https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow)\n\n- `rw_conversions` (Read/Write)\n    \n- `r_ads` (Read)\n    \n\nand\n\n(2) the user assigning permission holding one of the following roles in the Ad Account.\n\nAd Account Roles:\n\n- `ACCOUNT_BILLING_ADMIN`\n    \n- `ACCOUNT_MANAGER`\n    \n- `CAMPAIGN_MANAGER`\n    \n- `CREATIVE_MANAGER`\n    \n\n\\--All requests for the Conversions collection are in the Restli 2.0 format--",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/adAccountUsers": {
+      "get": {
+        "summary": "2. Retrieve authenticated user's Sponsored Ad Accounts",
+        "operationId": "operation2RetrieveAuthenticatedUserSSponsoredAdAccounts",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "paging",
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "paging": {
+                      "required": [
+                        "start",
+                        "count",
+                        "links",
+                        "total"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "type": "integer"
+                        },
+                        "count": {
+                          "type": "integer"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "total": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "user",
+                          "account",
+                          "role"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "user": {
+                            "type": "string"
+                          },
+                          "account": {
+                            "type": "string"
+                          },
+                          "role": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/conversions": {
+      "get": {
+        "summary": "4. Fetch existing Conversion Rules for CAPI in the selected ad account",
+        "description": "Fetch existing conversion rules in the selected ad account with this endpoint and parse the response to filter elements with `conversionMethod` to `CONVERSIONS_API` for streaming conversions through API.",
+        "operationId": "operation4FetchExistingConversionRulesForCAPIInTheSelectedAdAccount",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "account",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "paging",
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "paging": {
+                      "required": [
+                        "start",
+                        "count",
+                        "links",
+                        "total"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "type": "integer"
+                        },
+                        "count": {
+                          "type": "integer"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "total": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "name",
+                          "conversionMethod",
+                          "id",
+                          "type",
+                          "enabled"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "conversionMethod": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "integer"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "enabled": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "6c. Create a new Conversion Rule with no campaigns association",
+        "description": "Create one or more conversion rules with this endpoint and set `conversionMethod` to `CONVERSIONS_API` for streaming conversions through API.",
+        "operationId": "operation6cCreateANewConversionRuleWithNoCampaignsAssociation",
+        "parameters": [
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "name",
+                  "account",
+                  "conversionMethod",
+                  "postClickAttributionWindowSize",
+                  "viewThroughAttributionWindowSize",
+                  "attributionType",
+                  "type"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "account": {
+                    "type": "string"
+                  },
+                  "conversionMethod": {
+                    "type": "string"
+                  },
+                  "postClickAttributionWindowSize": {
+                    "type": "integer"
+                  },
+                  "viewThroughAttributionWindowSize": {
+                    "type": "integer"
+                  },
+                  "attributionType": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "postClickAttributionWindowSize",
+                    "conversionMethod",
+                    "viewThroughAttributionWindowSize",
+                    "created",
+                    "type",
+                    "enabled",
+                    "associatedCampaigns",
+                    "campaigns",
+                    "name",
+                    "id",
+                    "lastModified",
+                    "attributionType",
+                    "urlRules",
+                    "account"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "postClickAttributionWindowSize": {
+                      "type": "integer"
+                    },
+                    "conversionMethod": {
+                      "type": "string"
+                    },
+                    "viewThroughAttributionWindowSize": {
+                      "type": "integer"
+                    },
+                    "created": {
+                      "type": "integer"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "enabled": {
+                      "type": "boolean"
+                    },
+                    "associatedCampaigns": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "campaigns": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "lastModified": {
+                      "type": "integer"
+                    },
+                    "attributionType": {
+                      "type": "string"
+                    },
+                    "urlRules": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "account": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/adAccounts/{sponsoredaccount_id}/adCampaigns": {
+      "get": {
+        "summary": "7a. Fetch active campaigns",
+        "description": "Fetch existing conversion rules in the selected ad account with this endpoint and parse the response to filter elements with `conversionMethod` to `CONVERSIONS_API` for streaming conversions through API.",
+        "operationId": "operation7aFetchActiveCampaigns",
+        "parameters": [
+          {
+            "name": "sponsoredaccount_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "metadata",
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "metadata": {
+                      "required": [
+                        "nextPageToken"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "nextPageToken": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "name",
+                          "id"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/campaignConversions/(campaign:urn%3Ali%3AsponsoredCampaign%3A{campaign_id},conversion:urn%3Alla%3AllaPartnerConversion%3A{conversion_id})": {
+      "put": {
+        "summary": "7c. Associate campaigns to conversion rule",
+        "description": "Create one or more conversion rules with this endpoint and set `conversionMethod` to `CONVERSIONS_API` for streaming conversions through API.",
+        "operationId": "operation7cAssociateCampaignsToConversionRule",
+        "parameters": [
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "campaign",
+                  "conversion"
+                ],
+                "type": "object",
+                "properties": {
+                  "campaign": {
+                    "type": "string"
+                  },
+                  "conversion": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/campaignConversions": {
+      "put": {
+        "summary": "7d. Batch Associate Multiple Campaigns to Conversion Rule",
+        "description": "Create one or more conversion rules with this endpoint and set `conversionMethod` to `CONVERSIONS_API` for streaming conversions through API.",
+        "operationId": "operation7dBatchAssociateMultipleCampaignsToConversionRule",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "entities"
+                ],
+                "type": "object",
+                "properties": {
+                  "entities": {
+                    "required": [
+                      "(campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}})",
+                      "(campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id_2}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}})"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "(campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}})": {
+                        "required": [
+                          "campaign",
+                          "conversion"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "campaign": {
+                            "type": "string"
+                          },
+                          "conversion": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "(campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id_2}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}})": {
+                        "required": [
+                          "campaign",
+                          "conversion"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "campaign": {
+                            "type": "string"
+                          },
+                          "conversion": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "results",
+                    "errors"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "required": [
+                        "(campaign:urn%3Ali%3AsponsoredCampaign%3A1234,conversion:urn%3Alla%3AllaPartnerConversion%3A135)",
+                        "(campaign:urn%3Ali%3AsponsoredCampaign%3A5678,conversion:urn%3Alla%3AllaPartnerConversion%3A246)"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "(campaign:urn%3Ali%3AsponsoredCampaign%3A1234,conversion:urn%3Alla%3AllaPartnerConversion%3A135)": {
+                          "required": [
+                            "status"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "status": {
+                              "type": "integer"
+                            }
+                          }
+                        },
+                        "(campaign:urn%3Ali%3AsponsoredCampaign%3A5678,conversion:urn%3Alla%3AllaPartnerConversion%3A246)": {
+                          "required": [
+                            "status"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "status": {
+                              "type": "integer"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "errors": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/conversionEvents": {
+      "post": {
+        "summary": "8b. Stream multiple conversion events to the conversion rule",
+        "description": "Create one or more conversion rules with this endpoint and set `conversionMethod` to `CONVERSIONS_API` for streaming conversions through API.",
+        "operationId": "operation8bStreamMultipleConversionEventsToTheConversionRule",
+        "parameters": [
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "elements"
+                ],
+                "type": "object",
+                "properties": {
+                  "elements": {
+                    "type": "array",
+                    "items": {
+                      "required": [
+                        "conversion",
+                        "conversionHappenedAt",
+                        "conversionValue",
+                        "user",
+                        "eventId"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "conversion": {
+                          "type": "string"
+                        },
+                        "conversionHappenedAt": {
+                          "type": "integer"
+                        },
+                        "conversionValue": {
+                          "required": [
+                            "currencyCode",
+                            "amount"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "currencyCode": {
+                              "type": "string"
+                            },
+                            "amount": {
+                              "type": "number"
+                            }
+                          }
+                        },
+                        "user": {
+                          "required": [
+                            "userIds",
+                            "userInfo"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "userIds": {
+                              "type": "array",
+                              "items": {
+                                "required": [
+                                  "idType",
+                                  "idValue"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "idType": {
+                                    "type": "string"
+                                  },
+                                  "idValue": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            },
+                            "userInfo": {
+                              "required": [
+                                "firstName",
+                                "lastName",
+                                "title",
+                                "companyName",
+                                "countryCode"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "firstName": {
+                                  "type": "string"
+                                },
+                                "lastName": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                },
+                                "companyName": {
+                                  "type": "string"
+                                },
+                                "countryCode": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "eventId": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "status"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "status": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

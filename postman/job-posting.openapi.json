@@ -1,0 +1,198 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Job Posting",
+    "description": "We are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.\n\nLinkedIn's Job Posting API enables authorized third parties such as clients, ATS systems, and Job Distributors to post jobs directly to LinkedIn on behalf of customers. This guide details on how to integrate with LinkedIn's Jobs Posting API.\n\nThe use of these APIs is restricted to developers approved by LinkedIn. Please reach out to your LinkedIn Relationship Manager or Business Development contact as you will need to meet certain criteria and sign an API agreement with data restrictions in order to use this integration.  \nIf you are not yet a LinkedIn Talent Solutions Partner, please complete the [LinkedIn Talent Solutions Partner Request Form](https://business.linkedin.com/talent-solutions/ats-partners/partner-application).",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.linkedin.com"
+    }
+  ],
+  "paths": {
+    "/v2/simpleJobPostings": {
+      "post": {
+        "summary": "Close apply connect job posting",
+        "description": "In order to update a job posting, you can just re-post the job with any changed information and `jobPostingOperationType` field value set as `CLOSE` .Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-jobs-onsite-apply#apply-connect-jobs-lifecycle)",
+        "operationId": "CloseApplyConnectJobPosting",
+        "parameters": [
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/simpleJobPostingTasks": {
+      "get": {
+        "summary": "Check close apply connect job operation status",
+        "description": "`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2722131308/",
+        "operationId": "CheckCloseApplyConnectJobOperationStatus",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations": {
+      "post": {
+        "summary": "Update Customer Integrations",
+        "operationId": "UpdateCustomerIntegrations",
+        "parameters": [
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].tenantType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "entities"
+                ],
+                "type": "object",
+                "properties": {
+                  "entities": {
+                    "required": [
+                      "integrationContext=urn:li:contract:{{contract_id}}&integrationType=PREMIUM_JOB_POSTING&tenantType=JOBS&dataProvider=ATS"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "integrationContext=urn:li:contract:{{contract_id}}&integrationType=PREMIUM_JOB_POSTING&tenantType=JOBS&dataProvider=ATS": {
+                        "required": [
+                          "patch"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "patch": {
+                            "required": [
+                              "$set"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "$set": {
+                                "required": [
+                                  "integrationName"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "integrationName": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "summary": "Check Customer Integration",
+        "operationId": "CheckCustomerIntegration",
+        "parameters": [
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].tenantType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

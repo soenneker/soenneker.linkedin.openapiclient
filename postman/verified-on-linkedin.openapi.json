@@ -1,0 +1,314 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Verified on LinkedIn",
+    "description": "The Verified on LinkedIn API allows you to access trusted verification signals from LinkedIn members, enabling you to display verified identity and workplace information directly within your platform.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.linkedin.com"
+    }
+  ],
+  "paths": {
+    "/rest/identityMe": {
+      "get": {
+        "summary": "identityMe",
+        "description": "The **Identity API** (`/identityMe`) provides a simple way for partners to retrieve LinkedIn Member profile details. [Learn more ](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me?context=linkedin%2Fconsumer%2Fcontext) by viewing our public documentation.",
+        "operationId": "identityMe",
+        "parameters": [
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "identityMe-200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "lastRefreshedAt",
+                    "basicInfo",
+                    "id"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "lastRefreshedAt": {
+                      "type": "integer"
+                    },
+                    "basicInfo": {
+                      "required": [
+                        "profileUrl",
+                        "profilePicture",
+                        "lastName",
+                        "firstName",
+                        "primaryEmailAddress"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "profileUrl": {
+                          "type": "string"
+                        },
+                        "profilePicture": {
+                          "required": [
+                            "croppedImage"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "croppedImage": {
+                              "required": [
+                                "downloadUrl",
+                                "downloadUrlExpiresAt"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "downloadUrl": {
+                                  "type": "string"
+                                },
+                                "downloadUrlExpiresAt": {
+                                  "type": "integer"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "lastName": {
+                          "required": [
+                            "localized",
+                            "preferredLocale"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "localized": {
+                              "required": [
+                                "en_US"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "en_US": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "preferredLocale": {
+                              "required": [
+                                "country",
+                                "language"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "country": {
+                                  "type": "string"
+                                },
+                                "language": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "firstName": {
+                          "required": [
+                            "localized",
+                            "preferredLocale"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "localized": {
+                              "required": [
+                                "en_US"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "en_US": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "preferredLocale": {
+                              "required": [
+                                "country",
+                                "language"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "country": {
+                                  "type": "string"
+                                },
+                                "language": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "primaryEmailAddress": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/verificationReport": {
+      "get": {
+        "summary": "verificationReport",
+        "description": "The **Verification Report API** allows partners to retrieve the verified categories (for example, `IDENTITY`, `WORKPLACE`) associated with a LinkedIn Member, or to obtain a `verificationUrl` that enables Members to complete eligible verifications on LinkedIn. [Learn more ](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report?context=linkedin%2Fconsumer%2Fcontext) by viewing our public documentation.",
+        "operationId": "verificationReport",
+        "parameters": [
+          {
+            "name": "Linkedin-Version",
+            "in": "header",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "Fetch verifications with Identity and Workplace criteria",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "verifications",
+                    "id"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "verifications": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/validationStatus": {
+      "post": {
+        "summary": "validationStatus",
+        "description": "The **Validation Status API** lets Plus-tier partners check the current validation state of LinkedIn members at scale (single or bulk). It returns compact status flags for `identity`, `workplace`, and `profileInformationStatus.`[Learn more ](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status?context=linkedin%2Fconsumer%2Fcontext) by viewing our public documentation.",
+        "operationId": "validationStatus",
+        "parameters": [
+          {
+            "name": "action",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Linkedin-Version",
+            "in": "header",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "validationQueries"
+                ],
+                "type": "object",
+                "properties": {
+                  "validationQueries": {
+                    "type": "array",
+                    "items": {
+                      "required": [
+                        "id"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "default": {
+            "description": "Bulk Member Validation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "value"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "verificationStatus",
+                          "profileInformationStatus"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "verificationStatus": {
+                            "required": [
+                              "identity",
+                              "workplace"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "identity": {
+                                "type": "string"
+                              },
+                              "workplace": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "profileInformationStatus": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

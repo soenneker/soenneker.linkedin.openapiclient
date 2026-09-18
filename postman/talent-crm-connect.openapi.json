@@ -1,0 +1,1322 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Talent CRM Connect",
+    "description": "CRM Connect synchronizes candidate information between your Candidate Relationship Management system and LinkedIn Recruiter. With CRM Connect, LinkedIn Recruiter users will be able to export LinkedIn member profiles to your external CRM System and view member profiles directly within the CRM. Users will also be able to view CRM recruiting activity from within LinkedIn Recruiter.\n\nThe following features will be available with CRM Connect:\n\n- In-CRM Indicator\n    \n- One-Click Export\n    \n- Profile Widget\n    \n- CRM tab in LinkedIn Recruiter\n    \n\nWe are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.\n\nFor more details, please check the [Talent CRM Connect Overiew](https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview)",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.linkedin.com"
+    }
+  ],
+  "paths": {
+    "/oauth/v2/accessToken": {
+      "post": {
+        "summary": "Get Customer Application Access Token",
+        "operationId": "GetCustomerApplicationAccessToken",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "grant_type": {
+                    "type": "string"
+                  },
+                  "client_id": {
+                    "type": "string"
+                  },
+                  "client_secret": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations": {
+      "post": {
+        "summary": "Update Customer ATSIntegration - CRM_CSA_API",
+        "description": "`/atsIntegrations` used to update the customer Integration. To enable `CSA_API `, use `integrationType= CSA_API ` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`CSA_API ` is Contract level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)",
+        "operationId": "UpdateCustomerATSIntegrationCRMCSAAPI",
+        "parameters": [
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].tenantType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "entities"
+                ],
+                "type": "object",
+                "properties": {
+                  "entities": {
+                    "required": [
+                      "integrationContext=urn:li:contract:{{contract_id}}&integrationType=CRM_CSA_API&tenantType=RECRUITER&dataProvider=ATS"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "integrationContext=urn:li:contract:{{contract_id}}&integrationType=CRM_CSA_API&tenantType=RECRUITER&dataProvider=ATS": {
+                        "required": [
+                          "patch"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "patch": {
+                            "required": [
+                              "$set"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "$set": {
+                                "required": [
+                                  "integrationName"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "integrationName": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "summary": "GET Notification Type INTEGRATION_STATUS_CHANGE",
+        "description": "When a customer enables an integration, the onboarding status of that integration changes from `Partner Ready` to `Enabled`. When that happens, LinkedIn will send you a push notification with a unique ID.Use this endpoint with the unique notification ID to retrieve more information about the enabled integration.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#5-verify-customer-integrations-enablement)",
+        "operationId": "GETNotificationTypeINTEGRATIONSTATUSCHANGE",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations/integrationContext=urn:li:organization:{org_id}&integrationType=CRM_ONE_CLICK_EXPORT&tenantType=RECRUITER&dataProvider=ATS/configurations": {
+      "put": {
+        "summary": "Sync Integration Configuration - Job Posting Viewers (Optional)",
+        "description": "API governs who may view job postings within the One-Click Export drop-down.Customers can use this API, if they are not using ACL's.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#integration-configuration-keys)",
+        "operationId": "SyncIntegrationConfigurationJobPostingViewersOptional",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "entities"
+                ],
+                "type": "object",
+                "properties": {
+                  "entities": {
+                    "required": [
+                      "JOB_POSTING_VIEWERS"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "JOB_POSTING_VIEWERS": {
+                        "required": [
+                          "configurationValue"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "configurationValue": {
+                            "required": [
+                              "string"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "string": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "summary": "Verify Customer Integrations - Configs",
+        "description": "API used to retrieve the Customer Integration Configurations.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#verify-integration-configurations)",
+        "operationId": "VerifyCustomerIntegrationsConfigs",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations/integrationContext=urn:li:organization:{org_id}&integrationType=IN_CRM_INDICATOR&tenantType=RECRUITER&dataProvider=ATS/configurations": {
+      "put": {
+        "summary": "Sync Integration Configuration - Application Viewers (Optional)",
+        "description": "API governs who may view job-related data (Interview Feedback, Notes, Applications, and Stages) within the In-ATS indicator.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#integration-configuration-keys)",
+        "operationId": "SyncIntegrationConfigurationApplicationViewersOptional",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "entities"
+                ],
+                "type": "object",
+                "properties": {
+                  "entities": {
+                    "required": [
+                      "APPLICATION_VIEWERS"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "APPLICATION_VIEWERS": {
+                        "required": [
+                          "configurationValue"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "configurationValue": {
+                            "required": [
+                              "string"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "string": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations/integrationContext=urn:li:organization:{org_id}&integrationType=ONE_CLICK_EXPORT&tenantType=RECRUITER&dataProvider=ATS/configurations": {
+      "delete": {
+        "summary": "Delete Integration Configuration - Job Posting Viewers",
+        "description": "Customer can delete `JOB_POSTING_VIEWERS` Integration using this API. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#delete-integration-configurations)",
+        "operationId": "DeleteIntegrationConfigurationJobPostingViewers",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations/integrationContext=urn:li:organization:{org_id}&integrationType=IN_ATS_INDICATOR&tenantType=RECRUITER&dataProvider=ATS/configurations": {
+      "delete": {
+        "summary": "Delete Integration Configuration - Application Viewers",
+        "description": "Customer can delete `APPLICATION_VIEWERS` Integration using this API. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#delete-integration-configurations)",
+        "operationId": "DeleteIntegrationConfigurationApplicationViewers",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations/integrationContext=urn:li:organization:%7Borg_id%7D&integrationType=ONE_CLICK_EXPORT&tenantType=RECRUITER&dataProvider=ATS": {
+      "delete": {
+        "summary": "Delete ATS Integration CRM_ONE_CLICK_EXPORT",
+        "operationId": "DeleteATSIntegrationCRMONECLICKEXPORT",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations/integrationContext=urn:li:organization:%7Borg_id%7D&integrationType=IN_ATS_INDICATOR&tenantType=RECRUITER&dataProvider=ATS": {
+      "delete": {
+        "summary": "Delete ATS Integration IN_ATS_INDICATOR",
+        "operationId": "DeleteATSIntegrationINATSINDICATOR",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations/integrationContext=urn:li:organization:%7Borg_id%7D&integrationType=PROFILE_PLUGIN&tenantType=RECRUITER&dataProvider=ATS": {
+      "delete": {
+        "summary": "Delete ATS Integration PROFILE_PLUGIN",
+        "operationId": "DeleteATSIntegrationPROFILEPLUGIN",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations/integrationContext=urn:li:contract:%7Bcontract_id%7D&integrationType=CAS_PROFILE&tenantType=RECRUITER&dataProvider=ATS": {
+      "delete": {
+        "summary": "Delete ATS Integration CSA_PROFILE",
+        "operationId": "DeleteATSIntegrationCSAPROFILE",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsCandidates": {
+      "put": {
+        "summary": "Sync TCRM Candidates",
+        "operationId": "SyncTCRMCandidates",
+        "parameters": [
+          {
+            "name": "ids[0].atsCandidateId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get TCRM Candidates",
+        "operationId": "GetTCRMCandidates",
+        "parameters": [
+          {
+            "name": "ids[0].atsCandidateId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete TCRM Candidates",
+        "operationId": "DeleteTCRMCandidates",
+        "parameters": [
+          {
+            "name": "ids[0].atsCandidateId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "li-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/tcrmPipelines": {
+      "put": {
+        "summary": "Sync TCRM Pipelines",
+        "operationId": "SyncTCRMPipelines",
+        "parameters": [
+          {
+            "name": "ids[0].tcrmPipelineId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete TCRM Pipelines",
+        "operationId": "DeleteTCRMPipelines",
+        "parameters": [
+          {
+            "name": "ids[0].tcrmPipelineId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "li-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/tcrmPipelineStages": {
+      "put": {
+        "summary": "Sync TCRM PipelineStages",
+        "operationId": "SyncTCRMPipelineStages",
+        "parameters": [
+          {
+            "name": "ids[0].tcrmPipelineId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].tcrmStageId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete TCRM PipelineStages",
+        "operationId": "DeleteTCRMPipelineStages",
+        "parameters": [
+          {
+            "name": "ids[0].tcrmPipelineId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].tcrmStageId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "li-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/tcrmCandidatePipelines": {
+      "put": {
+        "summary": "Sync TCRM CandidatePipelines",
+        "operationId": "SyncTCRMCandidatePipelines",
+        "parameters": [
+          {
+            "name": "ids[0].tcrmCandidateId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].tcrmPipelineId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete TCRM CandidatePipelines",
+        "operationId": "DeleteTCRMCandidatePipelines",
+        "parameters": [
+          {
+            "name": "ids[0].tcrmCandidateId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].tcrmPipelineId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "li-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/tcrmCandidatePipelineStages": {
+      "put": {
+        "summary": "Sync TCRM CandidatePipelineStages",
+        "operationId": "SyncTCRMCandidatePipelineStages",
+        "parameters": [
+          {
+            "name": "ids[0].tcrmCandidatePipelineStageId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Sync TCRM CandidatePipelineStages Copy",
+        "operationId": "SyncTCRMCandidatePipelineStagesCopy",
+        "parameters": [
+          {
+            "name": "ids[0].tcrmCandidatePipelineStageId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/tcrmCandidateResumes": {
+      "put": {
+        "summary": "Sync TCRM CandidateResumes",
+        "operationId": "SyncTCRMCandidateResumes",
+        "parameters": [
+          {
+            "name": "ids[0].tcrmCandidateId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "description": "ids[0].",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].tcrmResumeId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete TCRM CandidateResumes",
+        "operationId": "DeleteTCRMCandidateResumes",
+        "parameters": [
+          {
+            "name": "ids[0].tcrmCandidateId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].tcrmResumeId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "li-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/tcrmInteractions": {
+      "put": {
+        "summary": "Sync TCRM Interactions",
+        "operationId": "SyncTCRMInteractions",
+        "parameters": [
+          {
+            "name": "ids[0].tcrmInteractionId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete TCRM Interactions",
+        "operationId": "DeleteTCRMInteractions",
+        "parameters": [
+          {
+            "name": "ids[0].tcrmInteractionId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "li-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/exportedCandidates": {
+      "get": {
+        "summary": "GET Notification Type EXPORT_CANDIDATE_PROFILE",
+        "operationId": "GETNotificationTypeEXPORTCANDIDATEPROFILE",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/conversationEvents": {
+      "get": {
+        "summary": "Retrieve InMail History",
+        "operationId": "RetrieveInMailHistory",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "viewer",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "timeRange.end",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "timeRange.start",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "threadUrn",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/seatsV2": {
+      "get": {
+        "summary": "Retrieve Recruiter Seatholders",
+        "operationId": "RetrieveRecruiterSeatholders",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contracts",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/mailStubs": {
+      "get": {
+        "summary": "Retrieve InMail Stub Profiles",
+        "operationId": "RetrieveInMailStubProfiles",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "contract",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "createdDateStart",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "createdDateEnd",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "owners",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

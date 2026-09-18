@@ -1,0 +1,1793 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Recruiter System Connect",
+    "description": "We are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.linkedin.com"
+    }
+  ],
+  "paths": {
+    "/oauth/v2/accessToken": {
+      "post": {
+        "summary": "Get Customer Application Access Token",
+        "operationId": "GetCustomerApplicationAccessToken",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "grant_type": {
+                    "type": "string"
+                  },
+                  "client_id": {
+                    "type": "string"
+                  },
+                  "client_secret": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations": {
+      "post": {
+        "summary": "Update Customer ATSIntegration - CSA_API",
+        "description": "`/atsIntegrations` used to update the customer Integration. To enable `CSA_API `, use `integrationType= CSA_API ` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`CSA_API ` is Contract level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)",
+        "operationId": "UpdateCustomerATSIntegrationCSAAPI",
+        "parameters": [
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].tenantType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "entities"
+                ],
+                "type": "object",
+                "properties": {
+                  "entities": {
+                    "required": [
+                      "integrationContext=urn:li:contract:{{contract_id}}&integrationType=CSA_API&tenantType=RECRUITER&dataProvider=ATS"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "integrationContext=urn:li:contract:{{contract_id}}&integrationType=CSA_API&tenantType=RECRUITER&dataProvider=ATS": {
+                        "required": [
+                          "patch"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "patch": {
+                            "required": [
+                              "$set"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "$set": {
+                                "required": [
+                                  "integrationName"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "integrationName": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "summary": "GET Notification Type INTEGRATION_STATUS_CHANGE",
+        "description": "When a customer enables an integration, the onboarding status of that integration changes from `Partner Ready` to `Enabled`. When that happens, LinkedIn will send you a push notification with a unique ID.Use this endpoint with the unique notification ID to retrieve more information about the enabled integration.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#5-verify-customer-integrations-enablement)",
+        "operationId": "GETNotificationTypeINTEGRATIONSTATUSCHANGE",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations/integrationContext=urn:li:organization:{org_id}&integrationType=ONE_CLICK_EXPORT&tenantType=RECRUITER&dataProvider=ATS/configurations": {
+      "put": {
+        "summary": "Sync Integration Configuration - Job Posting Viewers (Optional)",
+        "description": "API governs who may view job postings within the One-Click Export drop-down.Customers can use this API, if they are not using ACL's.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#integration-configuration-keys)",
+        "operationId": "SyncIntegrationConfigurationJobPostingViewersOptional",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "entities"
+                ],
+                "type": "object",
+                "properties": {
+                  "entities": {
+                    "required": [
+                      "JOB_POSTING_VIEWERS"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "JOB_POSTING_VIEWERS": {
+                        "required": [
+                          "configurationValue"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "configurationValue": {
+                            "required": [
+                              "string"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "string": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Integration Configuration - Job Posting Viewers",
+        "description": "Customer can delete `JOB_POSTING_VIEWERS` Integration using this API. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#delete-integration-configurations)",
+        "operationId": "DeleteIntegrationConfigurationJobPostingViewers",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "summary": "Verify Customer Integrations - Configs",
+        "description": "API used to retrieve the Customer Integration Configurations.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#verify-integration-configurations)",
+        "operationId": "VerifyCustomerIntegrationsConfigs",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations/integrationContext=urn:li:organization:{org_id}&integrationType=IN_ATS_INDICATOR&tenantType=RECRUITER&dataProvider=ATS/configurations": {
+      "put": {
+        "summary": "Sync Integration Configuration - Application Viewers (Optional)",
+        "description": "API governs who may view job-related data (Interview Feedback, Notes, Applications, and Stages) within the In-ATS indicator.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#integration-configuration-keys)",
+        "operationId": "SyncIntegrationConfigurationApplicationViewersOptional",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "entities"
+                ],
+                "type": "object",
+                "properties": {
+                  "entities": {
+                    "required": [
+                      "APPLICATION_VIEWERS"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "APPLICATION_VIEWERS": {
+                        "required": [
+                          "configurationValue"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "configurationValue": {
+                            "required": [
+                              "string"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "string": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Integration Configuration - Application Viewers",
+        "description": "Customer can delete `APPLICATION_VIEWERS` Integration using this API. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#delete-integration-configurations)",
+        "operationId": "DeleteIntegrationConfigurationApplicationViewers",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations/integrationContext=urn:li:organization:%7Borg_id%7D&integrationType=ONE_CLICK_EXPORT&tenantType=RECRUITER&dataProvider=ATS": {
+      "delete": {
+        "summary": "Delete ATS Integration ONE_CLICK_EXPORT",
+        "operationId": "DeleteATSIntegrationONECLICKEXPORT",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations/integrationContext=urn:li:organization:%7Borg_id%7D&integrationType=IN_ATS_INDICATOR&tenantType=RECRUITER&dataProvider=ATS": {
+      "delete": {
+        "summary": "Delete ATS Integration IN_ATS_INDICATOR",
+        "operationId": "DeleteATSIntegrationINATSINDICATOR",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations/integrationContext=urn:li:organization:%7Borg_id%7D&integrationType=PROFILE_PLUGIN&tenantType=RECRUITER&dataProvider=ATS": {
+      "delete": {
+        "summary": "Delete ATS Integration PROFILE_PLUGIN",
+        "operationId": "DeleteATSIntegrationPROFILEPLUGIN",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations/integrationContext=urn:li:contract:%7Bcontract_id%7D&integrationType=CSA_API&tenantType=RECRUITER&dataProvider=ATS": {
+      "delete": {
+        "summary": "Delete ATS Integration CSA_API",
+        "operationId": "DeleteATSIntegrationCSAAPI",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/simpleJobPostings": {
+      "post": {
+        "summary": "Create Private Job",
+        "description": "This call is for Syncing PUBLIC Jobs to LinkedIn from ATS. `availability` field set to `PRIVATE_TO_ATS_INTEGRATION`. Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#recruiter-system-connect-extension-schema)",
+        "operationId": "CreatePrivateJob",
+        "parameters": [
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/simpleJobPostingTasks": {
+      "get": {
+        "summary": "Get Private Job Creation Task Status",
+        "description": "/SimpleJobPostingTasks used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nCustomers can check Private Jobs from One-Click export dropdown in Recruiter as Private Jobs won't shows up in UI",
+        "operationId": "GetPrivateJobCreationTaskStatus",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsCandidates": {
+      "put": {
+        "summary": "Sync Candidates",
+        "description": "Customers can use `/atsCandidates` to sync candidates. Use your candidate identifier while syncing candidates via API. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates#sync-candidates-1)",
+        "operationId": "SyncCandidates",
+        "parameters": [
+          {
+            "name": "ids[0].atsCandidateId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "summary": "Sync Candidates - Retrieve Candidate Matches",
+        "description": "Once customer Sync the candidates, customers can retrieve candidate details, which will include any algorithmic and user-supplied matches with LinkedIn members.\nCandidate Match can be two types:\n1.`matchedMembers`\n2.`manualMatchedMember`\nTo know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates#retrieve-candidate-matches)",
+        "operationId": "SyncCandidatesRetrieveCandidateMatches",
+        "parameters": [
+          {
+            "name": "ids[0].atsCandidateId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "One Click Export - Attach Person URN",
+        "description": "API used to attach a Person URN to a candidate.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates#attach-person-urn-to-candidate)",
+        "operationId": "OneClickExportAttachPersonURN",
+        "parameters": [
+          {
+            "name": "ids[0].atsCandidateId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "entities"
+                ],
+                "type": "object",
+                "properties": {
+                  "entities": {
+                    "required": [
+                      "atsCandidateId={{candidate_id}}&dataProvider=ATS&integrationContext=urn:li:organization:{{org_id}}"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "atsCandidateId={{candidate_id}}&dataProvider=ATS&integrationContext=urn:li:organization:{{org_id}}": {
+                        "required": [
+                          "patch"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "patch": {
+                            "required": [
+                              "$set"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "$set": {
+                                "required": [
+                                  "manualMatchedMember"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "manualMatchedMember": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Sync Candidates - Delete",
+        "description": "Delete on the `/atsCandidates` endpoint to deletes records. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#delete-candidates)",
+        "operationId": "SyncCandidatesDelete",
+        "parameters": [
+          {
+            "name": "ids[0].atsCandidateId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsCandidates/atsCandidateId={candidate_id}&dataProvider=ATS&integrationContext=urn:li:organization:{org_id}/notes": {
+      "put": {
+        "summary": "Sync Candidate Notes",
+        "description": "Customer can use `/atsCandidates` endpoint to create and update candidate notes.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidate-notes)",
+        "operationId": "SyncCandidateNotes",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Sync Candidate Notes - Delete Note",
+        "description": "DELETE on `/atsCandidates/{CandidateIdentifier}/notes `endpoint to delete candidate notes.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#delete-candidate-notes)",
+        "operationId": "SyncCandidateNotesDeleteNote",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsApplications": {
+      "put": {
+        "summary": "Sync Job Applications",
+        "description": "`/atsApplications` to Sync Job Applications.Use Customer job application identifier when syncing via the API.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications)",
+        "operationId": "SyncJobApplications",
+        "parameters": [
+          {
+            "name": "ids[0].atsJobApplicationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Sync Job Applications - Delete",
+        "description": "DELETE on `/atsApplications` endpoint to delete Application records. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#delete-applications)",
+        "operationId": "SyncJobApplicationsDelete",
+        "parameters": [
+          {
+            "name": "ids[0].atsJobApplicationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/hireMediaUrl": {
+      "post": {
+        "summary": "Create Upload Resume URL",
+        "description": "`/hireMediaUrl` to create signed URL from LinkedIn and then use for uploading the file. please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications#resume-upload)",
+        "operationId": "CreateUploadResumeURL",
+        "parameters": [
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "usageParameters",
+                  "contentType",
+                  "fileName",
+                  "blobTtl",
+                  "hiringContext"
+                ],
+                "type": "object",
+                "properties": {
+                  "usageParameters": {
+                    "required": [
+                      "recruiterSystemConnectResumeParameters"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "recruiterSystemConnectResumeParameters": {
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "contentType": {
+                    "type": "string"
+                  },
+                  "fileName": {
+                    "type": "string"
+                  },
+                  "blobTtl": {
+                    "required": [
+                      "duration",
+                      "unit"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "duration": {
+                        "type": "integer"
+                      },
+                      "unit": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "hiringContext": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsApplications/atsJobApplicationId={application_id}&dataProvider=ATS&integrationContext=urn:li:organization:{org_id}/resumes": {
+      "put": {
+        "summary": "Sync Job Applications Resume",
+        "description": "`/atsApplications` to Sync Job Applications.Use Customer job application identifier when syncing via the API.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications)",
+        "operationId": "SyncJobApplicationsResume",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsApplications/atsJobApplicationId={application_id}&dataProvider=ATS&integrationContext=urn:li:organization:{org_id}/notes": {
+      "put": {
+        "summary": "Sync Job Application Notes",
+        "description": "`/atsApplications` to create or update Application Notes.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes)",
+        "operationId": "SyncJobApplicationNotes",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Sync Job Application Notes - Delete",
+        "description": "DELETE on the endpoint `/atsApplications/{JobApplicationIdentifier}/notes` to delete application notes. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#delete-application-notes)",
+        "operationId": "SyncJobApplicationNotesDelete",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsApplications/atsJobApplicationId={application_id}&dataProvider=ATS&integrationContext=urn:li:organization:{org_id}/interviewFeedback": {
+      "put": {
+        "summary": "Sync Application Interview Feedback",
+        "description": "Endpoint to create and update application interview feedbacK. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback)",
+        "operationId": "SyncApplicationInterviewFeedback",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Sync Application Interview Feedback - Delete",
+        "description": "DELETE on the endpoint `/atsApplications/{JobApplicationIdentifier}/interviewFeedback` to delete interviews.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#delete-application-interview-feedback)",
+        "operationId": "SyncApplicationInterviewFeedbackDelete",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsApplications/atsJobApplicationId={application_id}&dataProvider=ATS&integrationContext=urn:li:organization:{org_id}/stages": {
+      "put": {
+        "summary": "Sync Application Stages",
+        "operationId": "SyncApplicationStages",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Sync Application Stages - Delete",
+        "description": "DELETE on the endpoint `/atsApplications/{JobApplicationIdentifier}/stages` to delete Job Application Stages.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#delete-application-stages)",
+        "operationId": "SyncApplicationStagesDelete",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/exportedCandidates": {
+      "get": {
+        "summary": "GET Notification Type EXPORT_CANDIDATE_PROFILE",
+        "description": "When the callback URL has received a notification event of `EXPORT_CANDIDATE_PROFILE` type after `One_Click_Export`, you should then make an API call to retrieve the limited profile information of the exported candidate.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates#retrieving-exported-candidate-information)",
+        "operationId": "GETNotificationTypeEXPORTCANDIDATEPROFILE",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/seatsV2": {
+      "get": {
+        "summary": "Retrieve Recruiter Seatholders",
+        "description": "`/seats` used to retrieve the details of Contract Seat holders including name, email Id and unique ID.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/recruiter-seatholders#seats-deprecation-set-for-april-1-2022)",
+        "operationId": "RetrieveRecruiterSeatholders",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "active",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "contracts",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/conversationEvents": {
+      "get": {
+        "summary": "Retrieve InMail History",
+        "description": "InMail History API allows you to retrieve InMail activity, both sent and received, that occurred on a given LinkedIn Recruiter contract.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-history#api-endpoint)",
+        "operationId": "RetrieveInMailHistory",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "viewer",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "timeRange.end",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "timeRange.start",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "threadUrn",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/mailStubs": {
+      "get": {
+        "summary": "Retrieve InMail Stub Profiles",
+        "description": "InMail Stub Profile API allows you to retrieve basic profile data of LinkedIn members that have replied to InMails sent from Recruiter seat holders.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles)",
+        "operationId": "RetrieveInMailStubProfiles",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "contract",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "createdDateStart",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "createdDateEnd",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "owners",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/prospectNotes": {
+      "get": {
+        "summary": "Retrieve Prospect Notes",
+        "description": "Prospect Notes API allows you to retrieve notes that were created about prospects on a given Recruiter contract.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/prospect-notes)",
+        "operationId": "RetrieveProspectNotes",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "contract",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cutoffDate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "beforeDate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "owners",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/me": {
+      "get": {
+        "summary": "GET Person ID - With 3 legged OAuth Flow - r_liteprofile permission",
+        "operationId": "GETPersonIDWith3LeggedOAuthFlowRLiteprofilePermission",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsEntityAcls": {
+      "put": {
+        "summary": "Upsert Entity ACL",
+        "description": "Visibility of your customer's synced entities within LinkedIn products will depend on the ACLs you sync using `/atsEntityAcls`.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#sync-entity-acls)",
+        "operationId": "UpsertEntityACL",
+        "parameters": [
+          {
+            "name": "ids[0].atsEntityAclId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].atsEntityType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].atsEntityId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "entities"
+                ],
+                "type": "object",
+                "properties": {
+                  "entities": {
+                    "required": [
+                      "dataProvider=ATS&integrationContext=urn:li:organization:{{org_id}}&atsEntityType=JOB_POSTING&atsEntityId={{public_externalJobPostingId}}&atsEntityAclId=TEST_JOBS"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "dataProvider=ATS&integrationContext=urn:li:organization:{{org_id}}&atsEntityType=JOB_POSTING&atsEntityId={{public_externalJobPostingId}}&atsEntityAclId=TEST_JOBS": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "summary": "Retrieve Entity ACL",
+        "description": "API used to retrieve the details of already Sync ACL.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#retrieve-entity-acls)",
+        "operationId": "RetrieveEntityACL",
+        "parameters": [
+          {
+            "name": "atsEntityId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "atsEntityType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Entity ACL",
+        "description": "Endpoint used to delete already Synced ACL.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#delete-entity-acls)",
+        "operationId": "DeleteEntityACL",
+        "parameters": [
+          {
+            "name": "ids[0].atsEntityAclId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].atsEntityId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].atsEntityType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsEntityAclAssignees": {
+      "put": {
+        "summary": "Upsert Entity ACL Assignees",
+        "description": "Endpoint to create and update ACL entities for assignees. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#upsert-entity-acl-assignees)",
+        "operationId": "UpsertEntityACLAssignees",
+        "parameters": [
+          {
+            "name": "ids[0].atsEntityAclId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].assignee",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].atsEntityType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "entities"
+                ],
+                "type": "object",
+                "properties": {
+                  "entities": {
+                    "required": [
+                      "dataProvider=ATS&integrationContext=urn:li:organization:{{org_id}}&atsEntityType=JOB_POSTING&atsEntityAclId=TEST_JOBS&assignee=urn:li:person:iyxQ2ZcEAd"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "dataProvider=ATS&integrationContext=urn:li:organization:{{org_id}}&atsEntityType=JOB_POSTING&atsEntityAclId=TEST_JOBS&assignee=urn:li:person:iyxQ2ZcEAd": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "summary": "Retrieve Entity ACL Assignees",
+        "description": "Endpoint to retrieve details of already synced ACL Assignees. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#retrieve-entity-acl-assignee)",
+        "operationId": "RetrieveEntityACLAssignees",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "assignee",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Entity ACL Assignees",
+        "description": "Endpoint to delete already synced ACL Assignees. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#delete-entity-acl-assignees)",
+        "operationId": "DeleteEntityACLAssignees",
+        "parameters": [
+          {
+            "name": "ids[0].atsEntityAclId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].assignee",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].atsEntityType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

@@ -1,0 +1,779 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Company Intelligence API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/adAccountUsers": {
+      "get": {
+        "summary": "Fetch all ad accounts of the authenticated user",
+        "operationId": "FetchAllAdAccountsOfTheAuthenticatedUser",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "elements",
+                    "paging"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "account",
+                          "changeAuditStamps",
+                          "role",
+                          "user",
+                          "version"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "account": {
+                            "type": "string"
+                          },
+                          "changeAuditStamps": {
+                            "required": [
+                              "created",
+                              "lastModified"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "created": {
+                                "required": [
+                                  "actor",
+                                  "time"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "actor": {
+                                    "type": "string"
+                                  },
+                                  "time": {
+                                    "type": "integer"
+                                  }
+                                }
+                              },
+                              "lastModified": {
+                                "required": [
+                                  "actor",
+                                  "time"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "actor": {
+                                    "type": "string"
+                                  },
+                                  "time": {
+                                    "type": "integer"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "role": {
+                            "type": "string"
+                          },
+                          "user": {
+                            "type": "string"
+                          },
+                          "version": {
+                            "required": [
+                              "versionTag"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "versionTag": {
+                                "type": "integer"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "paging": {
+                      "required": [
+                        "count",
+                        "links",
+                        "start",
+                        "total"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "count": {
+                          "type": "integer"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "start": {
+                          "type": "integer"
+                        },
+                        "total": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adAccounts/{adAccountsId}/adCampaigns": {
+      "get": {
+        "summary": "Search for campaigns using search criteria",
+        "operationId": "SearchForCampaignsUsingSearchCriteria",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search.campaignGroup.values[0]",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "elements",
+                    "metadata"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "targetingCriteria",
+                          "servingStatuses",
+                          "type",
+                          "locale",
+                          "version",
+                          "associatedEntity",
+                          "test",
+                          "runSchedule",
+                          "targeting",
+                          "optimizationPreference",
+                          "optimizationTargetType",
+                          "changeAuditStamps",
+                          "campaignGroup",
+                          "dailyBudget",
+                          "unitCost",
+                          "creativeSelection",
+                          "costType",
+                          "name",
+                          "offsiteDeliveryEnabled",
+                          "id",
+                          "audienceExpansionEnabled",
+                          "account",
+                          "status"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "targetingCriteria": {
+                            "required": [
+                              "include"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "include": {
+                                "required": [
+                                  "and"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "and": {
+                                    "type": "array",
+                                    "items": {
+                                      "required": [
+                                        "or"
+                                      ],
+                                      "type": "object",
+                                      "properties": {
+                                        "or": {
+                                          "required": [
+                                            "urn:li:adTargetingFacet:employers"
+                                          ],
+                                          "type": "object",
+                                          "properties": {
+                                            "urn:li:adTargetingFacet:employers": {
+                                              "type": "array",
+                                              "items": {
+                                                "type": "string"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "servingStatuses": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "locale": {
+                            "required": [
+                              "country",
+                              "language"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "country": {
+                                "type": "string"
+                              },
+                              "language": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "version": {
+                            "required": [
+                              "versionTag"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "versionTag": {
+                                "type": "integer"
+                              }
+                            }
+                          },
+                          "associatedEntity": {
+                            "type": "string"
+                          },
+                          "test": {
+                            "type": "boolean"
+                          },
+                          "runSchedule": {
+                            "required": [
+                              "end",
+                              "start"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "end": {
+                                "type": "integer"
+                              },
+                              "start": {
+                                "type": "integer"
+                              }
+                            }
+                          },
+                          "targeting": {
+                            "required": [
+                              "includedTargetingFacets"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "includedTargetingFacets": {
+                                "required": [
+                                  "employers",
+                                  "locations",
+                                  "interfaceLocales"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "employers": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "locations": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "interfaceLocales": {
+                                    "type": "array",
+                                    "items": {
+                                      "required": [
+                                        "country",
+                                        "language"
+                                      ],
+                                      "type": "object",
+                                      "properties": {
+                                        "country": {
+                                          "type": "string"
+                                        },
+                                        "language": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "optimizationPreference": {
+                            "required": [
+                              "frequencyOptimizationPreference"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "frequencyOptimizationPreference": {
+                                "required": [
+                                  "timeSpan",
+                                  "optimizationType",
+                                  "frequency"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "timeSpan": {
+                                    "required": [
+                                      "duration",
+                                      "unit"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                      "duration": {
+                                        "type": "integer"
+                                      },
+                                      "unit": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  },
+                                  "optimizationType": {
+                                    "type": "string"
+                                  },
+                                  "frequency": {
+                                    "type": "integer"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "optimizationTargetType": {
+                            "type": "string"
+                          },
+                          "changeAuditStamps": {
+                            "required": [
+                              "created",
+                              "lastModified"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "created": {
+                                "required": [
+                                  "time"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "time": {
+                                    "type": "integer"
+                                  }
+                                }
+                              },
+                              "lastModified": {
+                                "required": [
+                                  "time"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "time": {
+                                    "type": "integer"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "campaignGroup": {
+                            "type": "string"
+                          },
+                          "dailyBudget": {
+                            "required": [
+                              "amount",
+                              "currencyCode"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "integer"
+                              },
+                              "currencyCode": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "unitCost": {
+                            "required": [
+                              "amount",
+                              "currencyCode"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "integer"
+                              },
+                              "currencyCode": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "creativeSelection": {
+                            "type": "string"
+                          },
+                          "costType": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "offsiteDeliveryEnabled": {
+                            "type": "boolean"
+                          },
+                          "id": {
+                            "type": "integer"
+                          },
+                          "audienceExpansionEnabled": {
+                            "type": "boolean"
+                          },
+                          "account": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "metadata": {
+                      "required": [
+                        "nextPageToken"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "nextPageToken": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adSegments": {
+      "get": {
+        "summary": "Fetch existing ad segments based on ad account",
+        "operationId": "FetchExistingAdSegmentsBasedOnAdAccount",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accounts",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "approximateMemberCount",
+                          "created",
+                          "name",
+                          "versionTag",
+                          "id",
+                          "lastModified",
+                          "type",
+                          "account",
+                          "status"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "approximateMemberCount": {
+                            "type": "integer"
+                          },
+                          "created": {
+                            "required": [
+                              "actor",
+                              "time"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "actor": {
+                                "type": "string"
+                              },
+                              "time": {
+                                "type": "integer"
+                              }
+                            }
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "versionTag": {
+                            "type": "integer"
+                          },
+                          "id": {
+                            "type": "integer"
+                          },
+                          "lastModified": {
+                            "required": [
+                              "actor",
+                              "time"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "actor": {
+                                "type": "string"
+                              },
+                              "time": {
+                                "type": "integer"
+                              }
+                            }
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "account": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/accountIntelligence": {
+      "get": {
+        "summary": "Fetch account intelligence data using campaign filter",
+        "operationId": "FetchAccountIntelligenceDataUsingCampaignFilter",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "account",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filterCriteria",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "authorizationHeader": {
+        "type": "apiKey",
+        "description": "Authorization header inferred from the Postman collection.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

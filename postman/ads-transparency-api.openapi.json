@@ -1,0 +1,68 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Ads Transparency API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.linkedin.com"
+    }
+  ],
+  "paths": {
+    "/rest/advertiserTransparencyData/urn%3Ali%3AsponsoredAccount%3A{sponsoredaccount_id}": {
+      "get": {
+        "summary": "Advertiser Transparency Data",
+        "operationId": "AdvertiserTransparencyData",
+        "parameters": [
+          {
+            "name": "month",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "authorizationHeader": {
+        "type": "apiKey",
+        "description": "Authorization header inferred from the Postman collection.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

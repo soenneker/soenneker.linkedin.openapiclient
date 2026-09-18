@@ -1,0 +1,2224 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Community Management",
+    "description": "**You must apply for access to the Marketing Developer Platform in order to use these APIs. See the** [**Developer Portal**](https://developer.linkedin.com/product-catalog/marketing/page-management) **on how to apply.**\n\nThis collection aims to focus on different Community Management use cases, for example, social action notifications, and should be used with the **community-management-env-versioning** environment.\n\n\\--All requests for the Community Management API collection are in the Restli 2.0 format--\n\nAuthorizationOAuth 2.0",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/shares": {
+      "post": {
+        "summary": "2. Create a share with a Company Mention",
+        "description": "Mention a company name by using the annotations. [Learn more](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/share-api?tabs=http#share-text-and-mentions) by viewing our public documentation.\n\nThis example uses the LinkedIn organization.",
+        "operationId": "operation2CreateAShareWithACompanyMention",
+        "parameters": [
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "owner",
+                  "text",
+                  "subject",
+                  "distribution",
+                  "content"
+                ],
+                "type": "object",
+                "properties": {
+                  "owner": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "required": [
+                      "annotations",
+                      "text"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "annotations": {
+                        "type": "array",
+                        "items": {
+                          "required": [
+                            "entity",
+                            "length",
+                            "start"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "entity": {
+                              "type": "string"
+                            },
+                            "length": {
+                              "type": "integer"
+                            },
+                            "start": {
+                              "type": "integer"
+                            }
+                          }
+                        }
+                      },
+                      "text": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "subject": {
+                    "type": "string"
+                  },
+                  "distribution": {
+                    "required": [
+                      "linkedInDistributionTarget"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "linkedInDistributionTarget": {
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "content": {
+                    "required": [
+                      "contentEntities",
+                      "title"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "contentEntities": {
+                        "type": "array",
+                        "items": {
+                          "required": [
+                            "entityLocation",
+                            "thumbnails"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "entityLocation": {
+                              "type": "string"
+                            },
+                            "thumbnails": {
+                              "type": "array",
+                              "items": {
+                                "required": [
+                                  "resolvedUrl"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "resolvedUrl": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "title": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/eventSubscriptions/(developerApplication:urn%3Ali%3AdeveloperApplication%3A{application_id},user:urn%3Ali%3Aperson%3A{person_id},entity:urn%3Ali%3Aorganization%3A{organization_id},eventType:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS)": {
+      "put": {
+        "summary": "3. Create a subscription request",
+        "description": "[Create a subscription](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#creating-and-updating-subscriptions) record to include the webhook URL where your app will receive notifications. The subscription request will only succeed if the subscribing member is an administrator of the organization being subscribed to.",
+        "operationId": "operation3CreateASubscriptionRequest",
+        "parameters": [
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Linkedin-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "webhook"
+                ],
+                "type": "object",
+                "properties": {
+                  "webhook": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "get": {
+        "summary": "5. Retrieve Subscription by Key",
+        "description": "Retrieve all the subscriptions details such as webhook url and expiration for the logged in user. [Learn more](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#retrieve-subscriptions-for-an-authenticated-member) by viewing our online documentation.",
+        "operationId": "operation5RetrieveSubscriptionByKey",
+        "parameters": [
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/eventSubscriptions": {
+      "get": {
+        "summary": "3. Retrieve Notifications for the authenticated member's organization",
+        "description": "[Learn more](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#pull-organizational-notifications) by viewing our public documentation.",
+        "operationId": "operation3RetrieveNotificationsForTheAuthenticatedMemberSOrganization",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "eventType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Linkedin-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/eventSubscriptions/(developerApplication:{application_id},user:{person_id},entity:{organization_id},eventType:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS)": {
+      "delete": {
+        "summary": "6. Remove a Subscription",
+        "description": "[Remove a subscription](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#remove-a-subscription) for a your developer application and Organization.",
+        "operationId": "operation6RemoveASubscription",
+        "parameters": [
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/organizationalEntityFollowerStatistics": {
+      "get": {
+        "summary": "Time-Bound follower statistics",
+        "operationId": "TimeBoundFollowerStatistics",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "organizationalEntity",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "timeIntervals.timeGranularityType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "timeIntervals.timeRange.start",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "timeIntervals.timeRange.end",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/organizationPageStatistics": {
+      "get": {
+        "summary": "Lifetime Page Statistics",
+        "operationId": "LifetimePageStatistics",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "organization",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/organizationalEntityShareStatistics": {
+      "get": {
+        "summary": "Time Bound Share Statistics",
+        "operationId": "TimeBoundShareStatistics",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "organizationalEntity",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "timeIntervals.timeGranularityType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "timeIntervals.timeRange.start",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "timeIntervals.timeRange.end",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/peopleTypeahead": {
+      "get": {
+        "summary": "Search By Keyword",
+        "operationId": "SearchByKeyword",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "keywords",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "organization",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/vanityUrl": {
+      "get": {
+        "summary": "Search By Vanity URL",
+        "operationId": "SearchByVanityURL",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "vanityUrl",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "organization",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/organizations": {
+      "get": {
+        "summary": "Find Administered Organization Brands by Parent Org",
+        "operationId": "FindAdministeredOrganizationBrandsByParentOrg",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "parent",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "paging",
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "paging": {
+                      "required": [
+                        "start",
+                        "count",
+                        "links",
+                        "total"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "type": "integer"
+                        },
+                        "count": {
+                          "type": "integer"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "total": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "name",
+                          "primaryOrganizationType",
+                          "vanityName",
+                          "locations",
+                          "localizedName",
+                          "id"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "required": [
+                              "localized",
+                              "preferredLocale"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "localized": {
+                                "required": [
+                                  "en_US"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "en_US": {
+                                    "type": "string"
+                                  }
+                                }
+                              },
+                              "preferredLocale": {
+                                "required": [
+                                  "country",
+                                  "language"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "country": {
+                                    "type": "string"
+                                  },
+                                  "language": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "primaryOrganizationType": {
+                            "type": "string"
+                          },
+                          "vanityName": {
+                            "type": "string"
+                          },
+                          "locations": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "localizedName": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization_id}": {
+      "get": {
+        "summary": "Lookup by Organization Primary Type",
+        "operationId": "LookupByOrganizationPrimaryType",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projection",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "primaryOrganizationType"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "primaryOrganizationType": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organizationsLookup": {
+      "get": {
+        "summary": "Find Non-Administered Organization",
+        "operationId": "FindNonAdministeredOrganization",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "results",
+                    "statuses",
+                    "errors"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "required": [
+                        "3803",
+                        "79988552"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "3803": {
+                          "required": [
+                            "name",
+                            "primaryOrganizationType",
+                            "vanityName",
+                            "locations",
+                            "localizedName",
+                            "id"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "required": [
+                                "localized",
+                                "preferredLocale"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "localized": {
+                                  "required": [
+                                    "en_US"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "en_US": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "preferredLocale": {
+                                  "required": [
+                                    "country",
+                                    "language"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "country": {
+                                      "type": "string"
+                                    },
+                                    "language": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "primaryOrganizationType": {
+                              "type": "string"
+                            },
+                            "vanityName": {
+                              "type": "string"
+                            },
+                            "locations": {
+                              "type": "array",
+                              "items": {
+                                "required": [
+                                  "staffCountRange",
+                                  "locationType",
+                                  "address"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "staffCountRange": {
+                                    "type": "string"
+                                  },
+                                  "locationType": {
+                                    "type": "string"
+                                  },
+                                  "address": {
+                                    "required": [
+                                      "country"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                      "country": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "localizedName": {
+                              "type": "string"
+                            },
+                            "id": {
+                              "type": "integer"
+                            }
+                          }
+                        },
+                        "79988552": {
+                          "required": [
+                            "name",
+                            "primaryOrganizationType",
+                            "vanityName",
+                            "locations",
+                            "localizedName",
+                            "id"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "required": [
+                                "localized",
+                                "preferredLocale"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "localized": {
+                                  "required": [
+                                    "en_US"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "en_US": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "preferredLocale": {
+                                  "required": [
+                                    "country",
+                                    "language"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "country": {
+                                      "type": "string"
+                                    },
+                                    "language": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "primaryOrganizationType": {
+                              "type": "string"
+                            },
+                            "vanityName": {
+                              "type": "string"
+                            },
+                            "locations": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "localizedName": {
+                              "type": "string"
+                            },
+                            "id": {
+                              "type": "integer"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "statuses": {
+                      "required": [
+                        "3803",
+                        "79988552"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "3803": {
+                          "type": "integer"
+                        },
+                        "79988552": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "errors": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/networkSizes/urn:li:organization:{organization_id}": {
+      "get": {
+        "summary": "Retrieve Organization Follower Count",
+        "operationId": "RetrieveOrganizationFollowerCount",
+        "parameters": [
+          {
+            "name": "edgeType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "firstDegreeSize"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "firstDegreeSize": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organizationBrands": {
+      "get": {
+        "summary": "Batch GET on Administered Organization Brands",
+        "operationId": "BatchGETOnAdministeredOrganizationBrands",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "results",
+                    "statuses",
+                    "errors"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "required": [
+                        "89758488"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "89758488": {
+                          "required": [
+                            "vanityName",
+                            "localizedName",
+                            "website",
+                            "groups",
+                            "versionTag",
+                            "defaultLocale",
+                            "alternativeNames",
+                            "specialties",
+                            "parentRelationship",
+                            "localizedSpecialties",
+                            "industries",
+                            "name",
+                            "primaryOrganizationType",
+                            "id",
+                            "autoCreated",
+                            "localizedWebsite"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "vanityName": {
+                              "type": "string"
+                            },
+                            "localizedName": {
+                              "type": "string"
+                            },
+                            "website": {
+                              "required": [
+                                "localized",
+                                "preferredLocale"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "localized": {
+                                  "required": [
+                                    "en_US"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "en_US": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "preferredLocale": {
+                                  "required": [
+                                    "country",
+                                    "language"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "country": {
+                                      "type": "string"
+                                    },
+                                    "language": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "groups": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "versionTag": {
+                              "type": "integer"
+                            },
+                            "defaultLocale": {
+                              "required": [
+                                "country",
+                                "language"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "country": {
+                                  "type": "string"
+                                },
+                                "language": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "alternativeNames": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "specialties": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "parentRelationship": {
+                              "required": [
+                                "relationshipStatus",
+                                "parent"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "relationshipStatus": {
+                                  "type": "string"
+                                },
+                                "parent": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "localizedSpecialties": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "industries": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "name": {
+                              "required": [
+                                "localized",
+                                "preferredLocale"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "localized": {
+                                  "required": [
+                                    "en_US"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "en_US": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "preferredLocale": {
+                                  "required": [
+                                    "country",
+                                    "language"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "country": {
+                                      "type": "string"
+                                    },
+                                    "language": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "primaryOrganizationType": {
+                              "type": "string"
+                            },
+                            "id": {
+                              "type": "integer"
+                            },
+                            "autoCreated": {
+                              "type": "boolean"
+                            },
+                            "localizedWebsite": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "statuses": {
+                      "required": [
+                        "35625943",
+                        "89758488"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "35625943": {
+                          "type": "integer"
+                        },
+                        "89758488": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "errors": {
+                      "required": [
+                        "35625943"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "35625943": {
+                          "required": [
+                            "message",
+                            "status"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "message": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "integer"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organizationBrands/{organizationBrand_id}": {
+      "get": {
+        "summary": "Retrieve an Administered Organization Brand",
+        "operationId": "RetrieveAnAdministeredOrganizationBrand",
+        "parameters": [
+          {
+            "name": "organizationBrand_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "vanityName",
+                    "localizedName",
+                    "website",
+                    "groups",
+                    "versionTag",
+                    "defaultLocale",
+                    "alternativeNames",
+                    "specialties",
+                    "parentRelationship",
+                    "localizedSpecialties",
+                    "industries",
+                    "name",
+                    "primaryOrganizationType",
+                    "id",
+                    "$URN",
+                    "autoCreated",
+                    "localizedWebsite"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "vanityName": {
+                      "type": "string"
+                    },
+                    "localizedName": {
+                      "type": "string"
+                    },
+                    "website": {
+                      "required": [
+                        "localized",
+                        "preferredLocale"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "localized": {
+                          "required": [
+                            "en_US"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "en_US": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "preferredLocale": {
+                          "required": [
+                            "country",
+                            "language"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "country": {
+                              "type": "string"
+                            },
+                            "language": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "groups": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "versionTag": {
+                      "type": "integer"
+                    },
+                    "defaultLocale": {
+                      "required": [
+                        "country",
+                        "language"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "country": {
+                          "type": "string"
+                        },
+                        "language": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "alternativeNames": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "specialties": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "parentRelationship": {
+                      "required": [
+                        "relationshipStatus",
+                        "parent"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "relationshipStatus": {
+                          "type": "string"
+                        },
+                        "parent": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "localizedSpecialties": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "industries": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "name": {
+                      "required": [
+                        "localized",
+                        "preferredLocale"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "localized": {
+                          "required": [
+                            "en_US"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "en_US": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "preferredLocale": {
+                          "required": [
+                            "country",
+                            "language"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "country": {
+                              "type": "string"
+                            },
+                            "language": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "primaryOrganizationType": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "$URN": {
+                      "type": "string"
+                    },
+                    "autoCreated": {
+                      "type": "boolean"
+                    },
+                    "localizedWebsite": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organizationBrandsLookup": {
+      "get": {
+        "summary": "Batch GET on Non-Administered Organization Brands",
+        "operationId": "BatchGETOnNonAdministeredOrganizationBrands",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "results",
+                    "statuses",
+                    "errors"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "required": [
+                        "35625943",
+                        "89758488"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "35625943": {
+                          "required": [
+                            "name",
+                            "primaryOrganizationType",
+                            "vanityName",
+                            "localizedName",
+                            "id"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "required": [
+                                "localized",
+                                "preferredLocale"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "localized": {
+                                  "required": [
+                                    "en_US"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "en_US": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "preferredLocale": {
+                                  "required": [
+                                    "country",
+                                    "language"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "country": {
+                                      "type": "string"
+                                    },
+                                    "language": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "primaryOrganizationType": {
+                              "type": "string"
+                            },
+                            "vanityName": {
+                              "type": "string"
+                            },
+                            "localizedName": {
+                              "type": "string"
+                            },
+                            "id": {
+                              "type": "integer"
+                            }
+                          }
+                        },
+                        "89758488": {
+                          "required": [
+                            "name",
+                            "primaryOrganizationType",
+                            "vanityName",
+                            "localizedName",
+                            "id",
+                            "localizedWebsite"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "required": [
+                                "localized",
+                                "preferredLocale"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "localized": {
+                                  "required": [
+                                    "en_US"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "en_US": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "preferredLocale": {
+                                  "required": [
+                                    "country",
+                                    "language"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "country": {
+                                      "type": "string"
+                                    },
+                                    "language": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "primaryOrganizationType": {
+                              "type": "string"
+                            },
+                            "vanityName": {
+                              "type": "string"
+                            },
+                            "localizedName": {
+                              "type": "string"
+                            },
+                            "id": {
+                              "type": "integer"
+                            },
+                            "localizedWebsite": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "statuses": {
+                      "required": [
+                        "35625943",
+                        "89758488"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "35625943": {
+                          "type": "integer"
+                        },
+                        "89758488": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "errors": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organizationAcls": {
+      "get": {
+        "summary": "Find Organization Access Control",
+        "operationId": "FindOrganizationAccessControl",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "organization",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Linkedin-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/memberFollowersCount": {
+      "get": {
+        "summary": "Followers Count By DataRange",
+        "operationId": "FollowersCountByDataRange",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dateRange",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Linkedin-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/memberCreatorPostAnalytics": {
+      "post": {
+        "summary": "Analytics for Specific Member Post",
+        "operationId": "AnalyticsForSpecificMemberPost",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "entity",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "queryType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "aggregation",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dateRange",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "owner",
+                  "text",
+                  "subject",
+                  "distribution",
+                  "content"
+                ],
+                "type": "object",
+                "properties": {
+                  "owner": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "required": [
+                      "annotations",
+                      "text"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "annotations": {
+                        "type": "array",
+                        "items": {
+                          "required": [
+                            "entity",
+                            "length",
+                            "start"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "entity": {
+                              "type": "string"
+                            },
+                            "length": {
+                              "type": "integer"
+                            },
+                            "start": {
+                              "type": "integer"
+                            }
+                          }
+                        }
+                      },
+                      "text": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "subject": {
+                    "type": "string"
+                  },
+                  "distribution": {
+                    "required": [
+                      "linkedInDistributionTarget"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "linkedInDistributionTarget": {
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "content": {
+                    "required": [
+                      "contentEntities",
+                      "title"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "contentEntities": {
+                        "type": "array",
+                        "items": {
+                          "required": [
+                            "entityLocation",
+                            "thumbnails"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "entityLocation": {
+                              "type": "string"
+                            },
+                            "thumbnails": {
+                              "type": "array",
+                              "items": {
+                                "required": [
+                                  "resolvedUrl"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "resolvedUrl": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "title": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/memberCreatorVideoAnalytics": {
+      "post": {
+        "summary": "Analytics for Specific Member VIDEO Post",
+        "operationId": "AnalyticsForSpecificMemberVIDEOPost",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "entity",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "queryType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "aggregation",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dateRange",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "owner",
+                  "text",
+                  "subject",
+                  "distribution",
+                  "content"
+                ],
+                "type": "object",
+                "properties": {
+                  "owner": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "required": [
+                      "annotations",
+                      "text"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "annotations": {
+                        "type": "array",
+                        "items": {
+                          "required": [
+                            "entity",
+                            "length",
+                            "start"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "entity": {
+                              "type": "string"
+                            },
+                            "length": {
+                              "type": "integer"
+                            },
+                            "start": {
+                              "type": "integer"
+                            }
+                          }
+                        }
+                      },
+                      "text": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "subject": {
+                    "type": "string"
+                  },
+                  "distribution": {
+                    "required": [
+                      "linkedInDistributionTarget"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "linkedInDistributionTarget": {
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "content": {
+                    "required": [
+                      "contentEntities",
+                      "title"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "contentEntities": {
+                        "type": "array",
+                        "items": {
+                          "required": [
+                            "entityLocation",
+                            "thumbnails"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "entityLocation": {
+                              "type": "string"
+                            },
+                            "thumbnails": {
+                              "type": "array",
+                              "items": {
+                                "required": [
+                                  "resolvedUrl"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "resolvedUrl": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "title": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "authorizationHeader": {
+        "type": "apiKey",
+        "description": "Authorization header inferred from the Postman collection.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

@@ -1,0 +1,477 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Learning Content",
+    "description": "We are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.\n\nThe 2 main uses for the externalized LinkedIn Learning APIs are for Learning Content and Learning Activity Reports.\n\n*Access to LinkedIn Learning APIs is available to members of our* [*Partner Program*](https://learning.linkedin.com/partners) *and organizations that have purchased LinkedIn Learning site licenses.*\n\nOverview: [https://docs.microsoft.com/en-us/linkedin/learning/overview/](https://docs.microsoft.com/en-us/linkedin/learning/overview/)\n\n* * *\n\nUse this collection with the **LinkedIn Learning Solutions** environment\n\n* * *",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.linkedin.com"
+    }
+  ],
+  "paths": {
+    "/v2/learningAssets/{asset_urn}": {
+      "get": {
+        "summary": "Learning Assets by Individual Asset URN",
+        "description": "To retrieve an individual learning asset, given an URN, issue a GET request to the following endpoint:\nGET https://api.linkedin.com/v2/learningAssets/{URN}\n\nThe URN types supported by this endpoint are \"urn:li:lyndaCourse\", \"urn:li:lyndaChapter\", and \"urn:li:lyndaVideo\".\n\n\nDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/retrieve-an-individual-learning-object#learningassets-get\n\n*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*",
+        "operationId": "LearningAssetsByIndividualAssetURN",
+        "parameters": [
+          {
+            "name": "asset_urn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "targetLocale.language",
+            "in": "query",
+            "description": "The locale language the API will use to try to localize the learning asset. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales \"de_DE\", \"en_US\", \"es_ES\", \"fr_FR\", and \"ja_JP\".",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "targetLocale.country",
+            "in": "query",
+            "description": "The locale country the API will use to try to localize the learning asset. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales \"de_DE\", \"en_US\", \"es_ES\", \"fr_FR\", and \"ja_JP\". ",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "expandDepth",
+            "in": "query",
+            "description": "The number of levels in the learning asset hierarchy to include asset details. Default is 1. ",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "includeRetired",
+            "in": "query",
+            "description": "Whether to include retired learning assets. The value of this parameter should be true or false.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "referer",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/learningAssets": {
+      "get": {
+        "summary": "Learning Assets by Locale and Type",
+        "description": "To retrieve a page of learning assets, given some criteria, issue a GET call to the following endpoint:\nGET https://api.linkedin.com/v2/learningAssets?q=localeAndType\n\nDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api#learningassets-localeandtype-finder\n\n*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*",
+        "operationId": "LearningAssetsByLocaleAndType",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "The value of this parameter should always be: localeAndType.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sourceLocale.language",
+            "in": "query",
+            "description": "The locale language of the learning assets. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales \"de_DE\", \"en_US\", \"es_ES\", \"fr_FR\", and \"ja_JP\".",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sourceLocale.country",
+            "in": "query",
+            "description": "The locale country of the learning assets. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales \"de_DE\", \"en_US\", \"es_ES\", \"fr_FR\", and \"ja_JP\".",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "expandDepth",
+            "in": "query",
+            "description": "The number of levels in the learning asset hierarchy to include asset details. This parameter is optional; please see the Specifying the level of asset details section for an explanation with examples.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "includeRetired",
+            "in": "query",
+            "description": "Whether to include retired learning assets. The value of this parameter should be true or false. ",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "The start index of learning assets for the page.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "description": "The number of learning assets to include in the page. Please choose a reasonable value if overriding the default; the API will return an error if the requested page exceeds the 2 MB response size limit of the framework.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "assetType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "referer",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/learningClassifications": {
+      "get": {
+        "summary": "Learning Classifications by Keyword",
+        "description": "To retrieve learning classifications for a keyboard, use a GET request supplied with a keyword to receive all of the classifications for that keyword. [https://api.linkedin.com/v2/learningClassifications?q=keyword&keyword=business](https://api.linkedin.com/v2/learningClassifications/{URN})\n\nDocumentation: [https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword](https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword)\n\n*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*",
+        "operationId": "LearningClassificationsByKeyword",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "The value of this parameter should always be keyword.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "keyword",
+            "in": "query",
+            "description": "The keyword string to search learning classifications. The search results will include only learning classifications matching this keyword string, as determined by LinkedIn Learning's relevance algorithm. The value of this parameter is case-insensitive.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sourceLocale.country",
+            "in": "query",
+            "description": "The locale country the API will use to try to localize the learning classification. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales \"de_DE\", \"en_US\", \"es_ES\", \"fr_FR\", and \"ja_JP\". ",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sourceLocale.language",
+            "in": "query",
+            "description": "The locale language the API will use to try to localize the learning classification. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales \"de_DE\", \"en_US\", \"es_ES\", \"fr_FR\", and \"ja_JP\".",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "The start index of learning classifications for the page.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "description": "The number of learning classifications to include in the page. The maximum supported count is 100 classifications per page.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "referer",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "Learning Classifications by Keyword",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "elements",
+                    "paging"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "urn",
+                          "name",
+                          "type"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "urn": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "required": [
+                              "locale",
+                              "value"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "locale": {
+                                "required": [
+                                  "country",
+                                  "language"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "country": {
+                                    "type": "string"
+                                  },
+                                  "language": {
+                                    "type": "string"
+                                  }
+                                }
+                              },
+                              "value": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "type": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "paging": {
+                      "required": [
+                        "total",
+                        "count",
+                        "start",
+                        "links"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "total": {
+                          "type": "integer"
+                        },
+                        "count": {
+                          "type": "integer"
+                        },
+                        "start": {
+                          "type": "integer"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "required": [
+                              "rel",
+                              "href",
+                              "type"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "rel": {
+                                "type": "string"
+                              },
+                              "href": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/learningClassifications/{category_urn}": {
+      "get": {
+        "summary": "Learning Classifications by Category Urn",
+        "description": "To retrieve an individual learning classification, given an URN, issue a GET request to the following endpoint:\nGET https://api.linkedin.com/v2/learningClassifications/{URN}\n\nThe URN types supported by this endpoint are \"urn:li:lyndaCategory\" and \"urn:li:skill\".\n\nDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/retrieve-an-individual-learning-object#learningclassifications-get\n\n*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*",
+        "operationId": "LearningClassificationsByCategoryUrn",
+        "parameters": [
+          {
+            "name": "category_urn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "targetLocale.language",
+            "in": "query",
+            "description": "The locale language the API will use to try to localize the learning classification. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales \"de_DE\", \"en_US\", \"es_ES\", \"fr_FR\", and \"ja_JP\".",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "targetLocale.country",
+            "in": "query",
+            "description": "The locale country the API will use to try to localize the learning classification. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales \"de_DE\", \"en_US\", \"es_ES\", \"fr_FR\", and \"ja_JP\". ",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "referer",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "urn",
+                    "owner",
+                    "name",
+                    "type"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "urn": {
+                      "type": "string"
+                    },
+                    "owner": {
+                      "required": [
+                        "urn",
+                        "name"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "urn": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "required": [
+                            "locale",
+                            "value"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "locale": {
+                              "required": [
+                                "country",
+                                "language"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "country": {
+                                  "type": "string"
+                                },
+                                "language": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "name": {
+                      "required": [
+                        "locale",
+                        "value"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "locale": {
+                          "required": [
+                            "country",
+                            "language"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "country": {
+                              "type": "string"
+                            },
+                            "language": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

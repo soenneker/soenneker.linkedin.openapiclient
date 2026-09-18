@@ -1,0 +1,2701 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Content APIs",
+    "description": "Please note that these are versioned set of APIs and they are different than the earlier one.\n\nThese must be used with the **content-api-env-versioning** environment.\n\nContent APIs are the APIs that are published with the versioned release. These APIs bring capabilities to partners/developers to create rich content via LinkedIn Ads with minimal operational and technical overhead.\n\n**You must apply for access to the Marketing Developer Platform in order to use these APIs. See the** [**Developer Portal**](https://developer.linkedin.com/product-catalog/marketing/campaign-management) **on how to apply.**",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://{{baseUrl}}"
+    }
+  ],
+  "paths": {
+    "//{baseUrl}/rest/inMailContents/": {
+      "post": {
+        "summary": "Create InMail Content",
+        "description": "API to create an inMail Content.",
+        "operationId": "CreateInMailContent",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "account",
+                  "name",
+                  "subject",
+                  "sender",
+                  "customFooter",
+                  "htmlBody",
+                  "subContent"
+                ],
+                "type": "object",
+                "properties": {
+                  "account": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "subject": {
+                    "type": "string"
+                  },
+                  "sender": {
+                    "type": "string"
+                  },
+                  "customFooter": {
+                    "type": "string"
+                  },
+                  "htmlBody": {
+                    "type": "string"
+                  },
+                  "subContent": {
+                    "required": [
+                      "regular"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "regular": {
+                        "required": [
+                          "callToActionText",
+                          "callToActionLandingPageUrl",
+                          "rightRailAdPicture"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "callToActionText": {
+                            "type": "string"
+                          },
+                          "callToActionLandingPageUrl": {
+                            "type": "string"
+                          },
+                          "rightRailAdPicture": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "//{baseUrl}/rest/inMailContents/{adInMailContentId}": {
+      "get": {
+        "summary": "Get InMail Content",
+        "description": "API to retrieve an inMail Content.",
+        "operationId": "GetInMailContent",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "adInMailContentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Update InMail Content",
+        "description": "API to update an inMail Content.",
+        "operationId": "UpdateInMailContent",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "adInMailContentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "patch"
+                ],
+                "type": "object",
+                "properties": {
+                  "patch": {
+                    "required": [
+                      "$set"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "$set": {
+                        "required": [
+                          "name"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/rest/inMailContents": {
+      "get": {
+        "summary": "Batch Get InMail Content",
+        "description": "API to retrieve an inMail Content in Batches.",
+        "operationId": "BatchGetInMailContent",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Send Test InMail",
+        "description": "API to send/share an inMail Content.",
+        "operationId": "SendTestInMail",
+        "parameters": [
+          {
+            "name": "action",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/": {
+      "put": {
+        "summary": "Upload the Document file (select a document file in the Body for postman to use)",
+        "operationId": "UploadTheDocumentFileSelectADocumentFileInTheBodyForPostmanToUse",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get document content",
+        "operationId": "GetDocumentContent",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/images": {
+      "post": {
+        "summary": "Initialize Image Upload",
+        "description": "Use the `initializeUpload` action to register the upload. When you initialize, you declare the upcoming upload. Use the upload URL to upload the image.",
+        "operationId": "InitializeImageUpload",
+        "parameters": [
+          {
+            "name": "action",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "initializeUploadRequest"
+                ],
+                "type": "object",
+                "properties": {
+                  "initializeUploadRequest": {
+                    "required": [
+                      "owner"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "owner": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "get": {
+        "summary": "Get Multiple Videos",
+        "description": "This API retrieves multiple videos.",
+        "operationId": "GetMultipleVideos",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "//{baseUrl}/rest/images/{image_urn}": {
+      "get": {
+        "summary": "Get a single Image",
+        "description": "This API rerieve a single image.",
+        "operationId": "GetASingleImage",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "image_urn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/rest/images": {
+      "get": {
+        "summary": "Get multiple documents",
+        "operationId": "GetMultipleDocuments",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "//{baseUrl}/rest/posts": {
+      "get": {
+        "summary": "Create Image Content",
+        "description": "This API creates an image content.",
+        "operationId": "CreateImageContent",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "author",
+                  "commentary",
+                  "visibility",
+                  "distribution",
+                  "content",
+                  "lifecycleState",
+                  "isReshareDisabledByAuthor"
+                ],
+                "type": "object",
+                "properties": {
+                  "author": {
+                    "type": "string"
+                  },
+                  "commentary": {
+                    "type": "string"
+                  },
+                  "visibility": {
+                    "type": "string"
+                  },
+                  "distribution": {
+                    "required": [
+                      "feedDistribution",
+                      "targetEntities",
+                      "thirdPartyDistributionChannels"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "feedDistribution": {
+                        "type": "string"
+                      },
+                      "targetEntities": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "thirdPartyDistributionChannels": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "content": {
+                    "required": [
+                      "media"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "media": {
+                        "required": [
+                          "id"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "lifecycleState": {
+                    "type": "string"
+                  },
+                  "isReshareDisabledByAuthor": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "//{baseUrl}/rest/posts/{postId}": {
+      "get": {
+        "summary": "Get Image Content",
+        "description": "This API rerieve the content associated with a single image.",
+        "operationId": "GetImageContent",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "postId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/rest/posts": {
+      "get": {
+        "summary": "Fetch multiple Image Content",
+        "description": "This API rerieve content from multiple images.",
+        "operationId": "FetchMultipleImageContent",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/videos": {
+      "post": {
+        "summary": "Initialize Video Upload",
+        "description": "Use the `initializeUpload` action to register the upload. When you initialize, you declare the upcoming upload. Use the upload URL from the `uploadInstructions` to upload the video.",
+        "operationId": "InitializeVideoUpload",
+        "parameters": [
+          {
+            "name": "action",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "//{baseUrl}/images/{image_urn}": {
+      "get": {
+        "summary": "Get a single video",
+        "description": "This API retrieves a single video.",
+        "operationId": "GetASingleVideo",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "image_urn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "//{baseUrl}/creatives": {
+      "post": {
+        "summary": "Create a Dynamic Spotlight Ad",
+        "description": "Creates a Dynamic Spotlight Ad Creative.\n\nA successful response returns a `201 Created HTTP` status code and the ID in the `x-linkedin-id` response header. For example, `urn:li:sponsoredCreative:123456789`\n\n##",
+        "operationId": "CreateADynamicSpotlightAd",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "content",
+                  "campaign",
+                  "intendedStatus"
+                ],
+                "type": "object",
+                "properties": {
+                  "content": {
+                    "required": [
+                      "spotlight"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "spotlight": {
+                        "required": [
+                          "callToAction",
+                          "description",
+                          "headline",
+                          "landingPage",
+                          "logo",
+                          "organizationName",
+                          "showMemberProfilePhoto"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "callToAction": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "headline": {
+                            "type": "string"
+                          },
+                          "landingPage": {
+                            "type": "string"
+                          },
+                          "logo": {
+                            "type": "string"
+                          },
+                          "organizationName": {
+                            "type": "string"
+                          },
+                          "showMemberProfilePhoto": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "campaign": {
+                    "type": "string"
+                  },
+                  "intendedStatus": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/creatives": {
+      "post": {
+        "summary": "Create an Sponsored Creative",
+        "description": "This API creates a sponsored content by adding the action as createInline.",
+        "operationId": "CreateAnSponsoredCreative",
+        "parameters": [
+          {
+            "name": "action",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "get": {
+        "summary": "Search for Creative",
+        "description": "You can search for creative content in order to get a collection of creatives matching your search parameters. The Creative API currently supports search by `creative id`, `campaign`, `account`, `content reference`, `intendedStatus`, `leadgenCreativeCallToActionDestinations` and test fields. The API supports finding creatives from multiple accounts. The values within each field are displayed with 'or' (ORed) and values across fields are displayed with 'and' (ANDed).",
+        "operationId": "SearchForCreative",
+        "parameters": [
+          {
+            "name": "accounts",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "campaigns",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contentReferences",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "creatives",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "intendedStatuses",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "isTestAccount",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "isTotalIncluded",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "leadgenCreativeCallToActionDestinations",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "//{baseUrl}/creatives/{urn_creatives}": {
+      "get": {
+        "summary": "Get a  Sponsored Creative",
+        "operationId": "GetASponsoredCreative",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "urn_creatives",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "//{baseUrl}/creatives/{creative ID}": {
+      "post": {
+        "summary": "Update a Creative",
+        "description": "You can change the details of following Creatives fields:\n\n\\*   `intendedStatus`:\n\\*   `leadgenCallToAction`: field `adFormUrn` - The ad form that is a target destination for the `callToAction` button. It can only be modified when the creative is in DRAFT status. It is read only once it is set for a creative and once it transitions to any non-draft intended status.\n\\*   `leadgenCallToAction`: field label `-Label` for the `callToAction` button\n    \n\n  \nThis API updates a sponsored creative.",
+        "operationId": "UpdateACreative",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "creative ID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a Creative",
+        "description": "A Creative can be deleted. Use DELETE method to delete a creative that meets one of the following conditions. To start the process of deleting other creative, update the status to `PENDING_DELETION`.\n\n\\*   It is in a DRAFT state.\n\\*   It is linked to a Campaign in a DRAFT state.\n\\*   It is a video ad creative and `processingState` is `PROCESSING_FAILED`.\n    \n\nThe header X-RestLi-Method must be included in the request and set to `DELETE`.",
+        "operationId": "DeleteACreative",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "creative ID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "//{baseUrl}/posts": {
+      "post": {
+        "summary": "Create Organic Post",
+        "description": "Simplest form of post creation where an organic post is made ith a sample text at a page.",
+        "operationId": "CreateOrganicPost",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "author",
+                  "commentary",
+                  "visibility",
+                  "distribution",
+                  "content",
+                  "lifecycleState",
+                  "isReshareDisabledByAuthor"
+                ],
+                "type": "object",
+                "properties": {
+                  "author": {
+                    "type": "string"
+                  },
+                  "commentary": {
+                    "type": "string"
+                  },
+                  "visibility": {
+                    "type": "string"
+                  },
+                  "distribution": {
+                    "required": [
+                      "feedDistribution",
+                      "targetEntities",
+                      "thirdPartyDistributionChannels"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "feedDistribution": {
+                        "type": "string"
+                      },
+                      "targetEntities": {
+                        "type": "array",
+                        "items": {
+                          "required": [
+                            "geoLocations",
+                            "seniorities"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "geoLocations": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "seniorities": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "thirdPartyDistributionChannels": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "content": {
+                    "required": [
+                      "media"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "media": {
+                        "required": [
+                          "title",
+                          "id"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "lifecycleState": {
+                    "type": "string"
+                  },
+                  "isReshareDisabledByAuthor": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "//{baseUrl}/posts/{encoded ugcPostUrn|shareUrn}": {
+      "get": {
+        "summary": "Get Posts by URN",
+        "description": "Creating posts with image requires uploading an image asset to obtain a Image URN (urn:li:image:{id}) for creating the post. See the [Images API](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/images-api?view=li-lms-2022-08) for instructions on how to do this.",
+        "operationId": "GetPostsByURN",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "encoded ugcPostUrn|shareUrn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a Post",
+        "description": "Post deletions are idempotent. Deletion requests for a previously deleted UGC Post will return a `204` code - No Content.\n\n####",
+        "operationId": "DeleteAPost",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "encoded ugcPostUrn|shareUrn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/posts": {
+      "get": {
+        "summary": "Fetch multiple document content",
+        "operationId": "FetchMultipleDocumentContent",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create document content",
+        "operationId": "CreateDocumentContent",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "author",
+                  "commentary",
+                  "visibility",
+                  "distribution",
+                  "content",
+                  "lifecycleState",
+                  "isReshareDisabledByAuthor"
+                ],
+                "type": "object",
+                "properties": {
+                  "author": {
+                    "type": "string"
+                  },
+                  "commentary": {
+                    "type": "string"
+                  },
+                  "visibility": {
+                    "type": "string"
+                  },
+                  "distribution": {
+                    "required": [
+                      "feedDistribution",
+                      "targetEntities",
+                      "thirdPartyDistributionChannels"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "feedDistribution": {
+                        "type": "string"
+                      },
+                      "targetEntities": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "thirdPartyDistributionChannels": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "content": {
+                    "required": [
+                      "media"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "media": {
+                        "required": [
+                          "title",
+                          "id"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "lifecycleState": {
+                    "type": "string"
+                  },
+                  "isReshareDisabledByAuthor": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "//{baseUrl}/posts/{shared ID}/{ugcPosts ID}": {
+      "post": {
+        "summary": "Update a Post",
+        "description": "The following `posts` field are available to update. Refer to [Schema](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/posts-api?view=li-lms-2022-08&tabs=http#post-schema) for complete field details.\n\n| Field | Description |\n| --- | --- |\n| commentary | String |\n| contentCallToActionLabel | contentCallToActionLabel text |\n| contentLandingPage | URL of the landing page |\n| reshareContext |  |\n| lifecycleState |  |\n| adContext | \\*   dscName: Update the name of the sponsored content<br>\\*   dscStatus: Update the status of the sponsored content |",
+        "operationId": "UpdateAPost",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "shared ID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ugcPosts ID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "patch"
+                ],
+                "type": "object",
+                "properties": {
+                  "patch": {
+                    "required": [
+                      "$set"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "$set": {
+                        "required": [
+                          "commentary",
+                          "contentCallToActionLabel"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "commentary": {
+                            "type": "string"
+                          },
+                          "contentCallToActionLabel": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "//{baseUrl}/conversationAds": {
+      "post": {
+        "summary": "Create a Sponsored Conversation",
+        "description": "Successful response will have Status `201 Created` and the ID in the `x-linkedin-id` response header. For example,`urn:li:sponsoredConversation:164380864`",
+        "operationId": "CreateASponsoredConversation",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "//{baseUrl}/conversationAds/{conversationUrn}": {
+      "get": {
+        "summary": "Get a Sponsored Conversation",
+        "description": "#### Sample Response\n\nJSONCopy\n\n```\n{\n  \"id\": \"urn:li:sponsoredConversation:185204\",\n  \"parentAccount\": \"urn:li:sponsoredAccount:520866471\"\n}\n\n```",
+        "operationId": "GetASponsoredConversation",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "conversationUrn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Update a Sponsored Conversation",
+        "description": "In the following example, the `firstMessageContent` field is changed to point to the first message of the conversation.",
+        "operationId": "UpdateASponsoredConversation",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "conversationUrn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/conversationAds": {
+      "get": {
+        "summary": "Get Multiple Sponsored Conversations",
+        "description": "Makes a BATCH_GET request to let a list of conversations that are created.\n\n#### Sample Response\n\nJSONCopy\n\n```\n{\n    \"statuses\": {\n        \"urn:li:sponsoredConversation:704255\": 200,\n        \"urn:li:sponsoredConversation:703695\": 200\n    },\n    \"results\": {\n        \"urn:li:sponsoredConversation:704255\": \n         {\n            \"id\": \"urn:li:sponsoredConversation:704255\",\n            \"parentAccount\": \"urn:li:sponsoredAccount:520866471\"\n            \n        },\n        \"urn:li:sponsoredConversation:703695\": \n        {\n            \"id\": \"urn:li:sponsoredConversation:703695\",\n            \"parentAccount\": \"urn:li:sponsoredAccount:520866471\",\n        }\n    },\n    \"errors\": {}\n}\n```",
+        "operationId": "GetMultipleSponsoredConversations",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "//{baseUrl}/conversationAds/{conversationAdsId}/sponsoredMessageContents": {
+      "post": {
+        "summary": "Batch create Sponsored Message Content",
+        "description": "Creates Sponsored Message Content in Batches.",
+        "operationId": "BatchCreateSponsoredMessageContent",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "conversationAdsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "elements"
+                ],
+                "type": "object",
+                "properties": {
+                  "elements": {
+                    "type": "array",
+                    "items": {
+                      "required": [
+                        "bodySource",
+                        "nextAction"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "bodySource": {
+                          "required": [
+                            "leadGenerationForm"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "leadGenerationForm": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "nextAction": {
+                          "required": [
+                            "options"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "options": {
+                              "type": "array",
+                              "items": {
+                                "required": [
+                                  "replyType",
+                                  "optionText"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "replyType": {
+                                    "type": "string"
+                                  },
+                                  "optionText": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "//{baseUrl}/conversationAds/{conversationUrn}/sponsoredMessageContents/{messageUrn}": {
+      "get": {
+        "summary": "Get Sponsored Message Content",
+        "description": "Retrieves just a single message content from all the conversations in a conversation Ad.",
+        "operationId": "GetSponsoredMessageContent",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "conversationUrn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "messageUrn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Update Sponsored Message Content",
+        "description": "Updates the message contents from all the conversations in a conversation Ad.",
+        "operationId": "UpdateSponsoredMessageContent",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "conversationUrn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "messageUrn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "//{baseUrl}/conversationAds/{conversationUrn}/sponsoredMessageContents": {
+      "get": {
+        "summary": "Get All Sponsored Message Content",
+        "description": "Retrieves just all the message contents from all the conversations in a conversation Ad.",
+        "operationId": "GetAllSponsoredMessageContent",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "conversationUrn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/conversationAds/{conversationUrn}/sponsoredMessageContents": {
+      "get": {
+        "summary": "Batch get Sponsored Message Content",
+        "description": "Retrieves Sponsored Message Content in Batches.",
+        "operationId": "BatchGetSponsoredMessageContent",
+        "parameters": [
+          {
+            "name": "conversationUrn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Batch update Sponsored Message Content",
+        "description": "Updates Sponsored Message Content in Batches.",
+        "operationId": "BatchUpdateSponsoredMessageContent",
+        "parameters": [
+          {
+            "name": "conversationUrn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "'Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Batch delete Sponsored Message Content",
+        "description": "Deletes Sponsored Message Content in Batches.",
+        "operationId": "BatchDeleteSponsoredMessageContent",
+        "parameters": [
+          {
+            "name": "conversationUrn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "//{baseUrl}/creatives/{sponsoredCreative-urn}": {
+      "get": {
+        "summary": "Get a Dynamic Spotlight Ad",
+        "description": "Retrives a Dynamic Spotlight Ad.\n\n#### Sample Response\n\nJSONCopy\n\n```\n{\n    \"servingHoldReasons\": [\n        \"UNDER_REVIEW\",\n        \"CAMPAIGN_STOPPED\"\n    ],\n    \"lastModifiedAt\": 1648512200000,\n    \"lastModifiedBy\": \"urn:li:member:123\",\n    \"content\": {\n        \"spotlight\": {\n            \"organizationName\": \"LinkedIn Demo\",\n            \"showMemberProfilePhoto\": true,\n            \"landingPage\": \"http://linkedin.com\",\n            \"description\": \"Check out this demo\",\n            \"logo\": \"urn:li:image:abc\",\n            \"headline\": \"Spotlight Ad Demo\",\n            \"callToAction\": \"Join Us Now\"\n        }\n    },\n    \"createdAt\": 1648512200000,\n    \"createdBy\": \"urn:li:member:123\",\n    \"isTest\": false,\n    \"review\": {\n        \"status\": \"PENDING\"\n    },\n    \"isServing\": false,\n    \"campaign\": \"urn:li:sponsoredCampaign:123\",\n    \"id\": \"urn:li:sponsoredCreative:123456789\",\n    \"intendedStatus\": \"ACTIVE\",\n    \"account\": \"urn:li:sponsoredAccount:123\"\n}\n```\n\n##",
+        "operationId": "GetADynamicSpotlightAd",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sponsoredCreative-urn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "'Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "Update a Dynamic Spotlight Ad",
+        "description": "## Update a Dynamic Spotlight Ad Creative\n\n\\*   [http](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads?view=li-lms-2022-08&tabs=http#tabpanel_3_http)\n\\*   [curl](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads?view=li-lms-2022-08&tabs=http#tabpanel_3_curl)\n    \n\nHTTPCopy\n\n```\nPOST https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}\n\n```\n\nJSONCopy\n\n```\n{\n    \"patch\": {\n        \"$set\": {\n            \"content\": {\n                \"spotlight\": {\n                    \"callToAction\": \"New Action\",\n                    \"description\": \"New Description\",\n                    \"headline\": \"New Headline\",\n                    \"landingPage\": \"http://example.com\",                       \n                    \"organizationName\": \"New Organization Name\",\n                    \"logo\": \"urn:li:image:def\",\n                    \"showMemberProfilePhoto\": false\n                }\n            }\n        }\n    }\n}\n\n```\n\nA successful response returns a `204 No Content`.",
+        "operationId": "UpdateADynamicSpotlightAd",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sponsoredCreative-urn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "patch"
+                ],
+                "type": "object",
+                "properties": {
+                  "patch": {
+                    "required": [
+                      "$set"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "$set": {
+                        "required": [
+                          "content"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "content": {
+                            "required": [
+                              "spotlight"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "spotlight": {
+                                "required": [
+                                  "callToAction",
+                                  "description",
+                                  "headline",
+                                  "landingPage",
+                                  "organizationName",
+                                  "logo",
+                                  "showMemberProfilePhoto"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "callToAction": {
+                                    "type": "string"
+                                  },
+                                  "description": {
+                                    "type": "string"
+                                  },
+                                  "headline": {
+                                    "type": "string"
+                                  },
+                                  "landingPage": {
+                                    "type": "string"
+                                  },
+                                  "organizationName": {
+                                    "type": "string"
+                                  },
+                                  "logo": {
+                                    "type": "string"
+                                  },
+                                  "showMemberProfilePhoto": {
+                                    "type": "boolean"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a Dynamic Spotlight Ad",
+        "description": "## Delete a Dynamic Spotlight Ad Creative\n\n\\*   [http](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads?view=li-lms-2022-08&tabs=http#tabpanel_4_http)\n\\*   [curl](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads?view=li-lms-2022-08&tabs=http#tabpanel_4_curl)\n    \n\nHTTPCopy\n\n```\nDELETE https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}\n\n```\n\nA successful response returns a `204 No Content`.",
+        "operationId": "DeleteADynamicSpotlightAd",
+        "parameters": [
+          {
+            "name": "baseUrl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sponsoredCreative-urn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/documents": {
+      "post": {
+        "summary": "Initialize Document Upload",
+        "operationId": "InitializeDocumentUpload",
+        "parameters": [
+          {
+            "name": "action",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "//documents/{document_asset_id}": {
+      "get": {
+        "summary": "Get a single document",
+        "operationId": "GetASingleDocument",
+        "parameters": [
+          {
+            "name": "document_asset_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "authorizationHeader": {
+        "type": "apiKey",
+        "description": "Authorization header inferred from the Postman collection.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

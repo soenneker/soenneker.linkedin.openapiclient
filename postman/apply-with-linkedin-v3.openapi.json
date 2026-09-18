@@ -1,0 +1,184 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Apply With LinkedIn V3",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.linkedin.com"
+    }
+  ],
+  "paths": {
+    "/oauth/v2/accessToken": {
+      "post": {
+        "summary": "Child Application Access Token",
+        "operationId": "ChildApplicationAccessToken",
+        "requestBody": {
+          "content": {
+            "text/plain": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "grant_type": {
+                    "type": "string"
+                  },
+                  "client_id": {
+                    "type": "string"
+                  },
+                  "client_secret": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v2/atsIntegrations": {
+      "post": {
+        "summary": "Update Customer ATSIntegration - APPLY_WITH_LINKEDIN",
+        "operationId": "UpdateCustomerATSIntegrationAPPLYWITHLINKEDIN",
+        "parameters": [
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].tenantType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "entities"
+                ],
+                "type": "object",
+                "properties": {
+                  "entities": {
+                    "required": [
+                      "integrationContext={{integration_context}}&integrationType=APPLY_WITH_LINKEDIN&tenantType=JOBS&dataProvider=ATS"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "integrationContext={{integration_context}}&integrationType=APPLY_WITH_LINKEDIN&tenantType=JOBS&dataProvider=ATS": {
+                        "required": [
+                          "patch"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "patch": {
+                            "required": [
+                              "$set"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "$set": {
+                                "required": [
+                                  "integrationName"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "integrationName": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "summary": "Verify Customer Integrations",
+        "operationId": "VerifyCustomerIntegrations",
+        "parameters": [
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].tenantType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

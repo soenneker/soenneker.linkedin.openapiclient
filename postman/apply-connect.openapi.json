@@ -1,0 +1,480 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Apply Connect",
+    "description": "We are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.linkedin.com"
+    }
+  ],
+  "paths": {
+    "/v2/provisionedApplications": {
+      "post": {
+        "summary": "Provision Customer Application",
+        "operationId": "ProvisionCustomerApplication",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "uniqueForeignId",
+                  "name",
+                  "description",
+                  "validJsSdkDomains"
+                ],
+                "type": "object",
+                "properties": {
+                  "uniqueForeignId": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "validJsSdkDomains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "get": {
+        "summary": "Get App by uniqueForeignID",
+        "operationId": "GetAppByUniqueForeignID",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uniqueForeignId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/v2/atsIntegrations": {
+      "post": {
+        "summary": "Sync Customer Integrations",
+        "operationId": "SyncCustomerIntegrations",
+        "parameters": [
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].tenantType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "entities"
+                ],
+                "type": "object",
+                "properties": {
+                  "entities": {
+                    "required": [
+                      "integrationContext=urn:li:organization:{{org_id}}&integrationType=APPLY_CONNECT&tenantType=JOBS&dataProvider=ATS"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "integrationContext=urn:li:organization:{{org_id}}&integrationType=APPLY_CONNECT&tenantType=JOBS&dataProvider=ATS": {
+                        "required": [
+                          "patch"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "patch": {
+                            "required": [
+                              "$set"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "$set": {
+                                "required": [
+                                  "integrationName"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "integrationName": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "get": {
+        "summary": "Verify Integrations",
+        "operationId": "VerifyIntegrations",
+        "parameters": [
+          {
+            "name": "ids[0].integrationContext",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].integrationType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].tenantType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0].dataProvider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/v2/simpleJobPostings": {
+      "post": {
+        "summary": "Sync Jobs",
+        "operationId": "SyncJobs",
+        "parameters": [
+          {
+            "name": "x-restli-method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/v2/simpleJobPostingTasks": {
+      "post": {
+        "summary": "Check Job Operation Task Status",
+        "operationId": "CheckJobOperationTaskStatus",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-HTTP-Method-Override",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ids": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/v2/jobPostingStatus": {
+      "post": {
+        "summary": "Check Job Posting Status",
+        "operationId": "CheckJobPostingStatus",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-HTTP-Method-Override",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ids": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/ambry/": {
+      "get": {
+        "summary": "Get Resume/Cover Letter",
+        "operationId": "GetResumeCoverLetter",
+        "parameters": [
+          {
+            "name": "x-li-ambry-ep",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/v2/jobApplicationLifecycleActions": {
+      "post": {
+        "summary": "Sync Job Application Feedback Signals",
+        "operationId": "SyncJobApplicationFeedbackSignals",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "authorizationHeader": {
+        "type": "apiKey",
+        "description": "Authorization header inferred from the Postman collection.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

@@ -1,0 +1,419 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Audience Insights",
+    "description": "## Overview\n\nAudience Insights API enables you to discover and identify the audience segments that meet your target persona, demonstrate interest and engagement in relevant customer products/offerings, uncover insights about the companies the target audience works for, and activate audience for targeting in sponsored ad campaigns on LinkedIn. This enables advertisers to use LinkedIn data and insights as a part of their broader audience discovery, planning, activation and optimization processes by delivering on the “Audience first” approach.\n\nNote: This is a private API that is available to qualified developers who meet additional criteria for access. To learn more about eligibility qualifications and how to request access, please see the [FAQ](https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq#how-do-i-get-access-to-audience-insights-api-product). If you wish to apply for access, please submit a [Zendesk support ticket](https://linkedin.zendesk.com/).\n\n## Permissions\n\nAudience Insights API requires a [3-legged OAuth](https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow) member token and your developer application needs to be provisioned with the Audience Insights API product. Once you have been approved to access, you can use any valid member access token associated with the authenticated user with any valid scope permissions for member authentication. If there is no valid member token for the relevant user from any previous integration, we recommend using the bare minimum scope permissions like `r_ads` which will be required to fetch authenticated user's ad accounts.  \nNote: This API is application-specific; hence, explicit member consent is not required. Any valid member access token associated with the authenticated user can be used, and you do not need to add any additional permission in the scope of your Oauth2 flow for authorization.\n\nThis collection aims to focus on different Audience Insights use cases and should be used with the **audience-insights-env-versioning** environment.\n\n\\--All requests for the Audience Insights API collection are in the Restli 2.0 format--",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/adTargetingFacets": {
+      "get": {
+        "summary": "Get a list of available Ad Targeting Facets",
+        "operationId": "GetAListOfAvailableAdTargetingFacets",
+        "parameters": [
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "paging",
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "paging": {
+                      "required": [
+                        "start",
+                        "count",
+                        "links"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "type": "integer"
+                        },
+                        "count": {
+                          "type": "integer"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "entityTypes",
+                          "facetName",
+                          "$URN",
+                          "availableEntityFinders"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "entityTypes": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "facetName": {
+                            "type": "string"
+                          },
+                          "$URN": {
+                            "type": "string"
+                          },
+                          "availableEntityFinders": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/adTargetingEntities": {
+      "get": {
+        "summary": "Get Bing Geo locations using search typeahead",
+        "operationId": "GetBingGeoLocationsUsingSearchTypeahead",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "facet",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "queryVersion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "paging",
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "paging": {
+                      "required": [
+                        "start",
+                        "count",
+                        "links"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "type": "integer"
+                        },
+                        "count": {
+                          "type": "integer"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "required": [
+                              "type",
+                              "rel",
+                              "href"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string"
+                              },
+                              "rel": {
+                                "type": "string"
+                              },
+                              "href": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "name",
+                          "urn",
+                          "facetUrn"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "urn": {
+                            "type": "string"
+                          },
+                          "facetUrn": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/targetingAudienceInsights": {
+      "post": {
+        "summary": "What are the top interests of Directors in Finance and in the US?",
+        "operationId": "WhatAreTheTopInterestsOfDirectorsInFinanceAndInTheUS",
+        "parameters": [
+          {
+            "name": "action",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "request"
+                ],
+                "type": "object",
+                "properties": {
+                  "request": {
+                    "required": [
+                      "requestMetaData",
+                      "targetingCriteria",
+                      "groupBy"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "requestMetaData": {
+                        "required": [
+                          "sponsoredAccount"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "sponsoredAccount": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "targetingCriteria": {
+                        "required": [
+                          "include"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "include": {
+                            "required": [
+                              "and"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "and": {
+                                "type": "array",
+                                "items": {
+                                  "required": [
+                                    "or"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "or": {
+                                      "required": [
+                                        "urn:li:adTargetingFacet:locations"
+                                      ],
+                                      "type": "object",
+                                      "properties": {
+                                        "urn:li:adTargetingFacet:locations": {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "string"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "groupBy": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "value"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "required": [
+                        "audienceInsight",
+                        "totalAudienceCount"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "audienceInsight": {
+                          "required": [
+                            "segmentations",
+                            "groupedBy"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "segmentations": {
+                              "type": "array",
+                              "items": {
+                                "required": [
+                                  "entityCount",
+                                  "entityPercentage",
+                                  "value"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "entityCount": {
+                                    "type": "integer"
+                                  },
+                                  "entityPercentage": {
+                                    "type": "integer"
+                                  },
+                                  "value": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            },
+                            "groupedBy": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "totalAudienceCount": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

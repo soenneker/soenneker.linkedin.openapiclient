@@ -1,0 +1,3049 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Campaign Management",
+    "description": "**You must apply for access to the Marketing Developer Platform in order to use these APIs. See the** [<b>Developer Portal</b>](https://developer.linkedin.com/product-catalog/marketing/campaign-management) **on how to apply.**\n\nThis collection aims to focus on different Campaign Management use cases and should be used with the **campaign-management-env-versioning** environment.\n\n\\--All requests for the Campaign Management API collection are in the Restli 2.0 format--\n\n**Prerequisite:** Perform steps 1 & 2 from the [Generate An Access Token using Postman](https://docs.microsoft.com/linkedin/shared/authentication/generate-an-access-token?context=linkedin/marketing/context) of our online documentation for this request to work.\n\nThis is an example for generating an access token with the necessary scope to test the Campaign Management collection apis.\n\nThe full process your application will need to implement for 3-legged tokens is described in [Authorization Code Flow](https://docs.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow?context=linkedin/marketing/context&tabs=HTTPS)\n\nAuthorizationOAuth 2.0",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/adAccountUsers/(account:urn%3Ali%3AsponsoredAccount%3A{sponsoredaccount_id},user:urn%3Ali%3Aperson%3A{person_id})": {
+      "put": {
+        "summary": "Create Ad Account User",
+        "description": "This API example [creates an Ad Account User](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?tabs=http#create-ad-account-user). Creating Ad Account Users grants a member access to an Ad Account.",
+        "operationId": "CreateAdAccountUser",
+        "parameters": [
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "account",
+                  "role",
+                  "user"
+                ],
+                "type": "object",
+                "properties": {
+                  "account": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string"
+                  },
+                  "user": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "get": {
+        "summary": "Fetch an Ad Account User",
+        "description": "This API example [fetches an Ad Account User](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?tabs=http#get-ad-account-user). Fetching an existing Ad Account User requires both account and user parameters.\n\nThe person id can also be retrieved from the [/me](https://docs.microsoft.com/linkedin/shared/integrations/people/profile-api#retrieve-current-members-profile) endpoint.",
+        "operationId": "FetchAnAdAccountUser",
+        "parameters": [
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Update Existing Ad Account User",
+        "description": "This API example [updates an Ad Account User](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?tabs=http#update-existing-ad-account-user). An Ad Account User's role can be updated by using this endpoint.",
+        "operationId": "UpdateExistingAdAccountUser",
+        "parameters": [
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "patch"
+                ],
+                "type": "object",
+                "properties": {
+                  "patch": {
+                    "required": [
+                      "$set"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "$set": {
+                        "required": [
+                          "account",
+                          "role",
+                          "user"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "account": {
+                            "type": "string"
+                          },
+                          "role": {
+                            "type": "string"
+                          },
+                          "user": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete an Ad Account User",
+        "description": "This API example [deletes an Ad Account User](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?tabs=http#delete-an-ad-account-user). Members can be removed from Ad Account access by using the delete Ad Account User endpoint. Deletion requires both account and user parameters to look up the appropriate Ad Account User.",
+        "operationId": "DeleteAnAdAccountUser",
+        "parameters": [
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adAccountUsers": {
+      "get": {
+        "summary": "Fetch the Authenticated User's Ad Accounts",
+        "description": "This API example retrieves all Ad Accounts that an authenticated user has access to. Specifically, this api call will return the Ad Accounts associated with the member whose access token is being used! The only required parameter is q=authenticatedUser.\n\nTo understand more about verifying Ad Account Access visit our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?tabs=http#find-ad-accounts-by-authenticated-user).",
+        "operationId": "FetchTheAuthenticatedUserSAdAccounts",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/organizationAcls": {
+      "get": {
+        "summary": "Fetch the Authenticated User's Organization Roles",
+        "description": "To understand more about verifying Company Page Access visit our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-access-control-by-role?tabs=http#find-a-members-organization-access-control-information).\n\nA role defines the privileges that a member has within the organization. You must be an authenticated member with role type **ADMINISTRATOR** of an organization to use many of the Organization APIs.",
+        "operationId": "FetchTheAuthenticatedUserSOrganizationRoles",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adAccounts": {
+      "post": {
+        "summary": "Create a Test Ad Account",
+        "description": "This API example [creates a \"test\" ad account](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#creating-a-test-ad-account) by including an additional boolean `test` flag to `true` on the payload.",
+        "operationId": "CreateATestAdAccount",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "currency",
+                  "name",
+                  "notifiedOnCampaignOptimization",
+                  "notifiedOnCreativeApproval",
+                  "notifiedOnCreativeRejection",
+                  "notifiedOnEndOfCampaign",
+                  "reference",
+                  "type",
+                  "test"
+                ],
+                "type": "object",
+                "properties": {
+                  "currency": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "notifiedOnCampaignOptimization": {
+                    "type": "boolean"
+                  },
+                  "notifiedOnCreativeApproval": {
+                    "type": "boolean"
+                  },
+                  "notifiedOnCreativeRejection": {
+                    "type": "boolean"
+                  },
+                  "notifiedOnEndOfCampaign": {
+                    "type": "boolean"
+                  },
+                  "reference": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "test": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "get": {
+        "summary": "Search Account by Type",
+        "description": "Use the `q=search` parameter with the adAccountsV2 API to [search for accounts](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#search-for-accounts) by ID, name, reference, type, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all accounts the caller has access to are returned in the response. This example searches for accounts by the type(BUSINESS).",
+        "operationId": "SearchAccountByType",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adAccounts/{sponsoredaccount_id}": {
+      "get": {
+        "summary": "Fetch the Ad Account by ID",
+        "description": "[Fetch an ad Account](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#fetch-ad-account) by sponsored account ID.",
+        "operationId": "FetchTheAdAccountByID",
+        "parameters": [
+          {
+            "name": "sponsoredaccount_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Update Ad Account Name",
+        "description": "Ad Accounts can be updated through a partial update by patching the fields you want to change. The following example changes the name field only.\n\nSee our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#update-ad-account) for more information.",
+        "operationId": "UpdateAdAccountName",
+        "parameters": [
+          {
+            "name": "sponsoredaccount_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "patch"
+                ],
+                "type": "object",
+                "properties": {
+                  "patch": {
+                    "required": [
+                      "$set"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "$set": {
+                        "required": [
+                          "name"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adAccounts/{adAccountsId}/adCampaignGroups": {
+      "post": {
+        "summary": "Update Multiple Campaign Groups",
+        "description": "Multiple campaign groups can be updated with a partial update. This example updates the amount and currencyCode for one Campaign Group and status for another Campaign Group using the RestLi method BATCH_PARTIAL_UPDATE.\n\nView our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-update-campaign-groups) to learn more.",
+        "operationId": "UpdateMultipleCampaignGroups",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "entities"
+                ],
+                "type": "object",
+                "properties": {
+                  "entities": {
+                    "required": [
+                      "{{campaigngroup_id1}}",
+                      "{{campaigngroup_id2}}"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "{{campaigngroup_id1}}": {
+                        "required": [
+                          "patch"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "patch": {
+                            "required": [
+                              "$set"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "$set": {
+                                "required": [
+                                  "totalBudget"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "totalBudget": {
+                                    "required": [
+                                      "amount",
+                                      "currencyCode"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                      "amount": {
+                                        "type": "integer"
+                                      },
+                                      "currencyCode": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "{{campaigngroup_id2}}": {
+                        "required": [
+                          "patch"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "patch": {
+                            "required": [
+                              "$set"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "$set": {
+                                "required": [
+                                  "status"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "status": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "get": {
+        "summary": "Search for Campaign Groups",
+        "description": "Use the `q=search` parameter to [search for campaign groups](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#search-for-campaign-groups) by ID, account, name, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all campaign groups the caller has access to is returned in a paginated response. this example fetches campaign groups by the status values DRAFT or ACTIVE and orders it by ID descending.",
+        "operationId": "SearchForCampaignGroups",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete Multiple Campaign Groups",
+        "description": "Multiple Campaign Group can be deleted as shown in this example call. View our online documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-delete-campaign-groups) to learn more.\n\nOnly campaign groups which are in DRAFT status are allowed to be deleted. Once deleted, a campaign group can't be retrieved or recovered.",
+        "operationId": "DeleteMultipleCampaignGroups",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adAccounts/{adAccountsId}/adCampaignGroups/{campaigngroup_id1}": {
+      "get": {
+        "summary": "Fetch a Campaign Group by ID",
+        "description": "A Campaign Group can be fetched by the campaign group id as shown in this example call. See our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#get-a-campaign-group) for more information.",
+        "operationId": "FetchACampaignGroupByID",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "campaigngroup_id1",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Update Campaign Group",
+        "description": "Campaign groups can be updated with a partial update. This example updates the amount and currencyCode for a Campaign Group. View our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#update-a-campaign-group) to learn more.",
+        "operationId": "UpdateCampaignGroup",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "campaigngroup_id1",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "patch"
+                ],
+                "type": "object",
+                "properties": {
+                  "patch": {
+                    "required": [
+                      "$set"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "$set": {
+                        "required": [
+                          "totalBudget"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "totalBudget": {
+                            "required": [
+                              "amount",
+                              "currencyCode"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "integer"
+                              },
+                              "currencyCode": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a Campaign Group",
+        "description": "This example call [deletes a Campaign Group](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#delete-a-campaign-group).\n\nOnly campaign groups which are in DRAFT status are allowed to be deleted. Once deleted, a campaign group can't be retrieved or recovered.",
+        "operationId": "DeleteACampaignGroup",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "campaigngroup_id1",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adAccounts/{adAccountsId}/adCampaigns/{campaignId1}": {
+      "get": {
+        "summary": "Fetch a Campaign using Campaign ID",
+        "operationId": "FetchACampaignUsingCampaignID",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "campaignId1",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Update Campaign Using campaignId",
+        "operationId": "UpdateCampaignUsingCampaignId",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "campaignId1",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "patch"
+                ],
+                "type": "object",
+                "properties": {
+                  "patch": {
+                    "required": [
+                      "$set"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "$set": {
+                        "required": [
+                          "runSchedule"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "runSchedule": {
+                            "required": [
+                              "start",
+                              "end"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "start": {
+                                "type": "integer"
+                              },
+                              "end": {
+                                "type": "integer"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adAccounts/{adAccountsId}/adCampaigns": {
+      "post": {
+        "summary": "Update multiple campaigns using BATCH",
+        "operationId": "UpdateMultipleCampaignsUsingBATCH",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[0]",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids[1]",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "get": {
+        "summary": "Search for Campaign using criteria",
+        "operationId": "SearchForCampaignUsingCriteria",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search.campaignGroup.values[0]",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete multiple campaigns using BATCH",
+        "operationId": "DeleteMultipleCampaignsUsingBATCH",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adAccounts/{adAccountsId}/adCampaigns/{campaign_id1}": {
+      "post": {
+        "summary": "Archive a Campaign",
+        "operationId": "ArchiveACampaign",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "campaign_id1",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "patch"
+                ],
+                "type": "object",
+                "properties": {
+                  "patch": {
+                    "required": [
+                      "$set"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "$set": {
+                        "required": [
+                          "status"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete campaign Using campaign Id",
+        "operationId": "DeleteCampaignUsingCampaignId",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "campaign_id1",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adAccounts/{adAccountsId}/creatives/{creative_Id1}": {
+      "get": {
+        "summary": "Fetch a Creative using Creative ID",
+        "operationId": "FetchACreativeUsingCreativeID",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "creative_Id1",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Update Creative Using Creative Id",
+        "operationId": "UpdateCreativeUsingCreativeId",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "creative_Id1",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "patch"
+                ],
+                "type": "object",
+                "properties": {
+                  "patch": {
+                    "required": [
+                      "$set"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "$set": {
+                        "required": [
+                          "variables"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "variables": {
+                            "required": [
+                              "data"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "data": {
+                                "required": [
+                                  "com.linkedin.ads.SponsoredUpdateCreativeVariables"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "com.linkedin.ads.SponsoredUpdateCreativeVariables": {
+                                    "required": [
+                                      "sponsoredStatusUpdateContentType",
+                                      "mediaAspectRatio",
+                                      "share",
+                                      "activity",
+                                      "callToActionEnabled",
+                                      "directSponsoredContent"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                      "sponsoredStatusUpdateContentType": {
+                                        "type": "string"
+                                      },
+                                      "mediaAspectRatio": {
+                                        "required": [
+                                          "widthAspect",
+                                          "heightAspect"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                          "widthAspect": {
+                                            "type": "number"
+                                          },
+                                          "heightAspect": {
+                                            "type": "number"
+                                          }
+                                        }
+                                      },
+                                      "share": {
+                                        "type": "string"
+                                      },
+                                      "activity": {
+                                        "type": "string"
+                                      },
+                                      "callToActionEnabled": {
+                                        "type": "boolean"
+                                      },
+                                      "directSponsoredContent": {
+                                        "type": "boolean"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete Creative Using Creative Id",
+        "operationId": "DeleteCreativeUsingCreativeId",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "creative_Id1",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/{adAccountsId}/creatives": {
+      "get": {
+        "summary": "Fetch multiple Creatives using BATCH",
+        "operationId": "FetchMultipleCreativesUsingBATCH",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adAccounts/{adAccountsId}/creatives": {
+      "post": {
+        "summary": "Create multiple Creatives using BATCH",
+        "operationId": "CreateMultipleCreativesUsingBATCH",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "elements"
+                ],
+                "type": "object",
+                "properties": {
+                  "elements": {
+                    "type": "array",
+                    "items": {
+                      "required": [
+                        "campaign",
+                        "status",
+                        "type",
+                        "variables"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "campaign": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "variables": {
+                          "required": [
+                            "clickUri",
+                            "data"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "clickUri": {
+                              "type": "string"
+                            },
+                            "data": {
+                              "required": [
+                                "com.linkedin.ads.TextAdCreativeVariables"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "com.linkedin.ads.TextAdCreativeVariables": {
+                                  "required": [
+                                    "text",
+                                    "title"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "text": {
+                                      "type": "string"
+                                    },
+                                    "title": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "get": {
+        "summary": "Search Creative using Criteria",
+        "operationId": "SearchCreativeUsingCriteria",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search.campaign.values[0]",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete multiple Creatives using BATCH",
+        "operationId": "DeleteMultipleCreativesUsingBATCH",
+        "parameters": [
+          {
+            "name": "adAccountsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adTargetingFacets": {
+      "get": {
+        "summary": "Fetch the Ad Targeting Facets",
+        "description": "View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting?tabs=http&view=li-lms-unversioned) to understand more on Ads Targeting APIs.\n\nFacets are high-level categories of the types of targeting available to you. Use facets to narrow down your intended audience. The adTargetingFacets API returns available targeting facets.",
+        "operationId": "FetchTheAdTargetingFacets",
+        "parameters": [
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adTargetingEntities": {
+      "get": {
+        "summary": "Find Entities by URNs",
+        "description": "To understand more about the Ad Targeting Entities refer to our public documentation [here](https://docs.microsoft.com/linkedin/shared/references/v2/ads/adtargetingentities?context=linkedin/marketing/contex&view=li-lms-unversioned).  \nOnce you've identified the facet type(s) you'd like to target, you can fetch their entity values. This API example fetches the Entities by URNs.",
+        "operationId": "FindEntitiesByURNs",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "queryVersion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "urns",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adSupplyForecasts": {
+      "get": {
+        "summary": "Ad Supply Forecast API",
+        "description": "The Ad Supply Forecasts API enables you to forecast impressions, spending, and other metrics based on:\n\n\\*   Targeting criteria\n\\*   Campaign settings such as campaign type and objective type\n\\*   Bid and spending settings\n\\*   Time period",
+        "operationId": "AdSupplyForecastAPI",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "account",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "timeRange",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "campaignType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "totalBudget",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "competingBid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "targetingCriteria",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/assets": {
+      "post": {
+        "summary": "2. Register Video Upload",
+        "operationId": "operation2RegisterVideoUpload",
+        "parameters": [
+          {
+            "name": "action",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "registerUploadRequest"
+                ],
+                "type": "object",
+                "properties": {
+                  "registerUploadRequest": {
+                    "required": [
+                      "owner",
+                      "recipes",
+                      "serviceRelationships",
+                      "supportedUploadMechanism"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "owner": {
+                        "type": "string"
+                      },
+                      "recipes": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "serviceRelationships": {
+                        "type": "array",
+                        "items": {
+                          "required": [
+                            "identifier",
+                            "relationshipType"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "identifier": {
+                              "type": "string"
+                            },
+                            "relationshipType": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "supportedUploadMechanism": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/": {
+      "put": {
+        "summary": "3. Upload the Document file (select a document file in the Body for postman to use)",
+        "operationId": "operation3UploadTheDocumentFileSelectADocumentFileInTheBodyForPostmanToUse",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/assets/{asset_id}": {
+      "get": {
+        "summary": "4. Check the status of the upload",
+        "description": "View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&view=li-lms-unversioned#check-status-of-upload) to understand more on this API.\n\nThis API examples retrieves the status of the Image File uploaded in the previous step by using the asset ID. The recipe upload status must be **'AVAILABLE'** in order to move on to the next step!",
+        "operationId": "operation4CheckTheStatusOfTheUpload2",
+        "parameters": [
+          {
+            "name": "asset_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/shares": {
+      "post": {
+        "summary": "5. Create a dark share",
+        "description": "View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/share-api?tabs=http&view=li-lms-unversioned#direct-sponsored-content-share) to understand more on creating a direct sponsored content share (dark share).\n\nThis API example creates a dark image share on the Company Page (organization) referencing referencing the Image file that was uploaded in Step 3.\n\nA Direct Sponsored Content Share allows an advertiser to sponsor content without first publishing the content on the Organization page. It is very similar to a Sponsored Content Share except the share is not organic. This is otherwise known as a \"dark\" share and can only be viewed by the administrators of the organization's page.",
+        "operationId": "operation5CreateADarkShare",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "agent",
+                  "content",
+                  "distribution",
+                  "owner",
+                  "subject",
+                  "text"
+                ],
+                "type": "object",
+                "properties": {
+                  "agent": {
+                    "type": "string"
+                  },
+                  "content": {
+                    "required": [
+                      "contentEntities",
+                      "title",
+                      "shareMediaCategory"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "contentEntities": {
+                        "type": "array",
+                        "items": {
+                          "required": [
+                            "entity"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "entity": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "shareMediaCategory": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "distribution": {
+                    "required": [
+                      "linkedInDistributionTarget"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "linkedInDistributionTarget": {
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "owner": {
+                    "type": "string"
+                  },
+                  "subject": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "required": [
+                      "text"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adCampaigns": {
+      "post": {
+        "summary": "6. Create a Campaign for the Document Ad",
+        "operationId": "operation6CreateACampaignForTheDocumentAd",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "account",
+                  "campaignGroup",
+                  "audienceExpansionEnabled",
+                  "costType",
+                  "objectiveType",
+                  "creativeSelection",
+                  "locale",
+                  "name",
+                  "format",
+                  "offsiteDeliveryEnabled",
+                  "runSchedule",
+                  "targetingCriteria",
+                  "type",
+                  "dailyBudget",
+                  "unitCost",
+                  "status"
+                ],
+                "type": "object",
+                "properties": {
+                  "account": {
+                    "type": "string"
+                  },
+                  "campaignGroup": {
+                    "type": "string"
+                  },
+                  "audienceExpansionEnabled": {
+                    "type": "boolean"
+                  },
+                  "costType": {
+                    "type": "string"
+                  },
+                  "objectiveType": {
+                    "type": "string"
+                  },
+                  "creativeSelection": {
+                    "type": "string"
+                  },
+                  "locale": {
+                    "required": [
+                      "language",
+                      "country"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "language": {
+                        "type": "string"
+                      },
+                      "country": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "format": {
+                    "type": "string"
+                  },
+                  "offsiteDeliveryEnabled": {
+                    "type": "boolean"
+                  },
+                  "runSchedule": {
+                    "required": [
+                      "start",
+                      "end"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "start": {
+                        "type": "integer"
+                      },
+                      "end": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "targetingCriteria": {
+                    "required": [
+                      "include"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "include": {
+                        "required": [
+                          "and"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "and": {
+                            "type": "array",
+                            "items": {
+                              "required": [
+                                "or"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "or": {
+                                  "required": [
+                                    "urn:li:adTargetingFacet:interfaceLocales"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "urn:li:adTargetingFacet:interfaceLocales": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "dailyBudget": {
+                    "required": [
+                      "currencyCode",
+                      "amount"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "currencyCode": {
+                        "type": "string"
+                      },
+                      "amount": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "unitCost": {
+                    "required": [
+                      "amount",
+                      "currencyCode"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "amount": {
+                        "type": "integer"
+                      },
+                      "currencyCode": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "status": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/adCreatives": {
+      "post": {
+        "summary": "7. Create a Creative for the Image Ad",
+        "description": "View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?tabs=http&view=li-lms-unversioned#create-a-sponsored-content-share) to understand more on creating a Sponsored Content Ad Creative.\n\nThis API example creates a Sponsored Content Ad Creative referencing the previously created image share in step 5. This Creative will be created under the Campaign created in the previous step.",
+        "operationId": "operation7CreateACreativeForTheImageAd",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "campaign",
+                  "reference",
+                  "status",
+                  "type",
+                  "variables"
+                ],
+                "type": "object",
+                "properties": {
+                  "campaign": {
+                    "type": "string"
+                  },
+                  "reference": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "variables": {
+                    "required": [
+                      "data"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "required": [
+                          "com.linkedin.ads.SponsoredUpdateCreativeVariables"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "com.linkedin.ads.SponsoredUpdateCreativeVariables": {
+                            "type": "object"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/assets/{video_asset_id}": {
+      "get": {
+        "summary": "4. Check the status of the upload",
+        "operationId": "operation4CheckTheStatusOfTheUpload3",
+        "parameters": [
+          {
+            "name": "video_asset_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/posts": {
+      "post": {
+        "summary": "5. Create Post",
+        "operationId": "operation5CreatePost2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "author",
+                  "lifecycleState",
+                  "specificContent",
+                  "visibility"
+                ],
+                "type": "object",
+                "properties": {
+                  "author": {
+                    "type": "string"
+                  },
+                  "lifecycleState": {
+                    "type": "string"
+                  },
+                  "specificContent": {
+                    "required": [
+                      "com.linkedin.ugc.ShareContent"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "com.linkedin.ugc.ShareContent": {
+                        "required": [
+                          "media",
+                          "shareCommentary",
+                          "shareMediaCategory"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "media": {
+                            "type": "array",
+                            "items": {
+                              "required": [
+                                "title",
+                                "description",
+                                "media",
+                                "thumbnails",
+                                "status"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "title": {
+                                  "required": [
+                                    "attributes",
+                                    "text"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "attributes": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "text": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "description": {
+                                  "required": [
+                                    "attributes",
+                                    "text"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "attributes": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "text": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "media": {
+                                  "type": "string"
+                                },
+                                "thumbnails": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                "status": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "shareCommentary": {
+                            "required": [
+                              "attributes",
+                              "text"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "attributes": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "text": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "shareMediaCategory": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "visibility": {
+                    "required": [
+                      "com.linkedin.ugc.MemberNetworkVisibility"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "com.linkedin.ugc.MemberNetworkVisibility": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/creatives": {
+      "post": {
+        "summary": "7. Create a Creative for the Document Ad",
+        "operationId": "operation7CreateACreativeForTheDocumentAd",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "campaign",
+                  "reference",
+                  "status",
+                  "type",
+                  "variables"
+                ],
+                "type": "object",
+                "properties": {
+                  "campaign": {
+                    "type": "string"
+                  },
+                  "reference": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "variables": {
+                    "required": [
+                      "data"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "required": [
+                          "com.linkedin.ads.SponsoredVideoCreativeVariables"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "com.linkedin.ads.SponsoredVideoCreativeVariables": {
+                            "type": "object"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/documents": {
+      "post": {
+        "summary": "2. Register Document Upload",
+        "operationId": "operation2RegisterDocumentUpload",
+        "parameters": [
+          {
+            "name": "action",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/assets/{document_asset_id}": {
+      "get": {
+        "summary": "4. Check the status of the upload",
+        "operationId": "operation4CheckTheStatusOfTheUpload4",
+        "parameters": [
+          {
+            "name": "document_asset_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/audienceCounts": {
+      "get": {
+        "summary": "Find audience count by targeting criteria",
+        "description": "View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting?tabs=http&view=li-lms-unversioned) to understand more on Ads Targeting APIs.\n\nFacets are high-level categories of the types of targeting available to you. Use facets to narrow down your intended audience. The adTargetingFacets API returns available targeting facets.",
+        "operationId": "FindAudienceCountByTargetingCriteria",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "targetingCriteria",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "authorizationHeader": {
+        "type": "apiKey",
+        "description": "Authorization header inferred from the Postman collection.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

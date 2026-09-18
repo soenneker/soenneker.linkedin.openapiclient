@@ -1,0 +1,840 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Audiences",
+    "description": "This collection aims to focus on different Audiences use cases and should be used with the **audiences-env-versioning** environment.\n\n\\--All requests for the Audiences API collection are in the Restli 2.0 format--\n\nAuthorizationOAuth 2.0",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/adAccounts": {
+      "get": {
+        "summary": "2. Retrieve the user's Ad Accounts (sponsoredAccount)",
+        "description": "View [Search for Accounts](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#search-for-accounts) documentation for more information.\n\nThis API call pulls back Ad Accounts that the member has access to where the status = ACTIVE, type = BUSINESS, and test = false (NOT a test Ad Account).\n\nLearn more about Test Ad Accounts [here](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#working-with-test-ad-accounts).\n\nFor testing purposes, if you wish to use this example api to pull back a Test Ad Account, simply remove `test:false` from the search parameter.\n\n**3\\. Ask the user to select the Ad Account where the audience should be created**\n\n**4\\. Create a CSV file to upload**\n\n**5\\. Upload the CSV file using the below curl command**\n\ncurl --form \"fileupload=@filename.csv;type=text/csv\" -H 'Authorization: Bearer ' [https://api.linkedin.com/media/upload?media_type=ad_segments](https://api.linkedin.com/media/upload?media_type=ad_segments)\n\nSee our online documentation for [example CSV file templates](https://desktop.postman.com/?desktopVersion=10.13.0&userId=16069442&teamId=1986404). See [Upload List File](https://desktop.postman.com/?desktopVersion=10.13.0&userId=16069442&teamId=1986404) in our online documentation for details on this API.",
+        "operationId": "operation2RetrieveTheUserSAdAccountsSponsoredAccount3",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "paging",
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "paging": {
+                      "required": [
+                        "start",
+                        "count",
+                        "links",
+                        "total"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "type": "integer"
+                        },
+                        "count": {
+                          "type": "integer"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "total": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "name",
+                          "reference",
+                          "id",
+                          "test"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "reference": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "integer"
+                          },
+                          "test": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/dmpSegments": {
+      "get": {
+        "summary": "8. Monitor Status of the List Upload DMP Segments",
+        "description": "The api call [fetches all DMP segments for a specific ad account](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segments?tabs=http#find-dmp-segments-by-account) that are List Upload segments.\n\nInitial processing can take up to 48 hours. The API should be periodically polled to fetch the latest match rate, audience size, and segment status. Match Rate is calculated by rounding matchedCount / inputCount. Review our online documentation for more information on [audienceSize vs matchedCount](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segment-destinations?tabs=http#differences-between-audience-size-and-matched-count-fields).",
+        "operationId": "operation8MonitorStatusOfTheListUploadDMPSegments",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "account",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sourcePlatform",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "6. Create list upload DMP Segment",
+        "description": "Here we create the CSV List Upload DMP segment. See our [online documentation](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/matched-audiences/create-and-manage-list-uploads?tabs=http#sample-request-1) for more information.\n\n**NOTE:** there must be at least a 5 second delay between step 6 (creating the segment) and step 7 (attaching the uploaded list file) or the segment may not be populated.",
+        "operationId": "operation6CreateListUploadDMPSegment",
+        "parameters": [
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "account",
+                  "destinations",
+                  "name",
+                  "sourcePlatform",
+                  "type"
+                ],
+                "type": "object",
+                "properties": {
+                  "account": {
+                    "type": "string"
+                  },
+                  "destinations": {
+                    "type": "array",
+                    "items": {
+                      "required": [
+                        "destination"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "destination": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "sourcePlatform": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/dmpSegments/{company_segment_id}/companies": {
+      "post": {
+        "summary": "7.  Stream company data - add or remove multiple companies",
+        "description": "This example adds multiple companies to the DMP segment created in step 2.\n\nTo see what other fields can also be added/removed, review the [schema section](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segment-companies?tabs=http#add-or-remove-a-company) of our online documentation.\n\nThe more information on a company that is provided, the better chance of a higher match rate.",
+        "operationId": "operation7StreamCompanyDataAddOrRemoveMultipleCompanies",
+        "parameters": [
+          {
+            "name": "company_segment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "elements"
+                ],
+                "type": "object",
+                "properties": {
+                  "elements": {
+                    "type": "array",
+                    "items": {
+                      "required": [
+                        "action",
+                        "companyName"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "action": {
+                          "type": "string"
+                        },
+                        "companyName": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "status"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "status": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/dmpSegments/{user_segment_id}/users": {
+      "post": {
+        "summary": "7. Stream user data - add or remove multiple users",
+        "description": "This example adds multiple users to the DMP segment created in step 2.\n\nTo see what other fields can also be added/removed, review the [schema section](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segment-users?tabs=http#add-or-remove-a-user) of our online documentation.\n\nThe more information on a user that is provided, the better chance of a higher match rate.",
+        "operationId": "operation7StreamUserDataAddOrRemoveMultipleUsers",
+        "parameters": [
+          {
+            "name": "user_segment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "elements"
+                ],
+                "type": "object",
+                "properties": {
+                  "elements": {
+                    "type": "array",
+                    "items": {
+                      "required": [
+                        "action",
+                        "userIds"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "action": {
+                          "type": "string"
+                        },
+                        "userIds": {
+                          "type": "array",
+                          "items": {
+                            "required": [
+                              "idType",
+                              "idValue"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "idType": {
+                                "type": "string"
+                              },
+                              "idValue": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "status"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "status": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/dmpSegments/{pa_dmp_segment_id}/businessObjectiveBasedAudiences": {
+      "post": {
+        "summary": "3.  Create Predictive Audience",
+        "description": "This example created a predictive audience within the DMP segment created in step 2.",
+        "operationId": "operation3CreatePredictiveAudience",
+        "parameters": [
+          {
+            "name": "pa_dmp_segment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Method",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "targetingFilter",
+                  "desiredAudienceCount",
+                  "seeds"
+                ],
+                "type": "object",
+                "properties": {
+                  "targetingFilter": {
+                    "required": [
+                      "include"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "include": {
+                        "required": [
+                          "and"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "and": {
+                            "type": "array",
+                            "items": {
+                              "required": [
+                                "or"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "or": {
+                                  "required": [
+                                    "urn:li:adTargetingFacet:locations"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "urn:li:adTargetingFacet:locations": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "desiredAudienceCount": {
+                    "type": "integer"
+                  },
+                  "seeds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/dmpSegments/{pa_dmp_segment_id}/businessObjectiveBasedAudiences/{predictive_audience_id}": {
+      "get": {
+        "summary": "4. Retrieve the Predictive Audience",
+        "operationId": "operation4RetrieveThePredictiveAudience",
+        "parameters": [
+          {
+            "name": "pa_dmp_segment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "predictive_audience_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "targetingFilter",
+                    "created",
+                    "dmpSegmentId",
+                    "seeds",
+                    "versionTag",
+                    "lastModified",
+                    "desiredAudienceCount"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "targetingFilter": {
+                      "required": [
+                        "include"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "include": {
+                          "required": [
+                            "and"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "and": {
+                              "type": "array",
+                              "items": {
+                                "required": [
+                                  "or"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "or": {
+                                    "required": [
+                                      "urn:li:adTargetingFacet:locations"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                      "urn:li:adTargetingFacet:locations": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "created": {
+                      "type": "integer"
+                    },
+                    "dmpSegmentId": {
+                      "type": "integer"
+                    },
+                    "seeds": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "versionTag": {
+                      "type": "integer"
+                    },
+                    "lastModified": {
+                      "type": "integer"
+                    },
+                    "desiredAudienceCount": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/dmpSegments/{listupload_segment_id}/listUploads": {
+      "post": {
+        "summary": "7. Attach the Uploaded List to the List Upload DMP Segment",
+        "description": "This call attaches the uploaded CSV list file (using the media URN returned in step 5) to the DMP segment created in step 6.\n\nFor more detail on [attaching an uploaded list to a DMP segment](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-list-uploads?tabs=http#attach-list-to-dmp-segment), see our online documentation.",
+        "operationId": "operation7AttachTheUploadedListToTheListUploadDMPSegment",
+        "parameters": [
+          {
+            "name": "listupload_segment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "inputFile"
+                ],
+                "type": "object",
+                "properties": {
+                  "inputFile": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "authorizationHeader": {
+        "type": "apiKey",
+        "description": "Authorization header inferred from the Postman collection.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

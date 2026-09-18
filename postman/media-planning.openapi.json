@@ -1,0 +1,1240 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Media Planning",
+    "description": "## Overview\n\nMedia Planning API can help Media Planners understand the reach and ROI that LinkedIn can offer to their client. It allows them to make budget allocation recommendations with confidence and know how to improve the results, even before spending the first dollar. Media Planning API helps Media Planners make that decision by giving the forecasted reach, impressions (and more in future, like clicks, leads) curve over the budget, based on inputs provided like targeted audience, campaign start/end date and more.\n\nNote: This is a private API that is available to qualified developers who meet additional criteria for access. To learn more about eligibility qualifications and how to request access, please see the [FAQ](https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq#how-do-i-get-access-to-media-planning-api-product). If you wish to apply for access, please submit a [Zendesk support ticket](https://linkedin.zendesk.com/).\n\n## Permissions\n\nMedia Planning API requires a [3-legged OAuth](https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow) member token and your developer application needs to be provisioned with the Media Planning API product. Once you have been approved to access, you can use any valid member access token associated with the authenticated user with any valid scope permissions for member authentication. If there is no valid member token for the relevant user from any previous integration, we recommend using the bare minimum scope permissions like `r_ads` which will be required to fetch authenticated user's ad accounts.  \nNote: This API is application-specific; hence, explicit member consent is not required. Any valid member access token associated with the authenticated user can be used, and you do not need to add any additional permission in the scope of your Oauth2 flow for authorization.\n\nThis collection aims to focus on different Media Planning use cases and should be used with the **media-planning-env-versioning** environment.\n\n\\--All requests for the Media Planning API collection are in the Restli 2.0 format--",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/adTargetingFacets": {
+      "get": {
+        "summary": "Get a list of available Ad Targeting Facets",
+        "operationId": "GetAListOfAvailableAdTargetingFacets",
+        "parameters": [
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "paging",
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "paging": {
+                      "required": [
+                        "start",
+                        "count",
+                        "links"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "type": "integer"
+                        },
+                        "count": {
+                          "type": "integer"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "entityTypes",
+                          "facetName",
+                          "$URN",
+                          "availableEntityFinders"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "entityTypes": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "facetName": {
+                            "type": "string"
+                          },
+                          "$URN": {
+                            "type": "string"
+                          },
+                          "availableEntityFinders": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/adTargetingEntities": {
+      "get": {
+        "summary": "Get Bing Geo locations using search typeahead",
+        "operationId": "GetBingGeoLocationsUsingSearchTypeahead",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "facet",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "queryVersion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "paging",
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "paging": {
+                      "required": [
+                        "start",
+                        "count",
+                        "links"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "type": "integer"
+                        },
+                        "count": {
+                          "type": "integer"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "required": [
+                              "type",
+                              "rel",
+                              "href"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string"
+                              },
+                              "rel": {
+                                "type": "string"
+                              },
+                              "href": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "name",
+                          "urn",
+                          "facetUrn"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "urn": {
+                            "type": "string"
+                          },
+                          "facetUrn": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mediaPlanning": {
+      "post": {
+        "summary": "Forecast Avg Lifetime Frequency",
+        "operationId": "ForecastAvgLifetimeFrequency",
+        "parameters": [
+          {
+            "name": "action",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Linkedin-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "request"
+                ],
+                "type": "object",
+                "properties": {
+                  "request": {
+                    "required": [
+                      "sponsoredAccountUrn",
+                      "targetingCriteria",
+                      "targetBudgetMicros",
+                      "optimizationType",
+                      "objectiveType",
+                      "enableAudienceExpansion",
+                      "enableAudienceNetwork",
+                      "startDateOn",
+                      "endDateOn"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "sponsoredAccountUrn": {
+                        "type": "string"
+                      },
+                      "targetingCriteria": {
+                        "required": [
+                          "include"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "include": {
+                            "required": [
+                              "and"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "and": {
+                                "type": "array",
+                                "items": {
+                                  "required": [
+                                    "or"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "or": {
+                                      "required": [
+                                        "urn:li:adTargetingFacet:ageRanges"
+                                      ],
+                                      "type": "object",
+                                      "properties": {
+                                        "urn:li:adTargetingFacet:ageRanges": {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "string"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "targetBudgetMicros": {
+                        "type": "integer"
+                      },
+                      "optimizationType": {
+                        "type": "string"
+                      },
+                      "objectiveType": {
+                        "type": "string"
+                      },
+                      "enableAudienceExpansion": {
+                        "type": "boolean"
+                      },
+                      "enableAudienceNetwork": {
+                        "type": "boolean"
+                      },
+                      "startDateOn": {
+                        "required": [
+                          "day",
+                          "month",
+                          "year"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "day": {
+                            "type": "integer"
+                          },
+                          "month": {
+                            "type": "integer"
+                          },
+                          "year": {
+                            "type": "integer"
+                          }
+                        }
+                      },
+                      "endDateOn": {
+                        "required": [
+                          "day",
+                          "month",
+                          "year"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "day": {
+                            "type": "integer"
+                          },
+                          "month": {
+                            "type": "integer"
+                          },
+                          "year": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "default": {
+            "description": "Forecast Avg Lifetime Frequency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "value"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "required": [
+                        "averageFrequency",
+                        "impressionCurve"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "averageFrequency": {
+                          "required": [
+                            "metricCurve",
+                            "singlePointMetric"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "metricCurve": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "singlePointMetric": {
+                              "required": [
+                                "metricValue",
+                                "budgetMicros"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "metricValue": {
+                                  "type": "number"
+                                },
+                                "budgetMicros": {
+                                  "type": "integer"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "impressionCurve": {
+                          "required": [
+                            "metricCurve",
+                            "singlePointMetric"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "metricCurve": {
+                              "type": "array",
+                              "items": {
+                                "required": [
+                                  "metricUpper",
+                                  "metricValue",
+                                  "budgetMicros",
+                                  "metricLower"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "metricUpper": {
+                                    "type": "number"
+                                  },
+                                  "metricValue": {
+                                    "type": "number"
+                                  },
+                                  "budgetMicros": {
+                                    "type": "integer"
+                                  },
+                                  "metricLower": {
+                                    "type": "number"
+                                  }
+                                }
+                              }
+                            },
+                            "singlePointMetric": {
+                              "required": [
+                                "metricUpper",
+                                "metricValue",
+                                "budgetMicros",
+                                "metricLower"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "metricUpper": {
+                                  "type": "number"
+                                },
+                                "metricValue": {
+                                  "type": "number"
+                                },
+                                "budgetMicros": {
+                                  "type": "integer"
+                                },
+                                "metricLower": {
+                                  "type": "number"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/mediaPlans": {
+      "post": {
+        "summary": "Create a Media Plan",
+        "operationId": "CreateAMediaPlan",
+        "parameters": [
+          {
+            "name": "forecastMetricType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Linkedin-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "name",
+                  "sponsoredAccountUrn",
+                  "targetingCriteria",
+                  "currencyCode",
+                  "objectiveType",
+                  "optimizationType",
+                  "targetBudgetMicros",
+                  "enableAudienceNetwork",
+                  "enableAudienceExpansion",
+                  "ctvOnly",
+                  "endDateOn",
+                  "startDateOn"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "sponsoredAccountUrn": {
+                    "type": "string"
+                  },
+                  "targetingCriteria": {
+                    "required": [
+                      "include"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "include": {
+                        "required": [
+                          "and"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "and": {
+                            "type": "array",
+                            "items": {
+                              "required": [
+                                "or"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "or": {
+                                  "required": [
+                                    "urn:li:adTargetingFacet:locations"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "urn:li:adTargetingFacet:locations": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "currencyCode": {
+                    "type": "string"
+                  },
+                  "objectiveType": {
+                    "type": "string"
+                  },
+                  "optimizationType": {
+                    "type": "string"
+                  },
+                  "targetBudgetMicros": {
+                    "type": "integer"
+                  },
+                  "enableAudienceNetwork": {
+                    "type": "boolean"
+                  },
+                  "enableAudienceExpansion": {
+                    "type": "boolean"
+                  },
+                  "ctvOnly": {
+                    "type": "boolean"
+                  },
+                  "endDateOn": {
+                    "required": [
+                      "month",
+                      "year",
+                      "day"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "month": {
+                        "type": "integer"
+                      },
+                      "year": {
+                        "type": "integer"
+                      },
+                      "day": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "startDateOn": {
+                    "required": [
+                      "month",
+                      "year",
+                      "day"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "month": {
+                        "type": "integer"
+                      },
+                      "year": {
+                        "type": "integer"
+                      },
+                      "day": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "get": {
+        "summary": "Fetch all Media Plans in an Ad Account",
+        "operationId": "FetchAllMediaPlansInAnAdAccount",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accountUrn",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Linkedin-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "paging",
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "paging": {
+                      "required": [
+                        "start",
+                        "count",
+                        "links"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "type": "integer"
+                        },
+                        "count": {
+                          "type": "integer"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "creator",
+                          "targetBudgetMicros",
+                          "enableAudienceNetwork",
+                          "targetingCriteria",
+                          "endDateOn",
+                          "ctvOnly",
+                          "startDateOn",
+                          "objectiveType",
+                          "createdAt",
+                          "reachCurve",
+                          "enableAudienceExpansion",
+                          "optimizationType",
+                          "name",
+                          "sponsoredAccountUrn",
+                          "mediaPlanUrn",
+                          "currencyCode"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "creator": {
+                            "type": "string"
+                          },
+                          "targetBudgetMicros": {
+                            "type": "integer"
+                          },
+                          "enableAudienceNetwork": {
+                            "type": "boolean"
+                          },
+                          "targetingCriteria": {
+                            "required": [
+                              "include"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "include": {
+                                "required": [
+                                  "and"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "and": {
+                                    "type": "array",
+                                    "items": {
+                                      "required": [
+                                        "or"
+                                      ],
+                                      "type": "object",
+                                      "properties": {
+                                        "or": {
+                                          "required": [
+                                            "urn:li:adTargetingFacet:skills"
+                                          ],
+                                          "type": "object",
+                                          "properties": {
+                                            "urn:li:adTargetingFacet:skills": {
+                                              "type": "array",
+                                              "items": {
+                                                "type": "string"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "endDateOn": {
+                            "required": [
+                              "month",
+                              "year",
+                              "day"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "month": {
+                                "type": "integer"
+                              },
+                              "year": {
+                                "type": "integer"
+                              },
+                              "day": {
+                                "type": "integer"
+                              }
+                            }
+                          },
+                          "ctvOnly": {
+                            "type": "boolean"
+                          },
+                          "startDateOn": {
+                            "required": [
+                              "month",
+                              "year",
+                              "day"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "month": {
+                                "type": "integer"
+                              },
+                              "year": {
+                                "type": "integer"
+                              },
+                              "day": {
+                                "type": "integer"
+                              }
+                            }
+                          },
+                          "objectiveType": {
+                            "type": "string"
+                          },
+                          "createdAt": {
+                            "type": "integer"
+                          },
+                          "reachCurve": {
+                            "required": [
+                              "metricCurve",
+                              "singlePointMetric"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "metricCurve": {
+                                "type": "array",
+                                "items": {
+                                  "required": [
+                                    "metricUpper",
+                                    "metricValue",
+                                    "budgetMicros",
+                                    "metricLower"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "metricUpper": {
+                                      "type": "number"
+                                    },
+                                    "metricValue": {
+                                      "type": "number"
+                                    },
+                                    "budgetMicros": {
+                                      "type": "integer"
+                                    },
+                                    "metricLower": {
+                                      "type": "number"
+                                    }
+                                  }
+                                }
+                              },
+                              "singlePointMetric": {
+                                "required": [
+                                  "metricUpper",
+                                  "metricValue",
+                                  "budgetMicros",
+                                  "metricLower"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "metricUpper": {
+                                    "type": "number"
+                                  },
+                                  "metricValue": {
+                                    "type": "number"
+                                  },
+                                  "budgetMicros": {
+                                    "type": "integer"
+                                  },
+                                  "metricLower": {
+                                    "type": "number"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "enableAudienceExpansion": {
+                            "type": "boolean"
+                          },
+                          "optimizationType": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "sponsoredAccountUrn": {
+                            "type": "string"
+                          },
+                          "mediaPlanUrn": {
+                            "type": "string"
+                          },
+                          "currencyCode": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/mediaPlans/urn%3Ali%3AmediaPlan%3A123456": {
+      "get": {
+        "summary": "Fetch a Media Plan",
+        "operationId": "FetchAMediaPlan",
+        "parameters": [
+          {
+            "name": "accountUrn",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Linkedin-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-RestLi-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "creator",
+                    "targetBudgetMicros",
+                    "enableAudienceNetwork",
+                    "targetingCriteria",
+                    "endDateOn",
+                    "ctvOnly",
+                    "startDateOn",
+                    "objectiveType",
+                    "createdAt",
+                    "reachCurve",
+                    "enableAudienceExpansion",
+                    "optimizationType",
+                    "name",
+                    "sponsoredAccountUrn",
+                    "mediaPlanUrn",
+                    "currencyCode"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "creator": {
+                      "type": "string"
+                    },
+                    "targetBudgetMicros": {
+                      "type": "integer"
+                    },
+                    "enableAudienceNetwork": {
+                      "type": "boolean"
+                    },
+                    "targetingCriteria": {
+                      "required": [
+                        "include"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "include": {
+                          "required": [
+                            "and"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "and": {
+                              "type": "array",
+                              "items": {
+                                "required": [
+                                  "or"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "or": {
+                                    "required": [
+                                      "urn:li:adTargetingFacet:skills"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                      "urn:li:adTargetingFacet:skills": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "endDateOn": {
+                      "required": [
+                        "month",
+                        "year",
+                        "day"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "month": {
+                          "type": "integer"
+                        },
+                        "year": {
+                          "type": "integer"
+                        },
+                        "day": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "ctvOnly": {
+                      "type": "boolean"
+                    },
+                    "startDateOn": {
+                      "required": [
+                        "month",
+                        "year",
+                        "day"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "month": {
+                          "type": "integer"
+                        },
+                        "year": {
+                          "type": "integer"
+                        },
+                        "day": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "objectiveType": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "integer"
+                    },
+                    "reachCurve": {
+                      "required": [
+                        "metricCurve",
+                        "singlePointMetric"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "metricCurve": {
+                          "type": "array",
+                          "items": {
+                            "required": [
+                              "metricUpper",
+                              "metricValue",
+                              "budgetMicros",
+                              "metricLower"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "metricUpper": {
+                                "type": "number"
+                              },
+                              "metricValue": {
+                                "type": "number"
+                              },
+                              "budgetMicros": {
+                                "type": "integer"
+                              },
+                              "metricLower": {
+                                "type": "number"
+                              }
+                            }
+                          }
+                        },
+                        "singlePointMetric": {
+                          "required": [
+                            "metricUpper",
+                            "metricValue",
+                            "budgetMicros",
+                            "metricLower"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "metricUpper": {
+                              "type": "number"
+                            },
+                            "metricValue": {
+                              "type": "number"
+                            },
+                            "budgetMicros": {
+                              "type": "integer"
+                            },
+                            "metricLower": {
+                              "type": "number"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "enableAudienceExpansion": {
+                      "type": "boolean"
+                    },
+                    "optimizationType": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "sponsoredAccountUrn": {
+                      "type": "string"
+                    },
+                    "mediaPlanUrn": {
+                      "type": "string"
+                    },
+                    "currencyCode": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "authorizationHeader": {
+        "type": "apiKey",
+        "description": "Authorization header inferred from the Postman collection.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

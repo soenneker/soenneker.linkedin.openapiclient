@@ -1,0 +1,235 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Reporting & ROI",
+    "description": "**You must apply for access to the LinkedIn Advertising APIs in order to gain access to these APIs. See the** [**Developer Platform**](https://developer.linkedin.com/product-catalog/marketing/reporting-and-roi) **on how to apply.**\n\n[LinkedIn's Reporting & ROI APIs](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started) enable you to leverage LinkedIn marketing data to automate internal reporting and gain valuable insights. Partners can integrate LinkedIn data into their solutions to retrieve performance data, targeting information, audience insights, and much more.\n\nThis collection aims to focus on different Reporting & ROI use cases and should be used with the **reporting-roi-env-versioning** environment.\n\n\\--All requests for the Reporting & ROI API collection are in the Restli 2.0 format--\n\nAuthorizationOAuth 2.0",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/adAnalytics": {
+      "get": {
+        "summary": "Ad Metrics By Ad Account + Campaign Group + Campaign",
+        "operationId": "AdMetricsByAdAccountCampaignGroupCampaign",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pivots",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dateRange",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accounts",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "timeGranularity",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "paging",
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "paging": {
+                      "required": [
+                        "start",
+                        "count",
+                        "links"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "type": "integer"
+                        },
+                        "count": {
+                          "type": "integer"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "externalWebsiteConversions",
+                          "oneClickLeads",
+                          "dateRange",
+                          "oneClickLeadFormOpens",
+                          "opens",
+                          "clicks",
+                          "costInLocalCurrency",
+                          "impressions",
+                          "pivotValues",
+                          "videoViews",
+                          "sends"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "externalWebsiteConversions": {
+                            "type": "integer"
+                          },
+                          "oneClickLeads": {
+                            "type": "integer"
+                          },
+                          "dateRange": {
+                            "required": [
+                              "start",
+                              "end"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "start": {
+                                "required": [
+                                  "month",
+                                  "day",
+                                  "year"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "month": {
+                                    "type": "integer"
+                                  },
+                                  "day": {
+                                    "type": "integer"
+                                  },
+                                  "year": {
+                                    "type": "integer"
+                                  }
+                                }
+                              },
+                              "end": {
+                                "required": [
+                                  "month",
+                                  "day",
+                                  "year"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "month": {
+                                    "type": "integer"
+                                  },
+                                  "day": {
+                                    "type": "integer"
+                                  },
+                                  "year": {
+                                    "type": "integer"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "oneClickLeadFormOpens": {
+                            "type": "integer"
+                          },
+                          "opens": {
+                            "type": "integer"
+                          },
+                          "clicks": {
+                            "type": "integer"
+                          },
+                          "costInLocalCurrency": {
+                            "type": "number"
+                          },
+                          "impressions": {
+                            "type": "integer"
+                          },
+                          "pivotValues": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "videoViews": {
+                            "type": "integer"
+                          },
+                          "sends": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "authorizationHeader": {
+        "type": "apiKey",
+        "description": "Authorization header inferred from the Postman collection.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

@@ -1,0 +1,1130 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Lead Sync",
+    "description": "This collection aims to focus on different lead syncing use cases and should be used with the **lead-sync-env-versioning** environment.\n\n_All requests for the Lead Sync collection are in the Restli 2.0 format and uses OAuth 2.0_",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/organizationAcls": {
+      "get": {
+        "summary": "4. Validate the user's organization role",
+        "description": "View the [Organization Access Control](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-access-control-by-role?tabs=http#organization-roles) documentation.\n\nTake note of the organization (company page) from the previous request (`referenceInfo.organization.id`). A member must have access to not only the Sponsored Account (step 2) but also have one of the roles mentioned in our [permissions](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#permissions) table for the associated company page to successfully sync leads.\n\nIf the user's role is not one of the approved roles for pulling leads, or the ad account does not have a company page associated to it (empty `referenceInfo` object in previous request) you should display a helpful message to the user guiding them on next steps.\n\nBelow are two resources to better understand Page Admin vs Paid Media Admin:\n\n- [Permissions for Lead Gen Forms](https://www.linkedin.com/help/lms/answer/a421620/permissions-for-lead-gen-forms?lang=en)\n    \n- [LinkedIn Page Admiin Roles - Overview](https://www.linkedin.com/help/lms/answer/4783)",
+        "operationId": "operation4ValidateTheUserSOrganizationRole",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "paging",
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "paging": {
+                      "required": [
+                        "start",
+                        "count",
+                        "links"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "type": "integer"
+                        },
+                        "count": {
+                          "type": "integer"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "roleAssignee",
+                          "state",
+                          "lastModified",
+                          "role",
+                          "created",
+                          "organization"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "roleAssignee": {
+                            "type": "string"
+                          },
+                          "state": {
+                            "type": "string"
+                          },
+                          "lastModified": {
+                            "required": [
+                              "actor",
+                              "impersonator",
+                              "time"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "actor": {
+                                "type": "string"
+                              },
+                              "impersonator": {
+                                "type": "string"
+                              },
+                              "time": {
+                                "type": "integer"
+                              }
+                            }
+                          },
+                          "role": {
+                            "type": "string"
+                          },
+                          "created": {
+                            "required": [
+                              "actor",
+                              "impersonator",
+                              "time"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "actor": {
+                                "type": "string"
+                              },
+                              "impersonator": {
+                                "type": "string"
+                              },
+                              "time": {
+                                "type": "integer"
+                              }
+                            }
+                          },
+                          "organization": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/leadForms": {
+      "get": {
+        "summary": "5. Get forms for the chosen Sponsored Account",
+        "description": "At this point, the user has picked the sponsored account they are trying to collect leads for and you have validated they have proper access to the ad account and associated company page. This step will retrieve the form(s) associated with the selected sponsored account.\n\n---\n\n**6\\. Map Lead Gen Form fields to destination fields**\n\nUsing the API response data from the previous step, your application should ask the user to map questions, consents, and hidden fields to the appropriate fields in the destination system (e.g. a CRM). All questions, consents, and hidden fields from the form should be mappable. `predefinedField` fields may be mapped automatically for the user, but all others will require the user to map them manually. Optionally, allow the user to map the ad account id, ad account name, campaign id, campaign name, creative id, creative name, form id, and form name (this additional metadata can be pulled back via the `leadFormResponses` endpoint in the next step). This additional metadata helps your customers with lead attribution.\n\n**Quick tip:** When it comes to mapping the `predefinedField` fields that are auto populated from the member’s profile, it's important to understand that the localized language of the form could be a language other than English. Due to this, you should use the `predefinedField` field so the user doesn't have to map the same field in different form languages separately. For custom questions you will need to use the `question` field as there is no predefinedField for custom questions.\n\n| **Field** | **Language Information** |\n| --- | --- |\n| name | This value will be translated to the localized language of the user who created the form (which could be different than the localized language of the form) |\n| predefinedField | ENUM for the pre-populated field |\n| question | This value will be translated to the localized form language |",
+        "operationId": "operation5GetFormsForTheChosenSponsoredAccount",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "owner",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "paging",
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "paging": {
+                      "required": [
+                        "start",
+                        "count",
+                        "links",
+                        "total"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "type": "integer"
+                        },
+                        "count": {
+                          "type": "integer"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "total": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "reviewInfo",
+                          "owner",
+                          "hiddenFields",
+                          "versionId",
+                          "created",
+                          "creationLocale",
+                          "name",
+                          "id",
+                          "lastModified",
+                          "state",
+                          "content"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "reviewInfo": {
+                            "required": [
+                              "rejectionReasons",
+                              "lastUpdated",
+                              "reviewStatus"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "rejectionReasons": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "lastUpdated": {
+                                "type": "integer"
+                              },
+                              "reviewStatus": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "owner": {
+                            "required": [
+                              "sponsoredAccount"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "sponsoredAccount": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "hiddenFields": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "versionId": {
+                            "type": "integer"
+                          },
+                          "created": {
+                            "type": "integer"
+                          },
+                          "creationLocale": {
+                            "required": [
+                              "country",
+                              "language"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "country": {
+                                "type": "string"
+                              },
+                              "language": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "integer"
+                          },
+                          "lastModified": {
+                            "type": "integer"
+                          },
+                          "state": {
+                            "type": "string"
+                          },
+                          "content": {
+                            "required": [
+                              "questions",
+                              "description",
+                              "postSubmissionInfo",
+                              "legalInfo",
+                              "headline"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "questions": {
+                                "type": "array",
+                                "items": {
+                                  "required": [
+                                    "questionId",
+                                    "question",
+                                    "responseEditable",
+                                    "name",
+                                    "questionDetails",
+                                    "predefinedField",
+                                    "responseRequired"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "questionId": {
+                                      "type": "integer"
+                                    },
+                                    "question": {
+                                      "required": [
+                                        "localized"
+                                      ],
+                                      "type": "object",
+                                      "properties": {
+                                        "localized": {
+                                          "required": [
+                                            "sv_SE"
+                                          ],
+                                          "type": "object",
+                                          "properties": {
+                                            "sv_SE": {
+                                              "type": "string"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "responseEditable": {
+                                      "type": "boolean"
+                                    },
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "questionDetails": {
+                                      "required": [
+                                        "textQuestionDetails"
+                                      ],
+                                      "type": "object",
+                                      "properties": {
+                                        "textQuestionDetails": {
+                                          "required": [
+                                            "maxResponseLength"
+                                          ],
+                                          "type": "object",
+                                          "properties": {
+                                            "maxResponseLength": {
+                                              "type": "integer"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "predefinedField": {
+                                      "type": "string"
+                                    },
+                                    "responseRequired": {
+                                      "type": "boolean"
+                                    }
+                                  }
+                                }
+                              },
+                              "description": {
+                                "required": [
+                                  "localized"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "localized": {
+                                    "required": [
+                                      "sv_SE"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                      "sv_SE": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "postSubmissionInfo": {
+                                "required": [
+                                  "message",
+                                  "callToAction"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "message": {
+                                    "required": [
+                                      "localized"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                      "localized": {
+                                        "required": [
+                                          "sv_SE"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                          "sv_SE": {
+                                            "type": "string"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "callToAction": {
+                                    "required": [
+                                      "callToActionTarget",
+                                      "callToActionLabel"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                      "callToActionTarget": {
+                                        "required": [
+                                          "landingPageUrl"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                          "landingPageUrl": {
+                                            "type": "string"
+                                          }
+                                        }
+                                      },
+                                      "callToActionLabel": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "legalInfo": {
+                                "required": [
+                                  "consents",
+                                  "legalInfoId",
+                                  "privacyPolicyUrl",
+                                  "legalDisclaimer"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "consents": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "legalInfoId": {
+                                    "type": "integer"
+                                  },
+                                  "privacyPolicyUrl": {
+                                    "type": "string"
+                                  },
+                                  "legalDisclaimer": {
+                                    "required": [
+                                      "localized"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                      "localized": {
+                                        "required": [
+                                          "sv_SE"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                          "sv_SE": {
+                                            "type": "string"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "headline": {
+                                "required": [
+                                  "localized"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "localized": {
+                                    "required": [
+                                      "sv_SE"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                      "sv_SE": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/leadFormResponses": {
+      "get": {
+        "summary": "8. [PULL] Schedule periodic form response (lead) pulls",
+        "description": "This example pulls back all form responses (leads) for the chosen sponsored account. It also uses [field projection](https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?context=linkedin/marketing/context) to pull back specific fields in the response and the `submittedAtTimeRange` field to pull back leads up to 365 days in the past.\n\nCurrently the only sponsored leadType is `SPONSORED`\n\nLinkedIn will store form response (lead) data for up to 365 days. It is a best practice to allow the user to do a one time pull upon integration setup to ensure no leads are missed.\n\nRefer to [Lead Form Responses](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#get-lead-sync-form-responses) documentation for more information.",
+        "operationId": "operation8PULLSchedulePeriodicFormResponseLeadPulls2",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "owner",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "leadType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limitedToTestLeads",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "submittedAtTimeRange",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/leadNotifications": {
+      "post": {
+        "summary": "8. [PUSH] Subscribe for lead notification webhooks",
+        "description": "[Register a lead notification webhook](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#lead-notification-subscriptions) to receive notifications for new leads. Lead notifications can also be subscribed at a more granular level - see the linked documentation.\n\nThis example registers the webhook url, [https://www.example.com](https://www.example.com/), at the Ad Account level (sponsoredAccount). For any new lead submitted for campaigns that live within this Ad Account, a webhook notification will be sent.\n\n**Listen for lead notifications**\n\nAs leads flow into the user's ad account, LinkedIn will send your webhook endpoint a notification for each lead. The notification body will contain content as laid out in our documentation [here.](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#example-payload-for-when-a-member-registers-for-an-event)",
+        "operationId": "operation8PUSHSubscribeForLeadNotificationWebhooks2",
+        "parameters": [
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "webhook",
+                  "owner",
+                  "leadType"
+                ],
+                "type": "object",
+                "properties": {
+                  "webhook": {
+                    "type": "string"
+                  },
+                  "owner": {
+                    "required": [
+                      "sponsoredAccount"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "sponsoredAccount": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "leadType": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/leadFormResponses/{lead_id}": {
+      "get": {
+        "summary": "9. [PUSH] Fetch full lead data after a lead notification is received",
+        "description": "[Responses can be fetched](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#get-lead-sync-form-responses) for a single form response, multiple form responses, or at the form or Ad Account level.\n\nWhen a lead notification event is received, the form response id exists in the lead notification [content](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#example-payload-for-when-a-member-registers-for-an-event).\n\nThis example pulls back data for a single form response (lead) by ID and uses field projection to pull back specific fields in the request response.",
+        "operationId": "operation9PUSHFetchFullLeadDataAfterALeadNotificationIsReceived2",
+        "parameters": [
+          {
+            "name": "lead_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "owner",
+                    "submitter",
+                    "leadType",
+                    "leadMetadata",
+                    "versionedLeadGenFormUrn",
+                    "id",
+                    "submittedAt",
+                    "testLead",
+                    "associatedEntity",
+                    "formResponse"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "owner": {
+                      "required": [
+                        "sponsoredAccount"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "sponsoredAccount": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "submitter": {
+                      "type": "string"
+                    },
+                    "leadType": {
+                      "type": "string"
+                    },
+                    "leadMetadata": {
+                      "required": [
+                        "sponsoredLeadMetadata"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "sponsoredLeadMetadata": {
+                          "required": [
+                            "campaign"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "campaign": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "versionedLeadGenFormUrn": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "submittedAt": {
+                      "type": "integer"
+                    },
+                    "testLead": {
+                      "type": "boolean"
+                    },
+                    "associatedEntity": {
+                      "required": [
+                        "associatedCreative"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "associatedCreative": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "formResponse": {
+                      "required": [
+                        "consentResponses",
+                        "answers"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "consentResponses": {
+                          "type": "array",
+                          "items": {
+                            "required": [
+                              "accepted",
+                              "consentId"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "accepted": {
+                                "type": "boolean"
+                              },
+                              "consentId": {
+                                "type": "integer"
+                              }
+                            }
+                          }
+                        },
+                        "answers": {
+                          "type": "array",
+                          "items": {
+                            "required": [
+                              "answerDetails",
+                              "questionId"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "answerDetails": {
+                                "required": [
+                                  "textQuestionAnswer"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "textQuestionAnswer": {
+                                    "required": [
+                                      "answer"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                      "answer": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "questionId": {
+                                "type": "integer"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/leadnotifications/<webhook id>": {
+      "delete": {
+        "summary": "[PUSH] Delete a registered webhook by id",
+        "description": "[Delete a lead notification subsription](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#delete-lead-notification-url)\n\nWhen an integration is deleted, the associated webhooks should also be deleted to ensure that lead notifications are not unnecessarily being sent.",
+        "operationId": "PUSHDeleteARegisteredWebhookById2",
+        "parameters": [
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/adAccounts": {
+      "get": {
+        "summary": "2. Get the user's sponsored accounts (ad accounts)",
+        "description": "View [Search for Accounts](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#search-for-accounts) documentation for more information.\n\nThis API call pulls back Ad Accounts that the member has access to where the status = ACTIVE and test = false (NOT a test Ad Account).\n\nLearn more about Test Ad Accounts [here](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#working-with-test-ad-accounts).\n\nFor testing purposes, if you wish to use this example api to pull back a Test Ad Account, simply remove `test:false` from the search parameter.\n\n---\n\n**3\\. Allow the user to select an Ad Account**",
+        "operationId": "operation2GetTheUserSSponsoredAccountsAdAccounts",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "X-Restli-Protocol-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LinkedIn-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "paging",
+                    "elements"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "paging": {
+                      "required": [
+                        "start",
+                        "count",
+                        "links",
+                        "total"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "type": "integer"
+                        },
+                        "count": {
+                          "type": "integer"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "total": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "elements": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "name",
+                          "id",
+                          "test",
+                          "referenceInfo"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "integer"
+                          },
+                          "test": {
+                            "type": "boolean"
+                          },
+                          "referenceInfo": {
+                            "required": [
+                              "organization"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "organization": {
+                                "required": [
+                                  "name",
+                                  "vanityName",
+                                  "localizedName",
+                                  "id"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "name": {
+                                    "required": [
+                                      "localized",
+                                      "preferredLocale"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                      "localized": {
+                                        "required": [
+                                          "en_US"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                          "en_US": {
+                                            "type": "string"
+                                          }
+                                        }
+                                      },
+                                      "preferredLocale": {
+                                        "required": [
+                                          "country",
+                                          "language"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                          "country": {
+                                            "type": "string"
+                                          },
+                                          "language": {
+                                            "type": "string"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "vanityName": {
+                                    "type": "string"
+                                  },
+                                  "localizedName": {
+                                    "type": "string"
+                                  },
+                                  "id": {
+                                    "type": "integer"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "authorizationHeader": {
+        "type": "apiKey",
+        "description": "Authorization header inferred from the Postman collection.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}
