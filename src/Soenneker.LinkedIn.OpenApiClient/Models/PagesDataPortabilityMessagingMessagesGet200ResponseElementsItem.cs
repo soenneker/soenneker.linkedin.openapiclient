@@ -75,10 +75,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The reactions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Reactions { get; set; }
+        public UntypedNode? Reactions { get; set; }
 #nullable restore
 #else
-        public List<string> Reactions { get; set; }
+        public UntypedNode Reactions { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItem"/> and sets the default values.
@@ -113,7 +113,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "messagingThread", n => { MessagingThread = n.GetStringValue(); } },
                 { "organizationalPage", n => { OrganizationalPage = n.GetStringValue(); } },
-                { "reactions", n => { Reactions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "reactions", n => { Reactions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -131,7 +131,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("messagingThread", MessagingThread);
             writer.WriteStringValue("organizationalPage", OrganizationalPage);
-            writer.WriteCollectionOfPrimitiveValues<string>("reactions", Reactions);
+            writer.WriteObjectValue<UntypedNode>("reactions", Reactions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

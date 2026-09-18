@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The photos property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Photos { get; set; }
+        public UntypedNode? Photos { get; set; }
 #nullable restore
 #else
-        public List<string> Photos { get; set; }
+        public UntypedNode Photos { get; set; }
 #endif
         /// <summary>The sectionTitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +57,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "photos", n => { Photos = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "photos", n => { Photos = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "sectionTitle", n => { SectionTitle = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponsePhotosSectionSectionTitle>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponsePhotosSectionSectionTitle.CreateFromDiscriminatorValue); } },
                 { "visible", n => { Visible = n.GetBoolValue(); } },
             };
@@ -69,7 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("photos", Photos);
+            writer.WriteObjectValue<UntypedNode>("photos", Photos);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponsePhotosSectionSectionTitle>("sectionTitle", SectionTitle);
             writer.WriteBoolValue("visible", Visible);
             writer.WriteAdditionalData(AdditionalData);

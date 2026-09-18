@@ -17,28 +17,28 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The additionalMediaSections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AdditionalMediaSections { get; set; }
+        public UntypedNode? AdditionalMediaSections { get; set; }
 #nullable restore
 #else
-        public List<string> AdditionalMediaSections { get; set; }
+        public UntypedNode AdditionalMediaSections { get; set; }
 #endif
         /// <summary>The candidateTestimonialSections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CandidateTestimonialSections { get; set; }
+        public UntypedNode? CandidateTestimonialSections { get; set; }
 #nullable restore
 #else
-        public List<string> CandidateTestimonialSections { get; set; }
+        public UntypedNode CandidateTestimonialSections { get; set; }
 #endif
         /// <summary>The candidateTestimonialSectionsVisible property</summary>
         public bool? CandidateTestimonialSectionsVisible { get; set; }
         /// <summary>The clientTestimonialSections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ClientTestimonialSections { get; set; }
+        public UntypedNode? ClientTestimonialSections { get; set; }
 #nullable restore
 #else
-        public List<string> ClientTestimonialSections { get; set; }
+        public UntypedNode ClientTestimonialSections { get; set; }
 #endif
         /// <summary>The clientTestimonialSectionsVisible property</summary>
         public bool? ClientTestimonialSectionsVisible { get; set; }
@@ -105,10 +105,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The testimonialSections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TestimonialSections { get; set; }
+        public UntypedNode? TestimonialSections { get; set; }
 #nullable restore
 #else
-        public List<string> TestimonialSections { get; set; }
+        public UntypedNode TestimonialSections { get; set; }
 #endif
         /// <summary>The testimonialSectionsVisible property</summary>
         public bool? TestimonialSectionsVisible { get; set; }
@@ -149,10 +149,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalMediaSections", n => { AdditionalMediaSections = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "candidateTestimonialSections", n => { CandidateTestimonialSections = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "additionalMediaSections", n => { AdditionalMediaSections = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "candidateTestimonialSections", n => { CandidateTestimonialSections = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "candidateTestimonialSectionsVisible", n => { CandidateTestimonialSectionsVisible = n.GetBoolValue(); } },
-                { "clientTestimonialSections", n => { ClientTestimonialSections = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "clientTestimonialSections", n => { ClientTestimonialSections = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "clientTestimonialSectionsVisible", n => { ClientTestimonialSectionsVisible = n.GetBoolValue(); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization38117628783F1F6889544D7931712Afadc9D3E5Created>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization38117628783F1F6889544D7931712Afadc9D3E5Created.CreateFromDiscriminatorValue); } },
                 { "defaultView", n => { DefaultView = n.GetBoolValue(); } },
@@ -163,7 +163,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "reportingId", n => { ReportingId = n.GetStringValue(); } },
                 { "showLifeAtCulturalInsights", n => { ShowLifeAtCulturalInsights = n.GetBoolValue(); } },
                 { "target", n => { Target = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization38117628783F1F6889544D7931712Afadc9D3E5Target>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization38117628783F1F6889544D7931712Afadc9D3E5Target.CreateFromDiscriminatorValue); } },
-                { "testimonialSections", n => { TestimonialSections = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "testimonialSections", n => { TestimonialSections = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "testimonialSectionsVisible", n => { TestimonialSectionsVisible = n.GetBoolValue(); } },
                 { "vanityName", n => { VanityName = n.GetStringValue(); } },
                 { "visible", n => { Visible = n.GetBoolValue(); } },
@@ -177,10 +177,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("additionalMediaSections", AdditionalMediaSections);
-            writer.WriteCollectionOfPrimitiveValues<string>("candidateTestimonialSections", CandidateTestimonialSections);
+            writer.WriteObjectValue<UntypedNode>("additionalMediaSections", AdditionalMediaSections);
+            writer.WriteObjectValue<UntypedNode>("candidateTestimonialSections", CandidateTestimonialSections);
             writer.WriteBoolValue("candidateTestimonialSectionsVisible", CandidateTestimonialSectionsVisible);
-            writer.WriteCollectionOfPrimitiveValues<string>("clientTestimonialSections", ClientTestimonialSections);
+            writer.WriteObjectValue<UntypedNode>("clientTestimonialSections", ClientTestimonialSections);
             writer.WriteBoolValue("clientTestimonialSectionsVisible", ClientTestimonialSectionsVisible);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization38117628783F1F6889544D7931712Afadc9D3E5Created>("created", Created);
             writer.WriteBoolValue("defaultView", DefaultView);
@@ -191,7 +191,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("reportingId", ReportingId);
             writer.WriteBoolValue("showLifeAtCulturalInsights", ShowLifeAtCulturalInsights);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization38117628783F1F6889544D7931712Afadc9D3E5Target>("target", Target);
-            writer.WriteCollectionOfPrimitiveValues<string>("testimonialSections", TestimonialSections);
+            writer.WriteObjectValue<UntypedNode>("testimonialSections", TestimonialSections);
             writer.WriteBoolValue("testimonialSectionsVisible", TestimonialSectionsVisible);
             writer.WriteStringValue("vanityName", VanityName);
             writer.WriteBoolValue("visible", Visible);

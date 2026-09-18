@@ -27,10 +27,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The locations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Locations { get; set; }
+        public UntypedNode? Locations { get; set; }
 #nullable restore
 #else
-        public List<string> Locations { get; set; }
+        public UntypedNode Locations { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "localizedName", n => { LocalizedName = n.GetStringValue(); } },
-                { "locations", n => { Locations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "locations", n => { Locations = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552Name>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552Name.CreateFromDiscriminatorValue); } },
                 { "primaryOrganizationType", n => { PrimaryOrganizationType = n.GetStringValue(); } },
                 { "vanityName", n => { VanityName = n.GetStringValue(); } },
@@ -98,7 +98,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("localizedName", LocalizedName);
-            writer.WriteCollectionOfPrimitiveValues<string>("locations", Locations);
+            writer.WriteObjectValue<UntypedNode>("locations", Locations);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552Name>("name", Name);
             writer.WriteStringValue("primaryOrganizationType", PrimaryOrganizationType);
             writer.WriteStringValue("vanityName", VanityName);

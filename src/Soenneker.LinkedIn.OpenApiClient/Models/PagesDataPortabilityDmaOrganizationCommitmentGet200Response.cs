@@ -12,8 +12,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     public partial class PagesDataPortabilityDmaOrganizationCommitmentGet200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The active property</summary>
+        public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The certificationsAndPledges property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CertificationsAndPledges { get; set; }
+#nullable restore
+#else
+        public UntypedNode CertificationsAndPledges { get; set; }
+#endif
         /// <summary>The created property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +40,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseDescription Description { get; set; }
 #endif
+        /// <summary>The isQuality property</summary>
+        public bool? IsQuality { get; set; }
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +57,30 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseLastModified LastModified { get; set; }
+#endif
+        /// <summary>The perksAndBenefits property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? PerksAndBenefits { get; set; }
+#nullable restore
+#else
+        public UntypedNode PerksAndBenefits { get; set; }
+#endif
+        /// <summary>The programs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponsePrograms? Programs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponsePrograms Programs { get; set; }
+#endif
+        /// <summary>The resources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseResourcesItem>? Resources { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseResourcesItem> Resources { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200Response"/> and sets the default values.
@@ -71,10 +107,16 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "active", n => { Active = n.GetBoolValue(); } },
+                { "certificationsAndPledges", n => { CertificationsAndPledges = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseCreated.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseDescription>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseDescription.CreateFromDiscriminatorValue); } },
+                { "isQuality", n => { IsQuality = n.GetBoolValue(); } },
                 { "key", n => { Key = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseKey>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseKey.CreateFromDiscriminatorValue); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseLastModified.CreateFromDiscriminatorValue); } },
+                { "perksAndBenefits", n => { PerksAndBenefits = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "programs", n => { Programs = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponsePrograms>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponsePrograms.CreateFromDiscriminatorValue); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseResourcesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseResourcesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -84,10 +126,16 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("active", Active);
+            writer.WriteObjectValue<UntypedNode>("certificationsAndPledges", CertificationsAndPledges);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseCreated>("created", Created);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseDescription>("description", Description);
+            writer.WriteBoolValue("isQuality", IsQuality);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseKey>("key", Key);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseLastModified>("lastModified", LastModified);
+            writer.WriteObjectValue<UntypedNode>("perksAndBenefits", PerksAndBenefits);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponsePrograms>("programs", Programs);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentGet200ResponseResourcesItem>("resources", Resources);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

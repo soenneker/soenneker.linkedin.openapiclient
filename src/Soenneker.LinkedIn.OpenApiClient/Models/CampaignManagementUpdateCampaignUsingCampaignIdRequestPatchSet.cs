@@ -22,6 +22,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCampaignUsingCampaignIdRequestPatchSetRunSchedule RunSchedule { get; set; }
 #endif
+        /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCampaignUsingCampaignIdRequestPatchSet"/> and sets the default values.
         /// </summary>
@@ -48,6 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "runSchedule", n => { RunSchedule = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCampaignUsingCampaignIdRequestPatchSetRunSchedule>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCampaignUsingCampaignIdRequestPatchSetRunSchedule.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,6 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCampaignUsingCampaignIdRequestPatchSetRunSchedule>("runSchedule", RunSchedule);
+            writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

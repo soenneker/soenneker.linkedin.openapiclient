@@ -14,6 +14,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The assetType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AssetType { get; set; }
+#nullable restore
+#else
+        public string AssetType { get; set; }
+#endif
         /// <summary>The engagementMetricQualifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "assetType", n => { AssetType = n.GetStringValue(); } },
                 { "engagementMetricQualifier", n => { EngagementMetricQualifier = n.GetStringValue(); } },
                 { "engagementType", n => { EngagementType = n.GetStringValue(); } },
                 { "engagementValue", n => { EngagementValue = n.GetIntValue(); } },
@@ -75,6 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("assetType", AssetType);
             writer.WriteStringValue("engagementMetricQualifier", EngagementMetricQualifier);
             writer.WriteStringValue("engagementType", EngagementType);
             writer.WriteIntValue("engagementValue", EngagementValue);

@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.LinkedIn.OpenApiClient.EventsManagementApi.Events.Item;
-using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,7 +34,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.EventsManagementApi.Events
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events-management-api/events{?count*,organizer*,q*,start*}", pathParameters)
+        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events-management-api/events{?count*,entryCriteria*,excludeCancelled*,organizer*,q*,sortOrder*,start*,timeBasedFilter*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,11 +42,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.EventsManagementApi.Events
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events-management-api/events{?count*,organizer*,q*,start*}", rawUrl)
+        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events-management-api/events{?count*,entryCriteria*,excludeCancelled*,organizer*,q*,sortOrder*,start*,timeBasedFilter*}", rawUrl)
         {
         }
         /// <summary>
-        /// Find Events with Lead Gen Form by Organizer
+        /// Find Events by Organizer
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.EventsManagementApi.Events
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create Person Owned Event
+        /// Create Organization Owned Event
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -73,11 +72,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.EventsManagementApi.Events
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreatePersonOwnedEventRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(UntypedNode body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreatePersonOwnedEventRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(UntypedNode body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -85,7 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.EventsManagementApi.Events
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Find Events with Lead Gen Form by Organizer
+        /// Find Events by Organizer
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,18 +102,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.EventsManagementApi.Events
             return requestInfo;
         }
         /// <summary>
-        /// Create Person Owned Event
+        /// Create Organization Owned Event
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreatePersonOwnedEventRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(UntypedNode body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreatePersonOwnedEventRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(UntypedNode body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -133,15 +132,50 @@ namespace Soenneker.LinkedIn.OpenApiClient.EventsManagementApi.Events
             return new global::Soenneker.LinkedIn.OpenApiClient.EventsManagementApi.Events.EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Find Events with Lead Gen Form by Organizer
+        /// Find Events by Organizer
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventsRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("count")]
-            public int? Count { get; set; }
+            public string? Count { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("count")]
+            public string Count { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("entryCriteria")]
+            public string? EntryCriteria { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("entryCriteria")]
+            public string EntryCriteria { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("excludeCancelled")]
+            public string? ExcludeCancelled { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("excludeCancelled")]
+            public string ExcludeCancelled { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -168,10 +202,45 @@ namespace Soenneker.LinkedIn.OpenApiClient.EventsManagementApi.Events
             public string Q { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("sortOrder")]
+            public string? SortOrder { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("sortOrder")]
+            public string SortOrder { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("start")]
-            public int? Start { get; set; }
+            public string? Start { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("start")]
+            public string Start { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("timeBasedFilter")]
+            public string? TimeBasedFilter { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("timeBasedFilter")]
+            public string TimeBasedFilter { get; set; }
+            #pragma warning restore CS1591
+#endif
         }
     }
 }

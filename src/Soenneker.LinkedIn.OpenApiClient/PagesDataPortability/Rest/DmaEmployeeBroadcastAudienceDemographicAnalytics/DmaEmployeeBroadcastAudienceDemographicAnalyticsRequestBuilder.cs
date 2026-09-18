@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaEmployee
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DmaEmployeeBroadcastAudienceDemographicAnalyticsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaEmployeeBroadcastAudienceDemographicAnalytics{?audienceDimensionTypes*,audienceType*,organizationalPageUrn*,q*,timeRange*,viewer*}", pathParameters)
+        public DmaEmployeeBroadcastAudienceDemographicAnalyticsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaEmployeeBroadcastAudienceDemographicAnalytics{?audienceDimensionTypes*,audienceType*,organizationalPageUrn*,q*,timeRange*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaEmployee
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DmaEmployeeBroadcastAudienceDemographicAnalyticsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaEmployeeBroadcastAudienceDemographicAnalytics{?audienceDimensionTypes*,audienceType*,organizationalPageUrn*,q*,timeRange*,viewer*}", rawUrl)
+        public DmaEmployeeBroadcastAudienceDemographicAnalyticsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaEmployeeBroadcastAudienceDemographicAnalytics{?audienceDimensionTypes*,audienceType*,organizationalPageUrn*,q*,timeRange*}", rawUrl)
         {
         }
         /// <summary>
@@ -148,19 +148,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaEmployee
             #pragma warning disable CS1591
             [QueryParameter("timeRange")]
             public string TimeRange { get; set; }
-            #pragma warning restore CS1591
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            #pragma warning disable CS1591
-            [QueryParameter("viewer")]
-            public string? Viewer { get; set; }
-            #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("viewer")]
-            public string Viewer { get; set; }
             #pragma warning restore CS1591
 #endif
         }

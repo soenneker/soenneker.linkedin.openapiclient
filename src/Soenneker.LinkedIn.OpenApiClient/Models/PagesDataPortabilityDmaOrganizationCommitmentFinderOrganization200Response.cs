@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The elements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Elements { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItem>? Elements { get; set; }
 #nullable restore
 #else
-        public List<string> Elements { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItem> Elements { get; set; }
 #endif
         /// <summary>The paging property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "elements", n => { Elements = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "elements", n => { Elements = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "paging", n => { Paging = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponsePaging>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponsePaging.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("elements", Elements);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItem>("elements", Elements);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponsePaging>("paging", Paging);
             writer.WriteAdditionalData(AdditionalData);
         }

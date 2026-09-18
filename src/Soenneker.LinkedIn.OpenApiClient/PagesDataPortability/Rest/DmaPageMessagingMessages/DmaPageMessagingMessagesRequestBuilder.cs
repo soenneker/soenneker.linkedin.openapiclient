@@ -85,10 +85,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaPageMess
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DmaPageMessagingMessagesRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("count")]
-            public int? Count { get; set; }
+            public string? Count { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("count")]
+            public string Count { get; set; }
+            #pragma warning restore CS1591
+#endif
             /// <summary>DevTestCo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,10 +134,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaPageMess
             public string Sort { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("start")]
-            public int? Start { get; set; }
+            public string? Start { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("start")]
+            public string Start { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591

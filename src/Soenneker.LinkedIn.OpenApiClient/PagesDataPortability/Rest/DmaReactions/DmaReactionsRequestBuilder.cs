@@ -34,25 +34,25 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaReaction
         {
         }
         /// <summary>
-        /// dmaReactions BATCH_GET 200 (1 opt-out reactionUrn (organizationUrn) on personal ugcPost)
+        /// dmaReactions BATCH_GET 200 (1 opt-in reactionUrn (personUrn) on Page activity)
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaReactionsBatchget2001OptOutReactionUrnOrganizationUrnOnPersonalUgcPost200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaReactionsBatchget2001OptInReactionUrnPersonUrnOnPageActivity200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaReactionsBatchget2001OptOutReactionUrnOrganizationUrnOnPersonalUgcPost200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaReactions.DmaReactionsRequestBuilder.DmaReactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaReactionsBatchget2001OptInReactionUrnPersonUrnOnPageActivity200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaReactions.DmaReactionsRequestBuilder.DmaReactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaReactionsBatchget2001OptOutReactionUrnOrganizationUrnOnPersonalUgcPost200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaReactions.DmaReactionsRequestBuilder.DmaReactionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaReactionsBatchget2001OptInReactionUrnPersonUrnOnPageActivity200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaReactions.DmaReactionsRequestBuilder.DmaReactionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaReactionsBatchget2001OptOutReactionUrnOrganizationUrnOnPersonalUgcPost200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaReactionsBatchget2001OptOutReactionUrnOrganizationUrnOnPersonalUgcPost200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaReactionsBatchget2001OptInReactionUrnPersonUrnOnPageActivity200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaReactionsBatchget2001OptInReactionUrnPersonUrnOnPageActivity200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// dmaReactions BATCH_GET 200 (1 opt-out reactionUrn (organizationUrn) on personal ugcPost)
+        /// dmaReactions BATCH_GET 200 (1 opt-in reactionUrn (personUrn) on Page activity)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaReaction
             return new global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaReactions.DmaReactionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// dmaReactions BATCH_GET 200 (1 opt-out reactionUrn (organizationUrn) on personal ugcPost)
+        /// dmaReactions BATCH_GET 200 (1 opt-in reactionUrn (personUrn) on Page activity)
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DmaReactionsRequestBuilderGetQueryParameters 

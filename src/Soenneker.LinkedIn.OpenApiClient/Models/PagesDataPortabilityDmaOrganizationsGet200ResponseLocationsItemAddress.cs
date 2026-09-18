@@ -47,7 +47,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Line1 { get; set; }
 #endif
         /// <summary>The postalCode property</summary>
-        public int? PostalCode { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PostalCode { get; set; }
+#nullable restore
+#else
+        public string PostalCode { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLocationsItemAddress"/> and sets the default values.
         /// </summary>
@@ -77,7 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "geographicArea", n => { GeographicArea = n.GetStringValue(); } },
                 { "line1", n => { Line1 = n.GetStringValue(); } },
-                { "postalCode", n => { PostalCode = n.GetIntValue(); } },
+                { "postalCode", n => { PostalCode = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -91,7 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("geographicArea", GeographicArea);
             writer.WriteStringValue("line1", Line1);
-            writer.WriteIntValue("postalCode", PostalCode);
+            writer.WriteStringValue("postalCode", PostalCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

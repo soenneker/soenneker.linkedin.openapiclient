@@ -21,7 +21,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationPageS
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationPageStatisticsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/community-management/organizationPageStatistics{?organization*,q*}", pathParameters)
+        public OrganizationPageStatisticsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/community-management/organizationPageStatistics{?organization*,q*,timeIntervals%2EtimeGranularityType*,timeIntervals%2EtimeRange%2Eend*,timeIntervals%2EtimeRange%2Estart*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,11 +29,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationPageS
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationPageStatisticsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/community-management/organizationPageStatistics{?organization*,q*}", rawUrl)
+        public OrganizationPageStatisticsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/community-management/organizationPageStatistics{?organization*,q*,timeIntervals%2EtimeGranularityType*,timeIntervals%2EtimeRange%2Eend*,timeIntervals%2EtimeRange%2Estart*}", rawUrl)
         {
         }
         /// <summary>
-        /// Lifetime Page Statistics
+        /// Time-Bound organization page statistics
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationPageS
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lifetime Page Statistics
+        /// Time-Bound organization page statistics
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,7 +78,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationPageS
             return new global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationPageStatistics.OrganizationPageStatisticsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lifetime Page Statistics
+        /// Time-Bound organization page statistics
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrganizationPageStatisticsRequestBuilderGetQueryParameters 
@@ -107,6 +107,45 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationPageS
             #pragma warning disable CS1591
             [QueryParameter("q")]
             public string Q { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("timeIntervals%2EtimeGranularityType")]
+            public string? TimeIntervalsTimeGranularityType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("timeIntervals%2EtimeGranularityType")]
+            public string TimeIntervalsTimeGranularityType { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("timeIntervals%2EtimeRange%2Eend")]
+            public string? TimeIntervalsTimeRangeEnd { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("timeIntervals%2EtimeRange%2Eend")]
+            public string TimeIntervalsTimeRangeEnd { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("timeIntervals%2EtimeRange%2Estart")]
+            public string? TimeIntervalsTimeRangeStart { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("timeIntervals%2EtimeRange%2Estart")]
+            public string TimeIntervalsTimeRangeStart { get; set; }
             #pragma warning restore CS1591
 #endif
         }

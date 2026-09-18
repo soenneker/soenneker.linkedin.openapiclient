@@ -22,6 +22,22 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<string> UrnLiAdTargetingFacetEmployers { get; set; }
 #endif
+        /// <summary>The urnLiAdTargetingFacetInterfaceLocales property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? UrnLiAdTargetingFacetInterfaceLocales { get; set; }
+#nullable restore
+#else
+        public List<string> UrnLiAdTargetingFacetInterfaceLocales { get; set; }
+#endif
+        /// <summary>The urnLiAdTargetingFacetLocations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? UrnLiAdTargetingFacetLocations { get; set; }
+#nullable restore
+#else
+        public List<string> UrnLiAdTargetingFacetLocations { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemTargetingCriteriaIncludeAndItemOr"/> and sets the default values.
         /// </summary>
@@ -48,6 +64,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "urn:li:adTargetingFacet:employers", n => { UrnLiAdTargetingFacetEmployers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "urn:li:adTargetingFacet:interfaceLocales", n => { UrnLiAdTargetingFacetInterfaceLocales = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "urn:li:adTargetingFacet:locations", n => { UrnLiAdTargetingFacetLocations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,6 +76,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("urn:li:adTargetingFacet:employers", UrnLiAdTargetingFacetEmployers);
+            writer.WriteCollectionOfPrimitiveValues<string>("urn:li:adTargetingFacet:interfaceLocales", UrnLiAdTargetingFacetInterfaceLocales);
+            writer.WriteCollectionOfPrimitiveValues<string>("urn:li:adTargetingFacet:locations", UrnLiAdTargetingFacetLocations);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

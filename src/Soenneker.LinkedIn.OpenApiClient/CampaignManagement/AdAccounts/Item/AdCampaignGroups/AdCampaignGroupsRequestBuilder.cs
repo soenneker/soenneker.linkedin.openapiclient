@@ -65,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Ad
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use the `q=search` parameter to [search for campaign groups](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#search-for-campaign-groups) by ID, account, name, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all campaign groups the caller has access to is returned in a paginated response. this example fetches campaign groups by the status values DRAFT or ACTIVE and orders it by ID descending.
+        /// Multiple Campaign Groups can be fetched by the campaign group ids a shown in this example call. View our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-get-campaign-groups) for more information.Use the `q=search` parameter to [search for campaign groups](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#search-for-campaign-groups) by ID, account, name, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all campaign groups the caller has access to is returned in a paginated response. this example fetches campaign groups by the status values DRAFT or ACTIVE and orders it by ID descending.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Ad
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Multiple campaign groups can be updated with a partial update. This example updates the amount and currencyCode for one Campaign Group and status for another Campaign Group using the RestLi method BATCH_PARTIAL_UPDATE.View our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-update-campaign-groups) to learn more.
+        /// Campaign groups can be created in ACTIVE or DRAFT state. You can change ACTIVE to ARCHIVED or PAUSED. This example [creates a Campaign Group](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#create-a-campaign-group) in the state DRAFT.Campaign groups can be created in ACTIVE or DRAFT state. You can change ACTIVE to ARCHIVED or PAUSED. This example [creates multiple Campaign Groups](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-create-campaign-groups) using the RestLi method BATCH_CREATE.Multiple campaign groups can be updated with a partial update. This example updates the amount and currencyCode for one Campaign Group and status for another Campaign Group using the RestLi method BATCH_PARTIAL_UPDATE.View our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-update-campaign-groups) to learn more.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -91,11 +91,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Ad
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateMultipleCampaignGroupsRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.AdCampaignGroupsRequestBuilder.AdCampaignGroupsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.AdCampaignGroupsRequestBuilder.AdCampaignGroupsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateMultipleCampaignGroupsRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.AdCampaignGroupsRequestBuilder.AdCampaignGroupsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.AdCampaignGroupsRequestBuilder.AdCampaignGroupsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -121,7 +121,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Ad
             return requestInfo;
         }
         /// <summary>
-        /// Use the `q=search` parameter to [search for campaign groups](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#search-for-campaign-groups) by ID, account, name, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all campaign groups the caller has access to is returned in a paginated response. this example fetches campaign groups by the status values DRAFT or ACTIVE and orders it by ID descending.
+        /// Multiple Campaign Groups can be fetched by the campaign group ids a shown in this example call. View our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-get-campaign-groups) for more information.Use the `q=search` parameter to [search for campaign groups](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#search-for-campaign-groups) by ID, account, name, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all campaign groups the caller has access to is returned in a paginated response. this example fetches campaign groups by the status values DRAFT or ACTIVE and orders it by ID descending.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,18 +139,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Ad
             return requestInfo;
         }
         /// <summary>
-        /// Multiple campaign groups can be updated with a partial update. This example updates the amount and currencyCode for one Campaign Group and status for another Campaign Group using the RestLi method BATCH_PARTIAL_UPDATE.View our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-update-campaign-groups) to learn more.
+        /// Campaign groups can be created in ACTIVE or DRAFT state. You can change ACTIVE to ARCHIVED or PAUSED. This example [creates a Campaign Group](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#create-a-campaign-group) in the state DRAFT.Campaign groups can be created in ACTIVE or DRAFT state. You can change ACTIVE to ARCHIVED or PAUSED. This example [creates multiple Campaign Groups](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-create-campaign-groups) using the RestLi method BATCH_CREATE.Multiple campaign groups can be updated with a partial update. This example updates the amount and currencyCode for one Campaign Group and status for another Campaign Group using the RestLi method BATCH_PARTIAL_UPDATE.View our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-update-campaign-groups) to learn more.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateMultipleCampaignGroupsRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.AdCampaignGroupsRequestBuilder.AdCampaignGroupsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.AdCampaignGroupsRequestBuilder.AdCampaignGroupsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateMultipleCampaignGroupsRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.AdCampaignGroupsRequestBuilder.AdCampaignGroupsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.AdCampaignGroupsRequestBuilder.AdCampaignGroupsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -189,11 +189,24 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Ad
 #endif
         }
         /// <summary>
-        /// Use the `q=search` parameter to [search for campaign groups](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#search-for-campaign-groups) by ID, account, name, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all campaign groups the caller has access to is returned in a paginated response. this example fetches campaign groups by the status values DRAFT or ACTIVE and orders it by ID descending.
+        /// Multiple Campaign Groups can be fetched by the campaign group ids a shown in this example call. View our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-get-campaign-groups) for more information.Use the `q=search` parameter to [search for campaign groups](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#search-for-campaign-groups) by ID, account, name, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all campaign groups the caller has access to is returned in a paginated response. this example fetches campaign groups by the status values DRAFT or ACTIVE and orders it by ID descending.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdCampaignGroupsRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids")]
+            public string? Ids { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids")]
+            public string Ids { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -235,7 +248,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Ad
 #endif
         }
         /// <summary>
-        /// Multiple campaign groups can be updated with a partial update. This example updates the amount and currencyCode for one Campaign Group and status for another Campaign Group using the RestLi method BATCH_PARTIAL_UPDATE.View our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-update-campaign-groups) to learn more.
+        /// Campaign groups can be created in ACTIVE or DRAFT state. You can change ACTIVE to ARCHIVED or PAUSED. This example [creates a Campaign Group](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#create-a-campaign-group) in the state DRAFT.Campaign groups can be created in ACTIVE or DRAFT state. You can change ACTIVE to ARCHIVED or PAUSED. This example [creates multiple Campaign Groups](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-create-campaign-groups) using the RestLi method BATCH_CREATE.Multiple campaign groups can be updated with a partial update. This example updates the amount and currencyCode for one Campaign Group and status for another Campaign Group using the RestLi method BATCH_PARTIAL_UPDATE.View our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-update-campaign-groups) to learn more.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdCampaignGroupsRequestBuilderPostQueryParameters 

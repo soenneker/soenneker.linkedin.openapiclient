@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.Item;
 using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,12 +18,24 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.contentApis.posts.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.Item.EncodedUgcPostUrnShareUrnItemRequestBuilder"/></returns>
+        public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.Item.EncodedUgcPostUrnShareUrnItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("encodedUgcPostUrnShareUrn%2Did", position);
+                return new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.Item.EncodedUgcPostUrnShareUrnItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.PostsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PostsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/content-apis/posts{?ids*}", pathParameters)
+        public PostsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/content-apis/posts{?dscAdAccount*,ids*,q*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +43,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PostsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/content-apis/posts{?ids*}", rawUrl)
+        public PostsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/content-apis/posts{?dscAdAccount*,ids*,q*}", rawUrl)
         {
         }
         /// <summary>
-        /// Fetch multiple document content
+        /// Multiple posts can be retrieved and viewed in a single API call by passing in multiple UGC Posts or share URNs into the `ids` parameter. The UGC Post URNs should be passed in `List` format and should be encoded as shown in the examples below. Note that the `,` in the `List` separating each URN does not need to be encoded.You can retrieve all posts with the specific Sponsored Account and the content types with the following parameters:
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create document content
+        /// Simplest form of post creation where an organic post is made ith a sample text at a page.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -60,11 +73,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateDocumentContentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateOrganicPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateDocumentContentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateOrganicPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -72,7 +85,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetch multiple document content
+        /// Multiple posts can be retrieved and viewed in a single API call by passing in multiple UGC Posts or share URNs into the `ids` parameter. The UGC Post URNs should be passed in `List` format and should be encoded as shown in the examples below. Note that the `,` in the `List` separating each URN does not need to be encoded.You can retrieve all posts with the specific Sponsored Account and the content types with the following parameters:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,18 +103,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts
             return requestInfo;
         }
         /// <summary>
-        /// Create document content
+        /// Simplest form of post creation where an organic post is made ith a sample text at a page.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateDocumentContentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateOrganicPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateDocumentContentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateOrganicPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -120,11 +133,24 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts
             return new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.PostsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Fetch multiple document content
+        /// Multiple posts can be retrieved and viewed in a single API call by passing in multiple UGC Posts or share URNs into the `ids` parameter. The UGC Post URNs should be passed in `List` format and should be encoded as shown in the examples below. Note that the `,` in the `List` separating each URN does not need to be encoded.You can retrieve all posts with the specific Sponsored Account and the content types with the following parameters:
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PostsRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("dscAdAccount")]
+            public string? DscAdAccount { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("dscAdAccount")]
+            public string DscAdAccount { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -136,6 +162,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts
             #pragma warning disable CS1591
             [QueryParameter("ids")]
             public string Ids { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("q")]
+            public string? Q { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("q")]
+            public string Q { get; set; }
             #pragma warning restore CS1591
 #endif
         }

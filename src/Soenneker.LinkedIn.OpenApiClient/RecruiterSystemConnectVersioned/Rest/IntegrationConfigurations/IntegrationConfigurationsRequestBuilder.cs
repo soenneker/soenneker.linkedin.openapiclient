@@ -52,7 +52,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// API governs who may view job-related data (Interview Feedback, Notes, Applications, and Stages) within the In-ATS indicator.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#integration-configuration-keys)
+        /// Once a customer creates an integration requiring configuration, you must create the configuration using this API before they can enable the integration.`Callback URL` is mandatory for enabling Integration.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#upsert-integration-configurations)API governs who may view job postings within the One-Click Export drop-down.Customers can use this API, if they are not using ACL&apos;s.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#integration-configuration-keys)API governs who may view job-related data (Interview Feedback, Notes, Applications, and Stages) within the In-ATS indicator.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#integration-configuration-keys)
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -60,11 +60,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncIntegrationConfigurationApplicationViewersOptionalRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.IntegrationConfigurations.IntegrationConfigurationsRequestBuilder.IntegrationConfigurationsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PutAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncIntegrationConfigurationCallbackUrlMandatoryRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.IntegrationConfigurations.IntegrationConfigurationsRequestBuilder.IntegrationConfigurationsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncIntegrationConfigurationApplicationViewersOptionalRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.IntegrationConfigurations.IntegrationConfigurationsRequestBuilder.IntegrationConfigurationsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PutAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncIntegrationConfigurationCallbackUrlMandatoryRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.IntegrationConfigurations.IntegrationConfigurationsRequestBuilder.IntegrationConfigurationsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -90,18 +90,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
             return requestInfo;
         }
         /// <summary>
-        /// API governs who may view job-related data (Interview Feedback, Notes, Applications, and Stages) within the In-ATS indicator.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#integration-configuration-keys)
+        /// Once a customer creates an integration requiring configuration, you must create the configuration using this API before they can enable the integration.`Callback URL` is mandatory for enabling Integration.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#upsert-integration-configurations)API governs who may view job postings within the One-Click Export drop-down.Customers can use this API, if they are not using ACL&apos;s.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#integration-configuration-keys)API governs who may view job-related data (Interview Feedback, Notes, Applications, and Stages) within the In-ATS indicator.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#integration-configuration-keys)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncIntegrationConfigurationApplicationViewersOptionalRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.IntegrationConfigurations.IntegrationConfigurationsRequestBuilder.IntegrationConfigurationsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncIntegrationConfigurationCallbackUrlMandatoryRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.IntegrationConfigurations.IntegrationConfigurationsRequestBuilder.IntegrationConfigurationsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncIntegrationConfigurationApplicationViewersOptionalRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.IntegrationConfigurations.IntegrationConfigurationsRequestBuilder.IntegrationConfigurationsRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncIntegrationConfigurationCallbackUrlMandatoryRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.IntegrationConfigurations.IntegrationConfigurationsRequestBuilder.IntegrationConfigurationsRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -179,7 +179,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
 #endif
         }
         /// <summary>
-        /// API governs who may view job-related data (Interview Feedback, Notes, Applications, and Stages) within the In-ATS indicator.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#integration-configuration-keys)
+        /// Once a customer creates an integration requiring configuration, you must create the configuration using this API before they can enable the integration.`Callback URL` is mandatory for enabling Integration.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#upsert-integration-configurations)API governs who may view job postings within the One-Click Export drop-down.Customers can use this API, if they are not using ACL&apos;s.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#integration-configuration-keys)API governs who may view job-related data (Interview Feedback, Notes, Applications, and Stages) within the In-ATS indicator.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#integration-configuration-keys)
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IntegrationConfigurationsRequestBuilderPutQueryParameters 

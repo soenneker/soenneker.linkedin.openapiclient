@@ -5,14 +5,12 @@
     "description": "We are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.\n\nLinkedIn provides Compliance API Guides for all monitoring, archiving, and management of communications for enterprises in regulated industries. The APIs will help your social interactions remain effective while ensuring compliance with corporate governance policies and major regulations.\n\nThe Compliance Events API allows applications to archive all LinkedIn activities from the past 30 days of a regulated, authenticated member. It returns each monitored activity as an individual event record to provide ease of archive and remediation if necessary.\n\nAll the variables used in this collection are defined in the `Compliance Events` environment.\n\nTo know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/compliance/).",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "https://api.linkedin.com"
-    }
-  ],
   "paths": {
     "/v2/memberComplianceAuthorizations": {
       "post": {
+        "tags": [
+          "Use Cases / Compliance Authorization"
+        ],
         "summary": "Opt in a member to be regulated",
         "operationId": "OptInAMemberToBeRegulated",
         "requestBody": {
@@ -20,18 +18,82 @@
             "application/json": {
               "schema": {
                 "type": "object"
+              },
+              "examples": {
+                "example1": {
+                  "value": { }
+                }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "OAuth2 configured scopes are listed on the scheme; per-endpoint required scopes are unknown."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Opt in a member to be regulated",
+            "id": "d6675add-2f99-41c4-9f30-48e398b2d1db",
+            "request": {
+              "method": "POST",
+              "header": [ ],
+              "body": {
+                "mode": "raw",
+                "raw": "{}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/memberComplianceAuthorizations"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Compliance Authorization"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "scope": "r_compliance",
+                "client_authentication": "header",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "grant_type": "authorization_code",
+                "tokenName": "Compliance - Read",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       },
       "get": {
+        "tags": [
+          "Use Cases / Compliance Authorization"
+        ],
         "summary": "Check a member's regulation status",
         "operationId": "CheckAMemberSRegulationStatus",
         "parameters": [
@@ -40,30 +102,174 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "member"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "OAuth2 configured scopes are listed on the scheme; per-endpoint required scopes are unknown."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Check a member's regulation status",
+            "id": "37d6248d-8664-481d-a86d-e17a8ceac168",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/memberComplianceAuthorizations?q=member",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "memberComplianceAuthorizations"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "member"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Compliance Authorization"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "scope": "r_compliance",
+                "client_authentication": "header",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "grant_type": "authorization_code",
+                "tokenName": "Compliance - Read",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
-    "/v2/memberComplianceAuthorizations/developerApplication=urn:li:developerApplication:%7Bdeveloper_application_id%7D&member=urn:li:person:%7Bperson_id%7D": {
+    "/v2/memberComplianceAuthorizations/developerApplication=urn:li:developerApplication:{developer_application_id}&member=urn:li:person:{person_id}": {
       "delete": {
+        "tags": [
+          "Use Cases / Compliance Authorization"
+        ],
         "summary": "Opt out a member from being regulated",
         "description": "Opt out a member from being regulated on LinkedIn.\n\n**Note:** A member will not opt out of Compliance authorization due to access token expiration. The only ways an opt out can happen are:\n* Application invokes the DELETE API mentioned above\n* The regulated member removes the application's authorization through LinkedIn's Privacy Setting page. This can be found under the [Third Parties section](https://www.linkedin.com/psettings/permitted-services).\n\n\nTo know more, please [refer](https://docs.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/?context=linkedin/compliance/context#sample-get-response).",
         "operationId": "OptOutAMemberFromBeingRegulated",
-        "responses": {
-          "200": {
-            "description": "Success"
+        "parameters": [
+          {
+            "name": "developer_application_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "person_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
-        }
+        ],
+        "responses": {
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
+          }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "OAuth2 configured scopes are listed on the scheme; per-endpoint required scopes are unknown."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Opt out a member from being regulated",
+            "id": "d61d901d-5961-41c1-a8db-be3a9de123fd",
+            "request": {
+              "method": "DELETE",
+              "header": [ ],
+              "url": "https://api.linkedin.com/v2/memberComplianceAuthorizations/developerApplication=urn:li:developerApplication:{{developer_application_id}}&member=urn:li:person:{{person_id}}",
+              "description": "Opt out a member from being regulated on LinkedIn.\n\n**Note:** A member will not opt out of Compliance authorization due to access token expiration. The only ways an opt out can happen are:\n* Application invokes the DELETE API mentioned above\n* The regulated member removes the application's authorization through LinkedIn's Privacy Setting page. This can be found under the [Third Parties section](https://www.linkedin.com/psettings/permitted-services).\n\n\nTo know more, please [refer](https://docs.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/?context=linkedin/compliance/context#sample-get-response)."
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Compliance Authorization"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "scope": "r_compliance",
+                "client_authentication": "header",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "grant_type": "authorization_code",
+                "tokenName": "Compliance - Read",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/v2/complianceEvents": {
       "get": {
+        "tags": [
+          "Use Cases / Compliance Events"
+        ],
         "summary": "Retrieve compliance events for a regulated member",
         "description": "Once the member has authorized to be regulated, the compliance events for the member can be retrieved using the `/v2/complianceEvents` API. \n\nTo know more on the response schema, refer [here](https://docs.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/?context=linkedin/compliance/context#compliance-events-schema).\n\nTo know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/?context=linkedin/compliance/context#compliance-events).",
         "operationId": "RetrieveComplianceEventsForARegulatedMember",
@@ -73,6 +279,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "memberAndApplication"
+              }
             }
           },
           {
@@ -80,6 +291,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "(elements*(id,capturedAt,processedAt,configVersion,owner~(firstName,lastName,headline),actor~(firstName,lastName,headline),resourceName,resourceid,resourceUri,method,activity,processedActivity,siblingActivities,parentActivity,parentSiblingActivities),paging)"
+              }
             }
           },
           {
@@ -87,23 +303,177 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{start_time_in_ms}}"
+              }
             }
           },
           {
             "name": "count",
             "in": "query",
             "schema": {
-              "type": "integer"
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "10"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
+          }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "OAuth2 configured scopes are listed on the scheme; per-endpoint required scopes are unknown."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Retrieve compliance events for a regulated member",
+            "id": "db916812-c8d7-41a4-afea-81d74405bac6",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/complianceEvents?q=memberAndApplication&projection=(elements*(id,capturedAt,processedAt,configVersion,owner~(firstName,lastName,headline),actor~(firstName,lastName,headline),resourceName,resourceid,resourceUri,method,activity,processedActivity,siblingActivities,parentActivity,parentSiblingActivities),paging)&startTime={{start_time_in_ms}}&count=10",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "complianceEvents"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "memberAndApplication"
+                  },
+                  {
+                    "key": "projection",
+                    "value": "(elements*(id,capturedAt,processedAt,configVersion,owner~(firstName,lastName,headline),actor~(firstName,lastName,headline),resourceName,resourceid,resourceUri,method,activity,processedActivity,siblingActivities,parentActivity,parentSiblingActivities),paging)"
+                  },
+                  {
+                    "key": "startTime",
+                    "value": "{{start_time_in_ms}}"
+                  },
+                  {
+                    "key": "count",
+                    "value": "10"
+                  }
+                ]
+              },
+              "description": "Once the member has authorized to be regulated, the compliance events for the member can be retrieved using the `/v2/complianceEvents` API. \n\nTo know more on the response schema, refer [here](https://docs.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/?context=linkedin/compliance/context#compliance-events-schema).\n\nTo know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/?context=linkedin/compliance/context#compliance-events)."
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Compliance Events"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "scope": "r_compliance",
+                "client_authentication": "header",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "grant_type": "authorization_code",
+                "tokenName": "Compliance - Read",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "oauth2Auth": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://www.linkedin.com/oauth/v2/authorization",
+            "tokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+            "scopes": {
+              "r_compliance": "Scope listed in the Postman authentication configuration."
+            }
           }
         }
       }
     }
   },
-  "components": { }
+  "tags": [
+    {
+      "name": "Use Cases / Compliance Authorization",
+      "description": "This folder contains APIs to opt-in and opt-out a member to be regulated on LinkedIn.\n\nTo know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/?context=linkedin/compliance/context#compliance-authorization)."
+    },
+    {
+      "name": "Use Cases / Compliance Events",
+      "description": "This folder contains API to retrieve compliance events for a regulated member.\n\nTo know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/?context=linkedin/compliance/context#compliance-events)."
+    }
+  ],
+  "x-postman-warnings": [
+    "collection: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Compliance Authorization / Opt in a member to be regulated: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Opt in a member to be regulated: No saved responses: status codes and response schemas cannot be inferred.",
+    "Opt in a member to be regulated: OAuth2 configured scopes are listed on the scheme; per-endpoint required scopes are unknown.",
+    "Use Cases / Compliance Authorization / Check a member's regulation status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Check a member's regulation status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Check a member's regulation status: OAuth2 configured scopes are listed on the scheme; per-endpoint required scopes are unknown.",
+    "Use Cases / Compliance Authorization / Opt out a member from being regulated: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Opt out a member from being regulated: No saved responses: status codes and response schemas cannot be inferred.",
+    "Opt out a member from being regulated: OAuth2 configured scopes are listed on the scheme; per-endpoint required scopes are unknown.",
+    "Use Cases / Compliance Events / Retrieve compliance events for a regulated member: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Retrieve compliance events for a regulated member: No saved responses: status codes and response schemas cannot be inferred.",
+    "Retrieve compliance events for a regulated member: OAuth2 configured scopes are listed on the scheme; per-endpoint required scopes are unknown."
+  ],
+  "x-postman-events": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "7469beb8-3e32-4db2-9fbf-18d217ced22f",
+        "type": "text/javascript",
+        "exec": [
+          "pm.request.headers.add({",
+          "  key: 'User-Agent',",
+          "  value: 'complianceevents-linkedin-postman'",
+          "});"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "990a1644-d708-4cc4-aa58-a9cb4b9fe632",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
 }

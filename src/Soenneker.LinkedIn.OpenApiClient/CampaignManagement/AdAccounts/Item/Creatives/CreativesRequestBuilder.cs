@@ -83,7 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create multiple Creatives using BATCH
+        /// Create a Creative
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -91,11 +91,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateMultipleCreativesUsingBatchRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACreativeRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Creatives.CreativesRequestBuilder.CreativesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateMultipleCreativesUsingBatchRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACreativeRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Creatives.CreativesRequestBuilder.CreativesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -139,18 +139,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
             return requestInfo;
         }
         /// <summary>
-        /// Create multiple Creatives using BATCH
+        /// Create a Creative
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateMultipleCreativesUsingBatchRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACreativeRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Creatives.CreativesRequestBuilder.CreativesRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateMultipleCreativesUsingBatchRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACreativeRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Creatives.CreativesRequestBuilder.CreativesRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -218,6 +218,26 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
             #pragma warning disable CS1591
             [QueryParameter("search%2Ecampaign%2Evalues%5B0%5D")]
             public string SearchCampaignValues0 { get; set; }
+            #pragma warning restore CS1591
+#endif
+        }
+        /// <summary>
+        /// Create a Creative
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class CreativesRequestBuilderPostQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids")]
+            public string? Ids { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids")]
+            public string Ids { get; set; }
             #pragma warning restore CS1591
 #endif
         }

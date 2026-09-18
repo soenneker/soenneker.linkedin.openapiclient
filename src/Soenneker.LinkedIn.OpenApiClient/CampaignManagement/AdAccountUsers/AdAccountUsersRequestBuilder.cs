@@ -34,7 +34,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccountUsers
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdAccountUsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccountUsers{?q*}", pathParameters)
+        public AdAccountUsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccountUsers{?accounts*,q*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,11 +42,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccountUsers
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdAccountUsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccountUsers{?q*}", rawUrl)
+        public AdAccountUsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccountUsers{?accounts*,q*}", rawUrl)
         {
         }
         /// <summary>
-        /// This API example retrieves all Ad Accounts that an authenticated user has access to. Specifically, this api call will return the Ad Accounts associated with the member whose access token is being used! The only required parameter is q=authenticatedUser.To understand more about verifying Ad Account Access visit our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?tabs=http#find-ad-accounts-by-authenticated-user).
+        /// This API example searches for all Ad Account Users by sponsored ad account or multiple sponsored ad accounts. Learn more in our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?tabs=http#find-ad-account-users-by-accounts).This API example retrieves all Ad Accounts that an authenticated user has access to. Specifically, this api call will return the Ad Accounts associated with the member whose access token is being used! The only required parameter is q=authenticatedUser.To understand more about verifying Ad Account Access visit our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?tabs=http#find-ad-accounts-by-authenticated-user).
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccountUsers
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This API example retrieves all Ad Accounts that an authenticated user has access to. Specifically, this api call will return the Ad Accounts associated with the member whose access token is being used! The only required parameter is q=authenticatedUser.To understand more about verifying Ad Account Access visit our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?tabs=http#find-ad-accounts-by-authenticated-user).
+        /// This API example searches for all Ad Account Users by sponsored ad account or multiple sponsored ad accounts. Learn more in our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?tabs=http#find-ad-account-users-by-accounts).This API example retrieves all Ad Accounts that an authenticated user has access to. Specifically, this api call will return the Ad Accounts associated with the member whose access token is being used! The only required parameter is q=authenticatedUser.To understand more about verifying Ad Account Access visit our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?tabs=http#find-ad-accounts-by-authenticated-user).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,11 +91,24 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccountUsers
             return new global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccountUsers.AdAccountUsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// This API example retrieves all Ad Accounts that an authenticated user has access to. Specifically, this api call will return the Ad Accounts associated with the member whose access token is being used! The only required parameter is q=authenticatedUser.To understand more about verifying Ad Account Access visit our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?tabs=http#find-ad-accounts-by-authenticated-user).
+        /// This API example searches for all Ad Account Users by sponsored ad account or multiple sponsored ad accounts. Learn more in our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?tabs=http#find-ad-account-users-by-accounts).This API example retrieves all Ad Accounts that an authenticated user has access to. Specifically, this api call will return the Ad Accounts associated with the member whose access token is being used! The only required parameter is q=authenticatedUser.To understand more about verifying Ad Account Access visit our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?tabs=http#find-ad-accounts-by-authenticated-user).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdAccountUsersRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("accounts")]
+            public string? Accounts { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("accounts")]
+            public string Accounts { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591

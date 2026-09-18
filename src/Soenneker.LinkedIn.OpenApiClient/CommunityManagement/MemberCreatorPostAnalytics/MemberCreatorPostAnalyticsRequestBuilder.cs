@@ -34,7 +34,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberCreatorPost
         {
         }
         /// <summary>
-        /// Analytics for Specific Member Post
+        /// Aggregate Analytics for Member Posts
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -42,11 +42,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberCreatorPost
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAnalyticsForSpecificMemberPostRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberCreatorPostAnalytics.MemberCreatorPostAnalyticsRequestBuilder.MemberCreatorPostAnalyticsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAggregateAnalyticsForMemberPostsRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberCreatorPostAnalytics.MemberCreatorPostAnalyticsRequestBuilder.MemberCreatorPostAnalyticsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAnalyticsForSpecificMemberPostRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberCreatorPostAnalytics.MemberCreatorPostAnalyticsRequestBuilder.MemberCreatorPostAnalyticsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAggregateAnalyticsForMemberPostsRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberCreatorPostAnalytics.MemberCreatorPostAnalyticsRequestBuilder.MemberCreatorPostAnalyticsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -54,18 +54,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberCreatorPost
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Analytics for Specific Member Post
+        /// Aggregate Analytics for Member Posts
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAnalyticsForSpecificMemberPostRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberCreatorPostAnalytics.MemberCreatorPostAnalyticsRequestBuilder.MemberCreatorPostAnalyticsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAggregateAnalyticsForMemberPostsRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberCreatorPostAnalytics.MemberCreatorPostAnalyticsRequestBuilder.MemberCreatorPostAnalyticsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAnalyticsForSpecificMemberPostRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberCreatorPostAnalytics.MemberCreatorPostAnalyticsRequestBuilder.MemberCreatorPostAnalyticsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAggregateAnalyticsForMemberPostsRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberCreatorPostAnalytics.MemberCreatorPostAnalyticsRequestBuilder.MemberCreatorPostAnalyticsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -84,7 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberCreatorPost
             return new global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberCreatorPostAnalytics.MemberCreatorPostAnalyticsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Analytics for Specific Member Post
+        /// Aggregate Analytics for Member Posts
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MemberCreatorPostAnalyticsRequestBuilderPostQueryParameters 

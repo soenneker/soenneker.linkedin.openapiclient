@@ -63,7 +63,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.EventSubscription
             return new global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.EventSubscriptions.DeveloperApplicationWithApplicationIduserWithPersonIdentityWithOrganizationIdeventTypeORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS.DeveloperApplicationWithApplicationIduserWithPersonIdentityWithOrganizationIdeventTypeORGANIZATION_SOCIAL_ACTION_NOTIFICATIONSRequestBuilder(PathParameters, RequestAdapter, applicationId, organizationId, personId);
         }
         /// <summary>
-        /// [Learn more](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#pull-organizational-notifications) by viewing our public documentation.
+        /// Retrieve Subscriptions details such as webhook url and expiration for your application and registered user. [Learn more](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#retrieve-subscriptions-by-key) by viewing our public documentation.[Learn more](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#pull-organizational-notifications) by viewing our public documentation.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.EventSubscription
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// [Learn more](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#pull-organizational-notifications) by viewing our public documentation.
+        /// Retrieve Subscriptions details such as webhook url and expiration for your application and registered user. [Learn more](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#retrieve-subscriptions-by-key) by viewing our public documentation.[Learn more](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#pull-organizational-notifications) by viewing our public documentation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +108,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.EventSubscription
             return new global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.EventSubscriptions.EventSubscriptionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// [Learn more](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#pull-organizational-notifications) by viewing our public documentation.
+        /// Retrieve Subscriptions details such as webhook url and expiration for your application and registered user. [Learn more](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#retrieve-subscriptions-by-key) by viewing our public documentation.[Learn more](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#pull-organizational-notifications) by viewing our public documentation.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventSubscriptionsRequestBuilderGetQueryParameters 

@@ -33,25 +33,25 @@ namespace Soenneker.LinkedIn.OpenApiClient.CompanyIntelligenceApi.AccountIntelli
         {
         }
         /// <summary>
-        /// Fetch account intelligence data using campaign filter
+        /// Fetch account intelligence data using lookback window filter
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A <see cref="UntypedNode"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CompanyIntelligenceApi.AccountIntelligence.AccountIntelligenceRequestBuilder.AccountIntelligenceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<UntypedNode?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CompanyIntelligenceApi.AccountIntelligence.AccountIntelligenceRequestBuilder.AccountIntelligenceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CompanyIntelligenceApi.AccountIntelligence.AccountIntelligenceRequestBuilder.AccountIntelligenceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<UntypedNode> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CompanyIntelligenceApi.AccountIntelligence.AccountIntelligenceRequestBuilder.AccountIntelligenceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, UntypedNode.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetch account intelligence data using campaign filter
+        /// Fetch account intelligence data using lookback window filter
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,7 +79,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CompanyIntelligenceApi.AccountIntelli
             return new global::Soenneker.LinkedIn.OpenApiClient.CompanyIntelligenceApi.AccountIntelligence.AccountIntelligenceRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Fetch account intelligence data using campaign filter
+        /// Fetch account intelligence data using lookback window filter
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AccountIntelligenceRequestBuilderGetQueryParameters 
@@ -97,10 +97,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.CompanyIntelligenceApi.AccountIntelli
             public string Account { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("count")]
-            public int? Count { get; set; }
+            public string? Count { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("count")]
+            public string Count { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -127,10 +136,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.CompanyIntelligenceApi.AccountIntelli
             public string Q { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("start")]
-            public int? Start { get; set; }
+            public string? Start { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("start")]
+            public string Start { get; set; }
+            #pragma warning restore CS1591
+#endif
         }
     }
 }

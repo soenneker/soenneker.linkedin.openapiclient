@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ReportingRoi.AdAnalytics
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdAnalyticsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reporting-roi/adAnalytics{?accounts*,dateRange*,fields*,pivots*,q*,timeGranularity*}", pathParameters)
+        public AdAnalyticsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reporting-roi/adAnalytics{?account*,accounts*,dateRange*,fields*,pivot*,pivots*,projection*,q*,timeGranularity*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,29 +30,29 @@ namespace Soenneker.LinkedIn.OpenApiClient.ReportingRoi.AdAnalytics
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdAnalyticsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reporting-roi/adAnalytics{?accounts*,dateRange*,fields*,pivots*,q*,timeGranularity*}", rawUrl)
+        public AdAnalyticsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reporting-roi/adAnalytics{?account*,accounts*,dateRange*,fields*,pivot*,pivots*,projection*,q*,timeGranularity*}", rawUrl)
         {
         }
         /// <summary>
-        /// Ad Metrics By Ad Account + Campaign Group + Campaign
+        /// This API slice the conversion and the campaign data against campaign name, type, status and campaign group projection.This API slice the creative data against content projections for different creative types.This API pull the analytics data by slicing it through the member insdustry with name projection.This API slice the conversion and the campaign data against nme, type, status and campaign projection.This API pull the analytics data by slicing it through the member company with name and website projection.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiAdMetricsByAdAccountCampaignGroupCampaign200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiAdMetricsByAdAccountCampaignGroupCampaign200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ReportingRoi.AdAnalytics.AdAnalyticsRequestBuilder.AdAnalyticsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ReportingRoi.AdAnalytics.AdAnalyticsRequestBuilder.AdAnalyticsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiAdMetricsByAdAccountCampaignGroupCampaign200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ReportingRoi.AdAnalytics.AdAnalyticsRequestBuilder.AdAnalyticsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ReportingRoi.AdAnalytics.AdAnalyticsRequestBuilder.AdAnalyticsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiAdMetricsByAdAccountCampaignGroupCampaign200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiAdMetricsByAdAccountCampaignGroupCampaign200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Ad Metrics By Ad Account + Campaign Group + Campaign
+        /// This API slice the conversion and the campaign data against campaign name, type, status and campaign group projection.This API slice the creative data against content projections for different creative types.This API pull the analytics data by slicing it through the member insdustry with name projection.This API slice the conversion and the campaign data against nme, type, status and campaign projection.This API pull the analytics data by slicing it through the member company with name and website projection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,11 +80,24 @@ namespace Soenneker.LinkedIn.OpenApiClient.ReportingRoi.AdAnalytics
             return new global::Soenneker.LinkedIn.OpenApiClient.ReportingRoi.AdAnalytics.AdAnalyticsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Ad Metrics By Ad Account + Campaign Group + Campaign
+        /// This API slice the conversion and the campaign data against campaign name, type, status and campaign group projection.This API slice the creative data against content projections for different creative types.This API pull the analytics data by slicing it through the member insdustry with name projection.This API slice the conversion and the campaign data against nme, type, status and campaign projection.This API pull the analytics data by slicing it through the member company with name and website projection.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdAnalyticsRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("account")]
+            public string? Account { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("account")]
+            public string Account { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -127,6 +140,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.ReportingRoi.AdAnalytics
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
+            [QueryParameter("pivot")]
+            public string? Pivot { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("pivot")]
+            public string Pivot { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("pivots")]
             public string? Pivots { get; set; }
             #pragma warning restore CS1591
@@ -135,6 +161,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.ReportingRoi.AdAnalytics
             #pragma warning disable CS1591
             [QueryParameter("pivots")]
             public string Pivots { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("projection")]
+            public string? Projection { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("projection")]
+            public string Projection { get; set; }
             #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

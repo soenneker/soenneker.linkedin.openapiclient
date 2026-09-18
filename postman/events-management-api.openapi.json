@@ -7,6 +7,9 @@
   "paths": {
     "/organizationAcls": {
       "get": {
+        "tags": [
+          "Use Cases"
+        ],
         "summary": "Find a Member's Organization Access Control",
         "operationId": "FindAMemberSOrganizationAccessControl",
         "parameters": [
@@ -15,6 +18,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "roleAssignee"
+              }
             }
           },
           {
@@ -22,6 +30,11 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              }
             }
           },
           {
@@ -29,18 +42,85 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{insert_version}}"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          { }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Find a Member's Organization Access Control",
+            "id": "d57a0f3c-b22d-4592-8577-bd354d25d24c",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "X-Restli-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Linkedin-Version",
+                  "value": "{{insert_version}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/organizationAcls?q=roleAssignee",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "organizationAcls"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "roleAssignee"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases"
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/events/{id}": {
       "get": {
+        "tags": [
+          "Use Cases"
+        ],
         "summary": "Get Event by ID",
         "operationId": "GetEventByID",
         "parameters": [
@@ -57,6 +137,11 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              }
             }
           },
           {
@@ -64,47 +149,184 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{insert_version}}"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          { }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get Event by ID",
+            "id": "4eabbace-14f3-44c2-b402-b1d7cf8b3589",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "X-Restli-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Linkedin-Version",
+                  "value": "{{insert_version}}"
+                }
+              ],
+              "url": "{{baseUrl}}/events/{id}"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases"
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/events": {
       "get": {
-        "summary": "Find Events with Lead Gen Form by Organizer",
-        "operationId": "FindEventsWithLeadGenFormByOrganizer",
+        "tags": [
+          "Use Cases"
+        ],
+        "summary": "Find Events by Organizer",
+        "operationId": "FindEventsByOrganizer",
         "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "eventsByOrganizer"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "organizerLeadGenFormEnabledEvents"
+              }
+            }
+          },
           {
             "name": "organizer",
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "urn%3Ali%3Aorganization%3A7185861"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "urn%3Ali%3Aorganization%3A7185861"
+              }
             }
           },
           {
             "name": "start",
             "in": "query",
             "schema": {
-              "type": "integer"
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "0"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "0"
+              }
             }
           },
           {
             "name": "count",
             "in": "query",
             "schema": {
-              "type": "integer"
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "10"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "2"
+              }
             }
           },
           {
-            "name": "q",
+            "name": "excludeCancelled",
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "true"
+              }
+            }
+          },
+          {
+            "name": "timeBasedFilter",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "(lifeCycleState%3APAST)"
+              }
+            }
+          },
+          {
+            "name": "entryCriteria",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "PUBLIC"
+              }
+            }
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "END_TIME_DESC\n"
+              }
             }
           },
           {
@@ -112,6 +334,15 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "2.0.0"
+              }
             }
           },
           {
@@ -119,24 +350,202 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{insert_version}}"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "{{insert_version}}"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Find Events by Organizer",
+            "id": "a3bc7cea-b6c0-4d43-8f43-460982540c7f",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": { }
+              },
+              "method": "GET",
+              "header": [
+                {
+                  "key": "X-Restli-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Linkedin-Version",
+                  "value": "{{insert_version}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/events?q=eventsByOrganizer&organizer=urn%3Ali%3Aorganization%3A7185861&start=0&count=10&excludeCancelled=true&timeBasedFilter=(lifeCycleState%3APAST)&entryCriteria=PUBLIC&sortOrder=END_TIME_DESC\n",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "events"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "eventsByOrganizer"
+                  },
+                  {
+                    "key": "organizer",
+                    "value": "urn%3Ali%3Aorganization%3A7185861"
+                  },
+                  {
+                    "key": "start",
+                    "value": "0"
+                  },
+                  {
+                    "key": "count",
+                    "value": "10"
+                  },
+                  {
+                    "key": "excludeCancelled",
+                    "value": "true"
+                  },
+                  {
+                    "key": "timeBasedFilter",
+                    "value": "(lifeCycleState%3APAST)"
+                  },
+                  {
+                    "key": "entryCriteria",
+                    "value": "PUBLIC"
+                  },
+                  {
+                    "key": "sortOrder",
+                    "value": "END_TIME_DESC\n"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases"
+            ],
+            "effectiveAuth": {
+              "type": "bearer",
+              "bearer": { }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Find Events with Lead Gen Form by Organizer",
+            "id": "f9dad8ee-308b-47af-a2a8-515657d73543",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": { }
+              },
+              "method": "GET",
+              "header": [
+                {
+                  "key": "X-Restli-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Linkedin-Version",
+                  "value": "{{insert_version}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/events?organizer=urn%3Ali%3Aorganization%3A7185861&start=0&count=2&q=organizerLeadGenFormEnabledEvents",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "events"
+                ],
+                "query": [
+                  {
+                    "key": "organizer",
+                    "value": "urn%3Ali%3Aorganization%3A7185861"
+                  },
+                  {
+                    "key": "start",
+                    "value": "0"
+                  },
+                  {
+                    "key": "count",
+                    "value": "2"
+                  },
+                  {
+                    "key": "q",
+                    "value": "organizerLeadGenFormEnabledEvents"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases"
+            ],
+            "effectiveAuth": {
+              "type": "bearer",
+              "bearer": { }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       },
       "post": {
-        "summary": "Create Person Owned Event",
-        "operationId": "CreatePersonOwnedEvent",
+        "tags": [
+          "Use Cases"
+        ],
+        "summary": "Create Organization Owned Event",
+        "operationId": "CreateOrganizationOwnedEvent",
         "parameters": [
           {
             "name": "X-Restli-Protocol-Version",
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "2.0.0"
+              }
             }
           },
           {
@@ -144,6 +553,15 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{insert_version}}"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "{{insert_version}}"
+              }
             }
           }
         ],
@@ -151,19 +569,163 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
-              }
+                "x-postman-invalid-json": true
+              },
+              "x-postman-raw-body": "{\n    \"name\": {\n        \"localized\": {\n            \"en_US\": \"My First Online Event\"\n        }\n    },\n    \"type\": {\n        \"online\": {\n            \"format\": {\n                \"liveVideo\": {\n                    \"endsAt\": 9091536065000\n                }\n            }\n        }\n    },\n    \"organizer\": \"urn:li:organization:2414183\",\n    \"leadGenFormSpec\": {\n        \"privacyPolicyUrl\": \"https://www.example.com/privacyPolicy\"\n    },\n    \"startsAt\": 9091536064111\n    \"backgroundImage\": \"urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\"\n}"
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Create Organization Owned Event",
+            "id": "4196db6f-ac89-4992-aa5d-417d6bfd667e",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": { }
+              },
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-Restli-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Linkedin-Version",
+                  "value": "{{insert_version}}"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": {\n        \"localized\": {\n            \"en_US\": \"My First Online Event\"\n        }\n    },\n    \"type\": {\n        \"online\": {\n            \"format\": {\n                \"liveVideo\": {\n                    \"endsAt\": 9091536065000\n                }\n            }\n        }\n    },\n    \"organizer\": \"urn:li:organization:2414183\",\n    \"leadGenFormSpec\": {\n        \"privacyPolicyUrl\": \"https://www.example.com/privacyPolicy\"\n    },\n    \"startsAt\": 9091536064111\n    \"backgroundImage\": \"urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "{{baseUrl}}/events"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases"
+            ],
+            "effectiveAuth": {
+              "type": "bearer",
+              "bearer": { }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Create Person Owned Event",
+            "id": "d0b69395-6d86-49c8-8389-1be9bf4b06c4",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": { }
+              },
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-Restli-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Linkedin-Version",
+                  "value": "{{insert_version}}"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": {\n        \"localized\": {\n            \"en_US\": \"My First Online Event\"\n        }\n    },\n    \"type\": {\n        \"online\": {\n            \"format\": {\n                \"liveVideo\": {\n                    \"endsAt\": 9091536065000\n                }\n            }\n        }\n    },\n    \"organizer\": \"urn:li:person:ABC123\",\n    \"leadGenFormSpec\": {\n        \"privacyPolicyUrl\": \"https://www.example.com/privacyPolicy\"\n    },\n    \"startsAt\": 9091536064111\n    \"backgroundImage\": \"urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "{{baseUrl}}/events"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases"
+            ],
+            "effectiveAuth": {
+              "type": "bearer",
+              "bearer": { }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     }
   },
-  "components": { }
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Use Cases"
+    }
+  ],
+  "x-postman-warnings": [
+    "Use Cases / Find a Member's Organization Access Control: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Find a Member's Organization Access Control: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "Find a Member's Organization Access Control: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Get Event by ID: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Get Event by ID: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "Get Event by ID: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Find Events by Organizer: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Find Events by Organizer: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "Find Events by Organizer: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Find Events with Lead Gen Form by Organizer: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Find Events with Lead Gen Form by Organizer: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "Find Events with Lead Gen Form by Organizer: No saved responses: status codes and response schemas cannot be inferred.",
+    "Find Events by Organizer: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+    "Use Cases / Create Organization Owned Event: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Create Organization Owned Event: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "Create Organization Owned Event: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Create Organization Owned Event: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Create Person Owned Event: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Create Person Owned Event: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "Create Person Owned Event: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Create Person Owned Event: No saved responses: status codes and response schemas cannot be inferred.",
+    "Create Organization Owned Event: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations."
+  ]
 }

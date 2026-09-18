@@ -21,7 +21,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaEmployee
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DmaEmployeeBroadcastAudienceTimeSeriesAnalyticsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaEmployeeBroadcastAudienceTimeSeriesAnalytics{?organizationalPageEmployeeAdvocacyAnalyticsTypes*,organizationalPageUrn*,q*,timeGranularityType*,timeIntervals*}", pathParameters)
+        public DmaEmployeeBroadcastAudienceTimeSeriesAnalyticsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaEmployeeBroadcastAudienceTimeSeriesAnalytics{?organizationalPageEmployeeAdvocacyAnalyticsTypes*,organizationalPageUrn*,q*,timeIntervals*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaEmployee
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DmaEmployeeBroadcastAudienceTimeSeriesAnalyticsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaEmployeeBroadcastAudienceTimeSeriesAnalytics{?organizationalPageEmployeeAdvocacyAnalyticsTypes*,organizationalPageUrn*,q*,timeGranularityType*,timeIntervals*}", rawUrl)
+        public DmaEmployeeBroadcastAudienceTimeSeriesAnalyticsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaEmployeeBroadcastAudienceTimeSeriesAnalytics{?organizationalPageEmployeeAdvocacyAnalyticsTypes*,organizationalPageUrn*,q*,timeIntervals*}", rawUrl)
         {
         }
         /// <summary>
@@ -120,19 +120,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaEmployee
             #pragma warning disable CS1591
             [QueryParameter("q")]
             public string Q { get; set; }
-            #pragma warning restore CS1591
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            #pragma warning disable CS1591
-            [QueryParameter("timeGranularityType")]
-            public string? TimeGranularityType { get; set; }
-            #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("timeGranularityType")]
-            public string TimeGranularityType { get; set; }
             #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

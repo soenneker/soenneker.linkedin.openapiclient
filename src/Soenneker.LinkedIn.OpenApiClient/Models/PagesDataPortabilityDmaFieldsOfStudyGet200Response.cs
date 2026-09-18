@@ -27,10 +27,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The rollupIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RollupIds { get; set; }
+        public UntypedNode? RollupIds { get; set; }
 #nullable restore
 #else
-        public List<string> RollupIds { get; set; }
+        public UntypedNode RollupIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGet200Response"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGet200ResponseName>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGet200ResponseName.CreateFromDiscriminatorValue); } },
-                { "rollupIds", n => { RollupIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "rollupIds", n => { RollupIds = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGet200ResponseName>("name", Name);
-            writer.WriteCollectionOfPrimitiveValues<string>("rollupIds", RollupIds);
+            writer.WriteObjectValue<UntypedNode>("rollupIds", RollupIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

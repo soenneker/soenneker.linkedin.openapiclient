@@ -21,7 +21,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.Ite
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAssetUrnItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-content/v2/learningAssets/{assetUrn}{?expandDepth*,includeRetired*,targetLocale%2Ecountry*,targetLocale%2Elanguage*}", pathParameters)
+        public WithAssetUrnItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-content/v2/learningAssets/{assetUrn}", pathParameters)
         {
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.Ite
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAssetUrnItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-content/v2/learningAssets/{assetUrn}{?expandDepth*,includeRetired*,targetLocale%2Ecountry*,targetLocale%2Elanguage*}", rawUrl)
+        public WithAssetUrnItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-content/v2/learningAssets/{assetUrn}", rawUrl)
         {
         }
         /// <summary>
@@ -40,11 +40,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.Item.WithAssetUrnItemRequestBuilder.WithAssetUrnItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<string?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.Item.WithAssetUrnItemRequestBuilder.WithAssetUrnItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<string> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -57,11 +57,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.Item.WithAssetUrnItemRequestBuilder.WithAssetUrnItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.Item.WithAssetUrnItemRequestBuilder.WithAssetUrnItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,39 +77,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.Ite
         public global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.Item.WithAssetUrnItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.Item.WithAssetUrnItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// To retrieve an individual learning asset, given an URN, issue a GET request to the following endpoint:GET https://api.linkedin.com/v2/learningAssets/{URN}The URN types supported by this endpoint are &quot;urn:li:lyndaCourse&quot;, &quot;urn:li:lyndaChapter&quot;, and &quot;urn:li:lyndaVideo&quot;.Documentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/retrieve-an-individual-learning-object#learningassets-get*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithAssetUrnItemRequestBuilderGetQueryParameters 
-        {
-            /// <summary>The number of levels in the learning asset hierarchy to include asset details. Default is 1. </summary>
-            [QueryParameter("expandDepth")]
-            public int? ExpandDepth { get; set; }
-            /// <summary>Whether to include retired learning assets. The value of this parameter should be true or false.</summary>
-            [QueryParameter("includeRetired")]
-            public bool? IncludeRetired { get; set; }
-            /// <summary>The locale country the API will use to try to localize the learning asset. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales &quot;de_DE&quot;, &quot;en_US&quot;, &quot;es_ES&quot;, &quot;fr_FR&quot;, and &quot;ja_JP&quot;. </summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("targetLocale%2Ecountry")]
-            public string? TargetLocaleCountry { get; set; }
-#nullable restore
-#else
-            [QueryParameter("targetLocale%2Ecountry")]
-            public string TargetLocaleCountry { get; set; }
-#endif
-            /// <summary>The locale language the API will use to try to localize the learning asset. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales &quot;de_DE&quot;, &quot;en_US&quot;, &quot;es_ES&quot;, &quot;fr_FR&quot;, and &quot;ja_JP&quot;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("targetLocale%2Elanguage")]
-            public string? TargetLocaleLanguage { get; set; }
-#nullable restore
-#else
-            [QueryParameter("targetLocale%2Elanguage")]
-            public string TargetLocaleLanguage { get; set; }
-#endif
         }
     }
 }

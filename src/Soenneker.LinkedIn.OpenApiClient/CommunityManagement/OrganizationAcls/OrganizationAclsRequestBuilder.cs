@@ -21,7 +21,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationAcls
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationAclsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/community-management/organizationAcls{?organization*,q*}", pathParameters)
+        public OrganizationAclsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/community-management/organizationAcls{?organization*,q*,role*,state*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,11 +29,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationAcls
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationAclsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/community-management/organizationAcls{?organization*,q*}", rawUrl)
+        public OrganizationAclsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/community-management/organizationAcls{?organization*,q*,role*,state*}", rawUrl)
         {
         }
         /// <summary>
-        /// Find Organization Access Control
+        /// Find a Member&apos;s Organization Access Control
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationAcls
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Find Organization Access Control
+        /// Find a Member&apos;s Organization Access Control
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,7 +78,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationAcls
             return new global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationAcls.OrganizationAclsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Find Organization Access Control
+        /// Find a Member&apos;s Organization Access Control
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrganizationAclsRequestBuilderGetQueryParameters 
@@ -107,6 +107,32 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationAcls
             #pragma warning disable CS1591
             [QueryParameter("q")]
             public string Q { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("role")]
+            public string? Role { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("role")]
+            public string Role { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("state")]
+            public string? State { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("state")]
+            public string State { get; set; }
             #pragma warning restore CS1591
 #endif
         }

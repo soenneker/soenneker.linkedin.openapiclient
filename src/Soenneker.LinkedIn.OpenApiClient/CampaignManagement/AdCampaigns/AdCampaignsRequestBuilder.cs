@@ -34,7 +34,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdCampaigns
         {
         }
         /// <summary>
-        /// 6. Create a Campaign for the Document Ad
+        /// View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?tabs=http&amp;view=li-lms-unversioned#create-a-campaign) to understand more on creating a Single Image Sponsored Content Campaign.This API example creates a Sponsored Content Campaign to be used in the next step.View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?tabs=http&amp;view=li-lms-unversioned#create-a-direct-sponsored-content-share) to understand more on creating a Sponsored Content Ad Creative.This API example creates a Sponsored Content Ad Creative referencing the previously created image dark share in step 5. This Creative will be created under the Campaign created in the previous step.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -42,11 +42,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdCampaigns
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation6CreateACampaignForTheDocumentAdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation6CreateACampaignForTheImageAdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation6CreateACampaignForTheDocumentAdRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation6CreateACampaignForTheImageAdRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -54,18 +54,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdCampaigns
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// 6. Create a Campaign for the Document Ad
+        /// View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?tabs=http&amp;view=li-lms-unversioned#create-a-campaign) to understand more on creating a Single Image Sponsored Content Campaign.This API example creates a Sponsored Content Campaign to be used in the next step.View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?tabs=http&amp;view=li-lms-unversioned#create-a-direct-sponsored-content-share) to understand more on creating a Sponsored Content Ad Creative.This API example creates a Sponsored Content Ad Creative referencing the previously created image dark share in step 5. This Creative will be created under the Campaign created in the previous step.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation6CreateACampaignForTheDocumentAdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation6CreateACampaignForTheImageAdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation6CreateACampaignForTheDocumentAdRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation6CreateACampaignForTheImageAdRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

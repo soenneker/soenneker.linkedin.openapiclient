@@ -35,7 +35,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationBrand
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationBrandsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/community-management/organizationBrands{?ids*}", pathParameters)
+        public OrganizationBrandsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/community-management/organizationBrands{?ids*,q*,vanityName*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,29 +43,29 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationBrand
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationBrandsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/community-management/organizationBrands{?ids*}", rawUrl)
+        public OrganizationBrandsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/community-management/organizationBrands{?ids*,q*,vanityName*}", rawUrl)
         {
         }
         /// <summary>
-        /// Batch GET on Administered Organization Brands
+        /// Find Organization Brand by Vanity Name
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnAdministeredOrganizationBrands200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnAdministeredOrganizationBrands200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationBrands.OrganizationBrandsRequestBuilder.OrganizationBrandsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationBrands.OrganizationBrandsRequestBuilder.OrganizationBrandsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnAdministeredOrganizationBrands200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationBrands.OrganizationBrandsRequestBuilder.OrganizationBrandsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationBrands.OrganizationBrandsRequestBuilder.OrganizationBrandsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnAdministeredOrganizationBrands200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnAdministeredOrganizationBrands200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Batch GET on Administered Organization Brands
+        /// Find Organization Brand by Vanity Name
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationBrand
             return new global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationBrands.OrganizationBrandsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Batch GET on Administered Organization Brands
+        /// Find Organization Brand by Vanity Name
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrganizationBrandsRequestBuilderGetQueryParameters 
@@ -109,6 +109,32 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationBrand
             #pragma warning disable CS1591
             [QueryParameter("ids")]
             public string Ids { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("q")]
+            public string? Q { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("q")]
+            public string Q { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("vanityName")]
+            public string? VanityName { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("vanityName")]
+            public string VanityName { get; set; }
             #pragma warning restore CS1591
 #endif
         }

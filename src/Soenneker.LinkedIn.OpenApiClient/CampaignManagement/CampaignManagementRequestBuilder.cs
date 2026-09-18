@@ -130,7 +130,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement
         {
         }
         /// <summary>
-        /// 3. Upload the Document file (select a document file in the Body for postman to use)
+        /// #### Select an image file on your local machine in the Body for postman to use in this example call.View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#upload-the-image) to understand more on this API.This API example uses `upLoadUrl` URL from the previous response (step 1) for an actual upload of an Image File.View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#upload-the-image) to understand more on this API.This API example uses the `upLoadUrl` URL from the previous Step&apos;s response for an actual upload of an Image File.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -148,7 +148,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// 3. Upload the Document file (select a document file in the Body for postman to use)
+        /// #### Select an image file on your local machine in the Body for postman to use in this example call.View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#upload-the-image) to understand more on this API.This API example uses `upLoadUrl` URL from the previous response (step 1) for an actual upload of an Image File.View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#upload-the-image) to understand more on this API.This API example uses the `upLoadUrl` URL from the previous Step&apos;s response for an actual upload of an Image File.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

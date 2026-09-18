@@ -34,25 +34,25 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaIngested
         {
         }
         /// <summary>
-        /// dmaIngestedContentSummaries BATCH_GET 200 (empty list)
+        /// dmaIngestedContentSummaries BATCH_GET 200 (2 opt-out / 1 opt-in articleUrns)
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaIngestedContentSummariesBatchget200EmptyList200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaIngestedContentSummariesBatchget2002OptOut1OptInArticleUrns200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaIngestedContentSummariesBatchget200EmptyList200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaIngestedContentSummaries.DmaIngestedContentSummariesRequestBuilder.DmaIngestedContentSummariesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaIngestedContentSummariesBatchget2002OptOut1OptInArticleUrns200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaIngestedContentSummaries.DmaIngestedContentSummariesRequestBuilder.DmaIngestedContentSummariesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaIngestedContentSummariesBatchget200EmptyList200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaIngestedContentSummaries.DmaIngestedContentSummariesRequestBuilder.DmaIngestedContentSummariesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaIngestedContentSummariesBatchget2002OptOut1OptInArticleUrns200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaIngestedContentSummaries.DmaIngestedContentSummariesRequestBuilder.DmaIngestedContentSummariesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaIngestedContentSummariesBatchget200EmptyList200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaIngestedContentSummariesBatchget200EmptyList200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaIngestedContentSummariesBatchget2002OptOut1OptInArticleUrns200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaIngestedContentSummariesBatchget2002OptOut1OptInArticleUrns200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// dmaIngestedContentSummaries BATCH_GET 200 (empty list)
+        /// dmaIngestedContentSummaries BATCH_GET 200 (2 opt-out / 1 opt-in articleUrns)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaIngested
             return new global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaIngestedContentSummaries.DmaIngestedContentSummariesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// dmaIngestedContentSummaries BATCH_GET 200 (empty list)
+        /// dmaIngestedContentSummaries BATCH_GET 200 (2 opt-out / 1 opt-in articleUrns)
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DmaIngestedContentSummariesRequestBuilderGetQueryParameters 

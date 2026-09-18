@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganiza
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DmaOrganizationalPageContentAnalyticsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaOrganizationalPageContentAnalytics{?metricType*,q*,sourcePostEntity*}", pathParameters)
+        public DmaOrganizationalPageContentAnalyticsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaOrganizationalPageContentAnalytics{?metricType*,metricTypes*,q*,sourceEntity*,sourcePostEntity*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,29 +30,29 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganiza
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DmaOrganizationalPageContentAnalyticsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaOrganizationalPageContentAnalytics{?metricType*,q*,sourcePostEntity*}", rawUrl)
+        public DmaOrganizationalPageContentAnalyticsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaOrganizationalPageContentAnalytics{?metricType*,metricTypes*,q*,sourceEntity*,sourcePostEntity*}", rawUrl)
         {
         }
         /// <summary>
-        /// dmaOrganizationalPageContentAnalytics
+        /// dmaOrganizationalPageContentAnalytics - sourceEntity: organizationalPageUrn
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageContentAnalytics2200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageContentAnalyticsSourceEntityOrganizationalPageUrn200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageContentAnalytics2200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationalPageContentAnalytics.DmaOrganizationalPageContentAnalyticsRequestBuilder.DmaOrganizationalPageContentAnalyticsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageContentAnalyticsSourceEntityOrganizationalPageUrn200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationalPageContentAnalytics.DmaOrganizationalPageContentAnalyticsRequestBuilder.DmaOrganizationalPageContentAnalyticsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageContentAnalytics2200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationalPageContentAnalytics.DmaOrganizationalPageContentAnalyticsRequestBuilder.DmaOrganizationalPageContentAnalyticsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageContentAnalyticsSourceEntityOrganizationalPageUrn200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationalPageContentAnalytics.DmaOrganizationalPageContentAnalyticsRequestBuilder.DmaOrganizationalPageContentAnalyticsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageContentAnalytics2200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageContentAnalytics2200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageContentAnalyticsSourceEntityOrganizationalPageUrn200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageContentAnalyticsSourceEntityOrganizationalPageUrn200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// dmaOrganizationalPageContentAnalytics
+        /// dmaOrganizationalPageContentAnalytics - sourceEntity: organizationalPageUrn
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganiza
             return new global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationalPageContentAnalytics.DmaOrganizationalPageContentAnalyticsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// dmaOrganizationalPageContentAnalytics
+        /// dmaOrganizationalPageContentAnalytics - sourceEntity: organizationalPageUrn
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DmaOrganizationalPageContentAnalyticsRequestBuilderGetQueryParameters 
@@ -101,6 +101,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganiza
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
+            [QueryParameter("metricTypes")]
+            public string? MetricTypes { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("metricTypes")]
+            public string MetricTypes { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("q")]
             public string? Q { get; set; }
             #pragma warning restore CS1591
@@ -109,6 +122,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganiza
             #pragma warning disable CS1591
             [QueryParameter("q")]
             public string Q { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("sourceEntity")]
+            public string? SourceEntity { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("sourceEntity")]
+            public string SourceEntity { get; set; }
             #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

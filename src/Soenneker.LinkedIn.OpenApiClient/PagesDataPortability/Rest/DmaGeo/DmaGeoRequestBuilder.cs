@@ -28,7 +28,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaGeo
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DmaGeoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaGeo{?count*,ids*,locale*,start*}", pathParameters)
+        public DmaGeoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaGeo{?ids*,locale*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaGeo
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DmaGeoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaGeo{?count*,ids*,locale*,start*}", rawUrl)
+        public DmaGeoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaGeo{?ids*,locale*}", rawUrl)
         {
         }
         /// <summary>
@@ -91,10 +91,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaGeo
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DmaGeoRequestBuilderGetQueryParameters 
         {
-            #pragma warning disable CS1591
-            [QueryParameter("count")]
-            public int? Count { get; set; }
-            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -121,10 +117,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaGeo
             public string Locale { get; set; }
             #pragma warning restore CS1591
 #endif
-            #pragma warning disable CS1591
-            [QueryParameter("start")]
-            public int? Start { get; set; }
-            #pragma warning restore CS1591
         }
     }
 }

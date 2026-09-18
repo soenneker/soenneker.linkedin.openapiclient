@@ -39,7 +39,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200ResponseTargetingFilter TargetingFilter { get; set; }
 #endif
         /// <summary>The versionTag property</summary>
-        public int? VersionTag { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VersionTag { get; set; }
+#nullable restore
+#else
+        public string VersionTag { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200Response"/> and sets the default values.
         /// </summary>
@@ -71,7 +77,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "lastModified", n => { LastModified = n.GetIntValue(); } },
                 { "seeds", n => { Seeds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "targetingFilter", n => { TargetingFilter = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200ResponseTargetingFilter>(global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200ResponseTargetingFilter.CreateFromDiscriminatorValue); } },
-                { "versionTag", n => { VersionTag = n.GetIntValue(); } },
+                { "versionTag", n => { VersionTag = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -87,7 +93,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteIntValue("lastModified", LastModified);
             writer.WriteCollectionOfPrimitiveValues<string>("seeds", Seeds);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200ResponseTargetingFilter>("targetingFilter", TargetingFilter);
-            writer.WriteIntValue("versionTag", VersionTag);
+            writer.WriteStringValue("versionTag", VersionTag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

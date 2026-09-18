@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaEventRol
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DmaEventRoleAssignmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaEventRoleAssignments{?event*,q*,role*}", pathParameters)
+        public DmaEventRoleAssignmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaEventRoleAssignments{?event*,q*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaEventRol
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DmaEventRoleAssignmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaEventRoleAssignments{?event*,q*,role*}", rawUrl)
+        public DmaEventRoleAssignmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaEventRoleAssignments{?event*,q*}", rawUrl)
         {
         }
         /// <summary>
@@ -109,19 +109,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaEventRol
             #pragma warning disable CS1591
             [QueryParameter("q")]
             public string Q { get; set; }
-            #pragma warning restore CS1591
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            #pragma warning disable CS1591
-            [QueryParameter("role")]
-            public string? Role { get; set; }
-            #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("role")]
-            public string Role { get; set; }
             #pragma warning restore CS1591
 #endif
         }

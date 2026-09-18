@@ -5,14 +5,12 @@
     "description": "We are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.\n\nLinkedIn's Provisioning APIs allow partners to create and configure developer applications on behalf of their customers. This is an initial step to manage and enable customer integrations. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api) for more information.  \nEnsure that you select Partner Application Management environment while executing use cases.",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "https://api.linkedin.com"
-    }
-  ],
   "paths": {
     "/v2/provisionedApplications": {
       "post": {
+        "tags": [
+          "Use Cases / Provision Customer (Child) Applications"
+        ],
         "summary": "Provision Child Application",
         "description": "Use this API Endpoint when partner wants to create a child application for any of mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#create-application) for more information.",
         "operationId": "ProvisionChildApplication",
@@ -20,13 +18,6 @@
           "content": {
             "application/json": {
               "schema": {
-                "required": [
-                  "description",
-                  "name",
-                  "uniqueForeignId",
-                  "oauth2AuthorizedCallbackUrls",
-                  "validJsSdkDomains"
-                ],
                 "type": "object",
                 "properties": {
                   "description": {
@@ -51,18 +42,107 @@
                     }
                   }
                 }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "description": "TEST APP FOR {{customer_name}}",
+                    "name": "{{customer_name}}",
+                    "uniqueForeignId": "{{unique_foreign_id}}",
+                    "oauth2AuthorizedCallbackUrls": [
+                      "https://app.getpostman.com/oauth2/callback"
+                    ],
+                    "validJsSdkDomains": [
+                      "http://localhost:5000"
+                    ]
+                  }
+                }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Provision Child Application",
+            "id": "919524b6-595f-4574-b57b-e382d296eb77",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "name": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"description\": \"TEST APP FOR {{customer_name}}\",\n    \"name\": \"{{customer_name}}\",\n    \"uniqueForeignId\": \"{{unique_foreign_id}}\",\n    \"oauth2AuthorizedCallbackUrls\": [\"https://app.getpostman.com/oauth2/callback\"],\n    \"validJsSdkDomains\": [\"http://localhost:5000\"]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/provisionedApplications",
+              "description": "Use this API Endpoint when partner wants to create a child application for any of mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#create-application) for more information."
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Provision Customer (Child) Applications"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "clientId": "{{parent_app_client_id}}",
+                "clientSecret": "{{parent_app_client_secret}}",
+                "grant_type": "client_credentials",
+                "addTokenTo": "header"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "ca36c741-3734-4f62-80af-5f512a83c55e",
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.collectionVariables.set(\"customer_application_urn\", jsonData.key);"
+                  ],
+                  "type": "text/javascript"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       },
       "get": {
+        "tags": [
+          "Use Cases / Provision Customer (Child) Applications"
+        ],
         "summary": "Get Child Application",
         "description": "Use this API Endpoint when partner wants to fetch a child application for any of our mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#get-application) for more information.",
         "operationId": "GetChildApplication",
@@ -72,6 +152,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "credentialsByUniqueForeignId"
+              }
             }
           },
           {
@@ -79,42 +164,122 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{unique_foreign_id}}"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get Child Application",
+            "id": "9fc56364-b808-4553-9704-9dc26ac5dd95",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/provisionedApplications?q=credentialsByUniqueForeignId&uniqueForeignId={{unique_foreign_id}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "provisionedApplications"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "credentialsByUniqueForeignId"
+                  },
+                  {
+                    "key": "uniqueForeignId",
+                    "value": "{{unique_foreign_id}}"
+                  }
+                ]
+              },
+              "description": "Use this API Endpoint when partner wants to fetch a child application for any of our mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#get-application) for more information."
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Provision Customer (Child) Applications"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "clientId": "{{parent_app_client_id}}",
+                "clientSecret": "{{parent_app_client_secret}}",
+                "grant_type": "client_credentials",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
-    "/v2/provisionedApplications/%7Bcustomer_application_urn%7D": {
+    "/v2/provisionedApplications/{customer_application_urn}": {
       "post": {
-        "summary": "Update OAuth2.0 Authorized CallBack URL for Child Application",
-        "description": "Use this API Endpoint when partner wants to update OAuth2.0 Authorized CallBack URL for child application for any of mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#update-application) for more information.",
-        "operationId": "UpdateOAuth20AuthorizedCallBackURLForChildApplication",
+        "tags": [
+          "Use Cases / Provision Customer (Child) Applications"
+        ],
+        "summary": "Update JavaScript SDK Domain for Child Application",
+        "description": "Use this API Endpoint when partner wants to update JavaScript SDK domain for child application for any of mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#update-application) for more information.\n\nUse this API Endpoint when partner wants to update OAuth2.0 Authorized CallBack URL for child application for any of mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#update-application) for more information.",
+        "operationId": "UpdateJavaScriptSDKDomainForChildApplication",
+        "parameters": [
+          {
+            "name": "customer_application_urn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "required": [
-                  "patch"
-                ],
                 "type": "object",
                 "properties": {
                   "patch": {
-                    "required": [
-                      "$set"
-                    ],
                     "type": "object",
                     "properties": {
                       "$set": {
-                        "required": [
-                          "oauth2AuthorizedCallbackUrls"
-                        ],
                         "type": "object",
                         "properties": {
+                          "validJsSdkDomains": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
                           "oauth2AuthorizedCallbackUrls": {
                             "type": "array",
                             "items": {
@@ -126,18 +291,206 @@
                     }
                   }
                 }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "patch": {
+                      "$set": {
+                        "validJsSdkDomains": [
+                          "http://localhost:8000",
+                          "http://localhost:5000"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "example1_2": {
+                  "summary": "example1",
+                  "value": {
+                    "patch": {
+                      "$set": {
+                        "oauth2AuthorizedCallbackUrls": [
+                          "https://app.getpostman.com/oauth2/callback"
+                        ]
+                      }
+                    }
+                  }
+                }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
+          }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Update JavaScript SDK Domain for Child Application",
+            "id": "46a86d71-5f74-4142-ad2f-14b96b85d952",
+            "request": {
+              "method": "POST",
+              "header": [ ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"patch\": {\n        \"$set\": {\n            \"validJsSdkDomains\": [\n                \"http://localhost:8000\",\n                \"http://localhost:5000\"\n            ]\n        }\n    }\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/provisionedApplications/{{customer_application_urn}}",
+              "description": "Use this API Endpoint when partner wants to update JavaScript SDK domain for child application for any of mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#update-application) for more information."
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Provision Customer (Child) Applications"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "clientId": "{{parent_app_client_id}}",
+                "clientSecret": "{{parent_app_client_secret}}",
+                "grant_type": "client_credentials",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Update OAuth2.0 Authorized CallBack URL for Child Application",
+            "id": "b9296527-1110-4180-be4e-297541c0ded2",
+            "request": {
+              "method": "POST",
+              "header": [ ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"patch\": {\n        \"$set\": {\n            \"oauth2AuthorizedCallbackUrls\": [\n                \"https://app.getpostman.com/oauth2/callback\"\n            ]\n        }\n    }\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/provisionedApplications/{{customer_application_urn}}",
+              "description": "Use this API Endpoint when partner wants to update OAuth2.0 Authorized CallBack URL for child application for any of mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#update-application) for more information."
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Provision Customer (Child) Applications"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "clientId": "{{parent_app_client_id}}",
+                "clientSecret": "{{parent_app_client_secret}}",
+                "grant_type": "client_credentials",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "oauth2Auth": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+            "scopes": { }
           }
         }
       }
     }
   },
-  "components": { }
+  "tags": [
+    {
+      "name": "Use Cases / Provision Customer (Child) Applications",
+      "description": "With the help of Partner Application, partners have to provision child applications for mutual customers. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api) for more information"
+    }
+  ],
+  "x-postman-warnings": [
+    "collection: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Provision Customer (Child) Applications: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Provision Customer (Child) Applications / Provision Child Application: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Provision Customer (Child) Applications / Provision Child Application: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Provision Child Application: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Provision Customer (Child) Applications / Update JavaScript SDK Domain for Child Application: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Update JavaScript SDK Domain for Child Application: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Provision Customer (Child) Applications / Update OAuth2.0 Authorized CallBack URL for Child Application: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Update OAuth2.0 Authorized CallBack URL for Child Application: No saved responses: status codes and response schemas cannot be inferred.",
+    "Update JavaScript SDK Domain for Child Application: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+    "Use Cases / Provision Customer (Child) Applications / Get Child Application: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Get Child Application: No saved responses: status codes and response schemas cannot be inferred."
+  ],
+  "x-postman-events": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "c734e21b-fb40-4936-8503-e41e33975a1a",
+        "type": "text/javascript",
+        "requests": { },
+        "exec": [
+          "pm.request.headers.add({",
+          "  key: 'User-Agent',",
+          "  value: 'parentappmgmt-linkedin-postman'",
+          "});"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "4c33d830-41a3-4eb0-b2da-b543356d14ba",
+        "type": "text/javascript",
+        "requests": { },
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "x-postman-variables": [
+    {
+      "key": "customer_application_urn",
+      "value": ""
+    },
+    {
+      "key": "parent_app_client_id",
+      "value": "787tss74is1avr"
+    },
+    {
+      "key": "parent_app_client_secret",
+      "value": "WPL_AP1.ZzKdVpkxEPoRzR5q.velSFg=="
+    }
+  ]
 }

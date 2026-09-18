@@ -16,6 +16,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The lastModifiedAt property</summary>
         public int? LastModifiedAt { get; set; }
+        /// <summary>The subscriber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Subscriber { get; set; }
+#nullable restore
+#else
+        public string Subscriber { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSeriesSubscribersFinder200ResponseElementsItem"/> and sets the default values.
         /// </summary>
@@ -42,6 +50,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "lastModifiedAt", n => { LastModifiedAt = n.GetIntValue(); } },
+                { "subscriber", n => { Subscriber = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,6 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("lastModifiedAt", LastModifiedAt);
+            writer.WriteStringValue("subscriber", Subscriber);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

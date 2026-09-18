@@ -3,7 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.LinkedIn.OpenApiClient.ComplianceEvents.V2.MemberComplianceAuthorizations.DeveloperApplicationUrnLiDeveloperApplication7Bdeveloper_application_id7DMemberUrnLiPerson7Bperson_id7D;
+using Soenneker.LinkedIn.OpenApiClient.ComplianceEvents.V2.MemberComplianceAuthorizations.DeveloperApplicationUrnLiDeveloperApplicationWithDeveloperApplicationIdMemberUrnLiPersonWithPersonId;
 using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -18,11 +18,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.ComplianceEvents.V2.MemberComplianceA
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MemberComplianceAuthorizationsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The developerApplicationUrnLiDeveloperApplication7Bdeveloper_application_id7DMemberUrnLiPerson7Bperson_id7D property</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.ComplianceEvents.V2.MemberComplianceAuthorizations.DeveloperApplicationUrnLiDeveloperApplication7Bdeveloper_application_id7DMemberUrnLiPerson7Bperson_id7D.DeveloperApplicationUrnLiDeveloperApplication7Bdeveloper_application_id7DMemberUrnLiPerson7Bperson_id7DRequestBuilder DeveloperApplicationUrnLiDeveloperApplication7Bdeveloper_application_id7DMemberUrnLiPerson7Bperson_id7D
-        {
-            get => new global::Soenneker.LinkedIn.OpenApiClient.ComplianceEvents.V2.MemberComplianceAuthorizations.DeveloperApplicationUrnLiDeveloperApplication7Bdeveloper_application_id7DMemberUrnLiPerson7Bperson_id7D.DeveloperApplicationUrnLiDeveloperApplication7Bdeveloper_application_id7DMemberUrnLiPerson7Bperson_id7DRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.ComplianceEvents.V2.MemberComplianceAuthorizations.MemberComplianceAuthorizationsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -38,6 +33,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.ComplianceEvents.V2.MemberComplianceA
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public MemberComplianceAuthorizationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance-events/v2/memberComplianceAuthorizations{?q*}", rawUrl)
         {
+        }
+        /// <summary>
+        /// Builds and executes requests for operations under \compliance-events\v2\memberComplianceAuthorizations\developerApplication=urn:li:developerApplication:{developerApplicationId}&amp;member=urn:li:person:{personId}
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.ComplianceEvents.V2.MemberComplianceAuthorizations.DeveloperApplicationUrnLiDeveloperApplicationWithDeveloperApplicationIdMemberUrnLiPersonWithPersonId.DeveloperApplicationUrnLiDeveloperApplicationWithDeveloperApplicationIdMemberUrnLiPersonWithPersonIdRequestBuilder"/></returns>
+        /// <param name="developerApplicationId">The path parameter: developerApplicationId</param>
+        /// <param name="personId">The path parameter: personId</param>
+        public global::Soenneker.LinkedIn.OpenApiClient.ComplianceEvents.V2.MemberComplianceAuthorizations.DeveloperApplicationUrnLiDeveloperApplicationWithDeveloperApplicationIdMemberUrnLiPersonWithPersonId.DeveloperApplicationUrnLiDeveloperApplicationWithDeveloperApplicationIdMemberUrnLiPersonWithPersonIdRequestBuilder DeveloperApplicationUrnLiDeveloperApplicationWithDeveloperApplicationIdMemberUrnLiPersonWithPersonId(string developerApplicationId, string personId)
+        {
+            if(string.IsNullOrEmpty(developerApplicationId)) throw new ArgumentNullException(nameof(developerApplicationId));
+            if(string.IsNullOrEmpty(personId)) throw new ArgumentNullException(nameof(personId));
+            return new global::Soenneker.LinkedIn.OpenApiClient.ComplianceEvents.V2.MemberComplianceAuthorizations.DeveloperApplicationUrnLiDeveloperApplicationWithDeveloperApplicationIdMemberUrnLiPersonWithPersonId.DeveloperApplicationUrnLiDeveloperApplicationWithDeveloperApplicationIdMemberUrnLiPersonWithPersonIdRequestBuilder(PathParameters, RequestAdapter, developerApplicationId, personId);
         }
         /// <summary>
         /// Check a member&apos;s regulation status

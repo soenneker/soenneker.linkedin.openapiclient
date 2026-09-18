@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.Item;
+using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -34,7 +35,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LearningAssetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-content/v2/learningAssets{?assetType*,count*,expandDepth*,includeRetired*,q*,sourceLocale%2Ecountry*,sourceLocale%2Elanguage*,start*}", pathParameters)
+        public LearningAssetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-content/v2/learningAssets{?assetFilteringCriteria%2EassetTypes%5B0%5D*,assetFilteringCriteria%2ElicensedOnly*,assetType*,count*,expandDepth*,includeRetired*,q*,sourceLocale%2Ecountry*,sourceLocale%2Elanguage*,start*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,29 +43,29 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LearningAssetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-content/v2/learningAssets{?assetType*,count*,expandDepth*,includeRetired*,q*,sourceLocale%2Ecountry*,sourceLocale%2Elanguage*,start*}", rawUrl)
+        public LearningAssetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-content/v2/learningAssets{?assetFilteringCriteria%2EassetTypes%5B0%5D*,assetFilteringCriteria%2ElicensedOnly*,assetType*,count*,expandDepth*,includeRetired*,q*,sourceLocale%2Ecountry*,sourceLocale%2Elanguage*,start*}", rawUrl)
         {
         }
         /// <summary>
-        /// To retrieve a page of learning assets, given some criteria, issue a GET call to the following endpoint:GET https://api.linkedin.com/v2/learningAssets?q=localeAndTypeDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api#learningassets-localeandtype-finder*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*
+        /// This finder can be used to retrieve a page of learning assets, given some set of criteria. Using this endpoint you can:Search for learning assets given some search and relevance criteria.  Retrieve a list of learning assets released, retired or modified since a given date.  Retrieve a list of learning assets the requester is licensed to access.GET [https://api.linkedin.com/v2/learningAssets?q=criteria](https://api.linkedin.com/v2/learningAssets?q=criteria)Documentation: [https://docs.microsoft.com/en-us/linkedin/learning/reference/learningassets#criteria](https://docs.microsoft.com/en-us/linkedin/learning/reference/learningassets#criteria)*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*To retrieve a page of learning assets, given some criteria, issue a GET call to the following endpoint:GET https://api.linkedin.com/v2/learningAssets?q=localeAndTypeDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api#learningassets-localeandtype-finder*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.LearningAssetsRequestBuilder.LearningAssetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.LearningAssetsRequestBuilder.LearningAssetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.LearningAssetsRequestBuilder.LearningAssetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.LearningAssetsRequestBuilder.LearningAssetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To retrieve a page of learning assets, given some criteria, issue a GET call to the following endpoint:GET https://api.linkedin.com/v2/learningAssets?q=localeAndTypeDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api#learningassets-localeandtype-finder*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*
+        /// This finder can be used to retrieve a page of learning assets, given some set of criteria. Using this endpoint you can:Search for learning assets given some search and relevance criteria.  Retrieve a list of learning assets released, retired or modified since a given date.  Retrieve a list of learning assets the requester is licensed to access.GET [https://api.linkedin.com/v2/learningAssets?q=criteria](https://api.linkedin.com/v2/learningAssets?q=criteria)Documentation: [https://docs.microsoft.com/en-us/linkedin/learning/reference/learningassets#criteria](https://docs.microsoft.com/en-us/linkedin/learning/reference/learningassets#criteria)*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*To retrieve a page of learning assets, given some criteria, issue a GET call to the following endpoint:GET https://api.linkedin.com/v2/learningAssets?q=localeAndTypeDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api#learningassets-localeandtype-finder*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,7 +80,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "text/plain;q=0.9");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -92,11 +93,31 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets
             return new global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets.LearningAssetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To retrieve a page of learning assets, given some criteria, issue a GET call to the following endpoint:GET https://api.linkedin.com/v2/learningAssets?q=localeAndTypeDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api#learningassets-localeandtype-finder*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*
+        /// This finder can be used to retrieve a page of learning assets, given some set of criteria. Using this endpoint you can:Search for learning assets given some search and relevance criteria.  Retrieve a list of learning assets released, retired or modified since a given date.  Retrieve a list of learning assets the requester is licensed to access.GET [https://api.linkedin.com/v2/learningAssets?q=criteria](https://api.linkedin.com/v2/learningAssets?q=criteria)Documentation: [https://docs.microsoft.com/en-us/linkedin/learning/reference/learningassets#criteria](https://docs.microsoft.com/en-us/linkedin/learning/reference/learningassets#criteria)*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*To retrieve a page of learning assets, given some criteria, issue a GET call to the following endpoint:GET https://api.linkedin.com/v2/learningAssets?q=localeAndTypeDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api#learningassets-localeandtype-finder*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LearningAssetsRequestBuilderGetQueryParameters 
         {
+            /// <summary>An array of types of learning assets to search. The search results will include only learning assets of these types. The values of this parameter should be COURSE, LEARNING_PATH, or VIDEO.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("assetFilteringCriteria%2EassetTypes%5B0%5D")]
+            public string? AssetFilteringCriteriaAssetTypes0 { get; set; }
+#nullable restore
+#else
+            [QueryParameter("assetFilteringCriteria%2EassetTypes%5B0%5D")]
+            public string AssetFilteringCriteriaAssetTypes0 { get; set; }
+#endif
+            /// <summary>Boolean that indicates results should be filtered to only include learningAssets the caller is licensed to access. If this parameter is set to true and assetFilteringCriteria.locales parameter is omitted the locale values are implied by the callers licensed access.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("assetFilteringCriteria%2ElicensedOnly")]
+            public string? AssetFilteringCriteriaLicensedOnly { get; set; }
+#nullable restore
+#else
+            [QueryParameter("assetFilteringCriteria%2ElicensedOnly")]
+            public string AssetFilteringCriteriaLicensedOnly { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -111,15 +132,36 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets
             #pragma warning restore CS1591
 #endif
             /// <summary>The number of learning assets to include in the page. Please choose a reasonable value if overriding the default; the API will return an error if the requested page exceeds the 2 MB response size limit of the framework.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("count")]
-            public int? Count { get; set; }
+            public string? Count { get; set; }
+#nullable restore
+#else
+            [QueryParameter("count")]
+            public string Count { get; set; }
+#endif
             /// <summary>The number of levels in the learning asset hierarchy to include asset details. This parameter is optional; please see the Specifying the level of asset details section for an explanation with examples.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("expandDepth")]
-            public int? ExpandDepth { get; set; }
+            public string? ExpandDepth { get; set; }
+#nullable restore
+#else
+            [QueryParameter("expandDepth")]
+            public string ExpandDepth { get; set; }
+#endif
             /// <summary>Whether to include retired learning assets. The value of this parameter should be true or false. </summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("includeRetired")]
-            public bool? IncludeRetired { get; set; }
-            /// <summary>The value of this parameter should always be: localeAndType.</summary>
+            public string? IncludeRetired { get; set; }
+#nullable restore
+#else
+            [QueryParameter("includeRetired")]
+            public string IncludeRetired { get; set; }
+#endif
+            /// <summary>Value of this parameter should always be criteriaThe value of this parameter should always be: localeAndType.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("q")]
@@ -150,8 +192,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningAssets
             public string SourceLocaleLanguage { get; set; }
 #endif
             /// <summary>The start index of learning assets for the page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("start")]
-            public int? Start { get; set; }
+            public string? Start { get; set; }
+#nullable restore
+#else
+            [QueryParameter("start")]
+            public string Start { get; set; }
+#endif
         }
     }
 }

@@ -4,14 +4,12 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.LinkedIn.OpenApiClient.Models;
-using Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiContract7Bcontract_id7DIntegrationTypeCAS_PROFILETenantTypeRECRUITERDataProviderATS;
-using Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypeIN_ATS_INDICATORTenantTypeRECRUITERDataProviderATS;
-using Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATS;
-using Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypePROFILE_PLUGINTenantTypeRECRUITERDataProviderATS;
+using Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiContractWithContractIdIntegrationTypeCAS_PROFILETenantTypeRECRUITERDataProviderATS;
 using Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypeCRM_ONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATS;
 using Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypeIN_ATS_INDICATORTenantTypeRECRUITERDataProviderATS;
 using Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypeIN_CRM_INDICATORTenantTypeRECRUITERDataProviderATS;
 using Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATS;
+using Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypePROFILE_PLUGINTenantTypeRECRUITERDataProviderATS;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -25,32 +23,12 @@ namespace Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AtsIntegrationsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The integrationContextUrnLiContract7Bcontract_id7DIntegrationTypeCAS_PROFILETenantTypeRECRUITERDataProviderATS property</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiContract7Bcontract_id7DIntegrationTypeCAS_PROFILETenantTypeRECRUITERDataProviderATS.IntegrationContextUrnLiContract7Bcontract_id7DIntegrationTypeCAS_PROFILETenantTypeRECRUITERDataProviderATSRequestBuilder IntegrationContextUrnLiContract7Bcontract_id7DIntegrationTypeCAS_PROFILETenantTypeRECRUITERDataProviderATS
-        {
-            get => new global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiContract7Bcontract_id7DIntegrationTypeCAS_PROFILETenantTypeRECRUITERDataProviderATS.IntegrationContextUrnLiContract7Bcontract_id7DIntegrationTypeCAS_PROFILETenantTypeRECRUITERDataProviderATSRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The integrationContextUrnLiOrganization7Borg_id7DIntegrationTypeIN_ATS_INDICATORTenantTypeRECRUITERDataProviderATS property</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypeIN_ATS_INDICATORTenantTypeRECRUITERDataProviderATS.IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypeIN_ATS_INDICATORTenantTypeRECRUITERDataProviderATSRequestBuilder IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypeIN_ATS_INDICATORTenantTypeRECRUITERDataProviderATS
-        {
-            get => new global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypeIN_ATS_INDICATORTenantTypeRECRUITERDataProviderATS.IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypeIN_ATS_INDICATORTenantTypeRECRUITERDataProviderATSRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The integrationContextUrnLiOrganization7Borg_id7DIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATS property</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATS.IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATSRequestBuilder IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATS
-        {
-            get => new global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATS.IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATSRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The integrationContextUrnLiOrganization7Borg_id7DIntegrationTypePROFILE_PLUGINTenantTypeRECRUITERDataProviderATS property</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypePROFILE_PLUGINTenantTypeRECRUITERDataProviderATS.IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypePROFILE_PLUGINTenantTypeRECRUITERDataProviderATSRequestBuilder IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypePROFILE_PLUGINTenantTypeRECRUITERDataProviderATS
-        {
-            get => new global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypePROFILE_PLUGINTenantTypeRECRUITERDataProviderATS.IntegrationContextUrnLiOrganization7Borg_id7DIntegrationTypePROFILE_PLUGINTenantTypeRECRUITERDataProviderATSRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.AtsIntegrationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AtsIntegrationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/talent-crm-connect/v2/atsIntegrations{?ids%5B0%5D%2EdataProvider*,ids%5B0%5D%2EintegrationContext*,ids%5B0%5D%2EintegrationType*,ids%5B0%5D%2EtenantType*,q*,requestId*}", pathParameters)
+        public AtsIntegrationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/talent-crm-connect/v2/atsIntegrations{?ids%5B0%5D%2EdataProvider*,ids%5B0%5D%2EintegrationContext*,ids%5B0%5D%2EintegrationType*,ids%5B0%5D%2EtenantType*,ids%5B1%5D%2EdataProvider*,ids%5B1%5D%2EintegrationContext*,ids%5B1%5D%2EintegrationType*,ids%5B1%5D%2EtenantType*,ids%5B2%5D%2EdataProvider*,ids%5B2%5D%2EintegrationContext*,ids%5B2%5D%2EintegrationType*,ids%5B2%5D%2EtenantType*,ids%5B3%5D%2EdataProvider*,ids%5B3%5D%2EintegrationContext*,ids%5B3%5D%2EintegrationType*,ids%5B3%5D%2EtenantType*,q*,requestId*}", pathParameters)
         {
         }
         /// <summary>
@@ -58,7 +36,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AtsIntegrationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/talent-crm-connect/v2/atsIntegrations{?ids%5B0%5D%2EdataProvider*,ids%5B0%5D%2EintegrationContext*,ids%5B0%5D%2EintegrationType*,ids%5B0%5D%2EtenantType*,q*,requestId*}", rawUrl)
+        public AtsIntegrationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/talent-crm-connect/v2/atsIntegrations{?ids%5B0%5D%2EdataProvider*,ids%5B0%5D%2EintegrationContext*,ids%5B0%5D%2EintegrationType*,ids%5B0%5D%2EtenantType*,ids%5B1%5D%2EdataProvider*,ids%5B1%5D%2EintegrationContext*,ids%5B1%5D%2EintegrationType*,ids%5B1%5D%2EtenantType*,ids%5B2%5D%2EdataProvider*,ids%5B2%5D%2EintegrationContext*,ids%5B2%5D%2EintegrationType*,ids%5B2%5D%2EtenantType*,ids%5B3%5D%2EdataProvider*,ids%5B3%5D%2EintegrationContext*,ids%5B3%5D%2EintegrationType*,ids%5B3%5D%2EtenantType*,q*,requestId*}", rawUrl)
         {
         }
         /// <summary>
@@ -78,6 +56,16 @@ namespace Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Builds and executes requests for operations under \talent-crm-connect\v2\atsIntegrations\integrationContext=urn:li:contract:{contractId}&amp;integrationType=CAS_PROFILE&amp;tenantType=RECRUITER&amp;dataProvider=ATS
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiContractWithContractIdIntegrationTypeCAS_PROFILETenantTypeRECRUITERDataProviderATS.IntegrationContextUrnLiContractWithContractIdIntegrationTypeCAS_PROFILETenantTypeRECRUITERDataProviderATSRequestBuilder"/></returns>
+        /// <param name="contractId">The path parameter: contractId</param>
+        public global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiContractWithContractIdIntegrationTypeCAS_PROFILETenantTypeRECRUITERDataProviderATS.IntegrationContextUrnLiContractWithContractIdIntegrationTypeCAS_PROFILETenantTypeRECRUITERDataProviderATSRequestBuilder IntegrationContextUrnLiContractWithContractIdIntegrationTypeCAS_PROFILETenantTypeRECRUITERDataProviderATS(string contractId)
+        {
+            if(string.IsNullOrEmpty(contractId)) throw new ArgumentNullException(nameof(contractId));
+            return new global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiContractWithContractIdIntegrationTypeCAS_PROFILETenantTypeRECRUITERDataProviderATS.IntegrationContextUrnLiContractWithContractIdIntegrationTypeCAS_PROFILETenantTypeRECRUITERDataProviderATSRequestBuilder(PathParameters, RequestAdapter, contractId);
         }
         /// <summary>
         /// Builds and executes requests for operations under \talent-crm-connect\v2\atsIntegrations\integrationContext=urn:li:organization:{orgId}&amp;integrationType=CRM_ONE_CLICK_EXPORT&amp;tenantType=RECRUITER&amp;dataProvider=ATS
@@ -120,7 +108,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations
             return new global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATS.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATSRequestBuilder(PathParameters, RequestAdapter, orgId);
         }
         /// <summary>
-        /// `/atsIntegrations` used to update the customer Integration. To enable `CSA_API `, use `integrationType= CSA_API ` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`CSA_API ` is Contract level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)
+        /// Builds and executes requests for operations under \talent-crm-connect\v2\atsIntegrations\integrationContext=urn:li:organization:{orgId}&amp;integrationType=PROFILE_PLUGIN&amp;tenantType=RECRUITER&amp;dataProvider=ATS
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypePROFILE_PLUGINTenantTypeRECRUITERDataProviderATS.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypePROFILE_PLUGINTenantTypeRECRUITERDataProviderATSRequestBuilder"/></returns>
+        /// <param name="orgId">The path parameter: orgId</param>
+        public global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypePROFILE_PLUGINTenantTypeRECRUITERDataProviderATS.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypePROFILE_PLUGINTenantTypeRECRUITERDataProviderATSRequestBuilder IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypePROFILE_PLUGINTenantTypeRECRUITERDataProviderATS(string orgId)
+        {
+            if(string.IsNullOrEmpty(orgId)) throw new ArgumentNullException(nameof(orgId));
+            return new global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypePROFILE_PLUGINTenantTypeRECRUITERDataProviderATS.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypePROFILE_PLUGINTenantTypeRECRUITERDataProviderATSRequestBuilder(PathParameters, RequestAdapter, orgId);
+        }
+        /// <summary>
+        /// `/atsIntegrations` used to update the customer Integration. To enable `ONE_CLICK_EXPORT`, use `integrationType=ONE_CLICK_EXPORT` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`ONE_CLICK_EXPORT` is Company level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)`/atsIntegrations` used to update the customer Integration. To enable `IN_ATS_INDICATOR `, use `integrationType= IN_ATS_INDICATOR ` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`IN_ATS_INDICATOR ` is Company level Integration To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)`/atsIntegrations` used to update the customer Integration. To enable `PROFILE_PLUGIN `, use `integrationType= PROFILE_PLUGIN ` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`PROFILE_PLUGIN ` is Company level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)`/atsIntegrations` used to update the customer Integration. To enable `CSA_API `, use `integrationType= CSA_API ` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`CSA_API ` is Contract level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -128,11 +126,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectUpdateCustomerAtsIntegrationCrmcsaapiRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.AtsIntegrationsRequestBuilder.AtsIntegrationsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectUpdateCustomerAtsIntegrationRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.AtsIntegrationsRequestBuilder.AtsIntegrationsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectUpdateCustomerAtsIntegrationCrmcsaapiRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.AtsIntegrationsRequestBuilder.AtsIntegrationsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectUpdateCustomerAtsIntegrationRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.AtsIntegrationsRequestBuilder.AtsIntegrationsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -158,18 +156,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations
             return requestInfo;
         }
         /// <summary>
-        /// `/atsIntegrations` used to update the customer Integration. To enable `CSA_API `, use `integrationType= CSA_API ` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`CSA_API ` is Contract level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)
+        /// `/atsIntegrations` used to update the customer Integration. To enable `ONE_CLICK_EXPORT`, use `integrationType=ONE_CLICK_EXPORT` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`ONE_CLICK_EXPORT` is Company level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)`/atsIntegrations` used to update the customer Integration. To enable `IN_ATS_INDICATOR `, use `integrationType= IN_ATS_INDICATOR ` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`IN_ATS_INDICATOR ` is Company level Integration To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)`/atsIntegrations` used to update the customer Integration. To enable `PROFILE_PLUGIN `, use `integrationType= PROFILE_PLUGIN ` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`PROFILE_PLUGIN ` is Company level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)`/atsIntegrations` used to update the customer Integration. To enable `CSA_API `, use `integrationType= CSA_API ` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`CSA_API ` is Contract level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectUpdateCustomerAtsIntegrationCrmcsaapiRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.AtsIntegrationsRequestBuilder.AtsIntegrationsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectUpdateCustomerAtsIntegrationRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.AtsIntegrationsRequestBuilder.AtsIntegrationsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectUpdateCustomerAtsIntegrationCrmcsaapiRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.AtsIntegrationsRequestBuilder.AtsIntegrationsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectUpdateCustomerAtsIntegrationRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations.AtsIntegrationsRequestBuilder.AtsIntegrationsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -193,6 +191,214 @@ namespace Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AtsIntegrationsRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EdataProvider")]
+            public string? Ids0DataProvider { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EdataProvider")]
+            public string Ids0DataProvider { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EintegrationContext")]
+            public string? Ids0IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EintegrationContext")]
+            public string Ids0IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EintegrationType")]
+            public string? Ids0IntegrationType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EintegrationType")]
+            public string Ids0IntegrationType { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EtenantType")]
+            public string? Ids0TenantType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EtenantType")]
+            public string Ids0TenantType { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B1%5D%2EdataProvider")]
+            public string? Ids1DataProvider { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B1%5D%2EdataProvider")]
+            public string Ids1DataProvider { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B1%5D%2EintegrationContext")]
+            public string? Ids1IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B1%5D%2EintegrationContext")]
+            public string Ids1IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B1%5D%2EintegrationType")]
+            public string? Ids1IntegrationType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B1%5D%2EintegrationType")]
+            public string Ids1IntegrationType { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B1%5D%2EtenantType")]
+            public string? Ids1TenantType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B1%5D%2EtenantType")]
+            public string Ids1TenantType { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B2%5D%2EdataProvider")]
+            public string? Ids2DataProvider { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B2%5D%2EdataProvider")]
+            public string Ids2DataProvider { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B2%5D%2EintegrationContext")]
+            public string? Ids2IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B2%5D%2EintegrationContext")]
+            public string Ids2IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B2%5D%2EintegrationType")]
+            public string? Ids2IntegrationType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B2%5D%2EintegrationType")]
+            public string Ids2IntegrationType { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B2%5D%2EtenantType")]
+            public string? Ids2TenantType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B2%5D%2EtenantType")]
+            public string Ids2TenantType { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B3%5D%2EdataProvider")]
+            public string? Ids3DataProvider { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B3%5D%2EdataProvider")]
+            public string Ids3DataProvider { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B3%5D%2EintegrationContext")]
+            public string? Ids3IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B3%5D%2EintegrationContext")]
+            public string Ids3IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B3%5D%2EintegrationType")]
+            public string? Ids3IntegrationType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B3%5D%2EintegrationType")]
+            public string Ids3IntegrationType { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B3%5D%2EtenantType")]
+            public string? Ids3TenantType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B3%5D%2EtenantType")]
+            public string Ids3TenantType { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -221,7 +427,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations
 #endif
         }
         /// <summary>
-        /// `/atsIntegrations` used to update the customer Integration. To enable `CSA_API `, use `integrationType= CSA_API ` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`CSA_API ` is Contract level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)
+        /// `/atsIntegrations` used to update the customer Integration. To enable `ONE_CLICK_EXPORT`, use `integrationType=ONE_CLICK_EXPORT` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`ONE_CLICK_EXPORT` is Company level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)`/atsIntegrations` used to update the customer Integration. To enable `IN_ATS_INDICATOR `, use `integrationType= IN_ATS_INDICATOR ` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`IN_ATS_INDICATOR ` is Company level Integration To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)`/atsIntegrations` used to update the customer Integration. To enable `PROFILE_PLUGIN `, use `integrationType= PROFILE_PLUGIN ` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`PROFILE_PLUGIN ` is Company level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)`/atsIntegrations` used to update the customer Integration. To enable `CSA_API `, use `integrationType= CSA_API ` in the request body. Partner can update other RSC Integrations by changing `integrationType`.`CSA_API ` is Contract level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AtsIntegrationsRequestBuilderPostQueryParameters 
@@ -276,6 +482,162 @@ namespace Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.V2.AtsIntegrations
             #pragma warning disable CS1591
             [QueryParameter("ids%5B0%5D%2EtenantType")]
             public string Ids0TenantType { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B1%5D%2EdataProvider")]
+            public string? Ids1DataProvider { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B1%5D%2EdataProvider")]
+            public string Ids1DataProvider { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B1%5D%2EintegrationContext")]
+            public string? Ids1IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B1%5D%2EintegrationContext")]
+            public string Ids1IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B1%5D%2EintegrationType")]
+            public string? Ids1IntegrationType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B1%5D%2EintegrationType")]
+            public string Ids1IntegrationType { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B1%5D%2EtenantType")]
+            public string? Ids1TenantType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B1%5D%2EtenantType")]
+            public string Ids1TenantType { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B2%5D%2EdataProvider")]
+            public string? Ids2DataProvider { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B2%5D%2EdataProvider")]
+            public string Ids2DataProvider { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B2%5D%2EintegrationContext")]
+            public string? Ids2IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B2%5D%2EintegrationContext")]
+            public string Ids2IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B2%5D%2EintegrationType")]
+            public string? Ids2IntegrationType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B2%5D%2EintegrationType")]
+            public string Ids2IntegrationType { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B2%5D%2EtenantType")]
+            public string? Ids2TenantType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B2%5D%2EtenantType")]
+            public string Ids2TenantType { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B3%5D%2EdataProvider")]
+            public string? Ids3DataProvider { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B3%5D%2EdataProvider")]
+            public string Ids3DataProvider { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B3%5D%2EintegrationContext")]
+            public string? Ids3IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B3%5D%2EintegrationContext")]
+            public string Ids3IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B3%5D%2EintegrationType")]
+            public string? Ids3IntegrationType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B3%5D%2EintegrationType")]
+            public string Ids3IntegrationType { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B3%5D%2EtenantType")]
+            public string? Ids3TenantType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B3%5D%2EtenantType")]
+            public string Ids3TenantType { get; set; }
             #pragma warning restore CS1591
 #endif
         }

@@ -85,10 +85,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.AdsTransparencyApi.Rest.AdvertiserTra
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Urn3Ali3AsponsoredAccount3AWithSponsoredaccountIdRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("month")]
-            public int? Month { get; set; }
+            public string? Month { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("month")]
+            public string Month { get; set; }
+            #pragma warning restore CS1591
+#endif
         }
     }
 }

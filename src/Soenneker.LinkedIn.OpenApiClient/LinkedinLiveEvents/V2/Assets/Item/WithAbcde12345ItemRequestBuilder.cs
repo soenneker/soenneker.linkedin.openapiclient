@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -33,39 +34,44 @@ namespace Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.Item
         {
         }
         /// <summary>
-        /// /assets?projection=(recipes) get
+        /// /assets?projection=(recipes) get Copy
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.Item.WithAbcde12345ItemRequestBuilder.WithAbcde12345ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsProjectionRecipesGetCopyPlainRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.Item.WithAbcde12345ItemRequestBuilder.WithAbcde12345ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.Item.WithAbcde12345ItemRequestBuilder.WithAbcde12345ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsProjectionRecipesGetCopyPlainRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.Item.WithAbcde12345ItemRequestBuilder.WithAbcde12345ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// /assets?projection=(recipes) get
+        /// /assets?projection=(recipes) get Copy
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.Item.WithAbcde12345ItemRequestBuilder.WithAbcde12345ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsProjectionRecipesGetCopyPlainRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.Item.WithAbcde12345ItemRequestBuilder.WithAbcde12345ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.Item.WithAbcde12345ItemRequestBuilder.WithAbcde12345ItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsProjectionRecipesGetCopyPlainRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.Item.WithAbcde12345ItemRequestBuilder.WithAbcde12345ItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.SetContentFromParsable(RequestAdapter, "text/plain", body);
             return requestInfo;
         }
         /// <summary>
@@ -78,7 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.Item
             return new global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.Item.WithAbcde12345ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// /assets?projection=(recipes) get
+        /// /assets?projection=(recipes) get Copy
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithAbcde12345ItemRequestBuilderGetQueryParameters 

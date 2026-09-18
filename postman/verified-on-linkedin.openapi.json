@@ -5,14 +5,12 @@
     "description": "The Verified on LinkedIn API allows you to access trusted verification signals from LinkedIn members, enabling you to display verified identity and workplace information directly within your platform.",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "https://api.linkedin.com"
-    }
-  ],
   "paths": {
     "/rest/identityMe": {
       "get": {
+        "tags": [
+          "Identity Me API / version-202510.03"
+        ],
         "summary": "identityMe",
         "description": "The **Identity API** (`/identityMe`) provides a simple way for partners to retrieve LinkedIn Member profile details. [Learn more ](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me?context=linkedin%2Fconsumer%2Fcontext) by viewing our public documentation.",
         "operationId": "identityMe",
@@ -21,7 +19,12 @@
             "name": "LinkedIn-Version",
             "in": "header",
             "schema": {
-              "type": "number"
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "202510.03"
+              }
             }
           }
         ],
@@ -31,40 +34,21 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "required": [
-                    "lastRefreshedAt",
-                    "basicInfo",
-                    "id"
-                  ],
                   "type": "object",
                   "properties": {
                     "lastRefreshedAt": {
                       "type": "integer"
                     },
                     "basicInfo": {
-                      "required": [
-                        "profileUrl",
-                        "profilePicture",
-                        "lastName",
-                        "firstName",
-                        "primaryEmailAddress"
-                      ],
                       "type": "object",
                       "properties": {
                         "profileUrl": {
                           "type": "string"
                         },
                         "profilePicture": {
-                          "required": [
-                            "croppedImage"
-                          ],
                           "type": "object",
                           "properties": {
                             "croppedImage": {
-                              "required": [
-                                "downloadUrl",
-                                "downloadUrlExpiresAt"
-                              ],
                               "type": "object",
                               "properties": {
                                 "downloadUrl": {
@@ -78,16 +62,9 @@
                           }
                         },
                         "lastName": {
-                          "required": [
-                            "localized",
-                            "preferredLocale"
-                          ],
                           "type": "object",
                           "properties": {
                             "localized": {
-                              "required": [
-                                "en_US"
-                              ],
                               "type": "object",
                               "properties": {
                                 "en_US": {
@@ -96,10 +73,6 @@
                               }
                             },
                             "preferredLocale": {
-                              "required": [
-                                "country",
-                                "language"
-                              ],
                               "type": "object",
                               "properties": {
                                 "country": {
@@ -113,16 +86,9 @@
                           }
                         },
                         "firstName": {
-                          "required": [
-                            "localized",
-                            "preferredLocale"
-                          ],
                           "type": "object",
                           "properties": {
                             "localized": {
-                              "required": [
-                                "en_US"
-                              ],
                               "type": "object",
                               "properties": {
                                 "en_US": {
@@ -131,10 +97,6 @@
                               }
                             },
                             "preferredLocale": {
-                              "required": [
-                                "country",
-                                "language"
-                              ],
                               "type": "object",
                               "properties": {
                                 "country": {
@@ -156,15 +118,125 @@
                       "type": "string"
                     }
                   }
+                },
+                "examples": {
+                  "identityMe-200": {
+                    "summary": "identityMe-200",
+                    "value": {
+                      "lastRefreshedAt": 1760631246905,
+                      "basicInfo": {
+                        "profileUrl": "https://www.linkedin.com/profile-thirdparty-redirect/AFw7Tw9YDLbPn8exJln1FFI074SVkNAH8eIr_u-rdXZCPyXMUTb3sTCE81RbfN_yO7870",
+                        "profilePicture": {
+                          "croppedImage": {
+                            "downloadUrl": "https://media.licdn.com/dms/image/v2/0hYE9aEqulDqnnCpvzUnx8dZy2T5yhR8",
+                            "downloadUrlExpiresAt": 1763596800000
+                          }
+                        },
+                        "lastName": {
+                          "localized": {
+                            "en_US": "Doe"
+                          },
+                          "preferredLocale": {
+                            "country": "US",
+                            "language": "en"
+                          }
+                        },
+                        "firstName": {
+                          "localized": {
+                            "en_US": "John"
+                          },
+                          "preferredLocale": {
+                            "country": "US",
+                            "language": "en"
+                          }
+                        },
+                        "primaryEmailAddress": "John.Doe@linkedin.com"
+                      },
+                      "id": "1n23dtwSmS"
+                    }
+                  }
                 }
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth."
+        ],
+        "x-postman-auth": {
+          "type": "oauth2",
+          "oauth2": {
+            "addTokenTo": "header"
+          }
+        },
+        "x-postman-variants": [
+          {
+            "name": "identityMe",
+            "id": "05ed7a1c-71cb-4901-ac5e-b3bb3826e007",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "LinkedIn-Version",
+                  "value": "202510.03"
+                }
+              ],
+              "url": "https://api.linkedin.com/rest/identityMe",
+              "description": "The **Identity API** (`/identityMe`) provides a simple way for partners to retrieve LinkedIn Member profile details. [Learn more ](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me?context=linkedin%2Fconsumer%2Fcontext) by viewing our public documentation."
+            },
+            "response": [
+              {
+                "id": "cd0aec97-0050-4ca8-b628-e7641e0a017e",
+                "name": "identityMe-200",
+                "originalRequest": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "LinkedIn-Version",
+                      "value": "202510.03"
+                    }
+                  ],
+                  "url": "https://api.linkedin.com/rest/identityMe"
+                },
+                "_postman_previewlanguage": null,
+                "header": null,
+                "cookie": [ ],
+                "responseTime": null,
+                "body": "{\n\t\"lastRefreshedAt\": 1760631246905,\n\t\"basicInfo\": {\n    \t\"profileUrl\": \"https://www.linkedin.com/profile-thirdparty-redirect/AFw7Tw9YDLbPn8exJln1FFI074SVkNAH8eIr_u-rdXZCPyXMUTb3sTCE81RbfN_yO7870\",\n    \t\"profilePicture\": {\n        \t\"croppedImage\": {\n            \t\"downloadUrl\": \"https://media.licdn.com/dms/image/v2/0hYE9aEqulDqnnCpvzUnx8dZy2T5yhR8\",\n                \"downloadUrlExpiresAt\": 1763596800000\n        \t}\n    \t},\n    \t\"lastName\": {\n        \t\"localized\": {\n            \t\"en_US\": \"Doe\"\n        \t},\n        \t\"preferredLocale\": {\n            \t\"country\": \"US\",\n            \t\"language\": \"en\"\n        \t}\n    \t},\n    \t\"firstName\": {\n        \t\"localized\": {\n            \t\"en_US\": \"John\"\n        \t},\n        \t\"preferredLocale\": {\n            \t\"country\": \"US\",\n            \t\"language\": \"en\"\n        \t}\n    \t},\n   \t\"primaryEmailAddress\": \"John.Doe@linkedin.com\"\n\t},\n   \"id\": \"1n23dtwSmS\"\n}"
+              }
+            ],
+            "folders": [
+              "Identity Me API",
+              "version-202510.03"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/rest/verificationReport": {
       "get": {
+        "tags": [
+          "Verification Report API / version-202510"
+        ],
         "summary": "verificationReport",
         "description": "The **Verification Report API** allows partners to retrieve the verified categories (for example, `IDENTITY`, `WORKPLACE`) associated with a LinkedIn Member, or to obtain a `verificationUrl` that enables Members to complete eligible verifications on LinkedIn. [Learn more ](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report?context=linkedin%2Fconsumer%2Fcontext) by viewing our public documentation.",
         "operationId": "verificationReport",
@@ -173,20 +245,21 @@
             "name": "Linkedin-Version",
             "in": "header",
             "schema": {
-              "type": "integer"
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "202510"
+              }
             }
           }
         ],
         "responses": {
           "default": {
-            "description": "Fetch verifications with Identity and Workplace criteria",
+            "description": "Fetch verifications\n\nFetch verification with Identity criteria\n\nFetch verification with Workplace criteria\n\nFetch verifications with Identity and Workplace criteria",
             "content": {
               "application/json": {
                 "schema": {
-                  "required": [
-                    "verifications",
-                    "id"
-                  ],
                   "type": "object",
                   "properties": {
                     "verifications": {
@@ -197,17 +270,249 @@
                     },
                     "id": {
                       "type": "string"
+                    },
+                    "verificationUrl": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Fetch_verifications": {
+                    "summary": "Fetch verifications",
+                    "value": {
+                      "verifications": [
+                        "IDENTITY",
+                        "WORKPLACE"
+                      ],
+                      "id": "Yw-zU_kyua"
+                    }
+                  },
+                  "Fetch_verification_with_Identity_criteria": {
+                    "summary": "Fetch verification with Identity criteria",
+                    "value": {
+                      "verifications": [
+                        "IDENTITY"
+                      ],
+                      "id": "Yw-zU_kyua"
+                    }
+                  },
+                  "Fetch_verification_with_Workplace_criteria": {
+                    "summary": "Fetch verification with Workplace criteria",
+                    "value": {
+                      "verifications": [
+                        "IDENTITY"
+                      ],
+                      "id": "Yw-zU_kyua",
+                      "verificationUrl": "https://www.linkedin.com/trust/verification?isDeeplinkToCCT=true&verificationUrl=https%3A%2F%2Fwww.linkedin.com%2Fverify%3FentryPoint%3Dfederation_external_api%26partnerId%3DAgFAAk4lCixcPAbCBxA%26verificationCriteria%3D2522WORK_EMAIL_ADDRESS%2522%2%2522WORK_EMAIL_ADDRESS%2255D%257D"
+                    }
+                  },
+                  "Fetch_verifications_with_Identity_and_Workplace_criteria": {
+                    "summary": "Fetch verifications with Identity and Workplace criteria",
+                    "value": {
+                      "verifications": [
+                        "IDENTITY",
+                        "WORKPLACE"
+                      ],
+                      "id": "Yw-zU_kyua"
                     }
                   }
                 }
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth."
+        ],
+        "x-postman-auth": {
+          "type": "oauth2",
+          "oauth2": {
+            "addTokenTo": "header"
+          }
+        },
+        "x-postman-variants": [
+          {
+            "name": "verificationReport",
+            "id": "bf6df946-5618-479b-b7e7-ea970d819464",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Linkedin-Version",
+                  "value": "202510"
+                }
+              ],
+              "url": "https://api.linkedin.com/rest/verificationReport",
+              "description": "The **Verification Report API** allows partners to retrieve the verified categories (for example, `IDENTITY`, `WORKPLACE`) associated with a LinkedIn Member, or to obtain a `verificationUrl` that enables Members to complete eligible verifications on LinkedIn. [Learn more ](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report?context=linkedin%2Fconsumer%2Fcontext) by viewing our public documentation."
+            },
+            "response": [
+              {
+                "id": "8f01c8ce-2e41-45e1-9406-04bf2196c9c9",
+                "name": "Fetch verifications",
+                "originalRequest": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "Linkedin-Version",
+                      "value": "202510"
+                    }
+                  ],
+                  "url": "https://api.linkedin.com/rest/verificationReport"
+                },
+                "_postman_previewlanguage": null,
+                "header": null,
+                "cookie": [ ],
+                "responseTime": null,
+                "body": "{\n  \"verifications\": [\"IDENTITY\", \"WORKPLACE\"],\n  \"id\": \"Yw-zU_kyua\"\n}"
+              },
+              {
+                "id": "6149c6be-c9d6-42b9-91b4-e0c0df470ed1",
+                "name": "Fetch verification with Identity criteria",
+                "originalRequest": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "Linkedin-Version",
+                      "value": "202510"
+                    }
+                  ],
+                  "url": {
+                    "raw": "https://api.linkedin.com/rest/verificationReport?verificationCriteria=IDENTITY",
+                    "protocol": "https",
+                    "host": [
+                      "api",
+                      "linkedin",
+                      "com"
+                    ],
+                    "path": [
+                      "rest",
+                      "verificationReport"
+                    ],
+                    "query": [
+                      {
+                        "key": "verificationCriteria",
+                        "value": "IDENTITY"
+                      }
+                    ]
+                  }
+                },
+                "_postman_previewlanguage": null,
+                "header": null,
+                "cookie": [ ],
+                "responseTime": null,
+                "body": "{\n  \"verifications\": [\"IDENTITY\"],\n  \"id\": \"Yw-zU_kyua\"\n}"
+              },
+              {
+                "id": "21fec06c-4e43-4ded-a75a-c5e04f23c893",
+                "name": "Fetch verification with Workplace criteria",
+                "originalRequest": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "Linkedin-Version",
+                      "value": "202510"
+                    }
+                  ],
+                  "url": {
+                    "raw": "https://api.linkedin.com/rest/verificationReport?verificationCriteria=WORKPLACE",
+                    "protocol": "https",
+                    "host": [
+                      "api",
+                      "linkedin",
+                      "com"
+                    ],
+                    "path": [
+                      "rest",
+                      "verificationReport"
+                    ],
+                    "query": [
+                      {
+                        "key": "verificationCriteria",
+                        "value": "WORKPLACE"
+                      }
+                    ]
+                  }
+                },
+                "_postman_previewlanguage": null,
+                "header": null,
+                "cookie": [ ],
+                "responseTime": null,
+                "body": "{\n  \"verifications\": [\"IDENTITY\"],\n  \"id\": \"Yw-zU_kyua\",\n  \"verificationUrl\": \"https://www.linkedin.com/trust/verification?isDeeplinkToCCT=true&verificationUrl=https%3A%2F%2Fwww.linkedin.com%2Fverify%3FentryPoint%3Dfederation_external_api%26partnerId%3DAgFAAk4lCixcPAbCBxA%26verificationCriteria%3D2522WORK_EMAIL_ADDRESS%2522%2%2522WORK_EMAIL_ADDRESS%2255D%257D\"\n}\n"
+              },
+              {
+                "id": "5b15103c-80b9-4bff-81e2-df64242c6c16",
+                "name": "Fetch verifications with Identity and Workplace criteria",
+                "originalRequest": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "Linkedin-Version",
+                      "value": "202510"
+                    }
+                  ],
+                  "url": {
+                    "raw": "https://api.linkedin.com/rest/verificationReport?verificationCriteria=IDENTITY&verificationCriteria=WORKPLACE",
+                    "protocol": "https",
+                    "host": [
+                      "api",
+                      "linkedin",
+                      "com"
+                    ],
+                    "path": [
+                      "rest",
+                      "verificationReport"
+                    ],
+                    "query": [
+                      {
+                        "key": "verificationCriteria",
+                        "value": "IDENTITY"
+                      },
+                      {
+                        "key": "verificationCriteria",
+                        "value": "WORKPLACE"
+                      }
+                    ]
+                  }
+                },
+                "_postman_previewlanguage": null,
+                "header": null,
+                "cookie": [ ],
+                "responseTime": null,
+                "body": "{\n  \"verifications\": [\"IDENTITY\", \"WORKPLACE\"],\n  \"id\": \"Yw-zU_kyua\"\n}\n"
+              }
+            ],
+            "folders": [
+              "Verification Report API",
+              "version-202510"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/rest/validationStatus": {
       "post": {
+        "tags": [
+          "Validation Status API / version-202510"
+        ],
         "summary": "validationStatus",
         "description": "The **Validation Status API** lets Plus-tier partners check the current validation state of LinkedIn members at scale (single or bulk). It returns compact status flags for `identity`, `workplace`, and `profileInformationStatus.`[Learn more ](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status?context=linkedin%2Fconsumer%2Fcontext) by viewing our public documentation.",
         "operationId": "validationStatus",
@@ -217,13 +522,23 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "retrieve"
+              }
             }
           },
           {
             "name": "Linkedin-Version",
             "in": "header",
             "schema": {
-              "type": "integer"
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "202510"
+              }
             }
           }
         ],
@@ -231,17 +546,11 @@
           "content": {
             "application/json": {
               "schema": {
-                "required": [
-                  "validationQueries"
-                ],
                 "type": "object",
                 "properties": {
                   "validationQueries": {
                     "type": "array",
                     "items": {
-                      "required": [
-                        "id"
-                      ],
                       "type": "object",
                       "properties": {
                         "id": {
@@ -251,40 +560,38 @@
                     }
                   }
                 }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "validationQueries": [
+                      {
+                        "id": "string"
+                      }
+                    ]
+                  }
+                }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
           "default": {
-            "description": "Bulk Member Validation",
+            "description": "Single Member Validation\n\nBulk Member Validation",
             "content": {
               "application/json": {
                 "schema": {
-                  "required": [
-                    "value"
-                  ],
                   "type": "object",
                   "properties": {
                     "value": {
                       "type": "array",
                       "items": {
-                        "required": [
-                          "id",
-                          "verificationStatus",
-                          "profileInformationStatus"
-                        ],
                         "type": "object",
                         "properties": {
                           "id": {
                             "type": "string"
                           },
                           "verificationStatus": {
-                            "required": [
-                              "identity",
-                              "workplace"
-                            ],
                             "type": "object",
                             "properties": {
                               "identity": {
@@ -302,13 +609,288 @@
                       }
                     }
                   }
+                },
+                "examples": {
+                  "Single_Member_Validation": {
+                    "summary": "Single Member Validation",
+                    "value": {
+                      "value": [
+                        {
+                          "id": "abc123",
+                          "verificationStatus": {
+                            "identity": "VALID",
+                            "workplace": "VALID"
+                          },
+                          "profileInformationStatus": "VALID"
+                        }
+                      ]
+                    }
+                  },
+                  "Bulk_Member_Validation": {
+                    "summary": "Bulk Member Validation",
+                    "value": {
+                      "value": [
+                        {
+                          "id": "abc123",
+                          "verificationStatus": {
+                            "identity": "VALID",
+                            "workplace": "VALID_WITH_UPDATES"
+                          },
+                          "profileInformationStatus": "VALID"
+                        },
+                        {
+                          "id": "def456",
+                          "verificationStatus": {
+                            "identity": "INVALID",
+                            "workplace": "VALID"
+                          },
+                          "profileInformationStatus": "INVALID"
+                        },
+                        {
+                          "id": "ghi789",
+                          "verificationStatus": {
+                            "identity": "VALID",
+                            "workplace": "VALID"
+                          },
+                          "profileInformationStatus": "VALID"
+                        }
+                      ]
+                    }
+                  }
                 }
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth."
+        ],
+        "x-postman-auth": {
+          "type": "oauth2",
+          "oauth2": {
+            "addTokenTo": "header"
+          }
+        },
+        "x-postman-variants": [
+          {
+            "name": "validationStatus",
+            "id": "f636187a-f753-47b8-984e-e793ab20fa55",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Linkedin-Version",
+                  "value": "202510"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"validationQueries\": [\n    {\n      \"id\": \"string\"\n    }\n  ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "https://api.linkedin.com/rest/validationStatus?action=retrieve",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "rest",
+                  "validationStatus"
+                ],
+                "query": [
+                  {
+                    "key": "action",
+                    "value": "retrieve"
+                  }
+                ]
+              },
+              "description": "The **Validation Status API** lets Plus-tier partners check the current validation state of LinkedIn members at scale (single or bulk). It returns compact status flags for `identity`, `workplace`, and `profileInformationStatus.`[Learn more ](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status?context=linkedin%2Fconsumer%2Fcontext) by viewing our public documentation."
+            },
+            "response": [
+              {
+                "id": "67e1f299-5a3a-471a-8e24-42aa91479800",
+                "name": "Single Member Validation",
+                "originalRequest": {
+                  "method": "POST",
+                  "header": [
+                    {
+                      "key": "Linkedin-Version",
+                      "value": "202510"
+                    }
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"validationQueries\": [\n    {\n      \"id\": \"abc123\"\n    }\n  ]\n}",
+                    "options": {
+                      "raw": {
+                        "language": "json"
+                      }
+                    }
+                  },
+                  "url": {
+                    "raw": "https://api.linkedin.com/rest/validationStatus?action=retrieve",
+                    "protocol": "https",
+                    "host": [
+                      "api",
+                      "linkedin",
+                      "com"
+                    ],
+                    "path": [
+                      "rest",
+                      "validationStatus"
+                    ],
+                    "query": [
+                      {
+                        "key": "action",
+                        "value": "retrieve"
+                      }
+                    ]
+                  }
+                },
+                "_postman_previewlanguage": null,
+                "header": null,
+                "cookie": [ ],
+                "responseTime": null,
+                "body": "{\n  \"value\": [\n    {\n      \"id\": \"abc123\",\n      \"verificationStatus\": {\n        \"identity\": \"VALID\",\n        \"workplace\": \"VALID\"\n      },\n      \"profileInformationStatus\": \"VALID\"\n    }\n  ]\n}"
+              },
+              {
+                "id": "7f5f1f3f-a4da-478b-b505-d921d5fa5719",
+                "name": "Bulk Member Validation",
+                "originalRequest": {
+                  "method": "POST",
+                  "header": [
+                    {
+                      "key": "Linkedin-Version",
+                      "value": "202510"
+                    }
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"validationQueries\": [\n    {\n      \"id\": \"abc123\"\n    },\n    {\n      \"id\": \"def456\"\n    },\n    {\n      \"id\": \"ghi789\"\n    }\n  ]\n}\n",
+                    "options": {
+                      "raw": {
+                        "language": "json"
+                      }
+                    }
+                  },
+                  "url": {
+                    "raw": "https://api.linkedin.com/rest/validationStatus?action=retrieve",
+                    "protocol": "https",
+                    "host": [
+                      "api",
+                      "linkedin",
+                      "com"
+                    ],
+                    "path": [
+                      "rest",
+                      "validationStatus"
+                    ],
+                    "query": [
+                      {
+                        "key": "action",
+                        "value": "retrieve"
+                      }
+                    ]
+                  }
+                },
+                "_postman_previewlanguage": null,
+                "header": null,
+                "cookie": [ ],
+                "responseTime": null,
+                "body": "{\n  \"value\": [\n    {\n      \"id\": \"abc123\",\n      \"verificationStatus\": {\n        \"identity\": \"VALID\",\n        \"workplace\": \"VALID_WITH_UPDATES\"\n      },\n      \"profileInformationStatus\": \"VALID\"\n    },\n    {\n      \"id\": \"def456\",\n      \"verificationStatus\": {\n        \"identity\": \"INVALID\",\n        \"workplace\": \"VALID\"\n      },\n      \"profileInformationStatus\": \"INVALID\"\n    },\n    {\n      \"id\": \"ghi789\",\n      \"verificationStatus\": {\n        \"identity\": \"VALID\",\n        \"workplace\": \"VALID\"\n      },\n      \"profileInformationStatus\": \"VALID\"\n    }\n  ]\n}"
+              }
+            ],
+            "folders": [
+              "Validation Status API",
+              "version-202510"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     }
   },
-  "components": { }
+  "components": {
+    "securitySchemes": {
+      "oauth2Auth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Identity Me API / version-202510.03",
+      "description": "/identityMe API is versioned api. use the latest verison- version-202510.03 in request header."
+    },
+    {
+      "name": "Verification Report API / version-202510",
+      "description": "`/verificationReport` API is versioned api. use the latest verison- version-202510 in request header."
+    },
+    {
+      "name": "Validation Status API / version-202510",
+      "description": "`/validationStatus` API is versioned api. use the latest verison-202510 in request header."
+    }
+  ],
+  "x-postman-warnings": [
+    "collection: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Identity Me API: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Identity Me API / version-202510.03 / identityMe: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "identityMe: OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+    "Verification Report API / version-202510 / verificationReport: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "verificationReport: OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+    "Validation Status API / version-202510 / validationStatus: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "validationStatus: OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth."
+  ],
+  "x-postman-events": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "ced4215a-ecd0-4f52-b3cd-e03ff3fb9c32",
+        "type": "text/javascript",
+        "packages": { },
+        "requests": { },
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "77983299-e4df-4b82-a2d7-7b03968955dc",
+        "type": "text/javascript",
+        "packages": { },
+        "requests": { },
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
 }

@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Ret.I
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IntegrationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recruiter-system-connect-versioned/ret/integrations{?ids%5B0%5D%2EdataProvider*,ids%5B0%5D%2EintegrationContext*,ids%5B0%5D%2EintegrationType*,ids%5B0%5D%2EtenantType*,ids%5B1%5D%2EdataProvider*,ids%5B1%5D%2EintegrationContext*,ids%5B1%5D%2EintegrationType*,ids%5B1%5D%2EtenantType*,ids%5B2%5D%2EdataProvider*,ids%5B2%5D%2EintegrationContext*,ids%5B2%5D%2EintegrationType*,ids%5B2%5D%2EtenantType*,ids%5B3%5D%2EdataProvider*,ids%5B3%5D%2EintegrationContext*,ids%5B3%5D%2EintegrationType*,ids%5B3%5D%2EtenantType*}", pathParameters)
+        public IntegrationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recruiter-system-connect-versioned/ret/integrations{?ids%5B0%5D%2EintegrationContext*,ids%5B0%5D%2EintegrationType*,ids%5B0%5D%2EtenantType*,ids%5B1%5D%2EintegrationContext*,ids%5B1%5D%2EintegrationType*,ids%5B1%5D%2EtenantType*,ids%5B2%5D%2EintegrationContext*,ids%5B2%5D%2EintegrationType*,ids%5B2%5D%2EtenantType*,ids%5B3%5D%2EintegrationContext*,ids%5B3%5D%2EintegrationType*,ids%5B3%5D%2EtenantType*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Ret.I
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IntegrationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recruiter-system-connect-versioned/ret/integrations{?ids%5B0%5D%2EdataProvider*,ids%5B0%5D%2EintegrationContext*,ids%5B0%5D%2EintegrationType*,ids%5B0%5D%2EtenantType*,ids%5B1%5D%2EdataProvider*,ids%5B1%5D%2EintegrationContext*,ids%5B1%5D%2EintegrationType*,ids%5B1%5D%2EtenantType*,ids%5B2%5D%2EdataProvider*,ids%5B2%5D%2EintegrationContext*,ids%5B2%5D%2EintegrationType*,ids%5B2%5D%2EtenantType*,ids%5B3%5D%2EdataProvider*,ids%5B3%5D%2EintegrationContext*,ids%5B3%5D%2EintegrationType*,ids%5B3%5D%2EtenantType*}", rawUrl)
+        public IntegrationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recruiter-system-connect-versioned/ret/integrations{?ids%5B0%5D%2EintegrationContext*,ids%5B0%5D%2EintegrationType*,ids%5B0%5D%2EtenantType*,ids%5B1%5D%2EintegrationContext*,ids%5B1%5D%2EintegrationType*,ids%5B1%5D%2EtenantType*,ids%5B2%5D%2EintegrationContext*,ids%5B2%5D%2EintegrationType*,ids%5B2%5D%2EtenantType*,ids%5B3%5D%2EintegrationContext*,ids%5B3%5D%2EintegrationType*,ids%5B3%5D%2EtenantType*}", rawUrl)
         {
         }
         /// <summary>
@@ -92,19 +92,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Ret.I
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
-            [QueryParameter("ids%5B0%5D%2EdataProvider")]
-            public string? Ids0DataProvider { get; set; }
-            #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("ids%5B0%5D%2EdataProvider")]
-            public string Ids0DataProvider { get; set; }
-            #pragma warning restore CS1591
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("ids%5B0%5D%2EintegrationContext")]
             public string? Ids0IntegrationContext { get; set; }
             #pragma warning restore CS1591
@@ -139,19 +126,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Ret.I
             #pragma warning disable CS1591
             [QueryParameter("ids%5B0%5D%2EtenantType")]
             public string Ids0TenantType { get; set; }
-            #pragma warning restore CS1591
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            #pragma warning disable CS1591
-            [QueryParameter("ids%5B1%5D%2EdataProvider")]
-            public string? Ids1DataProvider { get; set; }
-            #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("ids%5B1%5D%2EdataProvider")]
-            public string Ids1DataProvider { get; set; }
             #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -196,19 +170,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Ret.I
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
-            [QueryParameter("ids%5B2%5D%2EdataProvider")]
-            public string? Ids2DataProvider { get; set; }
-            #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("ids%5B2%5D%2EdataProvider")]
-            public string Ids2DataProvider { get; set; }
-            #pragma warning restore CS1591
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("ids%5B2%5D%2EintegrationContext")]
             public string? Ids2IntegrationContext { get; set; }
             #pragma warning restore CS1591
@@ -243,19 +204,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Ret.I
             #pragma warning disable CS1591
             [QueryParameter("ids%5B2%5D%2EtenantType")]
             public string Ids2TenantType { get; set; }
-            #pragma warning restore CS1591
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            #pragma warning disable CS1591
-            [QueryParameter("ids%5B3%5D%2EdataProvider")]
-            public string? Ids3DataProvider { get; set; }
-            #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("ids%5B3%5D%2EdataProvider")]
-            public string Ids3DataProvider { get; set; }
             #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

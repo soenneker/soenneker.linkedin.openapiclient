@@ -4,11 +4,6 @@
     "title": "Ads Transparency API",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "https://api.linkedin.com"
-    }
-  ],
   "paths": {
     "/rest/advertiserTransparencyData/urn%3Ali%3AsponsoredAccount%3A{sponsoredaccount_id}": {
       "get": {
@@ -16,10 +11,23 @@
         "operationId": "AdvertiserTransparencyData",
         "parameters": [
           {
+            "name": "sponsoredaccount_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "month",
             "in": "query",
             "schema": {
-              "type": "integer"
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "202312"
+              }
             }
           },
           {
@@ -27,6 +35,11 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{insert_version}}"
+              }
             }
           },
           {
@@ -34,35 +47,97 @@
             "in": "header",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
         },
         "security": [
-          { }
+          {
+            "authorizationAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Advertiser Transparency Data",
+            "id": "9b5286db-ffa7-493d-8881-4f8f48916a85",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "LinkedIn-Version",
+                  "value": "{{insert_version}}",
+                  "type": "text"
+                },
+                {
+                  "key": "X-Restli-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "{{insert_token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "https://api.linkedin.com/rest/advertiserTransparencyData/urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}?month=202312",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "rest",
+                  "advertiserTransparencyData",
+                  "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                ],
+                "query": [
+                  {
+                    "key": "month",
+                    "value": "202312"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [ ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       }
     }
   },
   "components": {
     "securitySchemes": {
-      "authorizationHeader": {
+      "authorizationAuth": {
         "type": "apiKey",
-        "description": "Authorization header inferred from the Postman collection.",
         "name": "Authorization",
         "in": "header"
       }
     }
-  }
+  },
+  "x-postman-warnings": [
+    "Advertiser Transparency Data: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Advertiser Transparency Data: No saved responses: status codes and response schemas cannot be inferred."
+  ]
 }

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Images.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -16,6 +17,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Images
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ImagesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.contentApis.rest.images.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Images.Item.WithImageUrnItemRequestBuilder"/></returns>
+        public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Images.Item.WithImageUrnItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("imageUrn", position);
+                return new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Images.Item.WithImageUrnItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Images.ImagesRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -33,7 +46,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Images
         {
         }
         /// <summary>
-        /// Get multiple documents
+        /// This API rerieve multiple images.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Images
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get multiple documents
+        /// This API rerieve multiple images.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,7 +91,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Images
             return new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Images.ImagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get multiple documents
+        /// This API rerieve multiple images.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ImagesRequestBuilderGetQueryParameters 

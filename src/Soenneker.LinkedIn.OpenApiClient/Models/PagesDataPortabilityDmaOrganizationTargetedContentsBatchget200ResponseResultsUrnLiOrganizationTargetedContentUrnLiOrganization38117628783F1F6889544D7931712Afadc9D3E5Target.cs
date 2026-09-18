@@ -17,26 +17,26 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The geoLocations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GeoLocations { get; set; }
+        public UntypedNode? GeoLocations { get; set; }
 #nullable restore
 #else
-        public List<string> GeoLocations { get; set; }
+        public UntypedNode GeoLocations { get; set; }
 #endif
         /// <summary>The industries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Industries { get; set; }
+        public UntypedNode? Industries { get; set; }
 #nullable restore
 #else
-        public List<string> Industries { get; set; }
+        public UntypedNode Industries { get; set; }
 #endif
         /// <summary>The interfaceLocales property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InterfaceLocales { get; set; }
+        public UntypedNode? InterfaceLocales { get; set; }
 #nullable restore
 #else
-        public List<string> InterfaceLocales { get; set; }
+        public UntypedNode InterfaceLocales { get; set; }
 #endif
         /// <summary>The jobFunctions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,26 +49,26 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The locations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Locations { get; set; }
+        public UntypedNode? Locations { get; set; }
 #nullable restore
 #else
-        public List<string> Locations { get; set; }
+        public UntypedNode Locations { get; set; }
 #endif
         /// <summary>The seniorities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Seniorities { get; set; }
+        public UntypedNode? Seniorities { get; set; }
 #nullable restore
 #else
-        public List<string> Seniorities { get; set; }
+        public UntypedNode Seniorities { get; set; }
 #endif
         /// <summary>The staffCountRanges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? StaffCountRanges { get; set; }
+        public UntypedNode? StaffCountRanges { get; set; }
 #nullable restore
 #else
-        public List<string> StaffCountRanges { get; set; }
+        public UntypedNode StaffCountRanges { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization38117628783F1F6889544D7931712Afadc9D3E5Target"/> and sets the default values.
@@ -95,13 +95,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "geoLocations", n => { GeoLocations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "industries", n => { Industries = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "interfaceLocales", n => { InterfaceLocales = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "geoLocations", n => { GeoLocations = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "industries", n => { Industries = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "interfaceLocales", n => { InterfaceLocales = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "jobFunctions", n => { JobFunctions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "locations", n => { Locations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "seniorities", n => { Seniorities = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "staffCountRanges", n => { StaffCountRanges = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "locations", n => { Locations = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "seniorities", n => { Seniorities = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "staffCountRanges", n => { StaffCountRanges = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -111,13 +111,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("geoLocations", GeoLocations);
-            writer.WriteCollectionOfPrimitiveValues<string>("industries", Industries);
-            writer.WriteCollectionOfPrimitiveValues<string>("interfaceLocales", InterfaceLocales);
+            writer.WriteObjectValue<UntypedNode>("geoLocations", GeoLocations);
+            writer.WriteObjectValue<UntypedNode>("industries", Industries);
+            writer.WriteObjectValue<UntypedNode>("interfaceLocales", InterfaceLocales);
             writer.WriteCollectionOfPrimitiveValues<string>("jobFunctions", JobFunctions);
-            writer.WriteCollectionOfPrimitiveValues<string>("locations", Locations);
-            writer.WriteCollectionOfPrimitiveValues<string>("seniorities", Seniorities);
-            writer.WriteCollectionOfPrimitiveValues<string>("staffCountRanges", StaffCountRanges);
+            writer.WriteObjectValue<UntypedNode>("locations", Locations);
+            writer.WriteObjectValue<UntypedNode>("seniorities", Seniorities);
+            writer.WriteObjectValue<UntypedNode>("staffCountRanges", StaffCountRanges);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

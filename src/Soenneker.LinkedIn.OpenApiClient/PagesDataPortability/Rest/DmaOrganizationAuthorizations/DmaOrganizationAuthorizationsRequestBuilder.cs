@@ -4,7 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.LinkedIn.OpenApiClient.Models;
-using Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationAuthorizations.ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATOR_READOrganization7Borganization_id7DImpersonationSubjectValueMember7BpersonUrn7D;
+using Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationAuthorizations.ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATOR_READOrganizationWithOrganizationIdimpersonationSubjectValueMemberWithPersonUrn;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -18,17 +18,24 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganiza
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DmaOrganizationAuthorizationsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The actionOrganizationRoleAuthorizationActionActionTypeADMINISTRATOR_READOrganization7Borganization_id7DImpersonationSubjectValueMember7BpersonUrn7D property</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationAuthorizations.ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATOR_READOrganization7Borganization_id7DImpersonationSubjectValueMember7BpersonUrn7D.ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATOR_READOrganization7Borganization_id7DImpersonationSubjectValueMember7BpersonUrn7DRequestBuilder ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATOR_READOrganization7Borganization_id7DImpersonationSubjectValueMember7BpersonUrn7D
+        /// <summary>
+        /// Builds and executes requests for operations under \pages-data-portability\rest\dmaOrganizationAuthorizations\(action:(organizationRoleAuthorizationAction:(actionType:ADMINISTRATOR_READ)),organization:{organizationId},impersonation:(subject:(value:(member:{personUrn}))))
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationAuthorizations.ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATOR_READOrganizationWithOrganizationIdimpersonationSubjectValueMemberWithPersonUrn.ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATOR_READOrganizationWithOrganizationIdimpersonationSubjectValueMemberWithPersonUrnRequestBuilder"/></returns>
+        /// <param name="organizationId">The path parameter: organizationId</param>
+        /// <param name="personUrn">The path parameter: personUrn</param>
+        public global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationAuthorizations.ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATOR_READOrganizationWithOrganizationIdimpersonationSubjectValueMemberWithPersonUrn.ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATOR_READOrganizationWithOrganizationIdimpersonationSubjectValueMemberWithPersonUrnRequestBuilder ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATOR_READOrganizationWithOrganizationIdimpersonationSubjectValueMemberWithPersonUrn(string organizationId, string personUrn)
         {
-            get => new global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationAuthorizations.ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATOR_READOrganization7Borganization_id7DImpersonationSubjectValueMember7BpersonUrn7D.ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATOR_READOrganization7Borganization_id7DImpersonationSubjectValueMember7BpersonUrn7DRequestBuilder(PathParameters, RequestAdapter);
+            if(string.IsNullOrEmpty(organizationId)) throw new ArgumentNullException(nameof(organizationId));
+            if(string.IsNullOrEmpty(personUrn)) throw new ArgumentNullException(nameof(personUrn));
+            return new global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationAuthorizations.ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATOR_READOrganizationWithOrganizationIdimpersonationSubjectValueMemberWithPersonUrn.ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATOR_READOrganizationWithOrganizationIdimpersonationSubjectValueMemberWithPersonUrnRequestBuilder(PathParameters, RequestAdapter, organizationId, personUrn);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationAuthorizations.DmaOrganizationAuthorizationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DmaOrganizationAuthorizationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaOrganizationAuthorizations{?ids*}", pathParameters)
+        public DmaOrganizationAuthorizationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaOrganizationAuthorizations{?authorizationActions*,bq*,ids*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,29 +43,29 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganiza
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DmaOrganizationAuthorizationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaOrganizationAuthorizations{?ids*}", rawUrl)
+        public DmaOrganizationAuthorizationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaOrganizationAuthorizations{?authorizationActions*,bq*,ids*}", rawUrl)
         {
         }
         /// <summary>
-        /// dmaOrganizationAuthorizations BATCH_GET
+        /// dmaOrganizationAuthorizations Impersonator FINDER
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsBatchget200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsBatchget200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationAuthorizations.DmaOrganizationAuthorizationsRequestBuilder.DmaOrganizationAuthorizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationAuthorizations.DmaOrganizationAuthorizationsRequestBuilder.DmaOrganizationAuthorizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsBatchget200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationAuthorizations.DmaOrganizationAuthorizationsRequestBuilder.DmaOrganizationAuthorizationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationAuthorizations.DmaOrganizationAuthorizationsRequestBuilder.DmaOrganizationAuthorizationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsBatchget200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsBatchget200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// dmaOrganizationAuthorizations BATCH_GET
+        /// dmaOrganizationAuthorizations Impersonator FINDER
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,11 +93,37 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganiza
             return new global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationAuthorizations.DmaOrganizationAuthorizationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// dmaOrganizationAuthorizations BATCH_GET
+        /// dmaOrganizationAuthorizations Impersonator FINDER
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DmaOrganizationAuthorizationsRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("authorizationActions")]
+            public string? AuthorizationActions { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("authorizationActions")]
+            public string AuthorizationActions { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("bq")]
+            public string? Bq { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("bq")]
+            public string Bq { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591

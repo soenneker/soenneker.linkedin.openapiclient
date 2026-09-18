@@ -8,45 +8,438 @@
   "paths": {
     "/v2/me": {
       "get": {
-        "summary": "/me",
-        "operationId": "Me3",
-        "responses": {
-          "200": {
-            "description": "Success"
+        "tags": [
+          "Use Cases / Member",
+          "Use Cases / Organization Page",
+          "Use Cases / Scheduled Live Events / Member",
+          "Use Cases / Scheduled Live Events / Organization"
+        ],
+        "summary": "/me get",
+        "operationId": "MeGet",
+        "requestBody": {
+          "content": {
+            "text/plain": {
+              "schema": {
+                "type": "string"
+              },
+              "examples": {
+                "example1": {
+                  "value": ""
+                },
+                "example1_2": {
+                  "summary": "example1",
+                  "value": ""
+                },
+                "example1_3": {
+                  "summary": "example1",
+                  "value": ""
+                },
+                "example1_4": {
+                  "summary": "example1",
+                  "value": ""
+                }
+              }
+            }
           }
-        }
+        },
+        "responses": {
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
+          }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations."
+        ],
+        "x-postman-auth": {
+          "type": "oauth2",
+          "oauth2": {
+            "useBrowser": true,
+            "tokenName": "live-video-token",
+            "client_authentication": "body",
+            "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+            "clientSecret": "{{clientSecret}}",
+            "clientId": "{{clientId}}",
+            "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+            "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+            "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+            "addTokenTo": "header"
+          }
+        },
+        "x-postman-variants": [
+          {
+            "name": "/me get",
+            "id": "0c96f4fb-95be-4237-8c37-b87f3146505e",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "body": {
+                "mode": "raw",
+                "raw": ""
+              },
+              "url": "{{baseUrl}}/v2/me"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Member"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/me",
+            "id": "d1321f63-bacd-48b3-8d62-c7a37657825a",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "body": {
+                "mode": "raw",
+                "raw": ""
+              },
+              "url": "{{baseUrl}}/v2/me"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Organization Page"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/me",
+            "id": "e0354518-3dc1-4e79-adea-bbbe709261fc",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "body": {
+                "mode": "raw",
+                "raw": ""
+              },
+              "url": "{{baseUrl}}/v2/me"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Member"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/me",
+            "id": "3ddcbca7-dc10-4d31-b79e-72bc4c38898b",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "body": {
+                "mode": "raw",
+                "raw": ""
+              },
+              "url": "{{baseUrl}}/v2/me"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Organization"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/v2/contentAccess/(entity:(member:urn%3Ali%3Aperson%3A{abcde}),featureType:LIVE_VIDEO)": {
       "get": {
+        "tags": [
+          "Use Cases / Member",
+          "Use Cases / Scheduled Live Events / Member"
+        ],
         "summary": "/contentAccess",
-        "operationId": "ContentAccess3",
+        "operationId": "ContentAccess",
         "parameters": [
+          {
+            "name": "abcde",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "X-RestLi-Protocol-Version",
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "2.0.0"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations."
+        ],
+        "x-postman-auth": {
+          "type": "oauth2",
+          "oauth2": {
+            "useBrowser": true,
+            "tokenName": "live-video-token",
+            "client_authentication": "body",
+            "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+            "clientSecret": "{{clientSecret}}",
+            "clientId": "{{clientId}}",
+            "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+            "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+            "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+            "addTokenTo": "header"
+          }
+        },
+        "x-postman-variants": [
+          {
+            "name": "/contentAccess",
+            "id": "b6d7f9ad-6cd2-4d71-a70d-74d55e8540e7",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "url": "{{baseUrl}}/v2/contentAccess/(entity:(member:urn%3Ali%3Aperson%3A{{abcde}}),featureType:LIVE_VIDEO)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Member"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/contentAccess",
+            "id": "0a1e9cbf-9921-4df2-83f2-75d068eb51c6",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "url": "{{baseUrl}}/v2/contentAccess/(entity:(member:urn%3Ali%3Aperson%3A{{abcde}}),featureType:LIVE_VIDEO)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Member"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/v2/liveAssetActions": {
       "post": {
-        "summary": "/liveAssetActions end",
-        "operationId": "LiveAssetActionsEnd4",
+        "tags": [
+          "Use Cases / Member",
+          "Use Cases / Organization Page",
+          "Use Cases / Scheduled Live Events / Member",
+          "Use Cases / Scheduled Live Events / Organization"
+        ],
+        "summary": "/liveAssetActions register",
+        "operationId": "LiveAssetActionsRegister",
         "parameters": [
           {
             "name": "action",
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "register"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "end"
+              },
+              "example1_3": {
+                "summary": "example1",
+                "value": "register"
+              },
+              "example1_4": {
+                "summary": "example1",
+                "value": "end"
+              },
+              "example1_5": {
+                "summary": "example1",
+                "value": "register"
+              },
+              "example1_6": {
+                "summary": "example1",
+                "value": "end"
+              },
+              "example1_7": {
+                "summary": "example1",
+                "value": "register"
+              },
+              "example1_8": {
+                "summary": "example1",
+                "value": "end"
+              }
             }
           },
           {
@@ -54,6 +447,39 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "action"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "action"
+              },
+              "example1_3": {
+                "summary": "example1",
+                "value": "action"
+              },
+              "example1_4": {
+                "summary": "example1",
+                "value": "action"
+              },
+              "example1_5": {
+                "summary": "example1",
+                "value": "action"
+              },
+              "example1_6": {
+                "summary": "example1",
+                "value": "action"
+              },
+              "example1_7": {
+                "summary": "example1",
+                "value": "action"
+              },
+              "example1_8": {
+                "summary": "example1",
+                "value": "action"
+              }
             }
           },
           {
@@ -61,6 +487,39 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "2.0.0"
+              },
+              "example1_3": {
+                "summary": "example1",
+                "value": "2.0.0"
+              },
+              "example1_4": {
+                "summary": "example1",
+                "value": "2.0.0"
+              },
+              "example1_5": {
+                "summary": "example1",
+                "value": "2.0.0"
+              },
+              "example1_6": {
+                "summary": "example1",
+                "value": "2.0.0"
+              },
+              "example1_7": {
+                "summary": "example1",
+                "value": "2.0.0"
+              },
+              "example1_8": {
+                "summary": "example1",
+                "value": "2.0.0"
+              }
             }
           }
         ],
@@ -68,31 +527,713 @@
           "content": {
             "application/json": {
               "schema": {
-                "required": [
-                  "asset"
-                ],
                 "type": "object",
                 "properties": {
+                  "registerLiveEventRequest": {
+                    "type": "object",
+                    "properties": {
+                      "owner": {
+                        "type": "string"
+                      },
+                      "recipes": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "region": {
+                        "type": "string"
+                      },
+                      "autoCaptionLanguageTag": {
+                        "type": "string"
+                      }
+                    }
+                  },
                   "asset": {
                     "type": "string"
                   }
                 }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "registerLiveEventRequest": {
+                      "owner": "urn:li:person:{{abcde}}",
+                      "recipes": [
+                        "urn:li:digitalmediaRecipe:feedshare-live-video"
+                      ],
+                      "region": "WEST_US",
+                      "autoCaptionLanguageTag": "en-US"
+                    }
+                  }
+                },
+                "example1_2": {
+                  "summary": "example1",
+                  "value": {
+                    "asset": "urn:li:digitalmediaAsset:{{abcde12345}}"
+                  }
+                },
+                "example1_3": {
+                  "summary": "example1",
+                  "value": {
+                    "registerLiveEventRequest": {
+                      "owner": "urn:li:organization:{{12345}}",
+                      "recipes": [
+                        "urn:li:digitalmediaRecipe:feedshare-live-video"
+                      ],
+                      "region": "WEST_US",
+                      "autoCaptionLanguageTag": "en-US"
+                    }
+                  }
+                },
+                "example1_4": {
+                  "summary": "example1",
+                  "value": {
+                    "asset": "urn:li:digitalmediaAsset:{{abcde12345}}}}"
+                  }
+                },
+                "example1_5": {
+                  "summary": "example1",
+                  "value": {
+                    "registerLiveEventRequest": {
+                      "owner": "urn:li:person:{{abcde}}",
+                      "recipes": [
+                        "urn:li:digitalmediaRecipe:feedshare-live-video"
+                      ],
+                      "region": "WEST_US",
+                      "autoCaptionLanguageTag": "en-US"
+                    }
+                  }
+                },
+                "example1_6": {
+                  "summary": "example1",
+                  "value": {
+                    "asset": "urn:li:digitalmediaAsset:{{abcde12345}}"
+                  }
+                },
+                "example1_7": {
+                  "summary": "example1",
+                  "value": {
+                    "registerLiveEventRequest": {
+                      "owner": "urn:li:organization:{{12345}}",
+                      "recipes": [
+                        "urn:li:digitalmediaRecipe:feedshare-live-video"
+                      ],
+                      "region": "WEST_US",
+                      "autoCaptionLanguageTag": "en-US"
+                    }
+                  }
+                },
+                "example1_8": {
+                  "summary": "example1",
+                  "value": {
+                    "asset": "urn:li:digitalmediaAsset:{{abcde12345}}"
+                  }
+                }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations."
+        ],
+        "x-postman-auth": {
+          "type": "oauth2",
+          "oauth2": {
+            "useBrowser": true,
+            "tokenName": "live-video-token",
+            "client_authentication": "body",
+            "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+            "clientSecret": "{{clientSecret}}",
+            "clientId": "{{clientId}}",
+            "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+            "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+            "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+            "addTokenTo": "header"
+          }
+        },
+        "x-postman-variants": [
+          {
+            "name": "/liveAssetActions register",
+            "id": "f7ee13cf-7440-4648-81b9-b9adc57fe67b",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Method",
+                  "value": "action",
+                  "type": "text"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "name": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"registerLiveEventRequest\": {\n        \"owner\": \"urn:li:person:{{abcde}}\",\n        \"recipes\": [\n            \"urn:li:digitalmediaRecipe:feedshare-live-video\"\n        ],\n        \"region\": \"WEST_US\",\n        \"autoCaptionLanguageTag\": \"en-US\"\n    }\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/v2/liveAssetActions?action=register",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "liveAssetActions"
+                ],
+                "query": [
+                  {
+                    "key": "action",
+                    "value": "register"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Member"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/liveAssetActions end",
+            "id": "55393eaf-dcde-4bde-a1b7-3d106f4e2d9b",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Method",
+                  "value": "action",
+                  "type": "text"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"asset\": \"urn:li:digitalmediaAsset:{{abcde12345}}\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "{{baseUrl}}/v2/liveAssetActions?action=end",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "liveAssetActions"
+                ],
+                "query": [
+                  {
+                    "key": "action",
+                    "value": "end"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Member"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/liveAssetActions register",
+            "id": "c2b1590a-2748-4f1e-9b30-605052ea21c4",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Method",
+                  "value": "action",
+                  "type": "text"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "name": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"registerLiveEventRequest\": {\n        \"owner\": \"urn:li:organization:{{12345}}\",\n        \"recipes\": [\n            \"urn:li:digitalmediaRecipe:feedshare-live-video\"\n        ],\n        \"region\": \"WEST_US\",\n        \"autoCaptionLanguageTag\": \"en-US\"\n    }\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/v2/liveAssetActions?action=register",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "liveAssetActions"
+                ],
+                "query": [
+                  {
+                    "key": "action",
+                    "value": "register"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Organization Page"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/liveAssetActions end",
+            "id": "10ec433d-1933-4e3e-a752-151bcef9d052",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Method",
+                  "value": "action",
+                  "type": "text"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"asset\": \"urn:li:digitalmediaAsset:{{abcde12345}}}}\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "{{baseUrl}}/v2/liveAssetActions?action=end",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "liveAssetActions"
+                ],
+                "query": [
+                  {
+                    "key": "action",
+                    "value": "end"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Organization Page"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/liveAssetActions register",
+            "id": "3d376d86-e1d9-43c0-bea1-5c54dbd860e2",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Method",
+                  "value": "action",
+                  "type": "text"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "name": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"registerLiveEventRequest\": {\n        \"owner\": \"urn:li:person:{{abcde}}\",\n        \"recipes\": [\n            \"urn:li:digitalmediaRecipe:feedshare-live-video\"\n        ],\n        \"region\": \"WEST_US\",\n        \"autoCaptionLanguageTag\": \"en-US\"\n    }\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/v2/liveAssetActions?action=register",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "liveAssetActions"
+                ],
+                "query": [
+                  {
+                    "key": "action",
+                    "value": "register"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Member"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/liveAssetActions end",
+            "id": "8807dbaf-b350-4e8e-b02d-a3fc3595b491",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Method",
+                  "value": "action",
+                  "type": "text"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"asset\": \"urn:li:digitalmediaAsset:{{abcde12345}}\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "{{baseUrl}}/v2/liveAssetActions?action=end",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "liveAssetActions"
+                ],
+                "query": [
+                  {
+                    "key": "action",
+                    "value": "end"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Member"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/liveAssetActions register",
+            "id": "b22b8131-d7ec-4463-ab6a-6051f6532e71",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Method",
+                  "value": "action",
+                  "type": "text"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "name": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"registerLiveEventRequest\": {\n        \"owner\": \"urn:li:organization:{{12345}}\",\n        \"recipes\": [\n            \"urn:li:digitalmediaRecipe:feedshare-live-video\"\n        ],\n        \"region\": \"WEST_US\",\n        \"autoCaptionLanguageTag\": \"en-US\"\n    }\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/v2/liveAssetActions?action=register",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "liveAssetActions"
+                ],
+                "query": [
+                  {
+                    "key": "action",
+                    "value": "register"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Organization"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/liveAssetActions end",
+            "id": "85e6cb1a-feca-4536-aa42-85ee3f093503",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Method",
+                  "value": "action",
+                  "type": "text"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"asset\": \"urn:li:digitalmediaAsset:{{abcde12345}}\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "{{baseUrl}}/v2/liveAssetActions?action=end",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "liveAssetActions"
+                ],
+                "query": [
+                  {
+                    "key": "action",
+                    "value": "end"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Organization"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/v2/assets/{abcde12345}": {
       "get": {
-        "summary": "/assets?projection=(recipes) get",
-        "operationId": "AssetsProjectionRecipesGet2",
+        "tags": [
+          "Use Cases / Member",
+          "Use Cases / Organization Page",
+          "Use Cases / Scheduled Live Events / Member",
+          "Use Cases / Scheduled Live Events / Organization"
+        ],
+        "summary": "/assets?projection=(recipes) get Copy",
+        "operationId": "AssetsProjectionRecipesGetCopy",
         "parameters": [
           {
             "name": "abcde12345",
@@ -107,26 +1248,342 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "(recipes)"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "(recipes)"
+              },
+              "example1_3": {
+                "summary": "example1",
+                "value": "(recipes)"
+              },
+              "example1_4": {
+                "summary": "example1",
+                "value": "(recipes)"
+              }
             }
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success"
+        "requestBody": {
+          "content": {
+            "text/plain": {
+              "schema": {
+                "type": "string"
+              },
+              "examples": {
+                "example1": {
+                  "value": ""
+                },
+                "example1_2": {
+                  "summary": "example1",
+                  "value": ""
+                },
+                "example1_3": {
+                  "summary": "example1",
+                  "value": ""
+                },
+                "example1_4": {
+                  "summary": "example1",
+                  "value": ""
+                }
+              }
+            }
           }
-        }
+        },
+        "responses": {
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
+          }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations."
+        ],
+        "x-postman-auth": {
+          "type": "oauth2",
+          "oauth2": {
+            "useBrowser": true,
+            "tokenName": "live-video-token",
+            "client_authentication": "body",
+            "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+            "clientSecret": "{{clientSecret}}",
+            "clientId": "{{clientId}}",
+            "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+            "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+            "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+            "addTokenTo": "header"
+          }
+        },
+        "x-postman-variants": [
+          {
+            "name": "/assets?projection=(recipes) get Copy",
+            "id": "0c66de35-da02-4b50-829a-e1c02cb345e1",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "body": {
+                "mode": "raw",
+                "raw": ""
+              },
+              "url": {
+                "raw": "{{baseUrl}}/v2/assets/{{abcde12345}}?projection=(recipes)",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "assets",
+                  "{{abcde12345}}"
+                ],
+                "query": [
+                  {
+                    "key": "projection",
+                    "value": "(recipes)"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Member"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/assets?projection=(recipes) get Copy 2",
+            "id": "bb810d73-4971-4f74-8df6-d9d374687fcb",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "body": {
+                "mode": "raw",
+                "raw": ""
+              },
+              "url": {
+                "raw": "{{baseUrl}}/v2/assets/{{abcde12345}}?projection=(recipes)",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "assets",
+                  "{{abcde12345}}"
+                ],
+                "query": [
+                  {
+                    "key": "projection",
+                    "value": "(recipes)"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Organization Page"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/assets?projection=(recipes) get",
+            "id": "835c087e-988c-421c-93b4-3ae4574ac165",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "body": {
+                "mode": "raw",
+                "raw": ""
+              },
+              "url": {
+                "raw": "{{baseUrl}}/v2/assets/{{abcde12345}}?projection=(recipes)",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "assets",
+                  "{{abcde12345}}"
+                ],
+                "query": [
+                  {
+                    "key": "projection",
+                    "value": "(recipes)"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Member"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/assets?projection=(recipes) get",
+            "id": "8ea3520c-6591-4e2a-b983-39a61e75de0d",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "body": {
+                "mode": "raw",
+                "raw": ""
+              },
+              "url": {
+                "raw": "{{baseUrl}}/v2/assets/{{abcde12345}}?projection=(recipes)",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "assets",
+                  "{{abcde12345}}"
+                ],
+                "query": [
+                  {
+                    "key": "projection",
+                    "value": "(recipes)"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Organization"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/v2/ugcPosts": {
       "post": {
-        "summary": "/ugcPosts",
-        "operationId": "UgcPosts3",
+        "tags": [
+          "Use Cases / Member",
+          "Use Cases / Organization Page",
+          "Use Cases / Scheduled Live Events / Member",
+          "Use Cases / Scheduled Live Events / Organization"
+        ],
+        "summary": "/ugcPosts create",
+        "description": "create ugcPosts live video",
+        "operationId": "UgcPostsCreate",
         "parameters": [
           {
             "name": "X-RestLi-Method",
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "create"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "create"
+              },
+              "example1_3": {
+                "summary": "example1",
+                "value": "create"
+              },
+              "example1_4": {
+                "summary": "example1",
+                "value": "create"
+              }
             }
           },
           {
@@ -134,6 +1591,23 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "2.0.0"
+              },
+              "example1_3": {
+                "summary": "example1",
+                "value": "2.0.0"
+              },
+              "example1_4": {
+                "summary": "example1",
+                "value": "2.0.0"
+              }
             }
           }
         ],
@@ -141,29 +1615,378 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
+                "x-postman-invalid-json": true
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "author": "urn:li:person:{{abcde}}",
+                    "lifecycleState": "PUBLISHED",
+                    "specificContent": {
+                      "com.linkedin.ugc.ShareContent": {
+                        "media": [
+                          {
+                            "media": "urn:li:digitalmediaAsset:{{abcde12345}}",
+                            "status": "READY"
+                          }
+                        ],
+                        "shareCommentary": {
+                          "attributes": [ ],
+                          "text": "Let's go live on LinkedIn!"
+                        },
+                        "shareMediaCategory": "LIVE_VIDEO"
+                      }
+                    },
+                    "visibility": {
+                      "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
+                    }
+                  }
+                },
+                "example1_2": {
+                  "summary": "example1",
+                  "value": {
+                    "author": "urn:li:organization:{{12345}}}}",
+                    "lifecycleState": "PUBLISHED",
+                    "specificContent": {
+                      "com.linkedin.ugc.ShareContent": {
+                        "media": [
+                          {
+                            "media": "urn:li:digitalmediaAsset:{{abcde12345}}}}",
+                            "status": "READY"
+                          }
+                        ],
+                        "shareCommentary": {
+                          "attributes": [ ],
+                          "text": "Let's go live on LinkedIn!"
+                        },
+                        "shareMediaCategory": "LIVE_VIDEO"
+                      }
+                    },
+                    "visibility": {
+                      "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
+                    }
+                  }
+                },
+                "example1_3": {
+                  "summary": "example1",
+                  "value": {
+                    "author": "urn:li:person:{{abcde}}",
+                    "lifecycleState": "PUBLISHED",
+                    "specificContent": {
+                      "com.linkedin.ugc.ShareContent": {
+                        "media": [
+                          {
+                            "media": "urn:li:livevideo:{{123456789}}",
+                            "status": "READY"
+                          }
+                        ],
+                        "shareCommentary": {
+                          "attributes": [ ],
+                          "text": "Let's go live on LinkedIn!"
+                        },
+                        "shareMediaCategory": "URN_REFERENCE"
+                      }
+                    },
+                    "visibility": {
+                      "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
+                    },
+                    "distribution": {
+                      "feedDistribution": "MAIN_FEED",
+                      "externalDistributionChannels": [ ],
+                      "distributedViaFollowFeed": true
+                    }
+                  }
+                }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+          "Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema."
+        ],
+        "x-postman-auth": {
+          "type": "oauth2",
+          "oauth2": {
+            "useBrowser": true,
+            "tokenName": "live-video-token",
+            "client_authentication": "body",
+            "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+            "clientSecret": "{{clientSecret}}",
+            "clientId": "{{clientId}}",
+            "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+            "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+            "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+            "addTokenTo": "header"
+          }
+        },
+        "x-postman-variants": [
+          {
+            "name": "/ugcPosts create",
+            "id": "8ab79a9f-eace-4cb0-8643-365154bf4876",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Method",
+                  "value": "create",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "name": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"author\": \"urn:li:person:{{abcde}}\",\n    \"lifecycleState\": \"PUBLISHED\",\n    \"specificContent\": {\n        \"com.linkedin.ugc.ShareContent\": {\n            \"media\": [\n                {\n                    \"media\": \"urn:li:digitalmediaAsset:{{abcde12345}}\",\n                    \"status\": \"READY\"\n                }\n            ],\n            \"shareCommentary\": {\n                \"attributes\": [],\n                \"text\": \"Let's go live on LinkedIn!\"\n            },\n            \"shareMediaCategory\": \"LIVE_VIDEO\"\n        }\n    },\n    \"visibility\": {\n        \"com.linkedin.ugc.MemberNetworkVisibility\": \"PUBLIC\"\n    }\n}"
+              },
+              "url": "{{baseUrl}}/v2/ugcPosts",
+              "description": "create ugcPosts live video"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Member"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/ugcPosts",
+            "id": "16878bd6-f42c-4a0e-a06f-2bce52350482",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Method",
+                  "value": "create",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "name": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"author\": \"urn:li:organization:{{12345}}}}\",\n    \"lifecycleState\": \"PUBLISHED\",\n    \"specificContent\": {\n        \"com.linkedin.ugc.ShareContent\": {\n            \"media\": [\n                {\n                    \"media\": \"urn:li:digitalmediaAsset:{{abcde12345}}}}\",\n                    \"status\": \"READY\"\n                }\n            ],\n            \"shareCommentary\": {\n                \"attributes\": [],\n                \"text\": \"Let's go live on LinkedIn!\"\n            },\n            \"shareMediaCategory\": \"LIVE_VIDEO\"\n        }\n    },\n    \"visibility\": {\n        \"com.linkedin.ugc.MemberNetworkVisibility\": \"PUBLIC\"\n    }\n}"
+              },
+              "url": "{{baseUrl}}/v2/ugcPosts",
+              "description": "create ugcPosts live video"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Organization Page"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/ugcPosts",
+            "id": "691693f8-92a8-4272-b8ff-c87a39915007",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Method",
+                  "value": "create",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "name": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"author\": \"urn:li:person:{{abcde}}\",\n    \"lifecycleState\": \"PUBLISHED\",\n    \"specificContent\": {\n        \"com.linkedin.ugc.ShareContent\": {\n            \"media\": [\n                {\n                    \"media\": \"urn:li:livevideo:{{123456789}}\",\n                    \"status\": \"READY\"\n                }\n            ],\n            \"shareCommentary\": {\n                \"attributes\": [],\n                \"text\": \"Let's go live on LinkedIn!\"\n            },\n            \"shareMediaCategory\": \"URN_REFERENCE\"\n        }\n    },\n    \"visibility\": {\n        \"com.linkedin.ugc.MemberNetworkVisibility\": \"PUBLIC\"\n    },\n    \"distribution\": {\n        \"feedDistribution\": \"MAIN_FEED\",\n        \"externalDistributionChannels\": [],\n        \"distributedViaFollowFeed\": true\n    }\n}"
+              },
+              "url": "{{baseUrl}}/v2/ugcPosts"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Member"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/ugcPosts",
+            "id": "00b5f1d6-f7ed-4c03-95b9-ee20ff9510e9",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Method",
+                  "value": "create",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "name": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"author\": \"urn:li:organization:{{12345}}\",\n    \"lifecycleState\": \"PUBLISHED\",\n    \"specificContent\": {\n        \"com.linkedin.ugc.ShareContent\": {\n            \"media\": [\n                {\n                    \"media\": \"urn:li:liveVideo:{{123456789}}\",\n                    \"status\": \"READY\"\n                }\n            ],\n            \"shareCommentary\": {\n                \"attributes\": [],\n                \"text\": \"Let's go live on LinkedIn!\"\n            },\n            \"shareMediaCategory\": \"URN_REFERENCE\"\n        }\n    },\n    \"visibility\": {\n        \"com.linkedin.ugc.MemberNetworkVisibility\": \"PUBLIC\"\n    },\n    \"distribution\": {\n        \"feedDistribution\": \"MAIN_FEED\",\n        \"externalDistributionChannels\": [],\n        \"distributedViaFollowFeed\": true\n    }\n}'"
+              },
+              "url": "{{baseUrl}}/v2/ugcPosts"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Organization"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/v2/organizationAcls": {
       "get": {
+        "tags": [
+          "Use Cases / Organization Page",
+          "Use Cases / Scheduled Live Events / Organization"
+        ],
         "summary": "/organizationAcls",
-        "operationId": "OrganizationAcls2",
+        "operationId": "OrganizationAcls",
         "parameters": [
           {
             "name": "q",
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "roleAssignee"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "roleAssignee"
+              }
             }
           },
           {
@@ -171,46 +1994,355 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "(elements*(organization~))"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "(elements*(organization~))"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations."
+        ],
+        "x-postman-auth": {
+          "type": "oauth2",
+          "oauth2": {
+            "useBrowser": true,
+            "tokenName": "live-video-token",
+            "client_authentication": "body",
+            "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+            "clientSecret": "{{clientSecret}}",
+            "clientId": "{{clientId}}",
+            "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+            "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+            "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+            "addTokenTo": "header"
+          }
+        },
+        "x-postman-variants": [
+          {
+            "name": "/organizationAcls",
+            "id": "66179296-c017-4982-b5f5-9ad0a9b1f572",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "{{baseUrl}}/v2/organizationAcls?q=roleAssignee&projection=(elements*(organization~))",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "organizationAcls"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "roleAssignee"
+                  },
+                  {
+                    "key": "projection",
+                    "value": "(elements*(organization~))"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Organization Page"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/organizationAcls",
+            "id": "87762dd7-0da6-462a-a89d-659e22330599",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "{{baseUrl}}/v2/organizationAcls?q=roleAssignee&projection=(elements*(organization~))",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "organizationAcls"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "roleAssignee"
+                  },
+                  {
+                    "key": "projection",
+                    "value": "(elements*(organization~))"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Organization"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/v2/contentAccess/(entity:(company:urn%3Ali%3Aorganization%3A{12345}),admin:(member:urn%3Ali%3Aperson%3A{abcde}),featureType:LIVE_VIDEO)": {
       "get": {
+        "tags": [
+          "Use Cases / Organization Page",
+          "Use Cases / Scheduled Live Events / Organization"
+        ],
         "summary": "/contentAccess",
-        "operationId": "ContentAccess4",
+        "operationId": "ContentAccess2",
         "parameters": [
+          {
+            "name": "12345",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "abcde",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "X-RestLi-Protocol-Version",
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "2.0.0"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations."
+        ],
+        "x-postman-auth": {
+          "type": "oauth2",
+          "oauth2": {
+            "useBrowser": true,
+            "tokenName": "live-video-token",
+            "client_authentication": "body",
+            "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+            "clientSecret": "{{clientSecret}}",
+            "clientId": "{{clientId}}",
+            "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+            "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+            "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+            "addTokenTo": "header"
+          }
+        },
+        "x-postman-variants": [
+          {
+            "name": "/contentAccess",
+            "id": "f2902fda-97c7-44ec-916a-0f45f4384c2f",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "url": "{{baseUrl}}/v2/contentAccess/(entity:(company:urn%3Ali%3Aorganization%3A{{12345}}),admin:(member:urn%3Ali%3Aperson%3A{{abcde}}),featureType:LIVE_VIDEO)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Organization Page"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/contentAccess",
+            "id": "55622e3a-9048-4322-8af1-45bcc44afd84",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "url": "{{baseUrl}}/v2/contentAccess/(entity:(company:urn%3Ali%3Aorganization%3A{{12345}}),admin:(member:urn%3Ali%3Aperson%3A{{abcde}}),featureType:LIVE_VIDEO)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Organization"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/v2/liveVideos": {
       "get": {
+        "tags": [
+          "Use Cases / Scheduled Live Events / Member",
+          "Use Cases / Scheduled Live Events / Organization"
+        ],
         "summary": "/liveVideos?q=author",
-        "operationId": "LiveVideosQAuthor2",
+        "operationId": "LiveVideosQAuthor",
         "parameters": [
           {
             "name": "q",
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "author"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "author"
+              }
             }
           },
           {
@@ -218,6 +2350,15 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "urn%3Ali%3Aperson%3A{{abcde}}"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "urn%3Ali%3Aorganization%3A{{12345}}"
+              }
             }
           },
           {
@@ -225,24 +2366,201 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "2.0.0"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations."
+        ],
+        "x-postman-auth": {
+          "type": "oauth2",
+          "oauth2": {
+            "useBrowser": true,
+            "tokenName": "live-video-token",
+            "client_authentication": "body",
+            "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+            "clientSecret": "{{clientSecret}}",
+            "clientId": "{{clientId}}",
+            "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+            "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+            "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+            "addTokenTo": "header"
+          }
+        },
+        "x-postman-variants": [
+          {
+            "name": "/liveVideos?q=author",
+            "id": "57518e37-2cc1-41c7-9756-7e25662a19a2",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/v2/liveVideos?q=author&author=urn%3Ali%3Aperson%3A{{abcde}}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "liveVideos"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "author"
+                  },
+                  {
+                    "key": "author",
+                    "value": "urn%3Ali%3Aperson%3A{{abcde}}"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Member"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/liveVideos?q=author",
+            "id": "2f9eac6a-8fbc-4a43-bc88-c46d846520d2",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/v2/liveVideos?q=author&author=urn%3Ali%3Aorganization%3A{{12345}}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "liveVideos"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "author"
+                  },
+                  {
+                    "key": "author",
+                    "value": "urn%3Ali%3Aorganization%3A{{12345}}"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Organization"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       },
       "post": {
+        "tags": [
+          "Use Cases / Scheduled Live Events / Member",
+          "Use Cases / Scheduled Live Events / Organization"
+        ],
         "summary": "/liveVideos",
-        "operationId": "LiveVideos3",
+        "operationId": "LiveVideos",
         "parameters": [
           {
             "name": "X-RestLi-Protocol-Version",
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "2.0.0"
+              }
             }
           }
         ],
@@ -250,20 +2568,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "required": [
-                  "author",
-                  "scheduledAt",
-                  "announcementImage",
-                  "name"
-                ],
                 "type": "object",
                 "properties": {
                   "author": {
-                    "required": [
-                      "organization"
-                    ],
                     "type": "object",
                     "properties": {
+                      "member": {
+                        "type": "string"
+                      },
                       "organization": {
                         "type": "string"
                       }
@@ -273,20 +2585,12 @@
                     "type": "integer"
                   },
                   "announcementImage": {
-                    "required": [
-                      "media",
-                      "title"
-                    ],
                     "type": "object",
                     "properties": {
                       "media": {
                         "type": "string"
                       },
                       "title": {
-                        "required": [
-                          "text",
-                          "inferredLocale"
-                        ],
                         "type": "object",
                         "properties": {
                           "text": {
@@ -303,28 +2607,210 @@
                     "type": "string"
                   }
                 }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "author": {
+                      "member": "urn:li:person:{{abcde}}}}"
+                    },
+                    "scheduledAt": 1626209590000,
+                    "announcementImage": {
+                      "media": "urn:li:digitalmediaAsset:{{C5F22AQEUvl4IOBjE2g}}",
+                      "title": {
+                        "text": "Image Title",
+                        "inferredLocale": "en_US"
+                      }
+                    },
+                    "name": "Scheduled Live Event Title"
+                  }
+                },
+                "example1_2": {
+                  "summary": "example1",
+                  "value": {
+                    "author": {
+                      "organization": "urn:li:organization:{{12345}}"
+                    },
+                    "scheduledAt": 1591892529000,
+                    "announcementImage": {
+                      "media": "urn:li:digitalmediaAsset:{{C5F22AQEUvl4IOBjE2g}}",
+                      "title": {
+                        "text": "Image Title",
+                        "inferredLocale": "en_US"
+                      }
+                    },
+                    "name": "Scheduled Live Event Title"
+                  }
+                }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations."
+        ],
+        "x-postman-auth": {
+          "type": "oauth2",
+          "oauth2": {
+            "useBrowser": true,
+            "tokenName": "live-video-token",
+            "client_authentication": "body",
+            "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+            "clientSecret": "{{clientSecret}}",
+            "clientId": "{{clientId}}",
+            "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+            "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+            "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+            "addTokenTo": "header"
+          }
+        },
+        "x-postman-variants": [
+          {
+            "name": "/liveVideos",
+            "id": "75af1abe-252c-49c6-9f7f-4c442242f8b8",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"author\": {\n        \"member\": \"urn:li:person:{{abcde}}}}\"\n    },\n    \"scheduledAt\": 1626209590000,\n    \"announcementImage\": {\n        \"media\": \"urn:li:digitalmediaAsset:{{C5F22AQEUvl4IOBjE2g}}\",\n        \"title\": {\n            \"text\": \"Image Title\",\n            \"inferredLocale\": \"en_US\"\n        }\n    },\n    \"name\": \"Scheduled Live Event Title\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "{{baseUrl}}/v2/liveVideos"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Member"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/liveVideos",
+            "id": "eb501e4e-a765-4544-b4c2-3d6500f33abe",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"author\": {\n        \"organization\": \"urn:li:organization:{{12345}}\"\n    },\n    \"scheduledAt\": 1591892529000,\n    \"announcementImage\": {\n        \"media\": \"urn:li:digitalmediaAsset:{{C5F22AQEUvl4IOBjE2g}}\",\n        \"title\": {\n            \"text\": \"Image Title\",\n            \"inferredLocale\": \"en_US\"\n        }\n    },\n    \"name\": \"Scheduled Live Event Title\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "{{baseUrl}}/v2/liveVideos"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Organization"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/v2/assets": {
       "post": {
+        "tags": [
+          "Use Cases / Scheduled Live Events / Member",
+          "Use Cases / Scheduled Live Events / Organization"
+        ],
         "summary": "/assets (optional announcement image)",
-        "operationId": "AssetsOptionalAnnouncementImage2",
+        "operationId": "AssetsOptionalAnnouncementImage",
         "parameters": [
           {
             "name": "action",
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "registerUpload"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "registerUpload"
+              }
             }
           },
           {
@@ -332,6 +2818,15 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "2.0.0"
+              }
             }
           }
         ],
@@ -339,17 +2834,9 @@
           "content": {
             "application/json": {
               "schema": {
-                "required": [
-                  "registerUploadRequest"
-                ],
                 "type": "object",
                 "properties": {
                   "registerUploadRequest": {
-                    "required": [
-                      "recipes",
-                      "owner",
-                      "serviceRelationships"
-                    ],
                     "type": "object",
                     "properties": {
                       "recipes": {
@@ -364,10 +2851,6 @@
                       "serviceRelationships": {
                         "type": "array",
                         "items": {
-                          "required": [
-                            "relationshipType",
-                            "identifier"
-                          ],
                           "type": "object",
                           "properties": {
                             "relationshipType": {
@@ -382,22 +2865,225 @@
                     }
                   }
                 }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "registerUploadRequest": {
+                      "recipes": [
+                        "urn:li:digitalmediaRecipe:video-liveannouncement-image"
+                      ],
+                      "owner": "urn:li:person:{{abcde}}",
+                      "serviceRelationships": [
+                        {
+                          "relationshipType": "OWNER",
+                          "identifier": "urn:li:userGeneratedContent"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "example1_2": {
+                  "summary": "example1",
+                  "value": {
+                    "registerUploadRequest": {
+                      "recipes": [
+                        "urn:li:digitalmediaRecipe:video-liveannouncement-image"
+                      ],
+                      "owner": "urn:li:person:{{abcde}}",
+                      "serviceRelationships": [
+                        {
+                          "relationshipType": "OWNER",
+                          "identifier": "urn:li:userGeneratedContent"
+                        }
+                      ]
+                    }
+                  }
+                }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations."
+        ],
+        "x-postman-auth": {
+          "type": "oauth2",
+          "oauth2": {
+            "useBrowser": true,
+            "tokenName": "live-video-token",
+            "client_authentication": "body",
+            "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+            "clientSecret": "{{clientSecret}}",
+            "clientId": "{{clientId}}",
+            "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+            "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+            "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+            "addTokenTo": "header"
+          }
+        },
+        "x-postman-variants": [
+          {
+            "name": "/assets (optional announcement image)",
+            "id": "8b496953-158f-406d-84af-07cd7bf2941e",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"registerUploadRequest\": {\n        \"recipes\": [\n            \"urn:li:digitalmediaRecipe:video-liveannouncement-image\"\n        ],\n        \"owner\": \"urn:li:person:{{abcde}}\",\n        \"serviceRelationships\": [\n            {\n                \"relationshipType\": \"OWNER\",\n                \"identifier\": \"urn:li:userGeneratedContent\"\n            }\n        ]\n    }\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "{{baseUrl}}/v2/assets?action=registerUpload",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "assets"
+                ],
+                "query": [
+                  {
+                    "key": "action",
+                    "value": "registerUpload"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Member"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/assets (optional announcement image)",
+            "id": "94a3463d-9ca8-4c62-b7b4-ef82d9bfe233",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"registerUploadRequest\": {\n        \"recipes\": [\n            \"urn:li:digitalmediaRecipe:video-liveannouncement-image\"\n        ],\n        \"owner\": \"urn:li:person:{{abcde}}\",\n        \"serviceRelationships\": [\n            {\n                \"relationshipType\": \"OWNER\",\n                \"identifier\": \"urn:li:userGeneratedContent\"\n            }\n        ]\n    }\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "{{baseUrl}}/v2/assets?action=registerUpload",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "v2",
+                  "assets"
+                ],
+                "query": [
+                  {
+                    "key": "action",
+                    "value": "registerUpload"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Organization"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/v2/liveVideos/{123456789}": {
       "post": {
+        "tags": [
+          "Use Cases / Scheduled Live Events / Member",
+          "Use Cases / Scheduled Live Events / Organization"
+        ],
         "summary": "/liveVideos",
-        "operationId": "LiveVideos4",
+        "operationId": "LiveVideos2",
         "parameters": [
           {
             "name": "123456789",
@@ -412,6 +3098,15 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "2.0.0"
+              }
             }
           }
         ],
@@ -419,27 +3114,15 @@
           "content": {
             "application/json": {
               "schema": {
-                "required": [
-                  "patch"
-                ],
                 "type": "object",
                 "properties": {
                   "patch": {
-                    "required": [
-                      "$set"
-                    ],
                     "type": "object",
                     "properties": {
                       "$set": {
-                        "required": [
-                          "liveVideoAsset"
-                        ],
                         "type": "object",
                         "properties": {
                           "liveVideoAsset": {
-                            "required": [
-                              "media"
-                            ],
                             "type": "object",
                             "properties": {
                               "media": {
@@ -452,18 +3135,314 @@
                     }
                   }
                 }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "patch": {
+                      "$set": {
+                        "liveVideoAsset": {
+                          "media": "urn:li:digitalmediaAsset:{{abcde12345}}"
+                        }
+                      }
+                    }
+                  }
+                },
+                "example1_2": {
+                  "summary": "example1",
+                  "value": {
+                    "patch": {
+                      "$set": {
+                        "liveVideoAsset": {
+                          "media": "urn:li:digitalmediaAsset:{{abcde12345}}"
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations."
+        ],
+        "x-postman-auth": {
+          "type": "oauth2",
+          "oauth2": {
+            "useBrowser": true,
+            "tokenName": "live-video-token",
+            "client_authentication": "body",
+            "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+            "clientSecret": "{{clientSecret}}",
+            "clientId": "{{clientId}}",
+            "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+            "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+            "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+            "addTokenTo": "header"
+          }
+        },
+        "x-postman-variants": [
+          {
+            "name": "/liveVideos",
+            "id": "e06aa751-0915-4043-b5ea-18f281bb3744",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"patch\": {\n        \"$set\": {\n            \"liveVideoAsset\": {\n                \"media\": \"urn:li:digitalmediaAsset:{{abcde12345}}\"\n            }\n        }\n    }\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "{{baseUrl}}/v2/liveVideos/{{123456789}}"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Member"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "/liveVideos",
+            "id": "f06027da-2ba3-4a77-b1ed-2ce4fcd18420",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"patch\": {\n        \"$set\": {\n            \"liveVideoAsset\": {\n                \"media\": \"urn:li:digitalmediaAsset:{{abcde12345}}\"\n            }\n        }\n    }\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "{{baseUrl}}/v2/liveVideos/{{123456789}}"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Scheduled Live Events",
+              "Organization"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "useBrowser": true,
+                "tokenName": "live-video-token",
+                "client_authentication": "body",
+                "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+                "clientSecret": "{{clientSecret}}",
+                "clientId": "{{clientId}}",
+                "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+                "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+                "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     }
   },
-  "components": { }
+  "components": {
+    "securitySchemes": {
+      "oauth2Auth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Use Cases / Member",
+      "description": "Go live to a LinkedIn member profile using [Live Video APIs](https://docs.microsoft.com/en-us/linkedin/consumer/integrations/live-video/)."
+    },
+    {
+      "name": "Use Cases / Organization Page",
+      "description": "Go live to a LinkedIn organization page using [Live Video APIs](https://docs.microsoft.com/en-us/linkedin/consumer/integrations/live-video/)."
+    },
+    {
+      "name": "Use Cases / Scheduled Live Events / Member",
+      "description": "This flow outlines the APIs needed to schedule a live event to a member profile."
+    },
+    {
+      "name": "Use Cases / Scheduled Live Events / Organization",
+      "description": "This flow outlines the APIs needed to schedule a live event to an organization page."
+    }
+  ],
+  "x-postman-warnings": [
+    "collection: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Member / /me get: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/me get: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "/me get: No saved responses: status codes and response schemas cannot be inferred.",
+    "/me get: OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+    "Use Cases / Member / /contentAccess: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/contentAccess: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "/contentAccess: No saved responses: status codes and response schemas cannot be inferred.",
+    "/contentAccess: OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+    "Use Cases / Member / /liveAssetActions register: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/liveAssetActions register: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "/liveAssetActions register: No saved responses: status codes and response schemas cannot be inferred.",
+    "/liveAssetActions register: OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+    "Use Cases / Member / /assets?projection=(recipes) get Copy: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/assets?projection=(recipes) get Copy: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "/assets?projection=(recipes) get Copy: No saved responses: status codes and response schemas cannot be inferred.",
+    "/assets?projection=(recipes) get Copy: OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+    "Use Cases / Member / /ugcPosts create: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/ugcPosts create: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "/ugcPosts create: No saved responses: status codes and response schemas cannot be inferred.",
+    "/ugcPosts create: OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+    "Use Cases / Member / /liveAssetActions end: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/liveAssetActions end: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "/liveAssetActions end: No saved responses: status codes and response schemas cannot be inferred.",
+    "/liveAssetActions end: OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+    "/liveAssetActions register: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+    "Use Cases / Organization Page / /me: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/me: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "/me: No saved responses: status codes and response schemas cannot be inferred.",
+    "/me: OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+    "/me get: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+    "Use Cases / Organization Page / /organizationAcls: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/organizationAcls: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "/organizationAcls: No saved responses: status codes and response schemas cannot be inferred.",
+    "/organizationAcls: OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+    "Use Cases / Organization Page / /contentAccess: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Use Cases / Organization Page / /liveAssetActions register: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Use Cases / Organization Page / /assets?projection=(recipes) get Copy 2: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/assets?projection=(recipes) get Copy 2: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "/assets?projection=(recipes) get Copy 2: No saved responses: status codes and response schemas cannot be inferred.",
+    "/assets?projection=(recipes) get Copy 2: OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+    "/assets?projection=(recipes) get Copy: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+    "Use Cases / Organization Page / /ugcPosts: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/ugcPosts: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "/ugcPosts: No saved responses: status codes and response schemas cannot be inferred.",
+    "/ugcPosts: OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+    "/ugcPosts create: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+    "Use Cases / Organization Page / /liveAssetActions end: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Use Cases / Scheduled Live Events / Member / /me: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Use Cases / Scheduled Live Events / Member / /contentAccess: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/contentAccess: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+    "Use Cases / Scheduled Live Events / Member / /liveVideos?q=author: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/liveVideos?q=author: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "/liveVideos?q=author: No saved responses: status codes and response schemas cannot be inferred.",
+    "/liveVideos?q=author: OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+    "Use Cases / Scheduled Live Events / Member / /assets (optional announcement image): Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/assets (optional announcement image): Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "/assets (optional announcement image): No saved responses: status codes and response schemas cannot be inferred.",
+    "/assets (optional announcement image): OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+    "Use Cases / Scheduled Live Events / Member / /liveVideos: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/liveVideos: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "/liveVideos: No saved responses: status codes and response schemas cannot be inferred.",
+    "/liveVideos: OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+    "Use Cases / Scheduled Live Events / Member / /ugcPosts: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Use Cases / Scheduled Live Events / Member / /liveAssetActions register: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Use Cases / Scheduled Live Events / Member / /assets?projection=(recipes) get: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/assets?projection=(recipes) get: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "/assets?projection=(recipes) get: No saved responses: status codes and response schemas cannot be inferred.",
+    "/assets?projection=(recipes) get: OAuth2 flow configuration is incomplete or unresolved. Only bearer-token transport can be described; configuration is retained in x-postman-auth.",
+    "Use Cases / Scheduled Live Events / Member / /liveAssetActions end: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Use Cases / Scheduled Live Events / Organization / /me: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Use Cases / Scheduled Live Events / Organization / /organizationAcls: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/organizationAcls: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+    "Use Cases / Scheduled Live Events / Organization / /contentAccess: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Use Cases / Scheduled Live Events / Organization / /liveVideos?q=author: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/liveVideos?q=author: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+    "Use Cases / Scheduled Live Events / Organization / /assets (optional announcement image): Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/assets (optional announcement image): Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+    "Use Cases / Scheduled Live Events / Organization / /liveVideos: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/liveVideos: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+    "Use Cases / Scheduled Live Events / Organization / /ugcPosts: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "/ugcPosts: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Use Cases / Scheduled Live Events / Organization / /liveAssetActions register: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Use Cases / Scheduled Live Events / Organization / /assets?projection=(recipes) get: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Use Cases / Scheduled Live Events / Organization / /liveAssetActions end: Postman protocol profile behavior has no OpenAPI equivalent."
+  ],
+  "x-postman-events": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "571d0405-0b9d-4687-bee0-cef42d74f59f",
+        "type": "text/javascript",
+        "exec": [
+          "pm.request.headers.add({",
+          "  key: 'User-Agent',",
+          "  value: 'livevideo-linkedin-postman'",
+          "});"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "138e0092-c668-40f4-b682-5aca4417b9fa",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
 }

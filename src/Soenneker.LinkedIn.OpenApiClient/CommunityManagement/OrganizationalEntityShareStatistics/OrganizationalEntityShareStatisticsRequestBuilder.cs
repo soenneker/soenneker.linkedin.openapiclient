@@ -33,7 +33,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationalEnt
         {
         }
         /// <summary>
-        /// Time Bound Share Statistics
+        /// Lifetime Share Statistics
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationalEnt
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Time Bound Share Statistics
+        /// Lifetime Share Statistics
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,7 +78,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationalEnt
             return new global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationalEntityShareStatistics.OrganizationalEntityShareStatisticsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Time Bound Share Statistics
+        /// Lifetime Share Statistics
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrganizationalEntityShareStatisticsRequestBuilderGetQueryParameters 
@@ -122,14 +122,32 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationalEnt
             public string TimeIntervalsTimeGranularityType { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("timeIntervals%2EtimeRange%2Eend")]
-            public int? TimeIntervalsTimeRangeEnd { get; set; }
+            public string? TimeIntervalsTimeRangeEnd { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("timeIntervals%2EtimeRange%2Eend")]
+            public string TimeIntervalsTimeRangeEnd { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("timeIntervals%2EtimeRange%2Estart")]
-            public int? TimeIntervalsTimeRangeStart { get; set; }
+            public string? TimeIntervalsTimeRangeStart { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("timeIntervals%2EtimeRange%2Estart")]
+            public string TimeIntervalsTimeRangeStart { get; set; }
+            #pragma warning restore CS1591
+#endif
         }
     }
 }

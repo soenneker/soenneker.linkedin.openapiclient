@@ -7,7 +7,6 @@ using Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds;
 using Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives;
 using Soenneker.LinkedIn.OpenApiClient.ContentApis.Documents;
 using Soenneker.LinkedIn.OpenApiClient.ContentApis.Images;
-using Soenneker.LinkedIn.OpenApiClient.ContentApis.Item;
 using Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts;
 using Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest;
 using Soenneker.LinkedIn.OpenApiClient.ContentApis.Videos;
@@ -59,18 +58,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis
         {
             get => new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Videos.VideosRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.contentApis.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Item.WithBaseUrlItemRequestBuilder"/></returns>
-        public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Item.WithBaseUrlItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("baseUrl", position);
-                return new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Item.WithBaseUrlItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ContentApisRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -88,25 +75,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis
         {
         }
         /// <summary>
-        /// Get document content
-        /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Upload the Document file (select a document file in the Body for postman to use)
+        /// This is a generic Upload URL call without init.This is a generic API to upload the data.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,25 +93,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get document content
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            return requestInfo;
-        }
-        /// <summary>
-        /// Upload the Document file (select a document file in the Body for postman to use)
+        /// This is a generic Upload URL call without init.This is a generic API to upload the data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

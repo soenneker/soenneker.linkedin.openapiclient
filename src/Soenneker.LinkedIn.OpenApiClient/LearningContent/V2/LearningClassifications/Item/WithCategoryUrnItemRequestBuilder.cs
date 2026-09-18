@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifica
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCategoryUrnItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-content/v2/learningClassifications/{categoryUrn}{?targetLocale%2Ecountry*,targetLocale%2Elanguage*}", pathParameters)
+        public WithCategoryUrnItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-content/v2/learningClassifications/{categoryUrn}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifica
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCategoryUrnItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-content/v2/learningClassifications/{categoryUrn}{?targetLocale%2Ecountry*,targetLocale%2Elanguage*}", rawUrl)
+        public WithCategoryUrnItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-content/v2/learningClassifications/{categoryUrn}", rawUrl)
         {
         }
         /// <summary>
@@ -41,11 +41,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifica
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationsByCategoryUrn200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifications.Item.WithCategoryUrnItemRequestBuilder.WithCategoryUrnItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationsByCategoryUrn200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationsByCategoryUrn200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifications.Item.WithCategoryUrnItemRequestBuilder.WithCategoryUrnItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationsByCategoryUrn200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -58,11 +58,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifica
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifications.Item.WithCategoryUrnItemRequestBuilder.WithCategoryUrnItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifications.Item.WithCategoryUrnItemRequestBuilder.WithCategoryUrnItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -78,33 +78,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifica
         public global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifications.Item.WithCategoryUrnItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifications.Item.WithCategoryUrnItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// To retrieve an individual learning classification, given an URN, issue a GET request to the following endpoint:GET https://api.linkedin.com/v2/learningClassifications/{URN}The URN types supported by this endpoint are &quot;urn:li:lyndaCategory&quot; and &quot;urn:li:skill&quot;.Documentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/retrieve-an-individual-learning-object#learningclassifications-get*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithCategoryUrnItemRequestBuilderGetQueryParameters 
-        {
-            /// <summary>The locale country the API will use to try to localize the learning classification. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales &quot;de_DE&quot;, &quot;en_US&quot;, &quot;es_ES&quot;, &quot;fr_FR&quot;, and &quot;ja_JP&quot;. </summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("targetLocale%2Ecountry")]
-            public string? TargetLocaleCountry { get; set; }
-#nullable restore
-#else
-            [QueryParameter("targetLocale%2Ecountry")]
-            public string TargetLocaleCountry { get; set; }
-#endif
-            /// <summary>The locale language the API will use to try to localize the learning classification. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales &quot;de_DE&quot;, &quot;en_US&quot;, &quot;es_ES&quot;, &quot;fr_FR&quot;, and &quot;ja_JP&quot;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("targetLocale%2Elanguage")]
-            public string? TargetLocaleLanguage { get; set; }
-#nullable restore
-#else
-            [QueryParameter("targetLocale%2Elanguage")]
-            public string TargetLocaleLanguage { get; set; }
-#endif
         }
     }
 }

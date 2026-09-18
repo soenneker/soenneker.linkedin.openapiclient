@@ -83,10 +83,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.SeatsV2
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SeatsV2RequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("active")]
-            public bool? Active { get; set; }
+            public string? Active { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("active")]
+            public string Active { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -100,10 +109,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.SeatsV2
             public string Contracts { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("count")]
-            public int? Count { get; set; }
+            public string? Count { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("count")]
+            public string Count { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -117,10 +135,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.SeatsV2
             public string Q { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("start")]
-            public int? Start { get; set; }
+            public string? Start { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("start")]
+            public string Start { get; set; }
+            #pragma warning restore CS1591
+#endif
         }
     }
 }

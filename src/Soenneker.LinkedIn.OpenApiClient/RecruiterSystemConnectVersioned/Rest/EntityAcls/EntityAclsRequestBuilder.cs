@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntityAclsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recruiter-system-connect-versioned/rest/entityAcls{?count*,dataProvider*,entityId*,entityType*,fields*,ids%5B0%5D%2EdataProvider*,ids%5B0%5D%2EentityAclId*,ids%5B0%5D%2EentityId*,ids%5B0%5D%2EentityType*,ids%5B0%5D%2EintegrationContext*,integrationContext*,q*,start*}", pathParameters)
+        public EntityAclsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recruiter-system-connect-versioned/rest/entityAcls{?count*,dataProvider*,entityId*,entityType*,ids%5B0%5D%2EdataProvider*,ids%5B0%5D%2EentityAclId*,ids%5B0%5D%2EentityId*,ids%5B0%5D%2EentityType*,ids%5B0%5D%2EintegrationContext*,integrationContext*,q*,start*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,25 +30,27 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntityAclsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recruiter-system-connect-versioned/rest/entityAcls{?count*,dataProvider*,entityId*,entityType*,fields*,ids%5B0%5D%2EdataProvider*,ids%5B0%5D%2EentityAclId*,ids%5B0%5D%2EentityId*,ids%5B0%5D%2EentityType*,ids%5B0%5D%2EintegrationContext*,integrationContext*,q*,start*}", rawUrl)
+        public EntityAclsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recruiter-system-connect-versioned/rest/entityAcls{?count*,dataProvider*,entityId*,entityType*,ids%5B0%5D%2EdataProvider*,ids%5B0%5D%2EentityAclId*,ids%5B0%5D%2EentityId*,ids%5B0%5D%2EentityType*,ids%5B0%5D%2EintegrationContext*,integrationContext*,q*,start*}", rawUrl)
         {
         }
         /// <summary>
         /// Delete Entity ACL
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.EntityAcls.EntityAclsRequestBuilder.EntityAclsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> DeleteAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedDeleteEntityAclFormDataRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.EntityAcls.EntityAclsRequestBuilder.EntityAclsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.EntityAcls.EntityAclsRequestBuilder.EntityAclsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> DeleteAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedDeleteEntityAclFormDataRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.EntityAcls.EntityAclsRequestBuilder.EntityAclsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
@@ -78,11 +80,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedUpsertEntityAclRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.EntityAcls.EntityAclsRequestBuilder.EntityAclsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PutAsync(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.EntityAcls.EntityAclsRequestBuilder.EntityAclsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedUpsertEntityAclRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.EntityAcls.EntityAclsRequestBuilder.EntityAclsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PutAsync(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.EntityAcls.EntityAclsRequestBuilder.EntityAclsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -93,18 +95,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
         /// Delete Entity ACL
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.EntityAcls.EntityAclsRequestBuilder.EntityAclsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedDeleteEntityAclFormDataRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.EntityAcls.EntityAclsRequestBuilder.EntityAclsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.EntityAcls.EntityAclsRequestBuilder.EntityAclsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedDeleteEntityAclFormDataRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.EntityAcls.EntityAclsRequestBuilder.EntityAclsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.SetContentFromParsable(RequestAdapter, "multipart/form-data", body);
             return requestInfo;
         }
         /// <summary>
@@ -133,11 +138,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedUpsertEntityAclRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.EntityAcls.EntityAclsRequestBuilder.EntityAclsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.EntityAcls.EntityAclsRequestBuilder.EntityAclsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedUpsertEntityAclRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.EntityAcls.EntityAclsRequestBuilder.EntityAclsRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.EntityAcls.EntityAclsRequestBuilder.EntityAclsRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -233,10 +238,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EntityAclsRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("count")]
-            public int? Count { get; set; }
+            public string? Count { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("count")]
+            public string Count { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -279,19 +293,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
-            [QueryParameter("fields")]
-            public string? Fields { get; set; }
-            #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("fields")]
-            public string Fields { get; set; }
-            #pragma warning restore CS1591
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("integrationContext")]
             public string? IntegrationContext { get; set; }
             #pragma warning restore CS1591
@@ -315,10 +316,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
             public string Q { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("start")]
-            public int? Start { get; set; }
+            public string? Start { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("start")]
+            public string Start { get; set; }
+            #pragma warning restore CS1591
+#endif
         }
         /// <summary>
         /// Upsert Entity ACL

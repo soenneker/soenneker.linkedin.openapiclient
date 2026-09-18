@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ConversionsApi.Conversions
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConversionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversions-api/conversions{?account*,fields*,q*}", pathParameters)
+        public ConversionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversions-api/conversions{?account*,autoAssociationType*,fields*,q*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ConversionsApi.Conversions
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConversionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversions-api/conversions{?account*,fields*,q*}", rawUrl)
+        public ConversionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversions-api/conversions{?account*,autoAssociationType*,fields*,q*}", rawUrl)
         {
         }
         /// <summary>
@@ -54,22 +54,22 @@ namespace Soenneker.LinkedIn.OpenApiClient.ConversionsApi.Conversions
         /// <summary>
         /// Create one or more conversion rules with this endpoint and set `conversionMethod` to `CONVERSIONS_API` for streaming conversions through API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6CCreateANewConversionRuleWithNoCampaignsAssociation201Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6CCreateANewConversionRuleWithNoCampaignsAssociation201Response?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6CCreateANewConversionRuleWithNoCampaignsAssociationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201Response?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ConversionsApi.Conversions.ConversionsRequestBuilder.ConversionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6CCreateANewConversionRuleWithNoCampaignsAssociation201Response> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6CCreateANewConversionRuleWithNoCampaignsAssociationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201Response> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ConversionsApi.Conversions.ConversionsRequestBuilder.ConversionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6CCreateANewConversionRuleWithNoCampaignsAssociation201Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6CCreateANewConversionRuleWithNoCampaignsAssociation201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetch existing conversion rules in the selected ad account with this endpoint and parse the response to filter elements with `conversionMethod` to `CONVERSIONS_API` for streaming conversions through API.
@@ -98,11 +98,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.ConversionsApi.Conversions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6CCreateANewConversionRuleWithNoCampaignsAssociationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ConversionsApi.Conversions.ConversionsRequestBuilder.ConversionsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6CCreateANewConversionRuleWithNoCampaignsAssociationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ConversionsApi.Conversions.ConversionsRequestBuilder.ConversionsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -164,6 +164,26 @@ namespace Soenneker.LinkedIn.OpenApiClient.ConversionsApi.Conversions
             #pragma warning disable CS1591
             [QueryParameter("q")]
             public string Q { get; set; }
+            #pragma warning restore CS1591
+#endif
+        }
+        /// <summary>
+        /// Create one or more conversion rules with this endpoint and set `conversionMethod` to `CONVERSIONS_API` for streaming conversions through API.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ConversionsRequestBuilderPostQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("autoAssociationType")]
+            public string? AutoAssociationType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("autoAssociationType")]
+            public string AutoAssociationType { get; set; }
             #pragma warning restore CS1591
 #endif
         }

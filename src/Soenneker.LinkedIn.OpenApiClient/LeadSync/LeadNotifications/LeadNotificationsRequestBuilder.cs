@@ -3,7 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.WebhookId;
+using Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item;
 using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -18,10 +18,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadNotificationsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The WebhookId property</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.WebhookId.WebhookIdRequestBuilder WebhookId
+        /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.leadSync.leadnotifications.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item.WithWebhookItemRequestBuilder"/></returns>
+        public global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item.WithWebhookItemRequestBuilder this[string position]
         {
-            get => new global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.WebhookId.WebhookIdRequestBuilder(PathParameters, RequestAdapter);
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("webhookId", position);
+                return new global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item.WithWebhookItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.LeadNotificationsRequestBuilder"/> and sets the default values.
@@ -40,7 +47,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications
         {
         }
         /// <summary>
-        /// [Register a lead notification webhook](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#lead-notification-subscriptions) to receive notifications for new leads. Lead notifications can also be subscribed at a more granular level - see the linked documentation.This example registers the webhook url, [https://www.example.com](https://www.example.com/), at the Ad Account level (sponsoredAccount). For any new lead submitted for campaigns that live within this Ad Account, a webhook notification will be sent.**Listen for lead notifications**As leads flow into the user&apos;s ad account, LinkedIn will send your webhook endpoint a notification for each lead. The notification body will contain content as laid out in our documentation [here.](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#example-payload-for-when-a-member-registers-for-an-event)
+        /// This is our recommended back practice (with a pull backup). [Register a lead notification webhook](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#lead-notification-subscriptions) to receive notifications for new leads. Lead notifications can also be subscribed at a more granular level and/or for a different lead type - see the linked documentation.This example registers the webhook url, [https://www.example.com](https://www.example.com/), at the organization level for leads of type COMPANY. For any new lead submitted on the company or showcase page, a webhook notification will be sent.**\--Listen for lead notifications--**As leads flow into the user&apos;s organization, LinkedIn will send your webhook endpoint a notification for each lead. The notification body will contain content as laid out in our documentation [here.](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#example-payload-for-when-a-member-registers-for-an-event)[Register a lead notification webhook](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#lead-notification-subscriptions) to receive notifications for new leads. Lead notifications can also be subscribed at a more granular level - see the linked documentation.This example registers the webhook url, [https://www.example.com](https://www.example.com/), at the Ad Account level (sponsoredAccount). For any new lead submitted for campaigns that live within this Ad Account, a webhook notification will be sent.**Listen for lead notifications**As leads flow into the user&apos;s ad account, LinkedIn will send your webhook endpoint a notification for each lead. The notification body will contain content as laid out in our documentation [here.](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#example-payload-for-when-a-member-registers-for-an-event)
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -48,11 +55,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation8PushSubscribeForLeadNotificationWebhooks2Request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation8PushSubscribeForLeadNotificationWebhooksRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation8PushSubscribeForLeadNotificationWebhooks2Request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation8PushSubscribeForLeadNotificationWebhooksRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -60,18 +67,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// [Register a lead notification webhook](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#lead-notification-subscriptions) to receive notifications for new leads. Lead notifications can also be subscribed at a more granular level - see the linked documentation.This example registers the webhook url, [https://www.example.com](https://www.example.com/), at the Ad Account level (sponsoredAccount). For any new lead submitted for campaigns that live within this Ad Account, a webhook notification will be sent.**Listen for lead notifications**As leads flow into the user&apos;s ad account, LinkedIn will send your webhook endpoint a notification for each lead. The notification body will contain content as laid out in our documentation [here.](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#example-payload-for-when-a-member-registers-for-an-event)
+        /// This is our recommended back practice (with a pull backup). [Register a lead notification webhook](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#lead-notification-subscriptions) to receive notifications for new leads. Lead notifications can also be subscribed at a more granular level and/or for a different lead type - see the linked documentation.This example registers the webhook url, [https://www.example.com](https://www.example.com/), at the organization level for leads of type COMPANY. For any new lead submitted on the company or showcase page, a webhook notification will be sent.**\--Listen for lead notifications--**As leads flow into the user&apos;s organization, LinkedIn will send your webhook endpoint a notification for each lead. The notification body will contain content as laid out in our documentation [here.](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#example-payload-for-when-a-member-registers-for-an-event)[Register a lead notification webhook](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#lead-notification-subscriptions) to receive notifications for new leads. Lead notifications can also be subscribed at a more granular level - see the linked documentation.This example registers the webhook url, [https://www.example.com](https://www.example.com/), at the Ad Account level (sponsoredAccount). For any new lead submitted for campaigns that live within this Ad Account, a webhook notification will be sent.**Listen for lead notifications**As leads flow into the user&apos;s ad account, LinkedIn will send your webhook endpoint a notification for each lead. The notification body will contain content as laid out in our documentation [here.](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#example-payload-for-when-a-member-registers-for-an-event)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation8PushSubscribeForLeadNotificationWebhooks2Request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation8PushSubscribeForLeadNotificationWebhooksRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation8PushSubscribeForLeadNotificationWebhooks2Request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation8PushSubscribeForLeadNotificationWebhooksRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

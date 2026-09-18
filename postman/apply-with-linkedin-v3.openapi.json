@@ -4,14 +4,12 @@
     "title": "Apply With LinkedIn V3",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "https://api.linkedin.com"
-    }
-  ],
   "paths": {
     "/oauth/v2/accessToken": {
       "post": {
+        "tags": [
+          "Configure Customer Middleware Integrations"
+        ],
         "summary": "Child Application Access Token",
         "operationId": "ChildApplicationAccessToken",
         "requestBody": {
@@ -30,20 +28,117 @@
                     "type": "string"
                   }
                 }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "grant_type": "client_credentials",
+                    "client_id": "{{customer_app_client_id}}",
+                    "client_secret": "{{customer_app_client_secret}}"
+                  }
+                }
+              },
+              "encoding": {
+                "grant_type": {
+                  "style": "form",
+                  "explode": true
+                },
+                "client_id": {
+                  "style": "form",
+                  "explode": true
+                },
+                "client_secret": {
+                  "style": "form",
+                  "explode": true
+                }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          { }
+        ],
+        "servers": [
+          {
+            "url": "https://www.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Child Application Access Token",
+            "id": "57a0ab8e-763d-4f9b-8ffd-28b892628570",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "name": "Content-Type",
+                  "value": "text/plain",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "grant_type",
+                    "value": "client_credentials",
+                    "type": "text"
+                  },
+                  {
+                    "key": "client_id",
+                    "value": "{{customer_app_client_id}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "client_secret",
+                    "value": "{{customer_app_client_secret}}",
+                    "type": "text"
+                  }
+                ]
+              },
+              "url": "https://www.linkedin.com/oauth/v2/accessToken"
+            },
+            "response": [ ],
+            "folders": [
+              "Configure Customer Middleware Integrations"
+            ],
+            "effectiveAuth": {
+              "type": "noauth"
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.globals.set(\"customer_access_token\", jsonData.access_token);"
+                  ],
+                  "type": "text/javascript",
+                  "id": "ae19a869-98b8-4675-95b6-592ac248f8df"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/v2/atsIntegrations": {
       "post": {
+        "tags": [
+          "Configure Customer Middleware Integrations"
+        ],
         "summary": "Update Customer ATSIntegration - APPLY_WITH_LINKEDIN",
         "operationId": "UpdateCustomerATSIntegrationAPPLYWITHLINKEDIN",
         "parameters": [
@@ -52,6 +147,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{integration_context}}"
+              }
             }
           },
           {
@@ -59,6 +159,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "APPLY_WITH_LINKEDIN"
+              }
             }
           },
           {
@@ -66,6 +171,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "JOBS"
+              }
             }
           },
           {
@@ -73,6 +183,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "ATS"
+              }
             }
           },
           {
@@ -80,6 +195,11 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "batch_partial_update"
+              }
             }
           }
         ],
@@ -87,33 +207,18 @@
           "content": {
             "application/json": {
               "schema": {
-                "required": [
-                  "entities"
-                ],
                 "type": "object",
                 "properties": {
                   "entities": {
-                    "required": [
-                      "integrationContext={{integration_context}}&integrationType=APPLY_WITH_LINKEDIN&tenantType=JOBS&dataProvider=ATS"
-                    ],
                     "type": "object",
                     "properties": {
                       "integrationContext={{integration_context}}&integrationType=APPLY_WITH_LINKEDIN&tenantType=JOBS&dataProvider=ATS": {
-                        "required": [
-                          "patch"
-                        ],
                         "type": "object",
                         "properties": {
                           "patch": {
-                            "required": [
-                              "$set"
-                            ],
                             "type": "object",
                             "properties": {
                               "$set": {
-                                "required": [
-                                  "integrationName"
-                                ],
                                 "type": "object",
                                 "properties": {
                                   "integrationName": {
@@ -128,18 +233,118 @@
                     }
                   }
                 }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "entities": {
+                      "integrationContext={{integration_context}}&integrationType=APPLY_WITH_LINKEDIN&tenantType=JOBS&dataProvider=ATS": {
+                        "patch": {
+                          "$set": {
+                            "integrationName": "TEST CUSTOMER INTEGRATION"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Update Customer ATSIntegration - APPLY_WITH_LINKEDIN",
+            "id": "d78fa933-61aa-4b8e-aef4-fc01dce104e8",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": {
+                  "token": "{{customer_access_token}}"
+                }
+              },
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_partial_update",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"entities\": {\n    \"integrationContext={{integration_context}}&integrationType=APPLY_WITH_LINKEDIN&tenantType=JOBS&dataProvider=ATS\": {\n      \"patch\": {\n        \"$set\": {\n          \"integrationName\": \"TEST CUSTOMER INTEGRATION\"\n        }\n      }\n    }\n  }\n}"
+              },
+              "url": {
+                "raw": "https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext={{integration_context}}&ids[0].integrationType=APPLY_WITH_LINKEDIN&ids[0].tenantType=JOBS&ids[0].dataProvider=ATS",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "atsIntegrations"
+                ],
+                "query": [
+                  {
+                    "key": "ids[0].integrationContext",
+                    "value": "{{integration_context}}"
+                  },
+                  {
+                    "key": "ids[0].integrationType",
+                    "value": "APPLY_WITH_LINKEDIN"
+                  },
+                  {
+                    "key": "ids[0].tenantType",
+                    "value": "JOBS"
+                  },
+                  {
+                    "key": "ids[0].dataProvider",
+                    "value": "ATS"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Configure Customer Middleware Integrations"
+            ],
+            "effectiveAuth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{customer_access_token}}"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       },
       "get": {
+        "tags": [
+          "Configure Customer Middleware Integrations"
+        ],
         "summary": "Verify Customer Integrations",
         "operationId": "VerifyCustomerIntegrations",
         "parameters": [
@@ -148,6 +353,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{integration_context}}"
+              }
             }
           },
           {
@@ -155,6 +365,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "APPLY_WITH_LINKEDIN"
+              }
             }
           },
           {
@@ -162,6 +377,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "JOBS"
+              }
             }
           },
           {
@@ -169,16 +389,171 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "ATS"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Verify Customer Integrations",
+            "id": "f9427a20-445e-4384-8d36-9f3bf0d5b720",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": {
+                  "token": "{{customer_access_token}}"
+                }
+              },
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext={{integration_context}}&ids[0].integrationType=APPLY_WITH_LINKEDIN&ids[0].tenantType=JOBS&ids[0].dataProvider=ATS",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "atsIntegrations"
+                ],
+                "query": [
+                  {
+                    "key": "ids[0].integrationContext",
+                    "value": "{{integration_context}}"
+                  },
+                  {
+                    "key": "ids[0].integrationType",
+                    "value": "APPLY_WITH_LINKEDIN"
+                  },
+                  {
+                    "key": "ids[0].tenantType",
+                    "value": "JOBS"
+                  },
+                  {
+                    "key": "ids[0].dataProvider",
+                    "value": "ATS"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Configure Customer Middleware Integrations"
+            ],
+            "effectiveAuth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{customer_access_token}}"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     }
   },
-  "components": { }
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Configure Customer Middleware Integrations"
+    }
+  ],
+  "x-postman-warnings": [
+    "collection: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Configure Customer Middleware Integrations: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Configure Customer Middleware Integrations / Child Application Access Token: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Configure Customer Middleware Integrations / Child Application Access Token: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Child Application Access Token: No saved responses: status codes and response schemas cannot be inferred.",
+    "Configure Customer Middleware Integrations / Update Customer ATSIntegration - APPLY_WITH_LINKEDIN: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Update Customer ATSIntegration - APPLY_WITH_LINKEDIN: No saved responses: status codes and response schemas cannot be inferred.",
+    "Configure Customer Middleware Integrations / Verify Customer Integrations: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Verify Customer Integrations: No saved responses: status codes and response schemas cannot be inferred."
+  ],
+  "x-postman-events": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ],
+        "id": "0e04ee93-b418-46eb-8df4-2abcf34d39f2"
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ],
+        "id": "53744a06-8401-4534-b356-b7239e689444"
+      }
+    }
+  ],
+  "x-postman-variables": [
+    {
+      "key": "partner_app_client_id",
+      "value": "<partner_app_client_id>",
+      "type": "string"
+    },
+    {
+      "key": "partner_app_client_secret",
+      "value": "<partner_app_client_secret>",
+      "type": "string"
+    },
+    {
+      "key": "customer_app_client_id",
+      "value": "<customer_app_client_id>",
+      "type": "string"
+    },
+    {
+      "key": "customer_app_client_secret",
+      "value": "<customer_app_client_secret>",
+      "type": "string"
+    },
+    {
+      "key": "integration_context",
+      "value": "<integration_context_obtained_via_LinkedIn_or_using_ATS_Integration_Confiuration_Plugin>",
+      "type": "string"
+    },
+    {
+      "key": "unique_foreign_id",
+      "value": "<unique_id_for_customer_in_your_ATS>",
+      "type": "string"
+    }
+  ]
 }

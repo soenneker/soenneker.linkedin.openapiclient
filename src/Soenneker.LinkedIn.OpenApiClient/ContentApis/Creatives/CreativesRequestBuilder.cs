@@ -3,6 +3,8 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives.Item;
+using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -16,6 +18,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreativesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.contentApis.creatives.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives.Item.WithUrnCreativesItemRequestBuilder"/></returns>
+        public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives.Item.WithUrnCreativesItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("urnCreatives", position);
+                return new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives.Item.WithUrnCreativesItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives.CreativesRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -51,22 +65,29 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This API creates a sponsored content by adding the action as createInline.
+        /// You can sponsor an existing organic post that has been serving your company page followers and gone viral.This API creates a sponsored content by adding the action as createInline.A successful response returns a `201 Created HTTP` status code and the ID in the `x-linkedin-id` response header. For example, `urn:li:sponsoredCreative:164380864`##Creates a Dynamic Spotlight Ad Creative.A successful response returns a `201 Created HTTP` status code and the ID in the `x-linkedin-id` response header. For example, `urn:li:sponsoredCreative:123456789`##
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeDefaultResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives.CreativesRequestBuilder.CreativesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives.CreativesRequestBuilder.CreativesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives.CreativesRequestBuilder.CreativesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives.CreativesRequestBuilder.CreativesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeDefaultResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// You can search for creative content in order to get a collection of creatives matching your search parameters. The Creative API currently supports search by `creative id`, `campaign`, `account`, `content reference`, `intendedStatus`, `leadgenCreativeCallToActionDestinations` and test fields. The API supports finding creatives from multiple accounts. The values within each field are displayed with &apos;or&apos; (ORed) and values across fields are displayed with &apos;and&apos; (ANDed).
@@ -87,21 +108,25 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives
             return requestInfo;
         }
         /// <summary>
-        /// This API creates a sponsored content by adding the action as createInline.
+        /// You can sponsor an existing organic post that has been serving your company page followers and gone viral.This API creates a sponsored content by adding the action as createInline.A successful response returns a `201 Created HTTP` status code and the ID in the `x-linkedin-id` response header. For example, `urn:li:sponsoredCreative:164380864`##Creates a Dynamic Spotlight Ad Creative.A successful response returns a `201 Created HTTP` status code and the ID in the `x-linkedin-id` response header. For example, `urn:li:sponsoredCreative:123456789`##
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives.CreativesRequestBuilder.CreativesRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives.CreativesRequestBuilder.CreativesRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives.CreativesRequestBuilder.CreativesRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives.CreativesRequestBuilder.CreativesRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -184,14 +209,32 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives
             public string IntendedStatuses { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("isTestAccount")]
-            public bool? IsTestAccount { get; set; }
+            public string? IsTestAccount { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("isTestAccount")]
+            public string IsTestAccount { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("isTotalIncluded")]
-            public bool? IsTotalIncluded { get; set; }
+            public string? IsTotalIncluded { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("isTotalIncluded")]
+            public string IsTotalIncluded { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -233,7 +276,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives
 #endif
         }
         /// <summary>
-        /// This API creates a sponsored content by adding the action as createInline.
+        /// You can sponsor an existing organic post that has been serving your company page followers and gone viral.This API creates a sponsored content by adding the action as createInline.A successful response returns a `201 Created HTTP` status code and the ID in the `x-linkedin-id` response header. For example, `urn:li:sponsoredCreative:164380864`##Creates a Dynamic Spotlight Ad Creative.A successful response returns a `201 Created HTTP` status code and the ID in the `x-linkedin-id` response header. For example, `urn:li:sponsoredCreative:123456789`##
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CreativesRequestBuilderPostQueryParameters 

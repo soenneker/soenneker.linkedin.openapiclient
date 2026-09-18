@@ -34,43 +34,43 @@ namespace Soenneker.LinkedIn.OpenApiClient.MediaPlanning.MediaPlanning
         {
         }
         /// <summary>
-        /// Forecast Avg Lifetime Frequency
+        /// Forecast Reach Curve
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastAvgLifetimeFrequencyDefaultResponse">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastAvgLifetimeFrequencyRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.MediaPlanning.MediaPlanning.MediaPlanningRequestBuilder.MediaPlanningRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.MediaPlanning.MediaPlanning.MediaPlanningRequestBuilder.MediaPlanningRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastAvgLifetimeFrequencyRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.MediaPlanning.MediaPlanning.MediaPlanningRequestBuilder.MediaPlanningRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.MediaPlanning.MediaPlanning.MediaPlanningRequestBuilder.MediaPlanningRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastAvgLifetimeFrequencyDefaultResponse.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Forecast Avg Lifetime Frequency
+        /// Forecast Reach Curve
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastAvgLifetimeFrequencyRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.MediaPlanning.MediaPlanning.MediaPlanningRequestBuilder.MediaPlanningRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.MediaPlanning.MediaPlanning.MediaPlanningRequestBuilder.MediaPlanningRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastAvgLifetimeFrequencyRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.MediaPlanning.MediaPlanning.MediaPlanningRequestBuilder.MediaPlanningRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.MediaPlanning.MediaPlanning.MediaPlanningRequestBuilder.MediaPlanningRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -90,7 +90,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.MediaPlanning.MediaPlanning
             return new global::Soenneker.LinkedIn.OpenApiClient.MediaPlanning.MediaPlanning.MediaPlanningRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Forecast Avg Lifetime Frequency
+        /// Forecast Reach Curve
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MediaPlanningRequestBuilderPostQueryParameters 

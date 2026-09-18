@@ -47,7 +47,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Assets
         {
         }
         /// <summary>
-        /// 2. Register Video Upload
+        /// View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#register-an-upload-for-images) to understand more on this API.This API example covers Registering an upload for an Image File.  The returned uploadUrl in the response can then subsequently be used to perform the actual upload in Step 3.View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#register-an-upload-for-images) to understand more on this API.This API example covers registering an upload for an Image File.  The returned `uploadUrl` URL in the response can then subsequently be used to perform the actual upload in step 3.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -55,11 +55,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Assets
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterVideoUploadRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterUploadRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterVideoUploadRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterUploadRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -67,18 +67,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Assets
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// 2. Register Video Upload
+        /// View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#register-an-upload-for-images) to understand more on this API.This API example covers Registering an upload for an Image File.  The returned uploadUrl in the response can then subsequently be used to perform the actual upload in Step 3.View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#register-an-upload-for-images) to understand more on this API.This API example covers registering an upload for an Image File.  The returned `uploadUrl` URL in the response can then subsequently be used to perform the actual upload in step 3.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterVideoUploadRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterUploadRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterVideoUploadRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterUploadRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -97,7 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Assets
             return new global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Assets.AssetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// 2. Register Video Upload
+        /// View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#register-an-upload-for-images) to understand more on this API.This API example covers Registering an upload for an Image File.  The returned uploadUrl in the response can then subsequently be used to perform the actual upload in Step 3.View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#register-an-upload-for-images) to understand more on this API.This API example covers registering an upload for an Image File.  The returned `uploadUrl` URL in the response can then subsequently be used to perform the actual upload in step 3.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AssetsRequestBuilderPostQueryParameters 

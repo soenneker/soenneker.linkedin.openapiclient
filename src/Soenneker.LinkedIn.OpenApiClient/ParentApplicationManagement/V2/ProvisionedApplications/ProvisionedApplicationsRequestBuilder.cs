@@ -4,7 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.LinkedIn.OpenApiClient.Models;
-using Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.ProvisionedApplications.SevenBcustomer_application_urn7D;
+using Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.ProvisionedApplications.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -18,10 +18,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.Provis
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProvisionedApplicationsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The SevenBcustomer_application_urn7D property</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.ProvisionedApplications.SevenBcustomer_application_urn7D.SevenBcustomer_application_urn7DRequestBuilder SevenBcustomer_application_urn7D
+        /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.parentApplicationManagement.v2.provisionedApplications.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.ProvisionedApplications.Item.WithCustomerApplicationUrnItemRequestBuilder"/></returns>
+        public global::Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.ProvisionedApplications.Item.WithCustomerApplicationUrnItemRequestBuilder this[string position]
         {
-            get => new global::Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.ProvisionedApplications.SevenBcustomer_application_urn7D.SevenBcustomer_application_urn7DRequestBuilder(PathParameters, RequestAdapter);
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("customerApplicationUrn", position);
+                return new global::Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.ProvisionedApplications.Item.WithCustomerApplicationUrnItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.ProvisionedApplications.ProvisionedApplicationsRequestBuilder"/> and sets the default values.

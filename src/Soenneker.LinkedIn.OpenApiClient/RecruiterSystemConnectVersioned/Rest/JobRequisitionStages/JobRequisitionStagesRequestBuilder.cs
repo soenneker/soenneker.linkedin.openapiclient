@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public JobRequisitionStagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recruiter-system-connect-versioned/rest/jobRequisitionStages", pathParameters)
+        public JobRequisitionStagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recruiter-system-connect-versioned/rest/jobRequisitionStages{?ids*,ids%5B0%5D%2EintegrationContext*,ids%5B0%5D%2EjobRequisitionId*,ids%5B0%5D%2EjobRequisitionStageId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public JobRequisitionStagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recruiter-system-connect-versioned/rest/jobRequisitionStages", rawUrl)
+        public JobRequisitionStagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recruiter-system-connect-versioned/rest/jobRequisitionStages{?ids*,ids%5B0%5D%2EintegrationContext*,ids%5B0%5D%2EjobRequisitionId*,ids%5B0%5D%2EjobRequisitionStageId*}", rawUrl)
         {
         }
         /// <summary>
-        /// Delete JobRequisitionStages - query tunneling
+        /// Delete JobRequisitionStages
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -42,11 +42,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedDeleteJobRequisitionStagesQueryTunnelingXWwwFormUrlencodedRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> DeleteAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedDeleteJobRequisitionStagesXWwwFormUrlencodedRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.JobRequisitionStages.JobRequisitionStagesRequestBuilder.JobRequisitionStagesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedDeleteJobRequisitionStagesQueryTunnelingXWwwFormUrlencodedRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> DeleteAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedDeleteJobRequisitionStagesXWwwFormUrlencodedRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.JobRequisitionStages.JobRequisitionStagesRequestBuilder.JobRequisitionStagesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -54,19 +54,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create Job Requisition Stages  - restli 2.0.0 + query tunnelling
+        /// Create Job Requisition Stages
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
-        /// <param name="body">Binary request body</param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(Stream body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PutAsync(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.JobRequisitionStages.JobRequisitionStagesRequestBuilder.JobRequisitionStagesRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(Stream body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PutAsync(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.JobRequisitionStages.JobRequisitionStagesRequestBuilder.JobRequisitionStagesRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -74,18 +74,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete JobRequisitionStages - query tunneling
+        /// Delete JobRequisitionStages
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedDeleteJobRequisitionStagesQueryTunnelingXWwwFormUrlencodedRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedDeleteJobRequisitionStagesXWwwFormUrlencodedRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.JobRequisitionStages.JobRequisitionStagesRequestBuilder.JobRequisitionStagesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedDeleteJobRequisitionStagesQueryTunnelingXWwwFormUrlencodedRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedDeleteJobRequisitionStagesXWwwFormUrlencodedRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.JobRequisitionStages.JobRequisitionStagesRequestBuilder.JobRequisitionStagesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -95,24 +95,24 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
             return requestInfo;
         }
         /// <summary>
-        /// Create Job Requisition Stages  - restli 2.0.0 + query tunnelling
+        /// Create Job Requisition Stages
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Binary request body</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(Stream body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.JobRequisitionStages.JobRequisitionStagesRequestBuilder.JobRequisitionStagesRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(Stream body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.JobRequisitionStages.JobRequisitionStagesRequestBuilder.JobRequisitionStagesRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.SetStreamContent(body, "multipart/mixed; boundary=xyz");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -123,6 +123,111 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.
         public global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.JobRequisitionStages.JobRequisitionStagesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.Rest.JobRequisitionStages.JobRequisitionStagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Delete JobRequisitionStages
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class JobRequisitionStagesRequestBuilderDeleteQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EintegrationContext")]
+            public string? Ids0IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EintegrationContext")]
+            public string Ids0IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EjobRequisitionId")]
+            public string? Ids0JobRequisitionId { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EjobRequisitionId")]
+            public string Ids0JobRequisitionId { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EjobRequisitionStageId")]
+            public string? Ids0JobRequisitionStageId { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EjobRequisitionStageId")]
+            public string Ids0JobRequisitionStageId { get; set; }
+            #pragma warning restore CS1591
+#endif
+        }
+        /// <summary>
+        /// Create Job Requisition Stages
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class JobRequisitionStagesRequestBuilderPutQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids")]
+            public string? Ids { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids")]
+            public string Ids { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EintegrationContext")]
+            public string? Ids0IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EintegrationContext")]
+            public string Ids0IntegrationContext { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EjobRequisitionId")]
+            public string? Ids0JobRequisitionId { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EjobRequisitionId")]
+            public string Ids0JobRequisitionId { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EjobRequisitionStageId")]
+            public string? Ids0JobRequisitionStageId { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ids%5B0%5D%2EjobRequisitionStageId")]
+            public string Ids0JobRequisitionStageId { get; set; }
+            #pragma warning restore CS1591
+#endif
         }
     }
 }

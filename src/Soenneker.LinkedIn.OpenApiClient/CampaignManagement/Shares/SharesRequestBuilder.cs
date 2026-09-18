@@ -34,7 +34,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Shares
         {
         }
         /// <summary>
-        /// View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/share-api?tabs=http&amp;view=li-lms-unversioned#direct-sponsored-content-share) to understand more on creating a direct sponsored content share (dark share).This API example creates a dark image share on the Company Page (organization) referencing referencing the Image file that was uploaded in Step 3.A Direct Sponsored Content Share allows an advertiser to sponsor content without first publishing the content on the Organization page. It is very similar to a Sponsored Content Share except the share is not organic. This is otherwise known as a &quot;dark&quot; share and can only be viewed by the administrators of the organization&apos;s page.
+        /// View our [Public Documentation](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/share-api?tabs=http&amp;view=li-lms-unversioned#post-shares) to understand more on creating shares.This API example creates an organic image share on the Company Page (organization) referencing the Image file that was uploaded in Step 3.View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/share-api?tabs=http&amp;view=li-lms-unversioned#direct-sponsored-content-share) to understand more on creating a direct sponsored content share (dark share).This API example creates a dark image share on the Company Page (organization) referencing referencing the Image file that was uploaded in Step 3.A Direct Sponsored Content Share allows an advertiser to sponsor content without first publishing the content on the Organization page. It is very similar to a Sponsored Content Share except the share is not organic. This is otherwise known as a &quot;dark&quot; share and can only be viewed by the administrators of the organization&apos;s page.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -42,11 +42,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Shares
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreateADarkShareRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreateAShareRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreateADarkShareRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreateAShareRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -54,18 +54,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Shares
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/share-api?tabs=http&amp;view=li-lms-unversioned#direct-sponsored-content-share) to understand more on creating a direct sponsored content share (dark share).This API example creates a dark image share on the Company Page (organization) referencing referencing the Image file that was uploaded in Step 3.A Direct Sponsored Content Share allows an advertiser to sponsor content without first publishing the content on the Organization page. It is very similar to a Sponsored Content Share except the share is not organic. This is otherwise known as a &quot;dark&quot; share and can only be viewed by the administrators of the organization&apos;s page.
+        /// View our [Public Documentation](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/share-api?tabs=http&amp;view=li-lms-unversioned#post-shares) to understand more on creating shares.This API example creates an organic image share on the Company Page (organization) referencing the Image file that was uploaded in Step 3.View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/share-api?tabs=http&amp;view=li-lms-unversioned#direct-sponsored-content-share) to understand more on creating a direct sponsored content share (dark share).This API example creates a dark image share on the Company Page (organization) referencing referencing the Image file that was uploaded in Step 3.A Direct Sponsored Content Share allows an advertiser to sponsor content without first publishing the content on the Organization page. It is very similar to a Sponsored Content Share except the share is not organic. This is otherwise known as a &quot;dark&quot; share and can only be viewed by the administrators of the organization&apos;s page.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreateADarkShareRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreateAShareRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreateADarkShareRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreateAShareRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

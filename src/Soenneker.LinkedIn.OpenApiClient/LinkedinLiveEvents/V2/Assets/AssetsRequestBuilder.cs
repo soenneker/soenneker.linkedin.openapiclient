@@ -55,11 +55,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImage2Request body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImage2Request body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -74,11 +74,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImage2Request body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImage2Request body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

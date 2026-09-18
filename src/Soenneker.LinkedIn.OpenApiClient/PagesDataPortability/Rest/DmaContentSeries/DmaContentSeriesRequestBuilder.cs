@@ -4,7 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.LinkedIn.OpenApiClient.Models;
-using Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaContentSeries.SevenBnewsletterUrn7D;
+using Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaContentSeries.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -18,10 +18,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaContentS
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DmaContentSeriesRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The SevenBnewsletterUrn7D property</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaContentSeries.SevenBnewsletterUrn7D.SevenBnewsletterUrn7DRequestBuilder SevenBnewsletterUrn7D
+        /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.pagesDataPortability.rest.dmaContentSeries.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaContentSeries.Item.WithNewsletterUrnItemRequestBuilder"/></returns>
+        public global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaContentSeries.Item.WithNewsletterUrnItemRequestBuilder this[string position]
         {
-            get => new global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaContentSeries.SevenBnewsletterUrn7D.SevenBnewsletterUrn7DRequestBuilder(PathParameters, RequestAdapter);
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("newsletterUrn", position);
+                return new global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaContentSeries.Item.WithNewsletterUrnItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaContentSeries.DmaContentSeriesRequestBuilder"/> and sets the default values.

@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadFormResponses.Item;
+using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -46,25 +47,25 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadFormResponses
         {
         }
         /// <summary>
-        /// This example pulls back all form responses (leads) for the chosen sponsored account. It also uses [field projection](https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?context=linkedin/marketing/context) to pull back specific fields in the response and the `submittedAtTimeRange` field to pull back leads up to 365 days in the past.Currently the only sponsored leadType is `SPONSORED`LinkedIn will store form response (lead) data for up to 365 days. It is a best practice to allow the user to do a one time pull upon integration setup to ensure no leads are missed.Refer to [Lead Form Responses](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#get-lead-sync-form-responses) documentation for more information.
+        /// This example pulls back all form responses (leads) for the chosen organization for a given lead type. It also uses [field projection](https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?context=linkedin/marketing/context) to pull back specific fields in the response and the `submittedAtTimeRange` field to pull back leads up to 365 days in the past. To pull back leads for other lead types make an additional API call with the appropriate [lead type ](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#leadtype-sub-object) (note the environment by default is set to COMPANY however, other lead types that are not the SPONSORED leadType are considered organic).LinkedIn will store form response (lead) data for up to 365 days. It is a best practice to allow the user to do a one time pull upon integration setup to ensure no leads are missed.Refer to [Lead Form Responses](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#get-lead-sync-form-responses) documentation for more information.This example pulls back all form responses (leads) for the chosen sponsored account. It also uses [field projection](https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?context=linkedin/marketing/context) to pull back specific fields in the response and the `submittedAtTimeRange` field to pull back leads up to 365 days in the past.Currently the only sponsored leadType is `SPONSORED`LinkedIn will store form response (lead) data for up to 365 days. It is a best practice to allow the user to do a one time pull upon integration setup to ensure no leads are missed.Refer to [Lead Form Responses](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#get-lead-sync-form-responses) documentation for more information.This example pulls back all form responses (leads) for the chosen sponsored account. It also uses [field projection](https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?context=linkedin/marketing/context) to pull back specific fields in the response and the `submittedAtTimeRange` field to pull back leads up to 365 days in the past.Currently the only sponsored leadType is `SPONSORED`LinkedIn will store form response (lead) data for up to 365 days. It is a best practice to allow the user to do a one time pull upon integration setup to ensure no leads are missed.Refer to [Lead Form Responses](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#get-lead-sync-form-responses) documentation for more information.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadFormResponses.LeadFormResponsesRequestBuilder.LeadFormResponsesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadFormResponses.LeadFormResponsesRequestBuilder.LeadFormResponsesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadFormResponses.LeadFormResponsesRequestBuilder.LeadFormResponsesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadFormResponses.LeadFormResponsesRequestBuilder.LeadFormResponsesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This example pulls back all form responses (leads) for the chosen sponsored account. It also uses [field projection](https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?context=linkedin/marketing/context) to pull back specific fields in the response and the `submittedAtTimeRange` field to pull back leads up to 365 days in the past.Currently the only sponsored leadType is `SPONSORED`LinkedIn will store form response (lead) data for up to 365 days. It is a best practice to allow the user to do a one time pull upon integration setup to ensure no leads are missed.Refer to [Lead Form Responses](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#get-lead-sync-form-responses) documentation for more information.
+        /// This example pulls back all form responses (leads) for the chosen organization for a given lead type. It also uses [field projection](https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?context=linkedin/marketing/context) to pull back specific fields in the response and the `submittedAtTimeRange` field to pull back leads up to 365 days in the past. To pull back leads for other lead types make an additional API call with the appropriate [lead type ](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#leadtype-sub-object) (note the environment by default is set to COMPANY however, other lead types that are not the SPONSORED leadType are considered organic).LinkedIn will store form response (lead) data for up to 365 days. It is a best practice to allow the user to do a one time pull upon integration setup to ensure no leads are missed.Refer to [Lead Form Responses](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#get-lead-sync-form-responses) documentation for more information.This example pulls back all form responses (leads) for the chosen sponsored account. It also uses [field projection](https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?context=linkedin/marketing/context) to pull back specific fields in the response and the `submittedAtTimeRange` field to pull back leads up to 365 days in the past.Currently the only sponsored leadType is `SPONSORED`LinkedIn will store form response (lead) data for up to 365 days. It is a best practice to allow the user to do a one time pull upon integration setup to ensure no leads are missed.Refer to [Lead Form Responses](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#get-lead-sync-form-responses) documentation for more information.This example pulls back all form responses (leads) for the chosen sponsored account. It also uses [field projection](https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?context=linkedin/marketing/context) to pull back specific fields in the response and the `submittedAtTimeRange` field to pull back leads up to 365 days in the past.Currently the only sponsored leadType is `SPONSORED`LinkedIn will store form response (lead) data for up to 365 days. It is a best practice to allow the user to do a one time pull upon integration setup to ensure no leads are missed.Refer to [Lead Form Responses](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#get-lead-sync-form-responses) documentation for more information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,6 +80,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadFormResponses
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -91,15 +93,24 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadFormResponses
             return new global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadFormResponses.LeadFormResponsesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// This example pulls back all form responses (leads) for the chosen sponsored account. It also uses [field projection](https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?context=linkedin/marketing/context) to pull back specific fields in the response and the `submittedAtTimeRange` field to pull back leads up to 365 days in the past.Currently the only sponsored leadType is `SPONSORED`LinkedIn will store form response (lead) data for up to 365 days. It is a best practice to allow the user to do a one time pull upon integration setup to ensure no leads are missed.Refer to [Lead Form Responses](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#get-lead-sync-form-responses) documentation for more information.
+        /// This example pulls back all form responses (leads) for the chosen organization for a given lead type. It also uses [field projection](https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?context=linkedin/marketing/context) to pull back specific fields in the response and the `submittedAtTimeRange` field to pull back leads up to 365 days in the past. To pull back leads for other lead types make an additional API call with the appropriate [lead type ](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#leadtype-sub-object) (note the environment by default is set to COMPANY however, other lead types that are not the SPONSORED leadType are considered organic).LinkedIn will store form response (lead) data for up to 365 days. It is a best practice to allow the user to do a one time pull upon integration setup to ensure no leads are missed.Refer to [Lead Form Responses](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#get-lead-sync-form-responses) documentation for more information.This example pulls back all form responses (leads) for the chosen sponsored account. It also uses [field projection](https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?context=linkedin/marketing/context) to pull back specific fields in the response and the `submittedAtTimeRange` field to pull back leads up to 365 days in the past.Currently the only sponsored leadType is `SPONSORED`LinkedIn will store form response (lead) data for up to 365 days. It is a best practice to allow the user to do a one time pull upon integration setup to ensure no leads are missed.Refer to [Lead Form Responses](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#get-lead-sync-form-responses) documentation for more information.This example pulls back all form responses (leads) for the chosen sponsored account. It also uses [field projection](https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?context=linkedin/marketing/context) to pull back specific fields in the response and the `submittedAtTimeRange` field to pull back leads up to 365 days in the past.Currently the only sponsored leadType is `SPONSORED`LinkedIn will store form response (lead) data for up to 365 days. It is a best practice to allow the user to do a one time pull upon integration setup to ensure no leads are missed.Refer to [Lead Form Responses](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#get-lead-sync-form-responses) documentation for more information.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LeadFormResponsesRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("count")]
-            public int? Count { get; set; }
+            public string? Count { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("count")]
+            public string Count { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -126,10 +137,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadFormResponses
             public string LeadType { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("limitedToTestLeads")]
-            public bool? LimitedToTestLeads { get; set; }
+            public string? LimitedToTestLeads { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("limitedToTestLeads")]
+            public string LimitedToTestLeads { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -156,10 +176,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadFormResponses
             public string Q { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("start")]
-            public int? Start { get; set; }
+            public string? Start { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("start")]
+            public string Start { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591

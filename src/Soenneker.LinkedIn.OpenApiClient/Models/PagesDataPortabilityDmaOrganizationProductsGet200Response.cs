@@ -75,10 +75,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The mediaSections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MediaSections { get; set; }
+        public UntypedNode? MediaSections { get; set; }
 #nullable restore
 #else
-        public List<string> MediaSections { get; set; }
+        public UntypedNode MediaSections { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -149,10 +149,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The standardizedSkills property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? StandardizedSkills { get; set; }
+        public UntypedNode? StandardizedSkills { get; set; }
 #nullable restore
 #else
-        public List<string> StandardizedSkills { get; set; }
+        public UntypedNode StandardizedSkills { get; set; }
 #endif
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -203,7 +203,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastModified.CreateFromDiscriminatorValue); } },
                 { "lastModifiedByAdmin", n => { LastModifiedByAdmin = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastModifiedByAdmin>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastModifiedByAdmin.CreateFromDiscriminatorValue); } },
                 { "logoV2", n => { LogoV2 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLogoV2>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLogoV2.CreateFromDiscriminatorValue); } },
-                { "mediaSections", n => { MediaSections = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "mediaSections", n => { MediaSections = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseName>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseName.CreateFromDiscriminatorValue); } },
                 { "organization", n => { Organization = n.GetStringValue(); } },
                 { "organizationalPage", n => { OrganizationalPage = n.GetStringValue(); } },
@@ -213,7 +213,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "productCategoryAdminSuggestions", n => { ProductCategoryAdminSuggestions = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseProductCategoryAdminSuggestions>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseProductCategoryAdminSuggestions.CreateFromDiscriminatorValue); } },
                 { "productIntegrations", n => { ProductIntegrations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "rolesUsingProduct", n => { RolesUsingProduct = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "standardizedSkills", n => { StandardizedSkills = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "standardizedSkills", n => { StandardizedSkills = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "vanityName", n => { VanityName = n.GetStringValue(); } },
             };
@@ -233,7 +233,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastModified>("lastModified", LastModified);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastModifiedByAdmin>("lastModifiedByAdmin", LastModifiedByAdmin);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLogoV2>("logoV2", LogoV2);
-            writer.WriteCollectionOfPrimitiveValues<string>("mediaSections", MediaSections);
+            writer.WriteObjectValue<UntypedNode>("mediaSections", MediaSections);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseName>("name", Name);
             writer.WriteStringValue("organization", Organization);
             writer.WriteStringValue("organizationalPage", OrganizationalPage);
@@ -243,7 +243,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseProductCategoryAdminSuggestions>("productCategoryAdminSuggestions", ProductCategoryAdminSuggestions);
             writer.WriteCollectionOfPrimitiveValues<string>("productIntegrations", ProductIntegrations);
             writer.WriteCollectionOfPrimitiveValues<string>("rolesUsingProduct", RolesUsingProduct);
-            writer.WriteCollectionOfPrimitiveValues<string>("standardizedSkills", StandardizedSkills);
+            writer.WriteObjectValue<UntypedNode>("standardizedSkills", StandardizedSkills);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("vanityName", VanityName);
             writer.WriteAdditionalData(AdditionalData);

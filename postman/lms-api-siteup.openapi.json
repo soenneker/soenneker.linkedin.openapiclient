@@ -7,6 +7,9 @@
   "paths": {
     "/adAccountUsers": {
       "get": {
+        "tags": [
+          "Auth and Basics"
+        ],
         "summary": "Fetch the Authenticated User's Ad Accounts",
         "operationId": "FetchTheAuthenticatedUserSAdAccounts",
         "parameters": [
@@ -15,6 +18,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "authenticatedUser"
+              }
             }
           },
           {
@@ -22,6 +30,11 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              }
             }
           },
           {
@@ -29,28 +42,99 @@
             "in": "header",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{insert_version}}"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
         },
         "security": [
           { }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Fetch the Authenticated User's Ad Accounts",
+            "id": "3c79dac2-fbdb-4b7c-9175-a2e14a738835",
+            "request": {
+              "auth": {
+                "type": "noauth"
+              },
+              "method": "GET",
+              "header": [
+                {
+                  "key": "X-Restli-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                },
+                {
+                  "key": "LinkedIn-Version",
+                  "value": "{{insert_version}}",
+                  "type": "text"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "{{insert_token}}",
+                  "type": "text",
+                  "disabled": true
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/adAccountUsers?q=authenticatedUser",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "adAccountUsers"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "authenticatedUser"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Auth and Basics"
+            ],
+            "effectiveAuth": {
+              "type": "noauth"
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       }
     },
     "/organizationAcls": {
       "get": {
+        "tags": [
+          "Auth and Basics"
+        ],
         "summary": "Fetch the Authenticated User's Organization Roles",
         "operationId": "FetchTheAuthenticatedUserSOrganizationRoles",
         "parameters": [
@@ -59,6 +143,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "roleAssignee"
+              }
             }
           },
           {
@@ -66,6 +155,11 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              }
             }
           },
           {
@@ -73,28 +167,99 @@
             "in": "header",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{insert_version}}"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
         },
         "security": [
           { }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Fetch the Authenticated User's Organization Roles",
+            "id": "aff29305-4ffd-4a85-b058-9fe2acd99318",
+            "request": {
+              "auth": {
+                "type": "noauth"
+              },
+              "method": "GET",
+              "header": [
+                {
+                  "key": "X-Restli-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                },
+                {
+                  "key": "LinkedIn-Version",
+                  "value": "{{insert_version}}",
+                  "type": "text"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "{{insert_token}}",
+                  "type": "text",
+                  "disabled": true
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/organizationAcls?q=roleAssignee",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "organizationAcls"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "roleAssignee"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Auth and Basics"
+            ],
+            "effectiveAuth": {
+              "type": "noauth"
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       }
     },
     "/adAccounts/{sponsoredaccount_id}": {
       "get": {
+        "tags": [
+          "Ad Account and core Campaign Entities "
+        ],
         "summary": "Fetch the Ad Account by ID",
         "operationId": "FetchTheAdAccountByID",
         "parameters": [
@@ -111,13 +276,11 @@
             "in": "header",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{insert_version}}"
+              }
             }
           },
           {
@@ -125,28 +288,99 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
         },
         "security": [
           { }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Fetch the Ad Account by ID",
+            "id": "e999dd8b-83d3-452b-909d-fb0b0a859777",
+            "request": {
+              "auth": {
+                "type": "noauth"
+              },
+              "method": "GET",
+              "header": [
+                {
+                  "key": "LinkedIn-Version",
+                  "value": "{{insert_version}}",
+                  "type": "text"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "{{insert_token}}",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "X-Restli-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "url": "{{baseUrl}}/adAccounts/{{sponsoredaccount_id}}"
+            },
+            "response": [ ],
+            "folders": [
+              "Ad Account and core Campaign Entities "
+            ],
+            "effectiveAuth": {
+              "type": "noauth"
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       }
     }
   },
-  "components": {
-    "securitySchemes": {
-      "authorizationHeader": {
-        "type": "apiKey",
-        "description": "Authorization header inferred from the Postman collection.",
-        "name": "Authorization",
-        "in": "header"
-      }
+  "components": { },
+  "tags": [
+    {
+      "name": "Auth and Basics"
+    },
+    {
+      "name": "Ad Account and core Campaign Entities "
     }
-  }
+  ],
+  "x-postman-warnings": [
+    "Auth and Basics / Fetch the Authenticated User's Ad Accounts: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Fetch the Authenticated User's Ad Accounts: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "Fetch the Authenticated User's Ad Accounts: No saved responses: status codes and response schemas cannot be inferred.",
+    "Auth and Basics / Fetch the Authenticated User's Organization Roles: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Fetch the Authenticated User's Organization Roles: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "Fetch the Authenticated User's Organization Roles: No saved responses: status codes and response schemas cannot be inferred.",
+    "Ad Account and core Campaign Entities  / Fetch the Ad Account by ID: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Fetch the Ad Account by ID: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "Fetch the Ad Account by ID: No saved responses: status codes and response schemas cannot be inferred."
+  ]
 }

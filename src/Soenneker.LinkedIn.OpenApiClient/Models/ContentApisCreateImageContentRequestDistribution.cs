@@ -25,18 +25,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The targetEntities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TargetEntities { get; set; }
+        public UntypedNode? TargetEntities { get; set; }
 #nullable restore
 #else
-        public List<string> TargetEntities { get; set; }
+        public UntypedNode TargetEntities { get; set; }
 #endif
         /// <summary>The thirdPartyDistributionChannels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ThirdPartyDistributionChannels { get; set; }
+        public UntypedNode? ThirdPartyDistributionChannels { get; set; }
 #nullable restore
 #else
-        public List<string> ThirdPartyDistributionChannels { get; set; }
+        public UntypedNode ThirdPartyDistributionChannels { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateImageContentRequestDistribution"/> and sets the default values.
@@ -64,8 +64,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "feedDistribution", n => { FeedDistribution = n.GetStringValue(); } },
-                { "targetEntities", n => { TargetEntities = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "thirdPartyDistributionChannels", n => { ThirdPartyDistributionChannels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "targetEntities", n => { TargetEntities = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "thirdPartyDistributionChannels", n => { ThirdPartyDistributionChannels = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,8 +76,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("feedDistribution", FeedDistribution);
-            writer.WriteCollectionOfPrimitiveValues<string>("targetEntities", TargetEntities);
-            writer.WriteCollectionOfPrimitiveValues<string>("thirdPartyDistributionChannels", ThirdPartyDistributionChannels);
+            writer.WriteObjectValue<UntypedNode>("targetEntities", TargetEntities);
+            writer.WriteObjectValue<UntypedNode>("thirdPartyDistributionChannels", ThirdPartyDistributionChannels);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

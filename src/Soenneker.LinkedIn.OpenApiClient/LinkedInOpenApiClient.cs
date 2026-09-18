@@ -187,11 +187,6 @@ namespace Soenneker.LinkedIn.OpenApiClient
             ApiClientBuilder.RegisterDefaultDeserializer<JsonParseNodeFactory>();
             ApiClientBuilder.RegisterDefaultDeserializer<TextParseNodeFactory>();
             ApiClientBuilder.RegisterDefaultDeserializer<FormParseNodeFactory>();
-            if (string.IsNullOrEmpty(RequestAdapter.BaseUrl))
-            {
-                RequestAdapter.BaseUrl = "https://api.linkedin.com";
-            }
-            PathParameters.TryAdd("baseurl", RequestAdapter.BaseUrl);
         }
     }
 }

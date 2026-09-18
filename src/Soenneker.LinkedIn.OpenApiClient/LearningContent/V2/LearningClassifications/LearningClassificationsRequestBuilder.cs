@@ -35,7 +35,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifica
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LearningClassificationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-content/v2/learningClassifications{?count*,keyword*,q*,sourceLocale%2Ecountry*,sourceLocale%2Elanguage*,start*}", pathParameters)
+        public LearningClassificationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-content/v2/learningClassifications{?count*,keyword*,q*,sourceLocale%2Ecountry*,sourceLocale%2Elanguage*,start*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,16 +43,16 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifica
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LearningClassificationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-content/v2/learningClassifications{?count*,keyword*,q*,sourceLocale%2Ecountry*,sourceLocale%2Elanguage*,start*}", rawUrl)
+        public LearningClassificationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-content/v2/learningClassifications{?count*,keyword*,q*,sourceLocale%2Ecountry*,sourceLocale%2Elanguage*,start*,type*}", rawUrl)
         {
         }
         /// <summary>
-        /// To retrieve learning classifications for a keyboard, use a GET request supplied with a keyword to receive all of the classifications for that keyword. [https://api.linkedin.com/v2/learningClassifications?q=keyword&amp;keyword=business](https://api.linkedin.com/v2/learningClassifications/{URN})Documentation: [https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword](https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword)*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*
+        /// To retrieve a page of learning classifications, given some criteria, issue a GET call to the following endpoint:GET https://api.linkedin.com/v2/learningClassifications?q=localeAndTypeDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api#learningclassifications-localeandtype-finder*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*To retrieve learning classifications for a keyboard, use a GET request supplied with a keyword to receive all of the classifications for that keyword. [https://api.linkedin.com/v2/learningClassifications?q=keyword&amp;keyword=business](https://api.linkedin.com/v2/learningClassifications/{URN})Documentation: [https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword](https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword)*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationsByKeywordDefaultResponse">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndTypeDefaultResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifications.LearningClassificationsRequestBuilder.LearningClassificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,12 +65,12 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifica
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationsByKeywordDefaultResponse.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndTypeDefaultResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To retrieve learning classifications for a keyboard, use a GET request supplied with a keyword to receive all of the classifications for that keyword. [https://api.linkedin.com/v2/learningClassifications?q=keyword&amp;keyword=business](https://api.linkedin.com/v2/learningClassifications/{URN})Documentation: [https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword](https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword)*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*
+        /// To retrieve a page of learning classifications, given some criteria, issue a GET call to the following endpoint:GET https://api.linkedin.com/v2/learningClassifications?q=localeAndTypeDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api#learningclassifications-localeandtype-finder*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*To retrieve learning classifications for a keyboard, use a GET request supplied with a keyword to receive all of the classifications for that keyword. [https://api.linkedin.com/v2/learningClassifications?q=keyword&amp;keyword=business](https://api.linkedin.com/v2/learningClassifications/{URN})Documentation: [https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword](https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword)*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,14 +98,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifica
             return new global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifications.LearningClassificationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To retrieve learning classifications for a keyboard, use a GET request supplied with a keyword to receive all of the classifications for that keyword. [https://api.linkedin.com/v2/learningClassifications?q=keyword&amp;keyword=business](https://api.linkedin.com/v2/learningClassifications/{URN})Documentation: [https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword](https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword)*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*
+        /// To retrieve a page of learning classifications, given some criteria, issue a GET call to the following endpoint:GET https://api.linkedin.com/v2/learningClassifications?q=localeAndTypeDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api#learningclassifications-localeandtype-finder*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*To retrieve learning classifications for a keyboard, use a GET request supplied with a keyword to receive all of the classifications for that keyword. [https://api.linkedin.com/v2/learningClassifications?q=keyword&amp;keyword=business](https://api.linkedin.com/v2/learningClassifications/{URN})Documentation: [https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword](https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword)*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LearningClassificationsRequestBuilderGetQueryParameters 
         {
             /// <summary>The number of learning classifications to include in the page. The maximum supported count is 100 classifications per page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("count")]
-            public int? Count { get; set; }
+            public string? Count { get; set; }
+#nullable restore
+#else
+            [QueryParameter("count")]
+            public string Count { get; set; }
+#endif
             /// <summary>The keyword string to search learning classifications. The search results will include only learning classifications matching this keyword string, as determined by LinkedIn Learning&apos;s relevance algorithm. The value of this parameter is case-insensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,7 +123,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifica
             [QueryParameter("keyword")]
             public string Keyword { get; set; }
 #endif
-            /// <summary>The value of this parameter should always be keyword.</summary>
+            /// <summary>The value of this parameter should always be: localeAndType.The value of this parameter should always be keyword.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("q")]
@@ -126,7 +133,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifica
             [QueryParameter("q")]
             public string Q { get; set; }
 #endif
-            /// <summary>The locale country the API will use to try to localize the learning classification. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales &quot;de_DE&quot;, &quot;en_US&quot;, &quot;es_ES&quot;, &quot;fr_FR&quot;, and &quot;ja_JP&quot;. </summary>
+            /// <summary>The locale country of the learning classifications. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales &quot;de_DE&quot;, &quot;en_US&quot;, &quot;es_ES&quot;, &quot;fr_FR&quot;, and &quot;ja_JP&quot;.The locale country the API will use to try to localize the learning classification. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales &quot;de_DE&quot;, &quot;en_US&quot;, &quot;es_ES&quot;, &quot;fr_FR&quot;, and &quot;ja_JP&quot;. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sourceLocale%2Ecountry")]
@@ -136,7 +143,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifica
             [QueryParameter("sourceLocale%2Ecountry")]
             public string SourceLocaleCountry { get; set; }
 #endif
-            /// <summary>The locale language the API will use to try to localize the learning classification. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales &quot;de_DE&quot;, &quot;en_US&quot;, &quot;es_ES&quot;, &quot;fr_FR&quot;, and &quot;ja_JP&quot;.</summary>
+            /// <summary>The locale language of the learning classifications. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales &quot;de_DE&quot;, &quot;en_US&quot;, &quot;es_ES&quot;, &quot;fr_FR&quot;, and &quot;ja_JP&quot;.The locale language the API will use to try to localize the learning classification. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales &quot;de_DE&quot;, &quot;en_US&quot;, &quot;es_ES&quot;, &quot;fr_FR&quot;, and &quot;ja_JP&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sourceLocale%2Elanguage")]
@@ -147,8 +154,25 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifica
             public string SourceLocaleLanguage { get; set; }
 #endif
             /// <summary>The start index of learning classifications for the page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("start")]
-            public int? Start { get; set; }
+            public string? Start { get; set; }
+#nullable restore
+#else
+            [QueryParameter("start")]
+            public string Start { get; set; }
+#endif
+            /// <summary>The type of the learning classifications. The value of this parameter should be LIBRARY, SUBJECT, or TOPIC. </summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("type")]
+            public string? Type { get; set; }
+#nullable restore
+#else
+            [QueryParameter("type")]
+            public string Type { get; set; }
+#endif
         }
     }
 }

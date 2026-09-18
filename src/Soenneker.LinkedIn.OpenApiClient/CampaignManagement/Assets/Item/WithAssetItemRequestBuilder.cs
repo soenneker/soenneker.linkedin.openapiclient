@@ -33,7 +33,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Assets.Item
         {
         }
         /// <summary>
-        /// View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#check-status-of-upload) to understand more on this API.This API examples retrieves the status of the Image File uploaded in the previous step by using the asset ID. The recipe upload status must be **&apos;AVAILABLE&apos;** in order to move on to the next step!
+        /// View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#check-status-of-upload) to understand more on this API.This API examples retrieves the status of the Image File uploaded in the previous step by using the digital media asset ID (returned in step 1). The recipe upload status must be **&apos;AVAILABLE&apos;** in order to move on to the next step!View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#check-status-of-upload) to understand more on this API.This API examples retrieves the status of the Image File uploaded in the previous step by using the asset ID. The recipe upload status must be **&apos;AVAILABLE&apos;** in order to move on to the next step!
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Assets.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#check-status-of-upload) to understand more on this API.This API examples retrieves the status of the Image File uploaded in the previous step by using the asset ID. The recipe upload status must be **&apos;AVAILABLE&apos;** in order to move on to the next step!
+        /// View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#check-status-of-upload) to understand more on this API.This API examples retrieves the status of the Image File uploaded in the previous step by using the digital media asset ID (returned in step 1). The recipe upload status must be **&apos;AVAILABLE&apos;** in order to move on to the next step!View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#check-status-of-upload) to understand more on this API.This API examples retrieves the status of the Image File uploaded in the previous step by using the asset ID. The recipe upload status must be **&apos;AVAILABLE&apos;** in order to move on to the next step!
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

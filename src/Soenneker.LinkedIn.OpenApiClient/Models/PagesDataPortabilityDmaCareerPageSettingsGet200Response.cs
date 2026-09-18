@@ -22,8 +22,20 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings AutomaticJobPostingSettings { get; set; }
 #endif
+        /// <summary>The candidateInterest property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseCandidateInterest? CandidateInterest { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseCandidateInterest CandidateInterest { get; set; }
+#endif
+        /// <summary>The employeesYouShouldReachOutToVisible property</summary>
+        public bool? EmployeesYouShouldReachOutToVisible { get; set; }
         /// <summary>The jobCulturalInsightsVisible property</summary>
         public bool? JobCulturalInsightsVisible { get; set; }
+        /// <summary>The meetTheTeamVisible property</summary>
+        public bool? MeetTheTeamVisible { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200Response"/> and sets the default values.
         /// </summary>
@@ -50,7 +62,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "automaticJobPostingSettings", n => { AutomaticJobPostingSettings = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings.CreateFromDiscriminatorValue); } },
+                { "candidateInterest", n => { CandidateInterest = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseCandidateInterest>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseCandidateInterest.CreateFromDiscriminatorValue); } },
+                { "employeesYouShouldReachOutToVisible", n => { EmployeesYouShouldReachOutToVisible = n.GetBoolValue(); } },
                 { "jobCulturalInsightsVisible", n => { JobCulturalInsightsVisible = n.GetBoolValue(); } },
+                { "meetTheTeamVisible", n => { MeetTheTeamVisible = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +76,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings>("automaticJobPostingSettings", AutomaticJobPostingSettings);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseCandidateInterest>("candidateInterest", CandidateInterest);
+            writer.WriteBoolValue("employeesYouShouldReachOutToVisible", EmployeesYouShouldReachOutToVisible);
             writer.WriteBoolValue("jobCulturalInsightsVisible", JobCulturalInsightsVisible);
+            writer.WriteBoolValue("meetTheTeamVisible", MeetTheTeamVisible);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

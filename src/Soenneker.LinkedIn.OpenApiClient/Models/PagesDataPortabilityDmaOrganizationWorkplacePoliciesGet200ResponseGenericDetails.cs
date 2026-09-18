@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The featuredBenefits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FeaturedBenefits { get; set; }
+        public UntypedNode? FeaturedBenefits { get; set; }
 #nullable restore
 #else
-        public List<string> FeaturedBenefits { get; set; }
+        public UntypedNode FeaturedBenefits { get; set; }
 #endif
         /// <summary>The locationBasedPayAdjustment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "featuredBenefits", n => { FeaturedBenefits = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "featuredBenefits", n => { FeaturedBenefits = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "locationBasedPayAdjustment", n => { LocationBasedPayAdjustment = n.GetStringValue(); } },
                 { "policyDescription", n => { PolicyDescription = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesGet200ResponseGenericDetailsPolicyDescription>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesGet200ResponseGenericDetailsPolicyDescription.CreateFromDiscriminatorValue); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("featuredBenefits", FeaturedBenefits);
+            writer.WriteObjectValue<UntypedNode>("featuredBenefits", FeaturedBenefits);
             writer.WriteStringValue("locationBasedPayAdjustment", LocationBasedPayAdjustment);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesGet200ResponseGenericDetailsPolicyDescription>("policyDescription", PolicyDescription);
             writer.WriteAdditionalData(AdditionalData);

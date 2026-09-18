@@ -14,13 +14,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The entities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationsResumeRequestEntities? Entities { get; set; }
 #nullable restore
 #else
-        public string Value { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationsResumeRequestEntities Entities { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationsResumeRequest"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "entities", n => { Entities = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationsResumeRequestEntities>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationsResumeRequestEntities.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("value", Value);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationsResumeRequestEntities>("entities", Entities);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

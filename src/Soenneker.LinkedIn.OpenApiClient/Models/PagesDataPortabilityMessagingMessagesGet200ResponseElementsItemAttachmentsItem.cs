@@ -22,6 +22,30 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemAudio Audio { get; set; }
 #endif
+        /// <summary>The document property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemDocument? Document { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemDocument Document { get; set; }
+#endif
+        /// <summary>The image property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemImage? Image { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemImage Image { get; set; }
+#endif
+        /// <summary>The video property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemVideo? Video { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemVideo Video { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItem"/> and sets the default values.
         /// </summary>
@@ -48,6 +72,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "audio", n => { Audio = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemAudio>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemAudio.CreateFromDiscriminatorValue); } },
+                { "document", n => { Document = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemDocument>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemDocument.CreateFromDiscriminatorValue); } },
+                { "image", n => { Image = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemImage>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemImage.CreateFromDiscriminatorValue); } },
+                { "video", n => { Video = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemVideo>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemVideo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,6 +85,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemAudio>("audio", Audio);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemDocument>("document", Document);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemImage>("image", Image);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemVideo>("video", Video);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

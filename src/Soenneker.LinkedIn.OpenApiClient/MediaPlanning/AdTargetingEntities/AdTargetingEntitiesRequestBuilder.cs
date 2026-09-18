@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.MediaPlanning.AdTargetingEntities
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdTargetingEntitiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/media-planning/adTargetingEntities{?count*,facet*,q*,query*,queryVersion*,start*}", pathParameters)
+        public AdTargetingEntitiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/media-planning/adTargetingEntities{?count*,facet*,fields*,q*,query*,queryVersion*,start*,totals*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,29 +30,29 @@ namespace Soenneker.LinkedIn.OpenApiClient.MediaPlanning.AdTargetingEntities
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdTargetingEntitiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/media-planning/adTargetingEntities{?count*,facet*,q*,query*,queryVersion*,start*}", rawUrl)
+        public AdTargetingEntitiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/media-planning/adTargetingEntities{?count*,facet*,fields*,q*,query*,queryVersion*,start*,totals*}", rawUrl)
         {
         }
         /// <summary>
-        /// Get Bing Geo locations using search typeahead
+        /// Get all seniorities
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningGetBingGeoLocationsUsingSearchTypeahead200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningGetAllSeniorities200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningGetBingGeoLocationsUsingSearchTypeahead200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.MediaPlanning.AdTargetingEntities.AdTargetingEntitiesRequestBuilder.AdTargetingEntitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningGetAllSeniorities200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.MediaPlanning.AdTargetingEntities.AdTargetingEntitiesRequestBuilder.AdTargetingEntitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningGetBingGeoLocationsUsingSearchTypeahead200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.MediaPlanning.AdTargetingEntities.AdTargetingEntitiesRequestBuilder.AdTargetingEntitiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningGetAllSeniorities200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.MediaPlanning.AdTargetingEntities.AdTargetingEntitiesRequestBuilder.AdTargetingEntitiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningGetBingGeoLocationsUsingSearchTypeahead200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningGetBingGeoLocationsUsingSearchTypeahead200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningGetAllSeniorities200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningGetAllSeniorities200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Bing Geo locations using search typeahead
+        /// Get all seniorities
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,15 +80,24 @@ namespace Soenneker.LinkedIn.OpenApiClient.MediaPlanning.AdTargetingEntities
             return new global::Soenneker.LinkedIn.OpenApiClient.MediaPlanning.AdTargetingEntities.AdTargetingEntitiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get Bing Geo locations using search typeahead
+        /// Get all seniorities
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdTargetingEntitiesRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("count")]
-            public int? Count { get; set; }
+            public string? Count { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("count")]
+            public string Count { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -100,6 +109,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.MediaPlanning.AdTargetingEntities
             #pragma warning disable CS1591
             [QueryParameter("facet")]
             public string Facet { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("fields")]
+            public string? Fields { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("fields")]
+            public string Fields { get; set; }
             #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,10 +163,32 @@ namespace Soenneker.LinkedIn.OpenApiClient.MediaPlanning.AdTargetingEntities
             public string QueryVersion { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("start")]
-            public int? Start { get; set; }
+            public string? Start { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("start")]
+            public string Start { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("totals")]
+            public string? Totals { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("totals")]
+            public string Totals { get; set; }
+            #pragma warning restore CS1591
+#endif
         }
     }
 }

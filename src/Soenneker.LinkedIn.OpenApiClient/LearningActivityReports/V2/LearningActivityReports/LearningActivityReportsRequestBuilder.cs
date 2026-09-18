@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningActivityReports.V2.LearningAc
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LearningActivityReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-activity-reports/v2/learningActivityReports{?aggregationCriteria%2Eprimary*,aggregationCriteria%2Esecondary*,assetType*,contentSource*,count*,locale%2Elanguage*,q*,sortBy%2EengagementMetricQualifier*,sortBy%2EengagementMetricType*,sortOrder*,startedAt*,timeOffset%2Eduration*,timeOffset%2Eunit*}", pathParameters)
+        public LearningActivityReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-activity-reports/v2/learningActivityReports{?aggregationCriteria%2Eprimary*,contentSource*,count*,locale%2Elanguage*,q*,startedAt*,timeOffset%2Eduration*,timeOffset%2Eunit*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningActivityReports.V2.LearningAc
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LearningActivityReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-activity-reports/v2/learningActivityReports{?aggregationCriteria%2Eprimary*,aggregationCriteria%2Esecondary*,assetType*,contentSource*,count*,locale%2Elanguage*,q*,sortBy%2EengagementMetricQualifier*,sortBy%2EengagementMetricType*,sortOrder*,startedAt*,timeOffset%2Eduration*,timeOffset%2Eunit*}", rawUrl)
+        public LearningActivityReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/learning-activity-reports/v2/learningActivityReports{?aggregationCriteria%2Eprimary*,contentSource*,count*,locale%2Elanguage*,q*,startedAt*,timeOffset%2Eduration*,timeOffset%2Eunit*}", rawUrl)
         {
         }
         /// <summary>
@@ -101,32 +101,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningActivityReports.V2.LearningAc
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
-            [QueryParameter("aggregationCriteria%2Esecondary")]
-            public string? AggregationCriteriaSecondary { get; set; }
-            #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("aggregationCriteria%2Esecondary")]
-            public string AggregationCriteriaSecondary { get; set; }
-            #pragma warning restore CS1591
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            #pragma warning disable CS1591
-            [QueryParameter("assetType")]
-            public string? AssetType { get; set; }
-            #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("assetType")]
-            public string AssetType { get; set; }
-            #pragma warning restore CS1591
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("contentSource")]
             public string? ContentSource { get; set; }
             #pragma warning restore CS1591
@@ -137,10 +111,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningActivityReports.V2.LearningAc
             public string ContentSource { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("count")]
-            public int? Count { get; set; }
+            public string? Count { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("count")]
+            public string Count { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -170,50 +153,29 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningActivityReports.V2.LearningAc
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
-            [QueryParameter("sortBy%2EengagementMetricQualifier")]
-            public string? SortByEngagementMetricQualifier { get; set; }
+            [QueryParameter("startedAt")]
+            public string? StartedAt { get; set; }
             #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
-            [QueryParameter("sortBy%2EengagementMetricQualifier")]
-            public string SortByEngagementMetricQualifier { get; set; }
-            #pragma warning restore CS1591
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            #pragma warning disable CS1591
-            [QueryParameter("sortBy%2EengagementMetricType")]
-            public string? SortByEngagementMetricType { get; set; }
-            #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("sortBy%2EengagementMetricType")]
-            public string SortByEngagementMetricType { get; set; }
-            #pragma warning restore CS1591
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            #pragma warning disable CS1591
-            [QueryParameter("sortOrder")]
-            public string? SortOrder { get; set; }
-            #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("sortOrder")]
-            public string SortOrder { get; set; }
-            #pragma warning restore CS1591
-#endif
             #pragma warning disable CS1591
             [QueryParameter("startedAt")]
-            public int? StartedAt { get; set; }
+            public string StartedAt { get; set; }
             #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("timeOffset%2Eduration")]
-            public int? TimeOffsetDuration { get; set; }
+            public string? TimeOffsetDuration { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("timeOffset%2Eduration")]
+            public string TimeOffsetDuration { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591

@@ -19,14 +19,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds
     {
         /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.contentApis.conversationAds.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.WithConversationUrnItemRequestBuilder"/></returns>
-        public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.WithConversationUrnItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.ConversationAdsItemRequestBuilder"/></returns>
+        public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.ConversationAdsItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("conversationUrn", position);
-                return new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.WithConversationUrnItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("conversationAds%2Did", position);
+                return new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.ConversationAdsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -64,6 +64,24 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Successful response will have Status `201 Created` and the ID in the `x-linkedin-id` response header. For example,`urn:li:sponsoredConversation:164380864`
+        /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<Stream?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<Stream> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToPostRequestInformation(requestConfiguration);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Makes a BATCH_GET request to let a list of conversations that are created.#### Sample ResponseJSONCopy```{    &quot;statuses&quot;: {        &quot;urn:li:sponsoredConversation:704255&quot;: 200,        &quot;urn:li:sponsoredConversation:703695&quot;: 200    },    &quot;results&quot;: {        &quot;urn:li:sponsoredConversation:704255&quot;:          {            &quot;id&quot;: &quot;urn:li:sponsoredConversation:704255&quot;,            &quot;parentAccount&quot;: &quot;urn:li:sponsoredAccount:520866471&quot;                    },        &quot;urn:li:sponsoredConversation:703695&quot;:         {            &quot;id&quot;: &quot;urn:li:sponsoredConversation:703695&quot;,            &quot;parentAccount&quot;: &quot;urn:li:sponsoredAccount:520866471&quot;,        }    },    &quot;errors&quot;: {}}```
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -78,6 +96,24 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            return requestInfo;
+        }
+        /// <summary>
+        /// Successful response will have Status `201 Created` and the ID in the `x-linkedin-id` response header. For example,`urn:li:sponsoredConversation:164380864`
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

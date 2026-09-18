@@ -16,6 +16,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createdAt property</summary>
         public int? CreatedAt { get; set; }
+        /// <summary>The creator property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Creator { get; set; }
+#nullable restore
+#else
+        public string Creator { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +76,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdAt", n => { CreatedAt = n.GetIntValue(); } },
+                { "creator", n => { Creator = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "labels", n => { Labels = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingThreadsGet200ResponseElementsItemLabelsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingThreadsGet200ResponseElementsItemLabelsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "lastActivityAt", n => { LastActivityAt = n.GetIntValue(); } },
@@ -82,6 +91,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("createdAt", CreatedAt);
+            writer.WriteStringValue("creator", Creator);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingThreadsGet200ResponseElementsItemLabelsItem>("labels", Labels);
             writer.WriteIntValue("lastActivityAt", LastActivityAt);

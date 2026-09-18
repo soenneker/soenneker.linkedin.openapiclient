@@ -14,6 +14,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The urnLiAdTargetingFacetInterfaceLocales property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? UrnLiAdTargetingFacetInterfaceLocales { get; set; }
+#nullable restore
+#else
+        public List<string> UrnLiAdTargetingFacetInterfaceLocales { get; set; }
+#endif
         /// <summary>The urnLiAdTargetingFacetLocations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +29,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #nullable restore
 #else
         public List<string> UrnLiAdTargetingFacetLocations { get; set; }
+#endif
+        /// <summary>The urnLiAdTargetingFacetSkills property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? UrnLiAdTargetingFacetSkills { get; set; }
+#nullable restore
+#else
+        public List<string> UrnLiAdTargetingFacetSkills { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestTargetingCriteriaIncludeAndItemOr"/> and sets the default values.
@@ -47,7 +63,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "urn:li:adTargetingFacet:interfaceLocales", n => { UrnLiAdTargetingFacetInterfaceLocales = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "urn:li:adTargetingFacet:locations", n => { UrnLiAdTargetingFacetLocations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "urn:li:adTargetingFacet:skills", n => { UrnLiAdTargetingFacetSkills = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +75,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("urn:li:adTargetingFacet:interfaceLocales", UrnLiAdTargetingFacetInterfaceLocales);
             writer.WriteCollectionOfPrimitiveValues<string>("urn:li:adTargetingFacet:locations", UrnLiAdTargetingFacetLocations);
+            writer.WriteCollectionOfPrimitiveValues<string>("urn:li:adTargetingFacet:skills", UrnLiAdTargetingFacetSkills);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

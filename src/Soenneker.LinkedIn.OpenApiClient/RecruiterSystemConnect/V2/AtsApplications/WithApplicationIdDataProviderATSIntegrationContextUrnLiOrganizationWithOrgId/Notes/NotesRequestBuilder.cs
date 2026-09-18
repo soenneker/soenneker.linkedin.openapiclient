@@ -37,18 +37,20 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplicat
         /// DELETE on the endpoint `/atsApplications/{JobApplicationIdentifier}/notes` to delete application notes. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#delete-application-notes)
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.Notes.NotesRequestBuilder.NotesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> DeleteAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationNotesDeletePlainRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.Notes.NotesRequestBuilder.NotesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.Notes.NotesRequestBuilder.NotesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> DeleteAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationNotesDeletePlainRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.Notes.NotesRequestBuilder.NotesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
@@ -60,11 +62,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplicat
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationNotesRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.Notes.NotesRequestBuilder.NotesRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PutAsync(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.Notes.NotesRequestBuilder.NotesRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationNotesRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.Notes.NotesRequestBuilder.NotesRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PutAsync(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.Notes.NotesRequestBuilder.NotesRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -75,18 +77,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplicat
         /// DELETE on the endpoint `/atsApplications/{JobApplicationIdentifier}/notes` to delete application notes. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#delete-application-notes)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.Notes.NotesRequestBuilder.NotesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationNotesDeletePlainRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.Notes.NotesRequestBuilder.NotesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.Notes.NotesRequestBuilder.NotesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationNotesDeletePlainRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.Notes.NotesRequestBuilder.NotesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.SetContentFromParsable(RequestAdapter, "text/plain", body);
             return requestInfo;
         }
         /// <summary>
@@ -97,11 +102,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplicat
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationNotesRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.Notes.NotesRequestBuilder.NotesRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.Notes.NotesRequestBuilder.NotesRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationNotesRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.Notes.NotesRequestBuilder.NotesRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.Notes.NotesRequestBuilder.NotesRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

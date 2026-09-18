@@ -5,35 +5,18 @@
     "description": "We are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "https://api.linkedin.com"
-    }
-  ],
   "paths": {
     "/v2/provisionedApplications": {
       "post": {
+        "tags": [
+          "Module 1 - Customer Configuration"
+        ],
         "summary": "Provision Customer Application",
         "operationId": "ProvisionCustomerApplication",
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "required": [
-                  "uniqueForeignId",
-                  "name",
-                  "description",
-                  "validJsSdkDomains"
-                ],
                 "type": "object",
                 "properties": {
                   "uniqueForeignId": {
@@ -52,21 +35,94 @@
                     }
                   }
                 }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "uniqueForeignId": "{{$randomUUID}}",
+                    "name": "Partner Name - Customer Application",
+                    "description": "This is a customer application.",
+                    "validJsSdkDomains": [
+                      "http://localhost:5000"
+                    ]
+                  }
+                }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
         },
         "security": [
-          { }
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Provision Customer Application",
+            "id": "6e5e559b-ee34-4b11-a525-9b416962b0d4",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "name": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{parent_access_token}}"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"uniqueForeignId\": \"{{$randomUUID}}\",\n  \"name\": \"Partner Name - Customer Application\",\n  \"description\": \"This is a customer application.\",\n  \"validJsSdkDomains\": [\"http://localhost:5000\"]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/provisionedApplications"
+            },
+            "response": [ ],
+            "folders": [
+              "Module 1 - Customer Configuration"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "clientSecret": "{{customer_client_secret}}",
+                "clientId": "{{customer_client_id}}",
+                "tokenName": "customer_access_token",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "grant_type": "client_credentials",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       },
       "get": {
+        "tags": [
+          "Module 1 - Customer Configuration"
+        ],
         "summary": "Get App by uniqueForeignID",
         "operationId": "GetAppByUniqueForeignID",
         "parameters": [
@@ -75,6 +131,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "credentialsByUniqueForeignId"
+              }
             }
           },
           {
@@ -82,28 +143,96 @@
             "in": "query",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{$randomUUID}}"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
         },
         "security": [
-          { }
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get App by uniqueForeignID",
+            "id": "73f46107-f6fd-4ade-b960-fbb4af2114af",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "type": "text",
+                  "value": "Bearer {{parent_access_token}}"
+                }
+              ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/provisionedApplications?q=credentialsByUniqueForeignId&uniqueForeignId={{$randomUUID}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "provisionedApplications"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "credentialsByUniqueForeignId"
+                  },
+                  {
+                    "key": "uniqueForeignId",
+                    "value": "{{$randomUUID}}"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Module 1 - Customer Configuration"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "clientSecret": "{{customer_client_secret}}",
+                "clientId": "{{customer_client_id}}",
+                "tokenName": "customer_access_token",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "grant_type": "client_credentials",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       }
     },
     "/v2/atsIntegrations": {
       "post": {
+        "tags": [
+          "Module 1 - Customer Configuration"
+        ],
         "summary": "Sync Customer Integrations",
         "operationId": "SyncCustomerIntegrations",
         "parameters": [
@@ -112,6 +241,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "urn:li:organization:{{org_id}}"
+              }
             }
           },
           {
@@ -119,6 +253,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "APPLY_CONNECT"
+              }
             }
           },
           {
@@ -126,6 +265,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "JOBS"
+              }
             }
           },
           {
@@ -133,6 +277,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "ATS"
+              }
             }
           },
           {
@@ -140,13 +289,11 @@
             "in": "header",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "batch_partial_update"
+              }
             }
           }
         ],
@@ -154,33 +301,18 @@
           "content": {
             "application/json": {
               "schema": {
-                "required": [
-                  "entities"
-                ],
                 "type": "object",
                 "properties": {
                   "entities": {
-                    "required": [
-                      "integrationContext=urn:li:organization:{{org_id}}&integrationType=APPLY_CONNECT&tenantType=JOBS&dataProvider=ATS"
-                    ],
                     "type": "object",
                     "properties": {
                       "integrationContext=urn:li:organization:{{org_id}}&integrationType=APPLY_CONNECT&tenantType=JOBS&dataProvider=ATS": {
-                        "required": [
-                          "patch"
-                        ],
                         "type": "object",
                         "properties": {
                           "patch": {
-                            "required": [
-                              "$set"
-                            ],
                             "type": "object",
                             "properties": {
                               "$set": {
-                                "required": [
-                                  "integrationName"
-                                ],
                                 "type": "object",
                                 "properties": {
                                   "integrationName": {
@@ -195,21 +327,134 @@
                     }
                   }
                 }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "entities": {
+                      "integrationContext=urn:li:organization:{{org_id}}&integrationType=APPLY_CONNECT&tenantType=JOBS&dataProvider=ATS": {
+                        "patch": {
+                          "$set": {
+                            "integrationName": "Apply Connect Integration"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
         },
         "security": [
-          { }
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Sync Customer Integrations",
+            "id": "52f1a3c3-d852-4a82-ac7e-0c9aaa1a1804",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "type": "text",
+                  "value": "batch_partial_update"
+                },
+                {
+                  "key": "Content-Type",
+                  "name": "Content-Type",
+                  "type": "text",
+                  "value": "application/json",
+                  "disabled": true
+                },
+                {
+                  "key": "Authorization",
+                  "type": "text",
+                  "value": "Bearer {{global_access_token}}"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"entities\": {\n        \"integrationContext=urn:li:organization:{{org_id}}&integrationType=APPLY_CONNECT&tenantType=JOBS&dataProvider=ATS\": {\n            \"patch\": {\n                \"$set\": {\n                    \"integrationName\": \"Apply Connect Integration\"\n                }\n            }\n        }\n    }\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext=urn:li:organization:{{org_id}}&ids[0].integrationType=APPLY_CONNECT&ids[0].tenantType=JOBS&ids[0].dataProvider=ATS",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "atsIntegrations"
+                ],
+                "query": [
+                  {
+                    "key": "ids[0].integrationContext",
+                    "value": "urn:li:organization:{{org_id}}"
+                  },
+                  {
+                    "key": "ids[0].integrationType",
+                    "value": "APPLY_CONNECT"
+                  },
+                  {
+                    "key": "ids[0].tenantType",
+                    "value": "JOBS"
+                  },
+                  {
+                    "key": "ids[0].dataProvider",
+                    "value": "ATS"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Module 1 - Customer Configuration"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "clientSecret": "{{customer_client_secret}}",
+                "clientId": "{{customer_client_id}}",
+                "tokenName": "customer_access_token",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "grant_type": "client_credentials",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       },
       "get": {
+        "tags": [
+          "Module 1 - Customer Configuration"
+        ],
         "summary": "Verify Integrations",
         "operationId": "VerifyIntegrations",
         "parameters": [
@@ -218,6 +463,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "urn:li:organization:{{org_id}}"
+              }
             }
           },
           {
@@ -225,6 +475,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "APPLY_CONNECT"
+              }
             }
           },
           {
@@ -232,6 +487,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "JOBS"
+              }
             }
           },
           {
@@ -239,28 +499,104 @@
             "in": "query",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "ATS"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
         },
         "security": [
-          { }
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Verify Integrations",
+            "id": "08230114-d12e-4f43-8195-35dcb397318a",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{child_access_token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext=urn:li:organization:{{org_id}}&ids[0].integrationType=APPLY_CONNECT&ids[0].tenantType=JOBS&ids[0].dataProvider=ATS",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "atsIntegrations"
+                ],
+                "query": [
+                  {
+                    "key": "ids[0].integrationContext",
+                    "value": "urn:li:organization:{{org_id}}"
+                  },
+                  {
+                    "key": "ids[0].integrationType",
+                    "value": "APPLY_CONNECT"
+                  },
+                  {
+                    "key": "ids[0].tenantType",
+                    "value": "JOBS"
+                  },
+                  {
+                    "key": "ids[0].dataProvider",
+                    "value": "ATS"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Module 1 - Customer Configuration"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "clientSecret": "{{customer_client_secret}}",
+                "clientId": "{{customer_client_id}}",
+                "tokenName": "customer_access_token",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "grant_type": "client_credentials",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       }
     },
     "/v2/simpleJobPostings": {
       "post": {
+        "tags": [
+          "Module 2 - Sync Jobs"
+        ],
         "summary": "Sync Jobs",
         "operationId": "SyncJobs",
         "parameters": [
@@ -269,13 +605,11 @@
             "in": "header",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "batch_create"
+              }
             }
           }
         ],
@@ -283,39 +617,118 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
-              }
+                "x-postman-invalid-json": true
+              },
+              "x-postman-raw-body": "{\n    \"elements\": [\n        {\n            \"externalJobPostingId\": \"externalJobPostingId-0001\",\n            \"title\": \"Software Engineer Test Job\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\",\n            \"integrationContext\": \"urn:li:organization:{{org_id}}\",\n            // \"companyName\": \"Company name\",\n            \"jobPostingOperationType\": \"CREATE\",\n            \"employmentStatus\": \"OTHER\",\n            \"experienceLevel\": \"NOT_APPLICABLE\",\n            \"listingType\": \"BASIC\",\n            \"listedAt\": {{$timestamp}}000,\n            \"location\": \"United States\",\n            \"industries\": [\n                \"urn:li:industry:26\"\n            ],\n            \"categories\": [\n                \"advr\"\n            ],\n            \"companyApplyUrl\": \"https://localhost:5000\",\n            \"onsiteApplyConfiguration\": {\n                \"jobApplicationWebhookUrl\": \"{{webhook_url}}\",\n                \"questions\": {\n                    \"resumeQuestions\": {\n                        \"resumeQuestionRequirement\": \"REQUIRED\"\n                    },\n                    \"coverLetterQuestions\": {},\n                    \"contactInformationQuestions\": {\n                        \"cellphoneNumberQuestionRequirement\": \"REQUIRED\",\n                        \"helpMessage\": \"This is a help message.\"\n                    },\n                    \"voluntarySelfIdentificationQuestions\": {},\n                    \"educationQuestions\": {\n                        \"educationExperienceQuestionSet\": {}\n                    },\n                    \"workQuestions\": {\n                        \"workExperienceQuestionSet\": {}\n                    },\n                    \"additionalQuestions\": {\n                        \"customQuestionSets\": [\n                            {\n                                \"repeatLimit\": 1,\n                                \"questions\": [\n                                    {\n                                        \"partnerQuestionIdentifier\": \"date-question\",\n                                        \"questionDetails\": {\n                                            \"dateQuestionDetails\": {}\n                                        },\n                                        \"required\": true,\n                                        \"questionText\": \"Enter Today's Date\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"text-question\",\n                                        \"helpMessage\": \"This is a help message.\",\n                                        \"questionDetails\": {\n                                            \"textQuestionDetails\": {\n                                                \"preferredFormComponent\": \"TEXT\"\n                                            }\n                                        },\n                                        \"required\": true,\n                                        \"questionText\": \"This is a text question.\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"multilinetext-question\",\n                                        \"helpMessage\": \"This is a help message.\",\n                                        \"questionDetails\": {\n                                            \"textQuestionDetails\": {\n                                                \"preferredFormComponent\": \"MULTILINE_TEXT\"\n                                            }\n                                        },\n                                        \"required\": true,\n                                        \"questionText\": \"This is a multiline text question.\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"fileupload-question\",\n                                        \"questionDetails\": {\n                                            \"documentQuestionDetails\": {}\n                                        },\n                                        \"required\": true,\n                                        \"questionText\": \"This is a file upload question.\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"multiplechoice-question\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"preferredFormComponent\": \"CHECKBOXES\",\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"choice-1\",\n                                                        \"displayValue\": \"Choice 1\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"choice-2\",\n                                                        \"displayValue\": \"Choice 2\"\n                                                    }\n                                                ]\n                                            }\n                                        },\n                                        \"required\": true,\n                                        \"questionText\": \"This is a checkbox question with HTML formatting.<a href='https://www.linkedin.com'>here.</a>\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"dropdown-question\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"preferredFormComponent\": \"DROPDOWN\",\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"choice-1\",\n                                                        \"displayValue\": \"Choice 1\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"choice-2\",\n                                                        \"displayValue\": \"Choice 2\"\n                                                    }\n                                                ]\n                                            }\n                                        },\n                                        \"required\": true,\n                                        \"questionText\": \"This is a drop-down question.\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"radiobutton-question\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"preferredFormComponent\": \"RADIO_BUTTONS\",\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"choice-1\",\n                                                        \"displayValue\": \"Choice 1\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"choice-2\",\n                                                        \"displayValue\": \"Choice 2\"\n                                                    }\n                                                ]\n                                            }\n                                        },\n                                        \"required\": true,\n                                        \"questionText\": \"This is a radio buttons question.\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"buttons-question\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"preferredFormComponent\": \"BUTTONS\",\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"choice-1\",\n                                                        \"displayValue\": \"Choice 1\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"choice-2\",\n                                                        \"displayValue\": \"Choice 2\"\n                                                    }\n                                                ]\n                                            }\n                                        },\n                                        \"required\": true,\n                                        \"questionText\": \"This is a button question.\"\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
         },
         "security": [
-          { }
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Sync Jobs",
+            "id": "f1d81034-2428-49eb-bdc6-ae1d94b2f460",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_create"
+                },
+                {
+                  "key": "Content-Type",
+                  "name": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{customer_access_token}}"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"elements\": [\n        {\n            \"externalJobPostingId\": \"externalJobPostingId-0001\",\n            \"title\": \"Software Engineer Test Job\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\",\n            \"integrationContext\": \"urn:li:organization:{{org_id}}\",\n            // \"companyName\": \"Company name\",\n            \"jobPostingOperationType\": \"CREATE\",\n            \"employmentStatus\": \"OTHER\",\n            \"experienceLevel\": \"NOT_APPLICABLE\",\n            \"listingType\": \"BASIC\",\n            \"listedAt\": {{$timestamp}}000,\n            \"location\": \"United States\",\n            \"industries\": [\n                \"urn:li:industry:26\"\n            ],\n            \"categories\": [\n                \"advr\"\n            ],\n            \"companyApplyUrl\": \"https://localhost:5000\",\n            \"onsiteApplyConfiguration\": {\n                \"jobApplicationWebhookUrl\": \"{{webhook_url}}\",\n                \"questions\": {\n                    \"resumeQuestions\": {\n                        \"resumeQuestionRequirement\": \"REQUIRED\"\n                    },\n                    \"coverLetterQuestions\": {},\n                    \"contactInformationQuestions\": {\n                        \"cellphoneNumberQuestionRequirement\": \"REQUIRED\",\n                        \"helpMessage\": \"This is a help message.\"\n                    },\n                    \"voluntarySelfIdentificationQuestions\": {},\n                    \"educationQuestions\": {\n                        \"educationExperienceQuestionSet\": {}\n                    },\n                    \"workQuestions\": {\n                        \"workExperienceQuestionSet\": {}\n                    },\n                    \"additionalQuestions\": {\n                        \"customQuestionSets\": [\n                            {\n                                \"repeatLimit\": 1,\n                                \"questions\": [\n                                    {\n                                        \"partnerQuestionIdentifier\": \"date-question\",\n                                        \"questionDetails\": {\n                                            \"dateQuestionDetails\": {}\n                                        },\n                                        \"required\": true,\n                                        \"questionText\": \"Enter Today's Date\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"text-question\",\n                                        \"helpMessage\": \"This is a help message.\",\n                                        \"questionDetails\": {\n                                            \"textQuestionDetails\": {\n                                                \"preferredFormComponent\": \"TEXT\"\n                                            }\n                                        },\n                                        \"required\": true,\n                                        \"questionText\": \"This is a text question.\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"multilinetext-question\",\n                                        \"helpMessage\": \"This is a help message.\",\n                                        \"questionDetails\": {\n                                            \"textQuestionDetails\": {\n                                                \"preferredFormComponent\": \"MULTILINE_TEXT\"\n                                            }\n                                        },\n                                        \"required\": true,\n                                        \"questionText\": \"This is a multiline text question.\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"fileupload-question\",\n                                        \"questionDetails\": {\n                                            \"documentQuestionDetails\": {}\n                                        },\n                                        \"required\": true,\n                                        \"questionText\": \"This is a file upload question.\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"multiplechoice-question\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"preferredFormComponent\": \"CHECKBOXES\",\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"choice-1\",\n                                                        \"displayValue\": \"Choice 1\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"choice-2\",\n                                                        \"displayValue\": \"Choice 2\"\n                                                    }\n                                                ]\n                                            }\n                                        },\n                                        \"required\": true,\n                                        \"questionText\": \"This is a checkbox question with HTML formatting.<a href='https://www.linkedin.com'>here.</a>\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"dropdown-question\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"preferredFormComponent\": \"DROPDOWN\",\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"choice-1\",\n                                                        \"displayValue\": \"Choice 1\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"choice-2\",\n                                                        \"displayValue\": \"Choice 2\"\n                                                    }\n                                                ]\n                                            }\n                                        },\n                                        \"required\": true,\n                                        \"questionText\": \"This is a drop-down question.\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"radiobutton-question\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"preferredFormComponent\": \"RADIO_BUTTONS\",\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"choice-1\",\n                                                        \"displayValue\": \"Choice 1\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"choice-2\",\n                                                        \"displayValue\": \"Choice 2\"\n                                                    }\n                                                ]\n                                            }\n                                        },\n                                        \"required\": true,\n                                        \"questionText\": \"This is a radio buttons question.\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"buttons-question\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"preferredFormComponent\": \"BUTTONS\",\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"choice-1\",\n                                                        \"displayValue\": \"Choice 1\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"choice-2\",\n                                                        \"displayValue\": \"Choice 2\"\n                                                    }\n                                                ]\n                                            }\n                                        },\n                                        \"required\": true,\n                                        \"questionText\": \"This is a button question.\"\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/simpleJobPostings"
+            },
+            "response": [ ],
+            "folders": [
+              "Module 2 - Sync Jobs"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "clientSecret": "{{customer_client_secret}}",
+                "clientId": "{{customer_client_id}}",
+                "tokenName": "customer_access_token",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "grant_type": "client_credentials",
+                "addTokenTo": "header"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "exec": [
+                    "let jsonData = JSON.parse(responseBody);",
+                    "pm.globals.set(\"id\", jsonData.elements[0].id);",
+                    ""
+                  ],
+                  "type": "text/javascript",
+                  "id": "f24cf1bc-b650-4df6-9095-60bfc0296aef"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       }
     },
     "/v2/simpleJobPostingTasks": {
       "post": {
+        "tags": [
+          "Module 2 - Sync Jobs"
+        ],
         "summary": "Check Job Operation Task Status",
         "operationId": "CheckJobOperationTaskStatus",
         "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "X-HTTP-Method-Override",
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "GET"
+              }
             }
           }
         ],
@@ -329,38 +742,127 @@
                     "type": "string"
                   }
                 }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "ids": "{{id}}"
+                  }
+                }
+              },
+              "encoding": {
+                "ids": {
+                  "style": "form",
+                  "explode": true
+                }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
         },
         "security": [
-          { }
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Check Job Operation Task Status",
+            "id": "11207f33-2107-45df-9703-59a13f20399f",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{customer_access_token}}"
+                },
+                {
+                  "key": "X-HTTP-Method-Override",
+                  "value": "GET",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/x-www-form-urlencoded",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "ids",
+                    "value": "{{id}}",
+                    "type": "text"
+                  }
+                ]
+              },
+              "url": "https://api.linkedin.com/v2/simpleJobPostingTasks"
+            },
+            "response": [ ],
+            "folders": [
+              "Module 2 - Sync Jobs"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "clientSecret": "{{customer_client_secret}}",
+                "clientId": "{{customer_client_id}}",
+                "tokenName": "customer_access_token",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "grant_type": "client_credentials",
+                "addTokenTo": "header"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "exec": [
+                    ""
+                  ],
+                  "type": "text/javascript",
+                  "id": "b43778a1-f68b-4fc9-ba9e-12e11d594641"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       }
     },
     "/v2/jobPostingStatus": {
       "post": {
+        "tags": [
+          "Module 2 - Sync Jobs"
+        ],
         "summary": "Check Job Posting Status",
         "operationId": "CheckJobPostingStatus",
         "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "X-HTTP-Method-Override",
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "GET"
+              }
             }
           }
         ],
@@ -371,26 +873,114 @@
                 "type": "object",
                 "properties": {
                   "ids": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   }
+                }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "ids": [
+                      "{{external_job_posting_id_1}}",
+                      "{{external_job_posting_id_2}}"
+                    ]
+                  }
+                }
+              },
+              "encoding": {
+                "ids": {
+                  "style": "form",
+                  "explode": true
                 }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
         },
         "security": [
-          { }
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Check Job Posting Status",
+            "id": "e6964397-705f-4d84-a7c2-b9868a964c7e",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{customer_access_token}}"
+                },
+                {
+                  "key": "X-HTTP-Method-Override",
+                  "value": "GET"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/x-www-form-urlencoded"
+                }
+              ],
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "ids",
+                    "value": "{{external_job_posting_id_1}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "ids",
+                    "value": "{{external_job_posting_id_2}}",
+                    "type": "text"
+                  }
+                ]
+              },
+              "url": "https://api.linkedin.com/v2/jobPostingStatus"
+            },
+            "response": [ ],
+            "folders": [
+              "Module 2 - Sync Jobs"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "clientSecret": "{{customer_client_secret}}",
+                "clientId": "{{customer_client_id}}",
+                "tokenName": "customer_access_token",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "grant_type": "client_credentials",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       }
     },
     "/ambry/": {
       "get": {
+        "tags": [
+          "Module 3 - Receive Applications"
+        ],
         "summary": "Get Resume/Cover Letter",
         "operationId": "GetResumeCoverLetter",
         "parameters": [
@@ -399,43 +989,110 @@
             "in": "query",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{resume_url}}"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
         },
         "security": [
-          { }
+          {
+            "bearerAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://www.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get Resume/Cover Letter",
+            "id": "c9988aae-4a3b-4cf1-b15b-5659cf527ed8",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": {
+                  "token": ""
+                }
+              },
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{customer_access_token}}"
+                }
+              ],
+              "url": {
+                "raw": "https://www.linkedin.com/ambry/?x-li-ambry-ep={{resume_url}}",
+                "protocol": "https",
+                "host": [
+                  "www",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "ambry",
+                  ""
+                ],
+                "query": [
+                  {
+                    "key": "",
+                    "value": "",
+                    "disabled": true
+                  },
+                  {
+                    "key": "x-li-ambry-ep",
+                    "value": "{{resume_url}}"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Module 3 - Receive Applications"
+            ],
+            "effectiveAuth": {
+              "type": "bearer",
+              "bearer": {
+                "token": ""
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       }
     },
     "/v2/jobApplicationLifecycleActions": {
       "post": {
+        "tags": [
+          "Module 5 - Sync Application Feedback Signals"
+        ],
         "summary": "Sync Job Application Feedback Signals",
         "operationId": "SyncJobApplicationFeedbackSignals",
         "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "X-RestLi-Method",
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "create"
+              }
             }
           },
           {
@@ -443,6 +1100,11 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              }
             }
           }
         ],
@@ -450,31 +1112,193 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
-              }
+                "x-postman-invalid-json": true
+              },
+              "x-postman-raw-body": "{\n    \"jobApplicationId\": \"urn:li:jobApplication:{{job_application_id}}\",\n    \"action\": \"APPLICATION_VIEWED\",\n    // \"action\": \"RESUME_DOWNLOADED\",\n    // \"action\": \"APPLICATION_REJECTED\",\n    \"performedAt\": {{$timestamp}}000,\n    \"integrationContext\": \"urn:li:organization:{{org_id}}\"\n}"
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
         },
         "security": [
-          { }
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Sync Job Application Feedback Signals",
+            "id": "b76762bd-b8ac-4dfe-9022-d6324dccb8ef",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{customer_access_token}}",
+                  "type": "text"
+                },
+                {
+                  "key": "X-RestLi-Method",
+                  "value": "create",
+                  "type": "text"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"jobApplicationId\": \"urn:li:jobApplication:{{job_application_id}}\",\n    \"action\": \"APPLICATION_VIEWED\",\n    // \"action\": \"RESUME_DOWNLOADED\",\n    // \"action\": \"APPLICATION_REJECTED\",\n    \"performedAt\": {{$timestamp}}000,\n    \"integrationContext\": \"urn:li:organization:{{org_id}}\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/jobApplicationLifecycleActions"
+            },
+            "response": [ ],
+            "folders": [
+              "Module 5 - Sync Application Feedback Signals"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "clientSecret": "{{customer_client_secret}}",
+                "clientId": "{{customer_client_id}}",
+                "tokenName": "customer_access_token",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "grant_type": "client_credentials",
+                "addTokenTo": "header"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       }
     }
   },
   "components": {
     "securitySchemes": {
-      "authorizationHeader": {
-        "type": "apiKey",
-        "description": "Authorization header inferred from the Postman collection.",
-        "name": "Authorization",
-        "in": "header"
+      "oauth2Auth": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+            "scopes": { }
+          }
+        }
+      },
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
       }
     }
-  }
+  },
+  "tags": [
+    {
+      "name": "Module 1 - Customer Configuration"
+    },
+    {
+      "name": "Module 2 - Sync Jobs"
+    },
+    {
+      "name": "Module 3 - Receive Applications"
+    },
+    {
+      "name": "Module 5 - Sync Application Feedback Signals"
+    }
+  ],
+  "x-postman-warnings": [
+    "collection: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Module 1 - Customer Configuration / Provision Customer Application: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Provision Customer Application: No saved responses: status codes and response schemas cannot be inferred.",
+    "Module 1 - Customer Configuration / Sync Customer Integrations: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Sync Customer Integrations: No saved responses: status codes and response schemas cannot be inferred.",
+    "Module 1 - Customer Configuration / Get App by uniqueForeignID: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Get App by uniqueForeignID: No saved responses: status codes and response schemas cannot be inferred.",
+    "Module 1 - Customer Configuration / Verify Integrations: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Verify Integrations: No saved responses: status codes and response schemas cannot be inferred.",
+    "Module 2 - Sync Jobs / Sync Jobs: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Module 2 - Sync Jobs / Sync Jobs: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Sync Jobs: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Sync Jobs: No saved responses: status codes and response schemas cannot be inferred.",
+    "Module 2 - Sync Jobs / Check Job Operation Task Status: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Module 2 - Sync Jobs / Check Job Operation Task Status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Check Job Operation Task Status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Module 2 - Sync Jobs / Check Job Posting Status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Check Job Posting Status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Module 3 - Receive Applications / Get Resume/Cover Letter: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Get Resume/Cover Letter: No saved responses: status codes and response schemas cannot be inferred.",
+    "Module 5 - Sync Application Feedback Signals / Sync Job Application Feedback Signals: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Sync Job Application Feedback Signals: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Sync Job Application Feedback Signals: No saved responses: status codes and response schemas cannot be inferred."
+  ],
+  "x-postman-events": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "fb90ae97-012d-44b0-a659-e8bb58b80cfd",
+        "type": "text/javascript",
+        "exec": [
+          "pm.request.headers.add({",
+          "  key: 'User-Agent',",
+          "  value: 'applyconnect-linkedin-postman'",
+          "});"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "16e3a59e-905e-4b6e-86a5-1032f6b96f8e",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "x-postman-variables": [
+    {
+      "key": "customer_client_id",
+      "value": "{{customer_client_id}}"
+    },
+    {
+      "key": "customer_client_secret",
+      "value": "{{customer_client_secret}}"
+    },
+    {
+      "key": "org_id",
+      "value": "{{org_id}}"
+    },
+    {
+      "key": "partner_client_id",
+      "value": "{{partner_client_id}}"
+    },
+    {
+      "key": "partner_client_secret",
+      "value": "{{partner_client_secret}}"
+    },
+    {
+      "key": "webhook_url",
+      "value": "{{customer_webhook_url}}"
+    }
+  ]
 }

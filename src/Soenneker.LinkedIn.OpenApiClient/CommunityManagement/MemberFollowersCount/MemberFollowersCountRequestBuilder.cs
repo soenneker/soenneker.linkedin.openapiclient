@@ -33,7 +33,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberFollowersCo
         {
         }
         /// <summary>
-        /// Followers Count By DataRange
+        /// Total Followers Count
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberFollowersCo
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Followers Count By DataRange
+        /// Total Followers Count
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,7 +78,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberFollowersCo
             return new global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.MemberFollowersCount.MemberFollowersCountRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Followers Count By DataRange
+        /// Total Followers Count
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MemberFollowersCountRequestBuilderGetQueryParameters 

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.LinkedIn.OpenApiClient.ContentApis.Images.Item;
 using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Images
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ImagesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.contentApis.images.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Images.Item.WithImageUrnItemRequestBuilder"/></returns>
+        public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Images.Item.WithImageUrnItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("imageUrn", position);
+                return new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Images.Item.WithImageUrnItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Images.ImagesRequestBuilder"/> and sets the default values.
         /// </summary>

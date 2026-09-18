@@ -19,10 +19,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Links { get; set; }
+        public UntypedNode? Links { get; set; }
 #nullable restore
 #else
-        public List<string> Links { get; set; }
+        public UntypedNode Links { get; set; }
 #endif
         /// <summary>The start property</summary>
         public int? Start { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "links", n => { Links = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "links", n => { Links = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "start", n => { Start = n.GetIntValue(); } },
             };
         }
@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
-            writer.WriteCollectionOfPrimitiveValues<string>("links", Links);
+            writer.WriteObjectValue<UntypedNode>("links", Links);
             writer.WriteIntValue("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }

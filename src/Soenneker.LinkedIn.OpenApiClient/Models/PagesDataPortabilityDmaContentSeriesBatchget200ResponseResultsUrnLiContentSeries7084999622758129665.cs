@@ -109,7 +109,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7084999622758129665Title Title { get; set; }
 #endif
         /// <summary>The versionTag property</summary>
-        public int? VersionTag { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VersionTag { get; set; }
+#nullable restore
+#else
+        public string VersionTag { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7084999622758129665"/> and sets the default values.
         /// </summary>
@@ -149,7 +155,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "subscriberCount", n => { SubscriberCount = n.GetIntValue(); } },
                 { "targetAudiences", n => { TargetAudiences = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "title", n => { Title = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7084999622758129665Title>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7084999622758129665Title.CreateFromDiscriminatorValue); } },
-                { "versionTag", n => { VersionTag = n.GetIntValue(); } },
+                { "versionTag", n => { VersionTag = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -173,7 +179,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteIntValue("subscriberCount", SubscriberCount);
             writer.WriteCollectionOfPrimitiveValues<string>("targetAudiences", TargetAudiences);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7084999622758129665Title>("title", Title);
-            writer.WriteIntValue("versionTag", VersionTag);
+            writer.WriteStringValue("versionTag", VersionTag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

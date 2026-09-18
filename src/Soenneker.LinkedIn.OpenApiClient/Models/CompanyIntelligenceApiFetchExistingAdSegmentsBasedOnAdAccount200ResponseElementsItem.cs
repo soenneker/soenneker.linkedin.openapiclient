@@ -32,6 +32,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchExistingAdSegmentsBasedOnAdAccount200ResponseElementsItemCreated Created { get; set; }
 #endif
+        /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
         /// <summary>The id property</summary>
         public int? Id { get; set; }
         /// <summary>The lastModified property</summary>
@@ -67,7 +75,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Type { get; set; }
 #endif
         /// <summary>The versionTag property</summary>
-        public int? VersionTag { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VersionTag { get; set; }
+#nullable restore
+#else
+        public string VersionTag { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchExistingAdSegmentsBasedOnAdAccount200ResponseElementsItem"/> and sets the default values.
         /// </summary>
@@ -96,12 +110,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "account", n => { Account = n.GetStringValue(); } },
                 { "approximateMemberCount", n => { ApproximateMemberCount = n.GetIntValue(); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchExistingAdSegmentsBasedOnAdAccount200ResponseElementsItemCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchExistingAdSegmentsBasedOnAdAccount200ResponseElementsItemCreated.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchExistingAdSegmentsBasedOnAdAccount200ResponseElementsItemLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchExistingAdSegmentsBasedOnAdAccount200ResponseElementsItemLastModified.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "versionTag", n => { VersionTag = n.GetIntValue(); } },
+                { "versionTag", n => { VersionTag = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -114,12 +129,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("account", Account);
             writer.WriteIntValue("approximateMemberCount", ApproximateMemberCount);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchExistingAdSegmentsBasedOnAdAccount200ResponseElementsItemCreated>("created", Created);
+            writer.WriteStringValue("description", Description);
             writer.WriteIntValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchExistingAdSegmentsBasedOnAdAccount200ResponseElementsItemLastModified>("lastModified", LastModified);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("type", Type);
-            writer.WriteIntValue("versionTag", VersionTag);
+            writer.WriteStringValue("versionTag", VersionTag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

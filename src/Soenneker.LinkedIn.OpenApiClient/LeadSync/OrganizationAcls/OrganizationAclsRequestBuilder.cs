@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.OrganizationAcls
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationAclsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/lead-sync/organizationAcls{?q*,state*}", pathParameters)
+        public OrganizationAclsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/lead-sync/organizationAcls{?count*,q*,start*,state*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,29 +30,29 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.OrganizationAcls
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationAclsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/lead-sync/organizationAcls{?q*,state*}", rawUrl)
+        public OrganizationAclsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/lead-sync/organizationAcls{?count*,q*,start*,state*}", rawUrl)
         {
         }
         /// <summary>
-        /// View the [Organization Access Control](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-access-control-by-role?tabs=http#organization-roles) documentation.Take note of the organization (company page) from the previous request (`referenceInfo.organization.id`). A member must have access to not only the Sponsored Account (step 2) but also have one of the roles mentioned in our [permissions](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#permissions) table for the associated company page to successfully sync leads.If the user&apos;s role is not one of the approved roles for pulling leads, or the ad account does not have a company page associated to it (empty `referenceInfo` object in previous request) you should display a helpful message to the user guiding them on next steps.Below are two resources to better understand Page Admin vs Paid Media Admin:- [Permissions for Lead Gen Forms](https://www.linkedin.com/help/lms/answer/a421620/permissions-for-lead-gen-forms?lang=en)    - [LinkedIn Page Admiin Roles - Overview](https://www.linkedin.com/help/lms/answer/4783)
+        /// In this step, you&apos;ll retrieve a list of all the organizations that the logged in user has an approved role for. The authenticated user must have one of the roles mentioned in our [permissions](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#permissions) table to successfully sync leads (note this may be different depending on the lead type chosen in the previous step).Additional information on this API is available on the [Organization Access Control page](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/organizations/organization-access-control-by-role?tabs=http#find-a-members-organization-access-control-information).**Step 3: Ask user to select the organization(s) for which they are interested in syncing leads for**View the [Organization Access Control](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-access-control-by-role?tabs=http#organization-roles) documentation.Take note of the organization (company page) from the previous request (`referenceInfo.organization.id`). A member must have access to not only the Sponsored Account (step 2) but also have one of the roles mentioned in our [permissions](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#permissions) table for the associated company page to successfully sync leads.If the user&apos;s role is not one of the approved roles for pulling leads, or the ad account does not have a company page associated to it (empty `referenceInfo` object in previous request) you should display a helpful message to the user guiding them on next steps.Below are two resources to better understand Page Admin vs Paid Media Admin:- [Permissions for Lead Gen Forms](https://www.linkedin.com/help/lms/answer/a421620/permissions-for-lead-gen-forms?lang=en)    - [LinkedIn Page Admiin Roles - Overview](https://www.linkedin.com/help/lms/answer/4783)
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation4ValidateTheUserSOrganizationRole200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation3GetTheUserSOrganizationSCompanyPages200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation4ValidateTheUserSOrganizationRole200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LeadSync.OrganizationAcls.OrganizationAclsRequestBuilder.OrganizationAclsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation3GetTheUserSOrganizationSCompanyPages200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LeadSync.OrganizationAcls.OrganizationAclsRequestBuilder.OrganizationAclsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation4ValidateTheUserSOrganizationRole200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LeadSync.OrganizationAcls.OrganizationAclsRequestBuilder.OrganizationAclsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation3GetTheUserSOrganizationSCompanyPages200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LeadSync.OrganizationAcls.OrganizationAclsRequestBuilder.OrganizationAclsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation4ValidateTheUserSOrganizationRole200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation4ValidateTheUserSOrganizationRole200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation3GetTheUserSOrganizationSCompanyPages200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation3GetTheUserSOrganizationSCompanyPages200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// View the [Organization Access Control](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-access-control-by-role?tabs=http#organization-roles) documentation.Take note of the organization (company page) from the previous request (`referenceInfo.organization.id`). A member must have access to not only the Sponsored Account (step 2) but also have one of the roles mentioned in our [permissions](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#permissions) table for the associated company page to successfully sync leads.If the user&apos;s role is not one of the approved roles for pulling leads, or the ad account does not have a company page associated to it (empty `referenceInfo` object in previous request) you should display a helpful message to the user guiding them on next steps.Below are two resources to better understand Page Admin vs Paid Media Admin:- [Permissions for Lead Gen Forms](https://www.linkedin.com/help/lms/answer/a421620/permissions-for-lead-gen-forms?lang=en)    - [LinkedIn Page Admiin Roles - Overview](https://www.linkedin.com/help/lms/answer/4783)
+        /// In this step, you&apos;ll retrieve a list of all the organizations that the logged in user has an approved role for. The authenticated user must have one of the roles mentioned in our [permissions](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#permissions) table to successfully sync leads (note this may be different depending on the lead type chosen in the previous step).Additional information on this API is available on the [Organization Access Control page](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/organizations/organization-access-control-by-role?tabs=http#find-a-members-organization-access-control-information).**Step 3: Ask user to select the organization(s) for which they are interested in syncing leads for**View the [Organization Access Control](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-access-control-by-role?tabs=http#organization-roles) documentation.Take note of the organization (company page) from the previous request (`referenceInfo.organization.id`). A member must have access to not only the Sponsored Account (step 2) but also have one of the roles mentioned in our [permissions](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#permissions) table for the associated company page to successfully sync leads.If the user&apos;s role is not one of the approved roles for pulling leads, or the ad account does not have a company page associated to it (empty `referenceInfo` object in previous request) you should display a helpful message to the user guiding them on next steps.Below are two resources to better understand Page Admin vs Paid Media Admin:- [Permissions for Lead Gen Forms](https://www.linkedin.com/help/lms/answer/a421620/permissions-for-lead-gen-forms?lang=en)    - [LinkedIn Page Admiin Roles - Overview](https://www.linkedin.com/help/lms/answer/4783)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,11 +80,24 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.OrganizationAcls
             return new global::Soenneker.LinkedIn.OpenApiClient.LeadSync.OrganizationAcls.OrganizationAclsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// View the [Organization Access Control](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-access-control-by-role?tabs=http#organization-roles) documentation.Take note of the organization (company page) from the previous request (`referenceInfo.organization.id`). A member must have access to not only the Sponsored Account (step 2) but also have one of the roles mentioned in our [permissions](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#permissions) table for the associated company page to successfully sync leads.If the user&apos;s role is not one of the approved roles for pulling leads, or the ad account does not have a company page associated to it (empty `referenceInfo` object in previous request) you should display a helpful message to the user guiding them on next steps.Below are two resources to better understand Page Admin vs Paid Media Admin:- [Permissions for Lead Gen Forms](https://www.linkedin.com/help/lms/answer/a421620/permissions-for-lead-gen-forms?lang=en)    - [LinkedIn Page Admiin Roles - Overview](https://www.linkedin.com/help/lms/answer/4783)
+        /// In this step, you&apos;ll retrieve a list of all the organizations that the logged in user has an approved role for. The authenticated user must have one of the roles mentioned in our [permissions](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#permissions) table to successfully sync leads (note this may be different depending on the lead type chosen in the previous step).Additional information on this API is available on the [Organization Access Control page](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/organizations/organization-access-control-by-role?tabs=http#find-a-members-organization-access-control-information).**Step 3: Ask user to select the organization(s) for which they are interested in syncing leads for**View the [Organization Access Control](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-access-control-by-role?tabs=http#organization-roles) documentation.Take note of the organization (company page) from the previous request (`referenceInfo.organization.id`). A member must have access to not only the Sponsored Account (step 2) but also have one of the roles mentioned in our [permissions](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/leadsync?tabs=http#permissions) table for the associated company page to successfully sync leads.If the user&apos;s role is not one of the approved roles for pulling leads, or the ad account does not have a company page associated to it (empty `referenceInfo` object in previous request) you should display a helpful message to the user guiding them on next steps.Below are two resources to better understand Page Admin vs Paid Media Admin:- [Permissions for Lead Gen Forms](https://www.linkedin.com/help/lms/answer/a421620/permissions-for-lead-gen-forms?lang=en)    - [LinkedIn Page Admiin Roles - Overview](https://www.linkedin.com/help/lms/answer/4783)
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrganizationAclsRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("count")]
+            public string? Count { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("count")]
+            public string Count { get; set; }
+            #pragma warning restore CS1591
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -96,6 +109,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.OrganizationAcls
             #pragma warning disable CS1591
             [QueryParameter("q")]
             public string Q { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("start")]
+            public string? Start { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("start")]
+            public string Start { get; set; }
             #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -14,6 +14,30 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The de_DE property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeDE { get; set; }
+#nullable restore
+#else
+        public string DeDE { get; set; }
+#endif
+        /// <summary>The en_US property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EnUS { get; set; }
+#nullable restore
+#else
+        public string EnUS { get; set; }
+#endif
+        /// <summary>The es_ES property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EsES { get; set; }
+#nullable restore
+#else
+        public string EsES { get; set; }
+#endif
         /// <summary>The fr_CA property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +45,38 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #nullable restore
 #else
         public string FrCA { get; set; }
+#endif
+        /// <summary>The fr_FR property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FrFR { get; set; }
+#nullable restore
+#else
+        public string FrFR { get; set; }
+#endif
+        /// <summary>The ja_JP property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? JaJP { get; set; }
+#nullable restore
+#else
+        public string JaJP { get; set; }
+#endif
+        /// <summary>The pt_BR property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PtBR { get; set; }
+#nullable restore
+#else
+        public string PtBR { get; set; }
+#endif
+        /// <summary>The zh_CN property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ZhCN { get; set; }
+#nullable restore
+#else
+        public string ZhCN { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGet200ResponseAliasItemLocalized"/> and sets the default values.
@@ -47,7 +103,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "de_DE", n => { DeDE = n.GetStringValue(); } },
+                { "en_US", n => { EnUS = n.GetStringValue(); } },
+                { "es_ES", n => { EsES = n.GetStringValue(); } },
                 { "fr_CA", n => { FrCA = n.GetStringValue(); } },
+                { "fr_FR", n => { FrFR = n.GetStringValue(); } },
+                { "ja_JP", n => { JaJP = n.GetStringValue(); } },
+                { "pt_BR", n => { PtBR = n.GetStringValue(); } },
+                { "zh_CN", n => { ZhCN = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +120,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("de_DE", DeDE);
+            writer.WriteStringValue("en_US", EnUS);
+            writer.WriteStringValue("es_ES", EsES);
             writer.WriteStringValue("fr_CA", FrCA);
+            writer.WriteStringValue("fr_FR", FrFR);
+            writer.WriteStringValue("ja_JP", JaJP);
+            writer.WriteStringValue("pt_BR", PtBR);
+            writer.WriteStringValue("zh_CN", ZhCN);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

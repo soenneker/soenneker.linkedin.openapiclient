@@ -14,6 +14,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The urnLiOrganizationTargetedContentUrnLiOrganization3811762752c3d33078745deB71f908800ef8aef property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8Aef? UrnLiOrganizationTargetedContentUrnLiOrganization3811762752c3d33078745deB71f908800ef8aef { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8Aef UrnLiOrganizationTargetedContentUrnLiOrganization3811762752c3d33078745deB71f908800ef8aef { get; set; }
+#endif
         /// <summary>The urnLiOrganizationTargetedContentUrnLiOrganization38117628783f1f6889544d7931712afadc9d3e5 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +55,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "urn:li:organizationTargetedContent:(urn:li:organization:3811762,752c3d33-0787-45de-b71f-908800ef8aef)", n => { UrnLiOrganizationTargetedContentUrnLiOrganization3811762752c3d33078745deB71f908800ef8aef = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8Aef>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8Aef.CreateFromDiscriminatorValue); } },
                 { "urn:li:organizationTargetedContent:(urn:li:organization:3811762,8783f1f6-8895-44d7-9317-12afadc9d3e5)", n => { UrnLiOrganizationTargetedContentUrnLiOrganization38117628783f1f6889544d7931712afadc9d3e5 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization38117628783F1F6889544D7931712Afadc9D3E5>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization38117628783F1F6889544D7931712Afadc9D3E5.CreateFromDiscriminatorValue); } },
             };
         }
@@ -57,6 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8Aef>("urn:li:organizationTargetedContent:(urn:li:organization:3811762,752c3d33-0787-45de-b71f-908800ef8aef)", UrnLiOrganizationTargetedContentUrnLiOrganization3811762752c3d33078745deB71f908800ef8aef);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization38117628783F1F6889544D7931712Afadc9D3E5>("urn:li:organizationTargetedContent:(urn:li:organization:3811762,8783f1f6-8895-44d7-9317-12afadc9d3e5)", UrnLiOrganizationTargetedContentUrnLiOrganization38117628783f1f6889544d7931712afadc9d3e5);
             writer.WriteAdditionalData(AdditionalData);
         }

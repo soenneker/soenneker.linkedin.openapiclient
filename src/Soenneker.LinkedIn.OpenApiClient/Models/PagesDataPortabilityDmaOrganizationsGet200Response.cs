@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The alternativeNames property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AlternativeNames { get; set; }
+        public UntypedNode? AlternativeNames { get; set; }
 #nullable restore
 #else
-        public List<string> AlternativeNames { get; set; }
+        public UntypedNode AlternativeNames { get; set; }
 #endif
         /// <summary>The autoCreated property</summary>
         public bool? AutoCreated { get; set; }
@@ -215,10 +215,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The revenueRecords property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RevenueRecords { get; set; }
+        public UntypedNode? RevenueRecords { get; set; }
 #nullable restore
 #else
-        public List<string> RevenueRecords { get; set; }
+        public UntypedNode RevenueRecords { get; set; }
 #endif
         /// <summary>The specialties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -285,7 +285,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alternativeNames", n => { AlternativeNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "alternativeNames", n => { AlternativeNames = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "autoCreated", n => { AutoCreated = n.GetBoolValue(); } },
                 { "competitorOrganizationUrns", n => { CompetitorOrganizationUrns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "coverPhotoV2", n => { CoverPhotoV2 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCoverPhotoV2>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCoverPhotoV2.CreateFromDiscriminatorValue); } },
@@ -312,7 +312,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "organizationalPage", n => { OrganizationalPage = n.GetStringValue(); } },
                 { "parentCareersUsed", n => { ParentCareersUsed = n.GetBoolValue(); } },
                 { "primaryOrganizationType", n => { PrimaryOrganizationType = n.GetStringValue(); } },
-                { "revenueRecords", n => { RevenueRecords = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "revenueRecords", n => { RevenueRecords = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "specialties", n => { Specialties = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSpecialtiesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSpecialtiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "staffCountRange", n => { StaffCountRange = n.GetStringValue(); } },
                 { "tagline", n => { Tagline = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseTagline>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseTagline.CreateFromDiscriminatorValue); } },
@@ -327,7 +327,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("alternativeNames", AlternativeNames);
+            writer.WriteObjectValue<UntypedNode>("alternativeNames", AlternativeNames);
             writer.WriteBoolValue("autoCreated", AutoCreated);
             writer.WriteCollectionOfPrimitiveValues<string>("competitorOrganizationUrns", CompetitorOrganizationUrns);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCoverPhotoV2>("coverPhotoV2", CoverPhotoV2);
@@ -354,7 +354,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("organizationType", OrganizationType);
             writer.WriteBoolValue("parentCareersUsed", ParentCareersUsed);
             writer.WriteStringValue("primaryOrganizationType", PrimaryOrganizationType);
-            writer.WriteCollectionOfPrimitiveValues<string>("revenueRecords", RevenueRecords);
+            writer.WriteObjectValue<UntypedNode>("revenueRecords", RevenueRecords);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSpecialtiesItem>("specialties", Specialties);
             writer.WriteStringValue("staffCountRange", StaffCountRange);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseTagline>("tagline", Tagline);

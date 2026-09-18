@@ -5,23 +5,88 @@
     "description": "We are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.\n\nLinkedIn's Job Posting API enables authorized third parties such as clients, ATS systems, and Job Distributors to post jobs directly to LinkedIn on behalf of customers. This guide details on how to integrate with LinkedIn's Jobs Posting API.\n\nThe use of these APIs is restricted to developers approved by LinkedIn. Please reach out to your LinkedIn Relationship Manager or Business Development contact as you will need to meet certain criteria and sign an API agreement with data restrictions in order to use this integration.  \nIf you are not yet a LinkedIn Talent Solutions Partner, please complete the [LinkedIn Talent Solutions Partner Request Form](https://business.linkedin.com/talent-solutions/ats-partners/partner-application).",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "https://api.linkedin.com"
-    }
-  ],
   "paths": {
     "/v2/simpleJobPostings": {
       "post": {
-        "summary": "Close apply connect job posting",
-        "description": "In order to update a job posting, you can just re-post the job with any changed information and `jobPostingOperationType` field value set as `CLOSE` .Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-jobs-onsite-apply#apply-connect-jobs-lifecycle)",
-        "operationId": "CloseApplyConnectJobPosting",
+        "tags": [
+          "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with foundation schema",
+          "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create promoted job with promoted jobs extension schema",
+          "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with RSC entension schema",
+          "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Manage job lifecycle",
+          "Use Cases / Sync Basic or Promoted Jobs / Batch jobs example",
+          "Use Cases / Sync Apply Connect Enabled Jobs / Create apply connect job postings",
+          "Use Cases / Sync Apply Connect Enabled Jobs / Manage job lifecycle"
+        ],
+        "summary": "Create basic job",
+        "description": "By using this API, Customer can create `BASIC` Jobs. To know more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#foundation-schema)\n\nBy using this API, Customer can create `BASIC` Jobs with `workRemoteAllowed` as `True`. Hence Jobs posted through this API will be Remote enabled Job. To know more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#foundation-schema)\n\nBy using this API, Customer can create `BASIC` Jobs with `workRemoteAllowed` as `True`. Hence Jobs posted through this API will be Remote enabled Job. To know more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#foundation-schema)\n\nThis API Call is for creating Promoted Jobs by mentioning `listingType` as `PREMIUM`. `Contract URN` is mandatory field for this call. Customer can include `posterEmail` and `showPosterInfo` as field Parameter. Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#promoted-jobs-extension-schema)\n\nThis call is for Syncing PUBLIC Jobs to LinkedIn from ATS. `availability` field set to `PUBLIC`. Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#recruiter-system-connect-extension-schema)\n\nThis call is for Syncing PUBLIC Jobs to LinkedIn from ATS. `availability` field set to `PRIVATE_TO_ATS_INTEGRATION`. Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#recruiter-system-connect-extension-schema)\n\nIn order to update a simple job posting, you can just re-post the job with any changed information and `jobPostingOperationType` field value set as `UPDATE` .Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/update-renew-jobs)\n\nTo renew a job, re-post it with `jobPostingOperationType` field as `RENEW` and no other changes. The renewal operation extends the expiration of job posts by 30 days. .Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/update-renew-jobs)\n\nThere are two alternate ways to renew job postings:\n\nClose previous jobs, and re-post jobs without any changes\nPublish new jobs with different `externalJobPostingId`\n\nTo close a job, re-post the job using same `externalJobPostingId` value, but set jobPostingOperationType to `CLOSE`.Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/close-jobs)\n\nThe maximum number of jobs which can be submitted during one batch call is 100. If you would like to submit more than 100 jobs at a time, please group your jobs in to collections of 100 and make multiple batch calls in sequential order. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/create-jobs#sample-request-for-basic-jobs)\n\nBy using this API, Customer can create `BASIC` Jobs with `onsiteApplyConfiguration`.To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-jobs-onsite-apply#job-posting-field-schema)\n\nThis API Call is for creating Promoted Jobs by mentioning `listingType` as `PREMIUM`. `Contract URN` is mandatory field for this call.To know more,Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-jobs-onsite-apply#sample-request-body)\n\nBy using this API, Customer can create `BASIC` Jobs with `onsiteApplyConfiguration` and `workRemoteAllowed` set to `TRUE`.To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-jobs-onsite-apply#job-posting-field-schema)\n\nIn order to update a job posting, you can just re-post the job with any changed information and `jobPostingOperationType` field value set as `UPDATE` .Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-jobs-onsite-apply#apply-connect-jobs-lifecycle)\n\nIn order to update a job posting, you can just re-post the job with any changed information and `jobPostingOperationType` field value set as `RENEW` .Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-jobs-onsite-apply#apply-connect-jobs-lifecycle)\n\nIn order to update a job posting, you can just re-post the job with any changed information and `jobPostingOperationType` field value set as `CLOSE` .Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-jobs-onsite-apply#apply-connect-jobs-lifecycle)",
+        "operationId": "CreateBasicJob",
         "parameters": [
           {
             "name": "x-restli-method",
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "batch_create"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "batch_create"
+              },
+              "example1_3": {
+                "summary": "example1",
+                "value": "batch_create"
+              },
+              "example1_4": {
+                "summary": "example1",
+                "value": "batch_create"
+              },
+              "example1_5": {
+                "summary": "example1",
+                "value": "batch_create"
+              },
+              "example1_6": {
+                "summary": "example1",
+                "value": "batch_create"
+              },
+              "example1_7": {
+                "summary": "example1",
+                "value": "batch_create"
+              },
+              "example1_8": {
+                "summary": "example1",
+                "value": "batch_create"
+              },
+              "example1_9": {
+                "summary": "example1",
+                "value": "batch_create"
+              },
+              "example1_10": {
+                "summary": "example1",
+                "value": "batch_create"
+              },
+              "example1_11": {
+                "summary": "example1",
+                "value": "batch_create"
+              },
+              "example1_12": {
+                "summary": "example1",
+                "value": "batch_create"
+              },
+              "example1_13": {
+                "summary": "example1",
+                "value": "batch_create"
+              },
+              "example1_14": {
+                "summary": "example1",
+                "value": "batch_create"
+              },
+              "example1_15": {
+                "summary": "example1",
+                "value": "batch_create"
+              }
             }
           }
         ],
@@ -29,42 +94,2082 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
-              }
+                "x-postman-invalid-json": true
+              },
+              "x-postman-raw-body": "{\n  \"elements\": [\n    {\n      \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n      \"companyApplyUrl\": \"https://careers.yourcompany.com\",\n      \"externalJobPostingId\": \"{{external_job_posting_id}}\",\n      \"jobPostingOperationType\": \"CREATE\",\n      \"title\": \"Software Developer in Test\",\n      \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n      \"listedAt\": {{$timestamp}}000,\n      \"location\": \"Sunnyvale, California\",\n      \"categories\": [\n          \"rsch\"\n      ],\n      \"industries\": [\n        \"urn:li:industry:55\"\n      ],\n      \"skillsDescription\": \"Lorem Ipsum is simply dummy text\",\n      \"companyJobCode\" : \"company_{{external_job_posting_id}}\",\n      \"employmentStatus\": \"FULL_TIME\",\n      \"experienceLevel\": \"EXECUTIVE\",\n      \"trackingPixelUrl\": \"http://www.trackingpixellocation.com/pixel.gif\",\n      \"listingType\": \"BASIC\"\n    }\n  ]\n}"
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+          "JSON body contains template variables or nonstandard JSON syntax. Its raw text is preserved; unresolved values have unconstrained schemas."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Create basic job",
+            "id": "76b52db5-9970-431c-943f-65c618674012",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_create",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"elements\": [\n    {\n      \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n      \"companyApplyUrl\": \"https://careers.yourcompany.com\",\n      \"externalJobPostingId\": \"{{external_job_posting_id}}\",\n      \"jobPostingOperationType\": \"CREATE\",\n      \"title\": \"Software Developer in Test\",\n      \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n      \"listedAt\": {{$timestamp}}000,\n      \"location\": \"Sunnyvale, California\",\n      \"categories\": [\n          \"rsch\"\n      ],\n      \"industries\": [\n        \"urn:li:industry:55\"\n      ],\n      \"skillsDescription\": \"Lorem Ipsum is simply dummy text\",\n      \"companyJobCode\" : \"company_{{external_job_posting_id}}\",\n      \"employmentStatus\": \"FULL_TIME\",\n      \"experienceLevel\": \"EXECUTIVE\",\n      \"trackingPixelUrl\": \"http://www.trackingpixellocation.com/pixel.gif\",\n      \"listingType\": \"BASIC\"\n    }\n  ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/simpleJobPostings",
+              "description": "By using this API, Customer can create `BASIC` Jobs. To know more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#foundation-schema)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Create basic job with foundation schema"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "fd0798f5-c856-413a-8ff7-90b39f8b83d4",
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.collectionVariables.set(\"basic_foundation_job_task_urn\", jsonData.elements[0].id);",
+                    ""
+                  ],
+                  "type": "text/javascript"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Create remote job posting",
+            "id": "68039bfd-e87a-4191-bb28-8491e91cafeb",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_create",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"elements\": [\n    {\n      \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n      \"companyApplyUrl\": \"https://careers.yourcompany.com\",\n      \"externalJobPostingId\": \"{{external_job_posting_id}}\",\n      \"jobPostingOperationType\": \"CREATE\",\n      \"title\": \"Software Developer in Test\",\n      \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n      \"listedAt\": {{$timestamp}}000,\n      \"location\": \"India\",\n      \"industries\": [\n        \"urn:li:industry:55\"\n      ],\n      \"listingType\": \"BASIC\",\n      \"workplaceTypes\": [\"Remote\"]\n    }\n  ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/simpleJobPostings",
+              "description": "By using this API, Customer can create `BASIC` Jobs with `workRemoteAllowed` as `True`. Hence Jobs posted through this API will be Remote enabled Job. To know more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#foundation-schema)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Create basic job with foundation schema"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "57d091d8-c203-4a9d-8023-94de1b5b0806",
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.collectionVariables.set(\"remote_basic_foundation_job_task_urn\", jsonData.elements[0].id);",
+                    ""
+                  ],
+                  "type": "text/javascript"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Create hybrid job posting",
+            "id": "4c07bec1-01b5-4184-b7fc-ac81f9e8941f",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_create",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"elements\": [\n    {\n      \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n      \"companyApplyUrl\": \"https://careers.yourcompany.com\",\n      \"externalJobPostingId\": \"{{external_job_posting_id}}\",\n      \"jobPostingOperationType\": \"CREATE\",\n      \"title\": \"Software Developer in Test\",\n      \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n      \"listedAt\": {{$timestamp}}000,\n      \"location\": \"India\",\n      \"industries\": [\n        \"urn:li:industry:55\"\n      ],\n      \"listingType\": \"BASIC\",\n      \"workplaceTypes\": [\"Hybrid\"]\n    }\n  ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/simpleJobPostings",
+              "description": "By using this API, Customer can create `BASIC` Jobs with `workRemoteAllowed` as `True`. Hence Jobs posted through this API will be Remote enabled Job. To know more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#foundation-schema)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Create basic job with foundation schema"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "57d091d8-c203-4a9d-8023-94de1b5b0806",
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.collectionVariables.set(\"hybrid_basic_foundation_job_task_urn\", jsonData.elements[0].id);",
+                    ""
+                  ],
+                  "type": "text/javascript"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Create promoted job",
+            "id": "80eab6a8-5eff-4edd-81c5-cc646dfa8f9e",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_create",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"elements\": [\n    {\n      \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n      \"companyApplyUrl\": \"https://careers.yourcompany.com\",\n      \"externalJobPostingId\": \"{{external_job_posting_id}}\",\n      \"jobPostingOperationType\": \"CREATE\",\n      \"title\": \"Software Developer in Test\",\n      \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n      \"listedAt\": {{$timestamp}}000,\n      \"location\": \"Sunnyvale, California\",\n      \"industries\": [\n        \"urn:li:industry:55\"\n      ],\n      \"listingType\": \"PREMIUM\",\n      \"contract\" : \"urn:li:contract:{{contract_id}}\"\n    }\n  ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/simpleJobPostings",
+              "description": "This API Call is for creating Promoted Jobs by mentioning `listingType` as `PREMIUM`. `Contract URN` is mandatory field for this call. Customer can include `posterEmail` and `showPosterInfo` as field Parameter. Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#promoted-jobs-extension-schema)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Create promoted job with promoted jobs extension schema"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "d4a04c5a-fd72-441b-9aaf-f00cf032dbf1",
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.collectionVariables.set(\"promoted_job_task_urn\", jsonData.elements[0].id);",
+                    ""
+                  ],
+                  "type": "text/javascript"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Create public job posting",
+            "id": "f7538859-92d0-4c75-a8fc-8ce18cdcc7e5",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_create",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"elements\": [\n    {\n      \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n      \"companyApplyUrl\": \"https://careers.yourcompany.com\",\n      \"externalJobPostingId\": \"{{external_job_posting_id}}\",\n      \"jobPostingOperationType\": \"CREATE\",\n      \"title\": \"Software Developer in Test\",\n      \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n      \"listedAt\": {{$timestamp}}000,\n      \"location\": \"Sunnyvale, California\",\n      \"industries\": [\n        \"urn:li:industry:55\"\n      ],\n      \"listingType\": \"BASIC\",\n       \"requisitionOwnerFirstName\": \"FirtName\",\n       \"requisitionOwnerLastName\": \"LastName\",\n       \"requisitionOwnerEmail\": \"sample@email.com\",\n       \"availability\": \"PUBLIC\"\n    }\n  ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/simpleJobPostings",
+              "description": "This call is for Syncing PUBLIC Jobs to LinkedIn from ATS. `availability` field set to `PUBLIC`. Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#recruiter-system-connect-extension-schema)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Create basic job with RSC entension schema"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "2556d05c-edfc-492c-887f-688acb653b3c",
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.collectionVariables.set(\"public_rsc_job_task_urn\", jsonData.elements[0].id);"
+                  ],
+                  "type": "text/javascript"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Create private  job posting",
+            "id": "2914be98-a001-48dd-9787-84fda8de9a36",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_create",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"elements\": [\n    {\n      \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n      \"companyApplyUrl\": \"https://careers.yourcompany.com\",\n      \"externalJobPostingId\": \"{{external_job_posting_id}}\",\n      \"jobPostingOperationType\": \"CREATE\",\n      \"title\": \"Software Developer in Test\",\n      \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n      \"listedAt\": {{$timestamp}}000,\n      \"location\": \"Sunnyvale, California\",\n      \"industries\": [\n        \"urn:li:industry:55\"\n      ],\n      \"listingType\": \"BASIC\",\n       \"requisitionOwnerFirstName\": \"FirtName\",\n       \"requisitionOwnerLastName\": \"LastName\",\n       \"requisitionOwnerEmail\": \"sample@email.com\",\n       \"availability\": \"PRIVATE_TO_ATS_INTEGRATION\"\n    }\n  ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/simpleJobPostings",
+              "description": "This call is for Syncing PUBLIC Jobs to LinkedIn from ATS. `availability` field set to `PRIVATE_TO_ATS_INTEGRATION`. Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#recruiter-system-connect-extension-schema)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Create basic job with RSC entension schema"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "f1ee6e75-3fc0-47fc-8634-7ac6854fc174",
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.collectionVariables.set(\"private_rsc_job_task_urn\", jsonData.elements[0].id);",
+                    ""
+                  ],
+                  "type": "text/javascript"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Update job posting",
+            "id": "1e6c6e10-f3d0-4142-8243-f5346f09a943",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_create",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"elements\": [\n    {\n      \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n      \"companyApplyUrl\": \"https://careers.yourcompany.com\",\n      \"externalJobPostingId\": \"{{external_job_posting_id}}\",\n      \"jobPostingOperationType\": \"UPDATE\",\n      \"title\": \"UPDATED ** Software Developer in Test ** UPDATED\", \n      \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n      \"listedAt\": {{$timestamp}}000,\n      \"location\": \"Sunnyvale, California\",\n      \"industries\": [\n        \"urn:li:industry:55\"\n      ],\n      \"listingType\": \"BASIC\"\n    }\n  ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/simpleJobPostings",
+              "description": "In order to update a simple job posting, you can just re-post the job with any changed information and `jobPostingOperationType` field value set as `UPDATE` .Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/update-renew-jobs)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Manage job lifecycle"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "e146bc08-ed74-4972-91b7-4a042c709271",
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.collectionVariables.set(\"update_job_task_urn\", jsonData.elements[0].id);",
+                    ""
+                  ],
+                  "type": "text/javascript"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Renew job posting",
+            "id": "9189e05f-1f62-49eb-afc9-3d7c4ca24b0e",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_create",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"elements\": [\n    {\n      \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n      \"companyApplyUrl\": \"https://careers.yourcompany.com\",\n      \"externalJobPostingId\": \"{{external_job_posting_id}}\",\n      \"jobPostingOperationType\": \"RENEW\",\n      \"title\": \"UPDATED ** Software Developer in Test ** \", \n      \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n      \"listedAt\": {{$timestamp}}000,\n      \"location\": \"Sunnyvale, California\",\n      \"industries\": [\n        \"urn:li:industry:55\"\n      ],\n      \"listingType\": \"BASIC\"\n    }\n  ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/simpleJobPostings",
+              "description": "To renew a job, re-post it with `jobPostingOperationType` field as `RENEW` and no other changes. The renewal operation extends the expiration of job posts by 30 days. .Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/update-renew-jobs)\n\nThere are two alternate ways to renew job postings:\n\nClose previous jobs, and re-post jobs without any changes\nPublish new jobs with different `externalJobPostingId`"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Manage job lifecycle"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "0025309b-dfdf-4636-abef-0a4bf65ac9ad",
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.collectionVariables.set(\"renew_job_task_urn\", jsonData.elements[0].id);",
+                    ""
+                  ],
+                  "type": "text/javascript"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Close job posting",
+            "id": "6e869f5c-8f92-4515-9f16-2c6616e4d6e1",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_create",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"elements\": [\n    {\n      \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n      \"companyApplyUrl\": \"https://careers.yourcompany.com\",\n      \"externalJobPostingId\": \"{{external_job_posting_id}}\",\n      \"jobPostingOperationType\": \"CLOSE\",\n      \"title\": \"UPDATED ** Software Developer in Test ** \", \n      \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n      \"listedAt\": {{$timestamp}}000,\n      \"location\": \"Sunnyvale, California\",\n      \"industries\": [\n        \"urn:li:industry:55\"\n      ],\n      \"listingType\": \"BASIC\"\n    }\n  ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/simpleJobPostings",
+              "description": "To close a job, re-post the job using same `externalJobPostingId` value, but set jobPostingOperationType to `CLOSE`.Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/close-jobs)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Manage job lifecycle"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.collectionVariables.set(\"close_job_task_urn\", jsonData.elements[0].id);",
+                    ""
+                  ],
+                  "type": "text/javascript",
+                  "id": "64a3d9c3-1cf7-4840-9283-6f2358df5934"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Create batch job postings",
+            "id": "02ac7992-370d-4d46-a2aa-1b560789617f",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_create",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"elements\": [\n    {\n      \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n      \"companyApplyUrl\": \"https://careers.yourcompany.com\",\n      \"externalJobPostingId\": \"external_job_posting_id1\",\n      \"jobPostingOperationType\": \"CREATE\",\n      \"title\": \"Software Developer in Test\",\n      \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n      \"listedAt\": {{$timestamp}}000,\n      \"location\": \"Sunnyvale, California\",\n      \"industries\": [\n        \"urn:li:industry:55\"\n      ],\n      \"listingType\": \"BASIC\"\n    },\n        {\n      \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n      \"companyApplyUrl\": \"https://careers.yourcompany.com\",\n      \"externalJobPostingId\": \"external_job_posting_id2\",\n      \"jobPostingOperationType\": \"CREATE\",\n      \"title\": \"Software Developer in Test\",\n      \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n      \"listedAt\": {{$timestamp}}000,\n      \"location\": \"Sunnyvale, California\",\n      \"industries\": [\n        \"urn:li:industry:55\"\n      ],\n      \"listingType\": \"BASIC\"\n    }\n  ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/simpleJobPostings",
+              "description": "The maximum number of jobs which can be submitted during one batch call is 100. If you would like to submit more than 100 jobs at a time, please group your jobs in to collections of 100 and make multiple batch calls in sequential order. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/create-jobs#sample-request-for-basic-jobs)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Batch jobs example"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "exec": [
+                    ""
+                  ],
+                  "type": "text/javascript",
+                  "id": "4018b8e6-292c-45ad-a9c3-9b0c1ce83601"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Create basic apply connect job posting",
+            "id": "e230520e-71ea-404e-823b-aef5cd1e2999",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_create",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"elements\": [\n        {\n            \"externalJobPostingId\": \"{{external_job_posting_id}}\",\n            \"title\": \"Software Developer in Test\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n            \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n            \"listingType\": \"BASIC\",\n            \"jobPostingOperationType\": \"CREATE\",\n            \"listedAt\": {{$timestamp}}000,\n            \"location\": \"San Francisco, CA\",\n            \"companyApplyUrl\": \"http://company.com/careers\",\n            \"onsiteApplyConfiguration\": {\n                \"jobApplicationWebhookUrl\": \"{{job_application_webhook_url}}\",\n                \"questions\": {\n                    \"resumeQuestions\": {\n                        \"resumeQuestionRequirement\": \"REQUIRED\"\n                    },\n                    \"coverLetterQuestions\": {\n                        \"coverLetterQuestionRequirement\": \"REQUIRED\"\n                    },\n                    \"voluntarySelfIdentificationQuestions\": {},\n                    \"educationQuestions\": {\n                        \"educationExperienceQuestionSet\": {}\n                    },\n                    \"workQuestions\": {\n                        \"workExperienceQuestionSet\": {}\n                    },\n                    \"additionalQuestions\": {\n                        \"customQuestionSets\": [\n                            {\n                                \"questions\": [\n                                    {\n                                        \"partnerQuestionIdentifier\": \"question-0001\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"yes\",\n                                                        \"displayValue\": \"Yes\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"no\",\n                                                        \"displayValue\": \"No\"\n                                                    }\n                                                ],\n                                                \"preferredFormComponent\": \"RADIO_BUTTONS\",\n                                                \"selectMultiple\": false\n                                            }\n                                        },\n                                        \"required\": false,\n                                        \"questionText\": \"Do you want to work here?\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"question-0002\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"yes\",\n                                                        \"displayValue\": \"Yes\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"no\",\n                                                        \"displayValue\": \"No\"\n                                                    }\n                                                ],\n                                                \"preferredFormComponent\": \"RADIO_BUTTONS\",\n                                                \"selectMultiple\": false\n                                            }\n                                        },\n                                        \"required\": false,\n                                        \"questionText\": \"Are you okay with late night shifts?\"\n                                    },\n                                    {\n                                        \"required\": true,\n                                        \"partnerQuestionIdentifier\": \"question-0003\",\n                                        \"questionText\": \"How often do you switch jobs\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"Wrong\",\n                                                        \"displayValue\": \"Every year\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"Right Answer\",\n                                                        \"displayValue\": \"Once every 2 -3 years\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"Best Answer\",\n                                                        \"displayValue\": \"Once every 4-5 years\"\n                                                    }\n                                                ],\n                                                \"selectMultiple\": false,\n                                                \"defaultValueSymbolicName\": \"Right Answer\",\n                                                \"preferredFormComponent\": \"DROPDOWN\",\n                                                \"favorableMultipleChoiceAnswer\": {\n                                                    \"favorableSymbolicNames\": [\n                                                        \"Right Answer\",\n                                                        \"Best Answer\"\n                                                    ]\n                                                }\n                                            }\n                                        }\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/simpleJobPostings",
+              "description": "By using this API, Customer can create `BASIC` Jobs with `onsiteApplyConfiguration`.To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-jobs-onsite-apply#job-posting-field-schema)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Apply Connect Enabled Jobs",
+              "Create apply connect job postings"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "dcb2842d-1136-42d9-ad10-28a9371838cb",
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.collectionVariables.set(\"basic_apply_connect_job_task_urn\", jsonData.elements[0].id);"
+                  ],
+                  "type": "text/javascript"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Create promoted apply connect job posting",
+            "id": "2832ca47-8f94-4da9-8ce1-7b763c18d5d3",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_create",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"elements\": [\n        {\n            \"externalJobPostingId\": \"{{external_job_posting_id}}\",\n            \"title\": \"Software Developer in Test\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n            \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n            \"jobPostingOperationType\": \"CREATE\",\n            \"listingType\": \"PREMIUM\",\n            \"listedAt\": {{$timestamp}},\n            \"location\": \"San Francisco, CA\",\n            \"companyApplyUrl\": \"http://company.com/careers\",\n            \"onsiteApplyConfiguration\": {\n                \"jobApplicationWebhookUrl\": \"{{job_application_webhook_url}}\",\n                \"questions\": {\n                    \"resumeQuestions\": {\n                        \"resumeQuestionRequirement\": \"REQUIRED\"\n                    },\n                    \"coverLetterQuestions\": {\n                        \"coverLetterQuestionRequirement\": \"REQUIRED\"\n                    },\n                    \"voluntarySelfIdentificationQuestions\": {},\n                    \"educationQuestions\": {\n                        \"educationExperienceQuestionSet\": {}\n                    },\n                    \"workQuestions\": {\n                        \"workExperienceQuestionSet\": {}\n                    },\n                    \"additionalQuestions\": {\n                        \"customQuestionSets\": [\n                            {\n                                \"questions\": [\n                                    {\n                                        \"partnerQuestionIdentifier\": \"question-0001\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"yes\",\n                                                        \"displayValue\": \"Yes\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"no\",\n                                                        \"displayValue\": \"No\"\n                                                    }\n                                                ],\n                                                \"preferredFormComponent\": \"RADIO_BUTTONS\",\n                                                \"selectMultiple\": false\n                                            }\n                                        },\n                                        \"required\": false,\n                                        \"questionText\": \"Do you want to work here?\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"question-0002\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"yes\",\n                                                        \"displayValue\": \"Yes\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"no\",\n                                                        \"displayValue\": \"No\"\n                                                    }\n                                                ],\n                                                \"preferredFormComponent\": \"RADIO_BUTTONS\",\n                                                \"selectMultiple\": false\n                                            }\n                                        },\n                                        \"required\": false,\n                                        \"questionText\": \"Are you okay with late night shifts?\"\n                                    },\n                                    {\n                                        \"required\": true,\n                                        \"partnerQuestionIdentifier\": \"question-0003\",\n                                        \"questionText\": \"How often do you switch jobs\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"Wrong\",\n                                                        \"displayValue\": \"Every year\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"Right Answer\",\n                                                        \"displayValue\": \"Once every 2 -3 years\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"Best Answer\",\n                                                        \"displayValue\": \"Once every 4-5 years\"\n                                                    }\n                                                ],\n                                                \"selectMultiple\": false,\n                                                \"defaultValueSymbolicName\": \"Right Answer\",\n                                                \"preferredFormComponent\": \"DROPDOWN\",\n                                                \"favorableMultipleChoiceAnswer\": {\n                                                    \"favorableSymbolicNames\": [\n                                                        \"Right Answer\",\n                                                        \"Best Answer\"\n                                                    ]\n                                                }\n                                            }\n                                        }\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/simpleJobPostings",
+              "description": "This API Call is for creating Promoted Jobs by mentioning `listingType` as `PREMIUM`. `Contract URN` is mandatory field for this call.To know more,Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-jobs-onsite-apply#sample-request-body)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Apply Connect Enabled Jobs",
+              "Create apply connect job postings"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "f23776d8-df0f-46b7-a4a2-4f538cc4510b",
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.collectionVariables.set(\"promoted_apply_connect_job_task_urn\", jsonData.elements[0].id);"
+                  ],
+                  "type": "text/javascript"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Create remote apply connect job posting",
+            "id": "9811eb7a-bb1a-42ec-b7a1-5d18755ea248",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_create",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"elements\": [\n        {\n            \"externalJobPostingId\": \"{{external_job_posting_id}}\",\n            \"title\": \"Software Developer in Test\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n            \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n            \"jobPostingOperationType\": \"CREATE\",\n            \"listingType\": \"BASIC\",\n            \"listedAt\": {{$timestamp}},\n            \"location\": \"India\",\n            \"companyApplyUrl\": \"http://company.com/careers\",\n            \"workplaceTypes\": [\"Remote\"],\n            \"onsiteApplyConfiguration\": {\n                \"jobApplicationWebhookUrl\": \"{{job_application_webhook_url}}\",\n                \"questions\": {\n                    \"resumeQuestions\": {\n                        \"resumeQuestionRequirement\": \"REQUIRED\"\n                    },\n                    \"coverLetterQuestions\": {\n                        \"coverLetterQuestionRequirement\": \"REQUIRED\"\n                    },\n                    \"voluntarySelfIdentificationQuestions\": {},\n                    \"educationQuestions\": {\n                        \"educationExperienceQuestionSet\": {}\n                    },\n                    \"workQuestions\": {\n                        \"workExperienceQuestionSet\": {}\n                    },\n                    \"additionalQuestions\": {\n                        \"customQuestionSets\": [\n                            {\n                                \"questions\": [\n                                    {\n                                        \"partnerQuestionIdentifier\": \"question-0001\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"yes\",\n                                                        \"displayValue\": \"Yes\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"no\",\n                                                        \"displayValue\": \"No\"\n                                                    }\n                                                ],\n                                                \"preferredFormComponent\": \"RADIO_BUTTONS\",\n                                                \"selectMultiple\": false\n                                            }\n                                        },\n                                        \"required\": false,\n                                        \"questionText\": \"Do you want to work here?\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"question-0002\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"yes\",\n                                                        \"displayValue\": \"Yes\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"no\",\n                                                        \"displayValue\": \"No\"\n                                                    }\n                                                ],\n                                                \"preferredFormComponent\": \"RADIO_BUTTONS\",\n                                                \"selectMultiple\": false\n                                            }\n                                        },\n                                        \"required\": false,\n                                        \"questionText\": \"Are you okay with late night shifts?\"\n                                    },\n                                    {\n                                        \"required\": true,\n                                        \"partnerQuestionIdentifier\": \"question-0003\",\n                                        \"questionText\": \"How often do you switch jobs\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"Wrong\",\n                                                        \"displayValue\": \"Every year\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"Right Answer\",\n                                                        \"displayValue\": \"Once every 2 -3 years\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"Best Answer\",\n                                                        \"displayValue\": \"Once every 4-5 years\"\n                                                    }\n                                                ],\n                                                \"selectMultiple\": false,\n                                                \"defaultValueSymbolicName\": \"Right Answer\",\n                                                \"preferredFormComponent\": \"DROPDOWN\",\n                                                \"favorableMultipleChoiceAnswer\": {\n                                                    \"favorableSymbolicNames\": [\n                                                        \"Right Answer\",\n                                                        \"Best Answer\"\n                                                    ]\n                                                }\n                                            }\n                                        }\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/simpleJobPostings",
+              "description": "By using this API, Customer can create `BASIC` Jobs with `onsiteApplyConfiguration` and `workRemoteAllowed` set to `TRUE`.To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-jobs-onsite-apply#job-posting-field-schema)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Apply Connect Enabled Jobs",
+              "Create apply connect job postings"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "407be0a1-ea6d-47ca-b170-9e2c8a75f34f",
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.collectionVariables.set(\"remote_apply_connect_job_task_urn\", jsonData.elements[0].id);"
+                  ],
+                  "type": "text/javascript"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Update apply connect job posting",
+            "id": "2ec12874-f20f-4724-9f49-1047a76a34eb",
+            "request": {
+              "method": "POST",
+              "header": [ ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"elements\": [\n        {\n            \"externalJobPostingId\": \"{{external_job_posting_id}}\",\n            \"title\": \"**<UPDATED>** Software Developer in Test **<UPDATED>**\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n            \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n            \"jobPostingOperationType\": \"UPDATE\",\n            \"listingType\": \"BASIC\",\n            \"listedAt\": {{$timestamp}},\n            \"location\": \"San Francisco, CA\",\n            \"companyApplyUrl\": \"http://company.com/careers\",\n            \"onsiteApplyConfiguration\": {\n                \"jobApplicationWebhookUrl\": \"{{job_application_webhook_url}}\",\n                \"questions\": {\n                    \"resumeQuestions\": {\n                        \"resumeQuestionRequirement\": \"REQUIRED\"\n                    },\n                    \"coverLetterQuestions\": {\n                        \"coverLetterQuestionRequirement\": \"REQUIRED\"\n                    },\n                    \"voluntarySelfIdentificationQuestions\": {},\n                    \"educationQuestions\": {\n                        \"educationExperienceQuestionSet\": {}\n                    },\n                    \"workQuestions\": {\n                        \"workExperienceQuestionSet\": {}\n                    },\n                    \"additionalQuestions\": {\n                        \"customQuestionSets\": [\n                            {\n                                \"questions\": [\n                                    {\n                                        \"partnerQuestionIdentifier\": \"question-0001\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"yes\",\n                                                        \"displayValue\": \"Yes\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"no\",\n                                                        \"displayValue\": \"No\"\n                                                    }\n                                                ],\n                                                \"preferredFormComponent\": \"RADIO_BUTTONS\",\n                                                \"selectMultiple\": false\n                                            }\n                                        },\n                                        \"required\": false,\n                                        \"questionText\": \"Do you want to work here?\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"question-0002\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"yes\",\n                                                        \"displayValue\": \"Yes\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"no\",\n                                                        \"displayValue\": \"No\"\n                                                    }\n                                                ],\n                                                \"preferredFormComponent\": \"RADIO_BUTTONS\",\n                                                \"selectMultiple\": false\n                                            }\n                                        },\n                                        \"required\": false,\n                                        \"questionText\": \"Are you okay with late night shifts?\"\n                                    },\n                                    {\n                                        \"required\": true,\n                                        \"partnerQuestionIdentifier\": \"question-0003\",\n                                        \"questionText\": \"How often do you switch jobs\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"Wrong\",\n                                                        \"displayValue\": \"Every year\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"Right Answer\",\n                                                        \"displayValue\": \"Once every 2 -3 years\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"Best Answer\",\n                                                        \"displayValue\": \"Once every 4-5 years\"\n                                                    }\n                                                ],\n                                                \"selectMultiple\": false,\n                                                \"defaultValueSymbolicName\": \"Right Answer\",\n                                                \"preferredFormComponent\": \"DROPDOWN\",\n                                                \"favorableMultipleChoiceAnswer\": {\n                                                    \"favorableSymbolicNames\": [\n                                                        \"Right Answer\",\n                                                        \"Best Answer\"\n                                                    ]\n                                                }\n                                            }\n                                        }\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": "https://api.linkedin.com/v2/simpleJobPostings",
+              "description": "In order to update a job posting, you can just re-post the job with any changed information and `jobPostingOperationType` field value set as `UPDATE` .Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-jobs-onsite-apply#apply-connect-jobs-lifecycle)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Apply Connect Enabled Jobs",
+              "Manage job lifecycle"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.collectionVariables.set(\"update_apply_connect_job_task_urn\", jsonData.elements[0].id);"
+                  ],
+                  "type": "text/javascript",
+                  "id": "e5c88b5c-0d0b-42a9-8a34-405716161905"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Renew apply connect job posting",
+            "id": "3877d52d-b48b-425f-b82d-e7ffce29b354",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_create",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"elements\": [\n        {\n            \"externalJobPostingId\": \"{{external_job_posting_id}}\",\n            \"title\": \"Software Developer in Test\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n            \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n            \"jobPostingOperationType\": \"RENEW\",\n            \"listingType\": \"BASIC\",\n            \"listedAt\": {{$timestamp}},\n            \"location\": \"San Francisco, CA\",\n            \"companyApplyUrl\": \"http://company.com/careers\",\n            \"onsiteApplyConfiguration\": {\n                \"jobApplicationWebhookUrl\": \"{{job_application_webhook_url}}\",\n                \"questions\": {\n                    \"resumeQuestions\": {\n                        \"resumeQuestionRequirement\": \"REQUIRED\"\n                    },\n                    \"coverLetterQuestions\": {\n                        \"coverLetterQuestionRequirement\": \"REQUIRED\"\n                    },\n                    \"voluntarySelfIdentificationQuestions\": {},\n                    \"educationQuestions\": {\n                        \"educationExperienceQuestionSet\": {}\n                    },\n                    \"workQuestions\": {\n                        \"workExperienceQuestionSet\": {}\n                    },\n                    \"additionalQuestions\": {\n                        \"customQuestionSets\": [\n                            {\n                                \"questions\": [\n                                    {\n                                        \"partnerQuestionIdentifier\": \"question-0001\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"yes\",\n                                                        \"displayValue\": \"Yes\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"no\",\n                                                        \"displayValue\": \"No\"\n                                                    }\n                                                ],\n                                                \"preferredFormComponent\": \"RADIO_BUTTONS\",\n                                                \"selectMultiple\": false\n                                            }\n                                        },\n                                        \"required\": false,\n                                        \"questionText\": \"Do you want to work here?\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"question-0002\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"yes\",\n                                                        \"displayValue\": \"Yes\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"no\",\n                                                        \"displayValue\": \"No\"\n                                                    }\n                                                ],\n                                                \"preferredFormComponent\": \"RADIO_BUTTONS\",\n                                                \"selectMultiple\": false\n                                            }\n                                        },\n                                        \"required\": false,\n                                        \"questionText\": \"Are you okay with late night shifts?\"\n                                    },\n                                    {\n                                        \"required\": true,\n                                        \"partnerQuestionIdentifier\": \"question-0003\",\n                                        \"questionText\": \"How often do you switch jobs\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"Wrong\",\n                                                        \"displayValue\": \"Every year\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"Right Answer\",\n                                                        \"displayValue\": \"Once every 2 -3 years\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"Best Answer\",\n                                                        \"displayValue\": \"Once every 4-5 years\"\n                                                    }\n                                                ],\n                                                \"selectMultiple\": false,\n                                                \"defaultValueSymbolicName\": \"Right Answer\",\n                                                \"preferredFormComponent\": \"DROPDOWN\",\n                                                \"favorableMultipleChoiceAnswer\": {\n                                                    \"favorableSymbolicNames\": [\n                                                        \"Right Answer\",\n                                                        \"Best Answer\"\n                                                    ]\n                                                }\n                                            }\n                                        }\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostings?=",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostings"
+                ],
+                "query": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ]
+              },
+              "description": "In order to update a job posting, you can just re-post the job with any changed information and `jobPostingOperationType` field value set as `RENEW` .Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-jobs-onsite-apply#apply-connect-jobs-lifecycle)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Apply Connect Enabled Jobs",
+              "Manage job lifecycle"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "baf3e53d-9eca-436a-a0dd-2813f9df8cb8",
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.collectionVariables.set(\"sjp_task_urn\", jsonData.elements[0].id);"
+                  ],
+                  "type": "text/javascript"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Close apply connect job posting",
+            "id": "e9d2895b-193f-48c3-94a5-233b19bd71af",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "x-restli-method",
+                  "value": "batch_create",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"elements\": [\n        {\n            \"externalJobPostingId\": \"{{external_job_posting_id}}\",\n            \"title\": \"Software Developer in Test\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\\n\",\n            \"integrationContext\": \"urn:li:organization:{{company_id}}\",\n            \"jobPostingOperationType\": \"CLOSE\",\n            \"listingType\": \"BASIC\",\n            \"listedAt\": {{$timestamp}},\n            \"location\": \"San Francisco, CA\",\n            \"companyApplyUrl\": \"http://company.com/careers\",\n            \"onsiteApplyConfiguration\": {\n                \"jobApplicationWebhookUrl\": \"{{job_application_webhook_url}}\",\n                \"questions\": {\n                    \"resumeQuestions\": {\n                        \"resumeQuestionRequirement\": \"REQUIRED\"\n                    },\n                    \"coverLetterQuestions\": {\n                        \"coverLetterQuestionRequirement\": \"REQUIRED\"\n                    },\n                    \"voluntarySelfIdentificationQuestions\": {},\n                    \"educationQuestions\": {\n                        \"educationExperienceQuestionSet\": {}\n                    },\n                    \"workQuestions\": {\n                        \"workExperienceQuestionSet\": {}\n                    },\n                    \"additionalQuestions\": {\n                        \"customQuestionSets\": [\n                            {\n                                \"questions\": [\n                                    {\n                                        \"partnerQuestionIdentifier\": \"question-0001\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"yes\",\n                                                        \"displayValue\": \"Yes\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"no\",\n                                                        \"displayValue\": \"No\"\n                                                    }\n                                                ],\n                                                \"preferredFormComponent\": \"RADIO_BUTTONS\",\n                                                \"selectMultiple\": false\n                                            }\n                                        },\n                                        \"required\": false,\n                                        \"questionText\": \"Do you want to work here?\"\n                                    },\n                                    {\n                                        \"partnerQuestionIdentifier\": \"question-0002\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"yes\",\n                                                        \"displayValue\": \"Yes\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"no\",\n                                                        \"displayValue\": \"No\"\n                                                    }\n                                                ],\n                                                \"preferredFormComponent\": \"RADIO_BUTTONS\",\n                                                \"selectMultiple\": false\n                                            }\n                                        },\n                                        \"required\": false,\n                                        \"questionText\": \"Are you okay with late night shifts?\"\n                                    },\n                                    {\n                                        \"required\": true,\n                                        \"partnerQuestionIdentifier\": \"question-0003\",\n                                        \"questionText\": \"How often do you switch jobs\",\n                                        \"questionDetails\": {\n                                            \"multipleChoiceQuestionDetails\": {\n                                                \"choices\": [\n                                                    {\n                                                        \"symbolicName\": \"Wrong\",\n                                                        \"displayValue\": \"Every year\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"Right Answer\",\n                                                        \"displayValue\": \"Once every 2 -3 years\"\n                                                    },\n                                                    {\n                                                        \"symbolicName\": \"Best Answer\",\n                                                        \"displayValue\": \"Once every 4-5 years\"\n                                                    }\n                                                ],\n                                                \"selectMultiple\": false,\n                                                \"defaultValueSymbolicName\": \"Right Answer\",\n                                                \"preferredFormComponent\": \"DROPDOWN\",\n                                                \"favorableMultipleChoiceAnswer\": {\n                                                    \"favorableSymbolicNames\": [\n                                                        \"Right Answer\",\n                                                        \"Best Answer\"\n                                                    ]\n                                                }\n                                            }\n                                        }\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostings?=",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostings"
+                ],
+                "query": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ]
+              },
+              "description": "In order to update a job posting, you can just re-post the job with any changed information and `jobPostingOperationType` field value set as `CLOSE` .Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-jobs-onsite-apply#apply-connect-jobs-lifecycle)"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Apply Connect Enabled Jobs",
+              "Manage job lifecycle"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "7894c3be-50fc-4318-8bf3-92796c1ed9fd",
+                  "exec": [
+                    "var jsonData = JSON.parse(responseBody);",
+                    "pm.collectionVariables.set(\"close_apply_connect_job_task_urn\", jsonData.elements[0].id);"
+                  ],
+                  "type": "text/javascript"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/v2/simpleJobPostingTasks": {
       "get": {
-        "summary": "Check close apply connect job operation status",
-        "description": "`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2722131308/",
-        "operationId": "CheckCloseApplyConnectJobOperationStatus",
+        "tags": [
+          "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with foundation schema",
+          "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create promoted job with promoted jobs extension schema",
+          "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with RSC entension schema",
+          "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Manage job lifecycle",
+          "Use Cases / Sync Basic or Promoted Jobs / Batch jobs example",
+          "Use Cases / Sync Apply Connect Enabled Jobs / Create apply connect job postings",
+          "Use Cases / Sync Apply Connect Enabled Jobs / Manage job lifecycle"
+        ],
+        "summary": "Check basic job task status",
+        "description": "`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2635675045\n\n/SimpleJobPostingTasks used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2635675045\n\n/SimpleJobPostingTasks used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nCustomers can check Private Jobs from One-Click export dropdown in Recruiter as Private Jobs won't shows up in UI\n\n/SimpleJobPostingTasks used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2635675045\n\n/SimpleJobPostingTasks used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2635675045\n\n/SimpleJobPostingTasks used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2635675045\n\n`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2635675045\n\n`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2722131308/\n\n`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2722131308/\n\n`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2722131308/\n\n`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2722131308/\n\n`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2722131308/\n\n`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2722131308/",
+        "operationId": "CheckBasicJobTaskStatus",
         "parameters": [
           {
             "name": "ids",
             "in": "query",
             "schema": {
-              "type": "string"
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "examples": {
+              "example1": {
+                "value": "{{basic_foundation_job_task_urn}}"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "{{remote_basic_foundation_job_task_urn}}"
+              },
+              "example1_3": {
+                "summary": "example1",
+                "value": "{{hybrid_basic_foundation_job_task_urn}}"
+              },
+              "example1_4": {
+                "summary": "example1",
+                "value": "{{promoted_job_task_urn}}"
+              },
+              "example1_5": {
+                "summary": "example1",
+                "value": "{{public_rsc_job_task_urn}}"
+              },
+              "example1_6": {
+                "summary": "example1",
+                "value": "{{private_rsc_job_task_urn}}"
+              },
+              "example1_7": {
+                "summary": "example1",
+                "value": "{{update_job_task_urn}}"
+              },
+              "example1_8": {
+                "summary": "example1",
+                "value": "{{renew_job_task_urn}}"
+              },
+              "example1_9": {
+                "summary": "example1",
+                "value": "{{close_job_task_urn}}"
+              },
+              "example1_10": {
+                "summary": "example1",
+                "value": [
+                  "urn:li:simpleJobPostingTask:<taskID1>",
+                  "urn:li:simpleJobPostingTask:<taskID2>"
+                ]
+              },
+              "example1_11": {
+                "summary": "example1",
+                "value": "{{basic_apply_connect_job_task_urn}}"
+              },
+              "example1_12": {
+                "summary": "example1",
+                "value": "{{promoted_apply_connect_job_task_urn}}"
+              },
+              "example1_13": {
+                "summary": "example1",
+                "value": "{{remote_apply_connect_job_task_urn}}"
+              },
+              "example1_14": {
+                "summary": "example1",
+                "value": "{{update_apply_connect_job_task_urn}}"
+              },
+              "example1_15": {
+                "summary": "example1",
+                "value": "{{renew_apply_connect_job_task_urn}}"
+              },
+              "example1_16": {
+                "summary": "example1",
+                "value": "{{close_apply_connect_job_task_urn}}"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          },
+          {
+            "bearerAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Check basic job task status",
+            "id": "ef0e20dc-156a-4af6-acf2-b5eeaecad136",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostingTasks?ids={{basic_foundation_job_task_urn}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostingTasks"
+                ],
+                "query": [
+                  {
+                    "key": "ids",
+                    "value": "{{basic_foundation_job_task_urn}}"
+                  }
+                ]
+              },
+              "description": "`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2635675045"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Create basic job with foundation schema"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Check remote job task status",
+            "id": "550e398a-7b77-4235-bc48-fff846f76541",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostingTasks?ids={{remote_basic_foundation_job_task_urn}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostingTasks"
+                ],
+                "query": [
+                  {
+                    "key": "ids",
+                    "value": "{{remote_basic_foundation_job_task_urn}}"
+                  }
+                ]
+              },
+              "description": "`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2635675045"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Create basic job with foundation schema"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Check remote job task status Copy",
+            "id": "bb163556-754d-4c8c-a43c-f71793e1216f",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostingTasks?ids={{hybrid_basic_foundation_job_task_urn}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostingTasks"
+                ],
+                "query": [
+                  {
+                    "key": "ids",
+                    "value": "{{hybrid_basic_foundation_job_task_urn}}"
+                  }
+                ]
+              },
+              "description": "`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2635675045"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Create basic job with foundation schema"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Check promoted job task status",
+            "id": "6cec4a1e-d662-40cb-90f2-1b243d3d64d6",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostingTasks?ids={{promoted_job_task_urn}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostingTasks"
+                ],
+                "query": [
+                  {
+                    "key": "ids",
+                    "value": "{{promoted_job_task_urn}}"
+                  }
+                ]
+              },
+              "description": "`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2635675045"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Create promoted job with promoted jobs extension schema"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Check public job task status",
+            "id": "a91906bc-c67d-4186-8acf-f466a15039f1",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostingTasks?ids={{public_rsc_job_task_urn}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostingTasks"
+                ],
+                "query": [
+                  {
+                    "key": "ids",
+                    "value": "{{public_rsc_job_task_urn}}"
+                  }
+                ]
+              },
+              "description": "/SimpleJobPostingTasks used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2635675045"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Create basic job with RSC entension schema"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Check private job task status",
+            "id": "2856536d-4a52-4354-9a32-c1deec2d0faa",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostingTasks?ids={{private_rsc_job_task_urn}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostingTasks"
+                ],
+                "query": [
+                  {
+                    "key": "ids",
+                    "value": "{{private_rsc_job_task_urn}}"
+                  }
+                ]
+              },
+              "description": "/SimpleJobPostingTasks used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nCustomers can check Private Jobs from One-Click export dropdown in Recruiter as Private Jobs won't shows up in UI"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Create basic job with RSC entension schema"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Get update job posting task status",
+            "id": "bbaa176c-69c8-472d-b615-c4e38435d83c",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostingTasks?ids={{update_job_task_urn}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostingTasks"
+                ],
+                "query": [
+                  {
+                    "key": "ids",
+                    "value": "{{update_job_task_urn}}"
+                  }
+                ]
+              },
+              "description": "/SimpleJobPostingTasks used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2635675045"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Manage job lifecycle"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Get renew job posting task status",
+            "id": "456e315f-002e-4fb5-80b8-25c5bb53a8c8",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostingTasks?ids={{renew_job_task_urn}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostingTasks"
+                ],
+                "query": [
+                  {
+                    "key": "ids",
+                    "value": "{{renew_job_task_urn}}"
+                  }
+                ]
+              },
+              "description": "/SimpleJobPostingTasks used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2635675045"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Manage job lifecycle"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Get close job posting task status",
+            "id": "5ab544cd-efe7-4ffe-919d-4aff4191a5a5",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostingTasks?ids={{close_job_task_urn}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostingTasks"
+                ],
+                "query": [
+                  {
+                    "key": "ids",
+                    "value": "{{close_job_task_urn}}"
+                  }
+                ]
+              },
+              "description": "/SimpleJobPostingTasks used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2635675045"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Create and manage jobs",
+              "Manage job lifecycle"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Get batch job postings task status",
+            "id": "42e622b7-5932-4aee-b4a1-d8c30f10a400",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostingTasks?ids=urn:li:simpleJobPostingTask:<taskID1>&ids=urn:li:simpleJobPostingTask:<taskID2>",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostingTasks"
+                ],
+                "query": [
+                  {
+                    "key": "ids",
+                    "value": "urn:li:simpleJobPostingTask:<taskID1>"
+                  },
+                  {
+                    "key": "ids",
+                    "value": "urn:li:simpleJobPostingTask:<taskID2>"
+                  }
+                ]
+              },
+              "description": "`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2635675045"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Basic or Promoted Jobs",
+              "Batch jobs example"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Check basic apply connect job posting status",
+            "id": "2bb69965-90b0-4c5c-a5ef-af22704ae707",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": {
+                  "token": "{{jop-posting-access-token}}"
+                }
+              },
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostingTasks?ids={{basic_apply_connect_job_task_urn}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostingTasks"
+                ],
+                "query": [
+                  {
+                    "key": "ids",
+                    "value": "{{basic_apply_connect_job_task_urn}}"
+                  }
+                ]
+              },
+              "description": "`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2722131308/"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Apply Connect Enabled Jobs",
+              "Create apply connect job postings"
+            ],
+            "effectiveAuth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{jop-posting-access-token}}"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "exec": [
+                    ""
+                  ],
+                  "type": "text/javascript",
+                  "id": "a298f566-6226-4ac8-bf0a-9b07ff3527fd"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Check promoted apply connect job posting status",
+            "id": "c0390119-6882-45bd-91df-3be3925b29b9",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": {
+                  "token": "{{jop-posting-access-token}}"
+                }
+              },
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostingTasks?ids={{promoted_apply_connect_job_task_urn}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostingTasks"
+                ],
+                "query": [
+                  {
+                    "key": "ids",
+                    "value": "{{promoted_apply_connect_job_task_urn}}"
+                  }
+                ]
+              },
+              "description": "`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2722131308/"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Apply Connect Enabled Jobs",
+              "Create apply connect job postings"
+            ],
+            "effectiveAuth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{jop-posting-access-token}}"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "exec": [
+                    ""
+                  ],
+                  "type": "text/javascript",
+                  "id": "f43482ce-3044-4fc1-85c4-ef271f977360"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Check remote apply connect job posting status",
+            "id": "a7df0969-475b-4e90-b576-fba8b991dd80",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": {
+                  "token": "{{jop-posting-access-token}}"
+                }
+              },
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostingTasks?ids={{remote_apply_connect_job_task_urn}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostingTasks"
+                ],
+                "query": [
+                  {
+                    "key": "ids",
+                    "value": "{{remote_apply_connect_job_task_urn}}"
+                  }
+                ]
+              },
+              "description": "`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2722131308/"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Apply Connect Enabled Jobs",
+              "Create apply connect job postings"
+            ],
+            "effectiveAuth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{jop-posting-access-token}}"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "exec": [
+                    ""
+                  ],
+                  "type": "text/javascript",
+                  "id": "7824b372-0fa7-4763-903c-bd4290e8f0e0"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Check update apply connect job operation status",
+            "id": "2428d69b-3fad-4726-8139-a5ba6c8d7643",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": {
+                  "token": "{{jop-posting-access-token}}"
+                }
+              },
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostingTasks?ids={{update_apply_connect_job_task_urn}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostingTasks"
+                ],
+                "query": [
+                  {
+                    "key": "ids",
+                    "value": "{{update_apply_connect_job_task_urn}}"
+                  }
+                ]
+              },
+              "description": "`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2722131308/"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Apply Connect Enabled Jobs",
+              "Manage job lifecycle"
+            ],
+            "effectiveAuth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{jop-posting-access-token}}"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "exec": [
+                    ""
+                  ],
+                  "type": "text/javascript",
+                  "id": "e90158e5-966d-41f8-b39a-defa7951ca37"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Check renew apply connect job operation status",
+            "id": "21311a6a-fda8-4ed3-b52b-849e7b81e082",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": {
+                  "token": "{{jop-posting-access-token}}"
+                }
+              },
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostingTasks?ids={{renew_apply_connect_job_task_urn}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostingTasks"
+                ],
+                "query": [
+                  {
+                    "key": "ids",
+                    "value": "{{renew_apply_connect_job_task_urn}}"
+                  }
+                ]
+              },
+              "description": "`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2722131308/"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Apply Connect Enabled Jobs",
+              "Manage job lifecycle"
+            ],
+            "effectiveAuth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{jop-posting-access-token}}"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "exec": [
+                    ""
+                  ],
+                  "type": "text/javascript",
+                  "id": "dcff242e-b28b-4e54-886a-4b52875e1e37"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Check close apply connect job operation status",
+            "id": "e75c0b1d-a78a-4c21-9cb0-c7f3afb33d5b",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/simpleJobPostingTasks?ids={{close_apply_connect_job_task_urn}}",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "simpleJobPostingTasks"
+                ],
+                "query": [
+                  {
+                    "key": "ids",
+                    "value": "{{close_apply_connect_job_task_urn}}"
+                  }
+                ]
+              },
+              "description": "`/SimpleJobPostingTasks` used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)\n\nTo test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }\njobPosting ID can be get from the response of /SimpleJobpostingtask\n\neg:https://www.linkedin.com/jobs/view/2722131308/"
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Sync Apply Connect Enabled Jobs",
+              "Manage job lifecycle"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "exec": [
+                    ""
+                  ],
+                  "type": "text/javascript",
+                  "id": "82eaea77-9b40-43c0-a246-005a8a13fd8a"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     },
     "/v2/atsIntegrations": {
       "post": {
+        "tags": [
+          "Use Cases / Customer applications for premium job posting"
+        ],
         "summary": "Update Customer Integrations",
         "operationId": "UpdateCustomerIntegrations",
         "parameters": [
@@ -73,6 +2178,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "urn:li:contract:{{contract_id}}"
+              }
             }
           },
           {
@@ -80,6 +2190,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "PREMIUM_JOB_POSTING"
+              }
             }
           },
           {
@@ -87,6 +2202,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "JOBS"
+              }
             }
           },
           {
@@ -94,6 +2214,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "ATS"
+              }
             }
           }
         ],
@@ -101,33 +2226,18 @@
           "content": {
             "application/json": {
               "schema": {
-                "required": [
-                  "entities"
-                ],
                 "type": "object",
                 "properties": {
                   "entities": {
-                    "required": [
-                      "integrationContext=urn:li:contract:{{contract_id}}&integrationType=PREMIUM_JOB_POSTING&tenantType=JOBS&dataProvider=ATS"
-                    ],
                     "type": "object",
                     "properties": {
                       "integrationContext=urn:li:contract:{{contract_id}}&integrationType=PREMIUM_JOB_POSTING&tenantType=JOBS&dataProvider=ATS": {
-                        "required": [
-                          "patch"
-                        ],
                         "type": "object",
                         "properties": {
                           "patch": {
-                            "required": [
-                              "$set"
-                            ],
                             "type": "object",
                             "properties": {
                               "$set": {
-                                "required": [
-                                  "integrationName"
-                                ],
                                 "type": "object",
                                 "properties": {
                                   "integrationName": {
@@ -142,18 +2252,120 @@
                     }
                   }
                 }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "entities": {
+                      "integrationContext=urn:li:contract:{{contract_id}}&integrationType=PREMIUM_JOB_POSTING&tenantType=JOBS&dataProvider=ATS": {
+                        "patch": {
+                          "$set": {
+                            "integrationName": "customer_name -LinkedIn LTS Premium Job Posting Integration"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Update Customer Integrations",
+            "id": "19de5d37-024f-4c76-8cf9-e0d548f2eb7f",
+            "request": {
+              "method": "POST",
+              "header": [ ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"entities\": {\n    \"integrationContext=urn:li:contract:{{contract_id}}&integrationType=PREMIUM_JOB_POSTING&tenantType=JOBS&dataProvider=ATS\": {\n      \"patch\": {\n        \"$set\": {\n          \"integrationName\": \"customer_name -LinkedIn LTS Premium Job Posting Integration\"\n        }\n      }\n    }\n  }\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext=urn:li:contract:{{contract_id}}&ids[0].integrationType=PREMIUM_JOB_POSTING&ids[0].tenantType=JOBS&ids[0].dataProvider=ATS",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "atsIntegrations"
+                ],
+                "query": [
+                  {
+                    "key": "ids[0].integrationContext",
+                    "value": "urn:li:contract:{{contract_id}}"
+                  },
+                  {
+                    "key": "ids[0].integrationType",
+                    "value": "PREMIUM_JOB_POSTING"
+                  },
+                  {
+                    "key": "ids[0].tenantType",
+                    "value": "JOBS"
+                  },
+                  {
+                    "key": "ids[0].dataProvider",
+                    "value": "ATS"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Customer applications for premium job posting"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       },
       "get": {
+        "tags": [
+          "Use Cases / Customer applications for premium job posting"
+        ],
         "summary": "Check Customer Integration",
         "operationId": "CheckCustomerIntegration",
         "parameters": [
@@ -162,6 +2374,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "urn:li:contract:{{contract_id}}"
+              }
             }
           },
           {
@@ -169,6 +2386,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "PREMIUM_JOB_POSTING"
+              }
             }
           },
           {
@@ -176,6 +2398,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "JOBS"
+              }
             }
           },
           {
@@ -183,16 +2410,337 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "ATS"
+              }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2Auth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.linkedin.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Check Customer Integration",
+            "id": "b4185e26-e301-4f78-bf8d-12380420bfa7",
+            "request": {
+              "method": "GET",
+              "header": [ ],
+              "url": {
+                "raw": "https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext=urn:li:contract:{{contract_id}}&ids[0].integrationType=PREMIUM_JOB_POSTING&ids[0].tenantType=JOBS&ids[0].dataProvider=ATS",
+                "protocol": "https",
+                "host": [
+                  "api",
+                  "linkedin",
+                  "com"
+                ],
+                "path": [
+                  "v2",
+                  "atsIntegrations"
+                ],
+                "query": [
+                  {
+                    "key": "ids[0].integrationContext",
+                    "value": "urn:li:contract:{{contract_id}}"
+                  },
+                  {
+                    "key": "ids[0].integrationType",
+                    "value": "PREMIUM_JOB_POSTING"
+                  },
+                  {
+                    "key": "ids[0].tenantType",
+                    "value": "JOBS"
+                  },
+                  {
+                    "key": "ids[0].dataProvider",
+                    "value": "ATS"
+                  }
+                ]
+              }
+            },
+            "response": [ ],
+            "folders": [
+              "Use Cases",
+              "Customer applications for premium job posting"
+            ],
+            "effectiveAuth": {
+              "type": "oauth2",
+              "oauth2": {
+                "tokenName": "job-posting-access-token",
+                "challengeAlgorithm": "S256",
+                "grant_type": "client_credentials",
+                "clientSecret": "{{client_secret}}",
+                "clientId": "{{client_id}}",
+                "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "addTokenTo": "header",
+                "client_authentication": "header",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+              }
+            },
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
+        ]
       }
     }
   },
-  "components": { }
+  "components": {
+    "securitySchemes": {
+      "oauth2Auth": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+            "scopes": { }
+          }
+        }
+      },
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with foundation schema",
+      "description": "Using this API, Customer can create `BASIC` Jobs using `Foundation Schema`. T0 know more about Foundation Schema, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#foundation-schema)"
+    },
+    {
+      "name": "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create promoted job with promoted jobs extension schema",
+      "description": "In order to post a Jobs as `PREMIUM`, Customer needs to provide `listingType` as `PREMIUM` and also include the Contract ID in the request body. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/create-jobs#sample-request-for-promoted-jobs)"
+    },
+    {
+      "name": "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with RSC entension schema",
+      "description": "RSC Extension Schema Jobs can be used for Syncing Private and Public Jobs to LinkedIn. Customer can set `availability` field as `PUBLIC` or `PRIVATE_TO_ATS_INTEGRATION` depends up on the requirement. Jobs posted through this API will be reflecting in One-Click Export.Please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#recruiter-system-connect-extension-schema)"
+    },
+    {
+      "name": "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Manage job lifecycle"
+    },
+    {
+      "name": "Use Cases / Sync Basic or Promoted Jobs / Batch jobs example"
+    },
+    {
+      "name": "Use Cases / Sync Apply Connect Enabled Jobs / Create apply connect job postings",
+      "description": "As part of LinkedIn's Apply Connect offering, the SimpleJobPostings API is used to create a new job posting. This API also allows the client to enable onsite application collection via Webhook based mechanism.To know more about Apply Connect, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-jobs-onsite-apply)"
+    },
+    {
+      "name": "Use Cases / Sync Apply Connect Enabled Jobs / Manage job lifecycle"
+    },
+    {
+      "name": "Use Cases / Customer applications for premium job posting"
+    }
+  ],
+  "x-postman-warnings": [
+    "collection: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with foundation schema / Create basic job: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with foundation schema / Create basic job: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Create basic job: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Create basic job: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with foundation schema / Check basic job task status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Check basic job task status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with foundation schema / Create remote job posting: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with foundation schema / Create remote job posting: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Create remote job posting: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Create remote job posting: No saved responses: status codes and response schemas cannot be inferred.",
+    "Create basic job: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with foundation schema / Check remote job task status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Check remote job task status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Check basic job task status: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with foundation schema / Create hybrid job posting: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with foundation schema / Create hybrid job posting: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Create hybrid job posting: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Create hybrid job posting: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with foundation schema / Check remote job task status Copy: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Check remote job task status Copy: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create promoted job with promoted jobs extension schema / Create promoted job: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create promoted job with promoted jobs extension schema / Create promoted job: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Create promoted job: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Create promoted job: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create promoted job with promoted jobs extension schema / Check promoted job task status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Check promoted job task status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with RSC entension schema / Create public job posting: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with RSC entension schema / Create public job posting: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Create public job posting: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Create public job posting: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with RSC entension schema / Check public job task status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Check public job task status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with RSC entension schema / Create private  job posting: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with RSC entension schema / Create private  job posting: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Create private  job posting: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Create private  job posting: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Create basic job with RSC entension schema / Check private job task status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Check private job task status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Manage job lifecycle / Update job posting: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Manage job lifecycle / Update job posting: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Update job posting: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Update job posting: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Manage job lifecycle / Get update job posting task status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Get update job posting task status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Manage job lifecycle / Renew job posting: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Manage job lifecycle / Renew job posting: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Renew job posting: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Renew job posting: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Manage job lifecycle / Get renew job posting task status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Get renew job posting task status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Manage job lifecycle / Close job posting: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Manage job lifecycle / Close job posting: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Close job posting: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Close job posting: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Create and manage jobs / Manage job lifecycle / Get close job posting task status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Get close job posting task status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Batch jobs example / Create batch job postings: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Batch jobs example / Create batch job postings: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Create batch job postings: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Create batch job postings: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Basic or Promoted Jobs / Batch jobs example / Get batch job postings task status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Get batch job postings task status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Create apply connect job postings / Create basic apply connect job posting: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Create apply connect job postings / Create basic apply connect job posting: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Create basic apply connect job posting: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Create basic apply connect job posting: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Create apply connect job postings / Check basic apply connect job posting status: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Create apply connect job postings / Check basic apply connect job posting status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Check basic apply connect job posting status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Create apply connect job postings / Create promoted apply connect job posting: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Create apply connect job postings / Create promoted apply connect job posting: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Create promoted apply connect job posting: JSON body contains template variables or nonstandard JSON syntax. Its raw text is preserved; unresolved values have unconstrained schemas.",
+    "Create promoted apply connect job posting: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Create apply connect job postings / Check promoted apply connect job posting status: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Create apply connect job postings / Check promoted apply connect job posting status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Check promoted apply connect job posting status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Create apply connect job postings / Create remote apply connect job posting: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Create apply connect job postings / Create remote apply connect job posting: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Create remote apply connect job posting: JSON body contains template variables or nonstandard JSON syntax. Its raw text is preserved; unresolved values have unconstrained schemas.",
+    "Create remote apply connect job posting: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Create apply connect job postings / Check remote apply connect job posting status: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Create apply connect job postings / Check remote apply connect job posting status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Check remote apply connect job posting status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Manage job lifecycle / Update apply connect job posting: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Manage job lifecycle / Update apply connect job posting: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Update apply connect job posting: JSON body contains template variables or nonstandard JSON syntax. Its raw text is preserved; unresolved values have unconstrained schemas.",
+    "Update apply connect job posting: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Manage job lifecycle / Check update apply connect job operation status: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Manage job lifecycle / Check update apply connect job operation status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Check update apply connect job operation status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Manage job lifecycle / Renew apply connect job posting: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Manage job lifecycle / Renew apply connect job posting: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Renew apply connect job posting: JSON body contains template variables or nonstandard JSON syntax. Its raw text is preserved; unresolved values have unconstrained schemas.",
+    "Renew apply connect job posting: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Manage job lifecycle / Check renew apply connect job operation status: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Manage job lifecycle / Check renew apply connect job operation status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Check renew apply connect job operation status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Manage job lifecycle / Close apply connect job posting: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Manage job lifecycle / Close apply connect job posting: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Close apply connect job posting: JSON body contains template variables or nonstandard JSON syntax. Its raw text is preserved; unresolved values have unconstrained schemas.",
+    "Close apply connect job posting: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Manage job lifecycle / Check close apply connect job operation status: Postman scripts are not executed; runtime changes to requests and assertions cannot be inferred.",
+    "Use Cases / Sync Apply Connect Enabled Jobs / Manage job lifecycle / Check close apply connect job operation status: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Check close apply connect job operation status: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Customer applications for premium job posting / Update Customer Integrations: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Update Customer Integrations: No saved responses: status codes and response schemas cannot be inferred.",
+    "Use Cases / Customer applications for premium job posting / Check Customer Integration: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Check Customer Integration: No saved responses: status codes and response schemas cannot be inferred."
+  ],
+  "x-postman-events": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "2fa1cf8b-5989-4876-9be1-f10b62130823",
+        "type": "text/javascript",
+        "exec": [
+          "pm.request.headers.add({",
+          "  key: 'User-Agent',",
+          "  value: 'jobposting-linkedin-postman'",
+          "});"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "62a3cade-d9b5-44f7-b451-b3607031e6e2",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "x-postman-variables": [
+    {
+      "key": "create_basic_foundation_job_task_urn",
+      "value": ""
+    },
+    {
+      "key": "basic_foundation_job_task_urn",
+      "value": ""
+    },
+    {
+      "key": "public_rsc_job_task_urn",
+      "value": ""
+    },
+    {
+      "key": "private_rsc_job_task_urn",
+      "value": ""
+    },
+    {
+      "key": "update_job_task_urn",
+      "value": ""
+    },
+    {
+      "key": "renew_job_task_urn",
+      "value": ""
+    },
+    {
+      "key": "close_job_task_urn",
+      "value": ""
+    },
+    {
+      "key": "promoted_job_task_urn",
+      "value": ""
+    },
+    {
+      "key": "basic_apply_connect_job_task_urn",
+      "value": ""
+    },
+    {
+      "key": "remote_apply_connect_job_task_urn",
+      "value": ""
+    },
+    {
+      "key": "promoted_apply_connect_job_task_urn",
+      "value": ""
+    },
+    {
+      "key": "update_apply_connect_job_task_urn",
+      "value": ""
+    },
+    {
+      "key": "renew_apply_connect_job_task_urn",
+      "value": ""
+    },
+    {
+      "key": "close_apply_connect_job_task_urn",
+      "value": ""
+    }
+  ]
 }

@@ -15,6 +15,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "authenticatedUser"
+              }
             }
           },
           {
@@ -22,6 +27,11 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{insert_version}}"
+              }
             }
           },
           {
@@ -29,55 +39,136 @@
             "in": "header",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              }
             }
           }
         ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "X-RestLi-Protocol-Version": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "2.0.0"
+                  }
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+                  }
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "chunked"
+                  }
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "keep-alive"
+                  }
+                }
+              },
+              "X-Li-Fabric": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "prod-lva1"
+                  }
+                }
+              },
+              "X-Li-Pop": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "prod-lva1-x"
+                  }
+                }
+              },
+              "X-LI-Proto": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "http/1.1"
+                  }
+                }
+              },
+              "X-LI-UUID": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "AAYDeP50GndIRiDUNqZFNA=="
+                  }
+                }
+              },
+              "Set-Cookie": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "lidc=\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  }
+                }
+              },
+              "X-LI-Route-Key": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  }
+                }
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "required": [
-                    "elements",
-                    "paging"
-                  ],
                   "type": "object",
                   "properties": {
                     "elements": {
                       "type": "array",
                       "items": {
-                        "required": [
-                          "account",
-                          "changeAuditStamps",
-                          "role",
-                          "user",
-                          "version"
-                        ],
                         "type": "object",
                         "properties": {
                           "account": {
                             "type": "string"
                           },
                           "changeAuditStamps": {
-                            "required": [
-                              "created",
-                              "lastModified"
-                            ],
                             "type": "object",
                             "properties": {
                               "created": {
-                                "required": [
-                                  "actor",
-                                  "time"
-                                ],
                                 "type": "object",
                                 "properties": {
                                   "actor": {
@@ -89,10 +180,6 @@
                                 }
                               },
                               "lastModified": {
-                                "required": [
-                                  "actor",
-                                  "time"
-                                ],
                                 "type": "object",
                                 "properties": {
                                   "actor": {
@@ -112,13 +199,10 @@
                             "type": "string"
                           },
                           "version": {
-                            "required": [
-                              "versionTag"
-                            ],
                             "type": "object",
                             "properties": {
                               "versionTag": {
-                                "type": "integer"
+                                "type": "string"
                               }
                             }
                           }
@@ -126,12 +210,6 @@
                       }
                     },
                     "paging": {
-                      "required": [
-                        "count",
-                        "links",
-                        "start",
-                        "total"
-                      ],
                       "type": "object",
                       "properties": {
                         "count": {
@@ -139,9 +217,7 @@
                         },
                         "links": {
                           "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
+                          "items": { }
                         },
                         "start": {
                           "type": "integer"
@@ -152,6 +228,57 @@
                       }
                     }
                   }
+                },
+                "examples": {
+                  "Fetch_all_ad_accounts_of_the_authenticated_user": {
+                    "summary": "Fetch all ad accounts of the authenticated user",
+                    "value": {
+                      "elements": [
+                        {
+                          "account": "urn:li:sponsoredAccount:516413367",
+                          "changeAuditStamps": {
+                            "created": {
+                              "actor": "urn:li:unknown:0",
+                              "time": 1500331577000
+                            },
+                            "lastModified": {
+                              "actor": "urn:li:unknown:0",
+                              "time": 1505328748000
+                            }
+                          },
+                          "role": "ACCOUNT_BILLING_ADMIN",
+                          "user": "urn:li:person:K1RwyVNukt",
+                          "version": {
+                            "versionTag": "89"
+                          }
+                        },
+                        {
+                          "account": "urn:li:sponsoredAccount:516880883",
+                          "changeAuditStamps": {
+                            "created": {
+                              "actor": "urn:li:unknown:0",
+                              "time": 1505326590000
+                            },
+                            "lastModified": {
+                              "actor": "urn:li:unknown:0",
+                              "time": 1505326615000
+                            }
+                          },
+                          "role": "ACCOUNT_BILLING_ADMIN",
+                          "user": "urn:li:person:K1RwyVNukt",
+                          "version": {
+                            "versionTag": "3"
+                          }
+                        }
+                      ],
+                      "paging": {
+                        "count": 2,
+                        "links": [ ],
+                        "start": 0,
+                        "total": 2
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -159,6 +286,154 @@
         },
         "security": [
           { }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Fetch all ad accounts of the authenticated user",
+            "id": "bcd1424b-baee-4661-9f16-ba6e109400f3",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "LinkedIn-Version",
+                  "value": "{{insert_version}}"
+                },
+                {
+                  "key": "X-Restli-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "{{insert_token}}",
+                  "disabled": true
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/adAccountUsers?q=authenticatedUser",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "adAccountUsers"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "authenticatedUser"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "id": "b4e2b018-803d-4bef-89db-22dfd592556c",
+                "name": "Fetch all ad accounts of the authenticated user",
+                "originalRequest": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "LinkedIn-Version",
+                      "value": "{{insert_version}}"
+                    },
+                    {
+                      "key": "X-Restli-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Authorization",
+                      "value": "{{insert_token}}",
+                      "disabled": true
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{baseUrl}}/adAccountUsers?q=authenticatedUser",
+                    "host": [
+                      "{{baseUrl}}"
+                    ],
+                    "path": [
+                      "adAccountUsers"
+                    ],
+                    "query": [
+                      {
+                        "key": "q",
+                        "value": "authenticatedUser"
+                      }
+                    ]
+                  }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "X-RestLi-Protocol-Version",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "Date",
+                    "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+                  },
+                  {
+                    "key": "Transfer-Encoding",
+                    "value": "chunked"
+                  },
+                  {
+                    "key": "Connection",
+                    "value": "keep-alive"
+                  },
+                  {
+                    "key": "X-Li-Fabric",
+                    "value": "prod-lva1"
+                  },
+                  {
+                    "key": "X-Li-Pop",
+                    "value": "prod-lva1-x"
+                  },
+                  {
+                    "key": "X-LI-Proto",
+                    "value": "http/1.1"
+                  },
+                  {
+                    "key": "X-LI-UUID",
+                    "value": "AAYDeP50GndIRiDUNqZFNA=="
+                  },
+                  {
+                    "key": "Set-Cookie",
+                    "value": "lidc=\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  },
+                  {
+                    "key": "X-LI-Route-Key",
+                    "value": "\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  }
+                ],
+                "cookie": [ ],
+                "responseTime": null,
+                "body": "{\n    \"elements\": [\n        {\n            \"account\": \"urn:li:sponsoredAccount:516413367\",\n            \"changeAuditStamps\": {\n                \"created\": {\n                    \"actor\": \"urn:li:unknown:0\",\n                    \"time\": 1500331577000\n                },\n                \"lastModified\": {\n                    \"actor\": \"urn:li:unknown:0\",\n                    \"time\": 1505328748000\n                }\n            },\n            \"role\": \"ACCOUNT_BILLING_ADMIN\",\n            \"user\": \"urn:li:person:K1RwyVNukt\",\n            \"version\": {\n                \"versionTag\": \"89\"\n            }\n        },\n        {\n            \"account\": \"urn:li:sponsoredAccount:516880883\",\n            \"changeAuditStamps\": {\n                \"created\": {\n                    \"actor\": \"urn:li:unknown:0\",\n                    \"time\": 1505326590000\n                },\n                \"lastModified\": {\n                    \"actor\": \"urn:li:unknown:0\",\n                    \"time\": 1505326615000\n                }\n            },\n            \"role\": \"ACCOUNT_BILLING_ADMIN\",\n            \"user\": \"urn:li:person:K1RwyVNukt\",\n            \"version\": {\n                \"versionTag\": \"3\"\n            }\n        }\n    ],\n    \"paging\": {\n        \"count\": 2,\n        \"links\": [],\n        \"start\": 0,\n        \"total\": 2\n    }\n}"
+              }
+            ],
+            "folders": [ ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       }
     },
@@ -180,6 +455,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "search"
+              }
             }
           },
           {
@@ -187,6 +467,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "urn:li:sponsoredCampaignGroup:{{campaigngroup_id}}"
+              }
             }
           },
           {
@@ -194,6 +479,11 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{insert_version}}"
+              }
             }
           },
           {
@@ -201,85 +491,156 @@
             "in": "header",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              }
             }
           }
         ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "X-RestLi-Protocol-Version": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "2.0.0"
+                  }
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+                  }
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "chunked"
+                  }
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "keep-alive"
+                  }
+                }
+              },
+              "X-Li-Fabric": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "prod-lva1"
+                  }
+                }
+              },
+              "X-Li-Pop": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "prod-lva1-x"
+                  }
+                }
+              },
+              "X-LI-Proto": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "http/1.1"
+                  }
+                }
+              },
+              "X-LI-UUID": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "AAYDeP50GndIRiDUNqZFNA=="
+                  }
+                }
+              },
+              "Set-Cookie": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "lidc=\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  }
+                }
+              },
+              "X-LI-Route-Key": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  }
+                }
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "required": [
-                    "elements",
-                    "metadata"
-                  ],
                   "type": "object",
                   "properties": {
                     "elements": {
                       "type": "array",
                       "items": {
-                        "required": [
-                          "targetingCriteria",
-                          "servingStatuses",
-                          "type",
-                          "locale",
-                          "version",
-                          "associatedEntity",
-                          "test",
-                          "runSchedule",
-                          "targeting",
-                          "optimizationPreference",
-                          "optimizationTargetType",
-                          "changeAuditStamps",
-                          "campaignGroup",
-                          "dailyBudget",
-                          "unitCost",
-                          "creativeSelection",
-                          "costType",
-                          "name",
-                          "offsiteDeliveryEnabled",
-                          "id",
-                          "audienceExpansionEnabled",
-                          "account",
-                          "status"
-                        ],
                         "type": "object",
                         "properties": {
                           "targetingCriteria": {
-                            "required": [
-                              "include"
-                            ],
                             "type": "object",
                             "properties": {
                               "include": {
-                                "required": [
-                                  "and"
-                                ],
                                 "type": "object",
                                 "properties": {
                                   "and": {
                                     "type": "array",
                                     "items": {
-                                      "required": [
-                                        "or"
-                                      ],
                                       "type": "object",
                                       "properties": {
                                         "or": {
-                                          "required": [
-                                            "urn:li:adTargetingFacet:employers"
-                                          ],
                                           "type": "object",
                                           "properties": {
                                             "urn:li:adTargetingFacet:employers": {
+                                              "type": "array",
+                                              "items": {
+                                                "type": "string"
+                                              }
+                                            },
+                                            "urn:li:adTargetingFacet:locations": {
+                                              "type": "array",
+                                              "items": {
+                                                "type": "string"
+                                              }
+                                            },
+                                            "urn:li:adTargetingFacet:interfaceLocales": {
                                               "type": "array",
                                               "items": {
                                                 "type": "string"
@@ -304,10 +665,6 @@
                             "type": "string"
                           },
                           "locale": {
-                            "required": [
-                              "country",
-                              "language"
-                            ],
                             "type": "object",
                             "properties": {
                               "country": {
@@ -319,13 +676,10 @@
                             }
                           },
                           "version": {
-                            "required": [
-                              "versionTag"
-                            ],
                             "type": "object",
                             "properties": {
                               "versionTag": {
-                                "type": "integer"
+                                "type": "string"
                               }
                             }
                           },
@@ -336,10 +690,6 @@
                             "type": "boolean"
                           },
                           "runSchedule": {
-                            "required": [
-                              "end",
-                              "start"
-                            ],
                             "type": "object",
                             "properties": {
                               "end": {
@@ -351,17 +701,9 @@
                             }
                           },
                           "targeting": {
-                            "required": [
-                              "includedTargetingFacets"
-                            ],
                             "type": "object",
                             "properties": {
                               "includedTargetingFacets": {
-                                "required": [
-                                  "employers",
-                                  "locations",
-                                  "interfaceLocales"
-                                ],
                                 "type": "object",
                                 "properties": {
                                   "employers": {
@@ -379,10 +721,6 @@
                                   "interfaceLocales": {
                                     "type": "array",
                                     "items": {
-                                      "required": [
-                                        "country",
-                                        "language"
-                                      ],
                                       "type": "object",
                                       "properties": {
                                         "country": {
@@ -399,24 +737,12 @@
                             }
                           },
                           "optimizationPreference": {
-                            "required": [
-                              "frequencyOptimizationPreference"
-                            ],
                             "type": "object",
                             "properties": {
                               "frequencyOptimizationPreference": {
-                                "required": [
-                                  "timeSpan",
-                                  "optimizationType",
-                                  "frequency"
-                                ],
                                 "type": "object",
                                 "properties": {
                                   "timeSpan": {
-                                    "required": [
-                                      "duration",
-                                      "unit"
-                                    ],
                                     "type": "object",
                                     "properties": {
                                       "duration": {
@@ -441,16 +767,9 @@
                             "type": "string"
                           },
                           "changeAuditStamps": {
-                            "required": [
-                              "created",
-                              "lastModified"
-                            ],
                             "type": "object",
                             "properties": {
                               "created": {
-                                "required": [
-                                  "time"
-                                ],
                                 "type": "object",
                                 "properties": {
                                   "time": {
@@ -459,9 +778,6 @@
                                 }
                               },
                               "lastModified": {
-                                "required": [
-                                  "time"
-                                ],
                                 "type": "object",
                                 "properties": {
                                   "time": {
@@ -475,14 +791,10 @@
                             "type": "string"
                           },
                           "dailyBudget": {
-                            "required": [
-                              "amount",
-                              "currencyCode"
-                            ],
                             "type": "object",
                             "properties": {
                               "amount": {
-                                "type": "integer"
+                                "type": "string"
                               },
                               "currencyCode": {
                                 "type": "string"
@@ -490,14 +802,10 @@
                             }
                           },
                           "unitCost": {
-                            "required": [
-                              "amount",
-                              "currencyCode"
-                            ],
                             "type": "object",
                             "properties": {
                               "amount": {
-                                "type": "integer"
+                                "type": "string"
                               },
                               "currencyCode": {
                                 "type": "string"
@@ -532,14 +840,121 @@
                       }
                     },
                     "metadata": {
-                      "required": [
-                        "nextPageToken"
-                      ],
                       "type": "object",
                       "properties": {
                         "nextPageToken": {
                           "type": "string"
                         }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Search_for_campaigns_using_search_criteria": {
+                    "summary": "Search for campaigns using search criteria",
+                    "value": {
+                      "elements": [
+                        {
+                          "targetingCriteria": {
+                            "include": {
+                              "and": [
+                                {
+                                  "or": {
+                                    "urn:li:adTargetingFacet:employers": [
+                                      "urn:li:company:1035"
+                                    ]
+                                  }
+                                },
+                                {
+                                  "or": {
+                                    "urn:li:adTargetingFacet:locations": [
+                                      "urn:li:geo:103644278"
+                                    ]
+                                  }
+                                },
+                                {
+                                  "or": {
+                                    "urn:li:adTargetingFacet:interfaceLocales": [
+                                      "urn:li:locale:en_US"
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "servingStatuses": [
+                            "ACCOUNT_SERVING_HOLD"
+                          ],
+                          "type": "SPONSORED_UPDATES",
+                          "locale": {
+                            "country": "US",
+                            "language": "en"
+                          },
+                          "version": {
+                            "versionTag": "1"
+                          },
+                          "associatedEntity": "urn:li:organization:2414183",
+                          "test": false,
+                          "runSchedule": {
+                            "end": 9876543210123,
+                            "start": 1234567890987
+                          },
+                          "targeting": {
+                            "includedTargetingFacets": {
+                              "employers": [
+                                "urn:li:organization:1035"
+                              ],
+                              "locations": [
+                                "urn:li:geo:103644278"
+                              ],
+                              "interfaceLocales": [
+                                {
+                                  "country": "US",
+                                  "language": "en"
+                                }
+                              ]
+                            }
+                          },
+                          "optimizationPreference": {
+                            "frequencyOptimizationPreference": {
+                              "timeSpan": {
+                                "duration": 7,
+                                "unit": "DAY"
+                              },
+                              "optimizationType": "MAX_FREQUENCY",
+                              "frequency": 10
+                            }
+                          },
+                          "optimizationTargetType": "NONE",
+                          "changeAuditStamps": {
+                            "created": {
+                              "time": 1543365082000
+                            },
+                            "lastModified": {
+                              "time": 1543365082000
+                            }
+                          },
+                          "campaignGroup": "urn:li:sponsoredCampaignGroup:603030884",
+                          "dailyBudget": {
+                            "amount": "18",
+                            "currencyCode": "USD"
+                          },
+                          "unitCost": {
+                            "amount": "15",
+                            "currencyCode": "USD"
+                          },
+                          "creativeSelection": "OPTIMIZED",
+                          "costType": "CPC",
+                          "name": "Campaign Sponsored update B",
+                          "offsiteDeliveryEnabled": false,
+                          "id": 145282384,
+                          "audienceExpansionEnabled": false,
+                          "account": "urn:li:sponsoredAccount:506333826",
+                          "status": "ACTIVE"
+                        }
+                      ],
+                      "metadata": {
+                        "nextPageToken": "DgGerr1iVQreCJVjZDOW_grcp63nueBDipsS4DJpvJo"
                       }
                     }
                   }
@@ -550,6 +965,166 @@
         },
         "security": [
           { }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Search for campaigns using search criteria",
+            "id": "04564c05-ce1e-4e0f-992f-21d9ff916245",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "LinkedIn-Version",
+                  "value": "{{insert_version}}"
+                },
+                {
+                  "key": "X-Restli-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "{{insert_token}}",
+                  "disabled": true
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/adAccounts/{{adAccountsId}}/adCampaigns?q=search&search.campaignGroup.values[0]=urn:li:sponsoredCampaignGroup:{{campaigngroup_id}}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "adAccounts",
+                  "{{adAccountsId}}",
+                  "adCampaigns"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "search"
+                  },
+                  {
+                    "key": "search.campaignGroup.values[0]",
+                    "value": "urn:li:sponsoredCampaignGroup:{{campaigngroup_id}}"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "id": "18e21178-3f4d-46ea-8f2e-1c1c1fab158c",
+                "name": "Search for campaigns using search criteria",
+                "originalRequest": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "LinkedIn-Version",
+                      "value": "{{insert_version}}"
+                    },
+                    {
+                      "key": "X-Restli-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Authorization",
+                      "value": "{{insert_token}}",
+                      "disabled": true
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{baseUrl}}/adAccounts/{{adAccountsId}}/adCampaigns?q=search&search.campaignGroup.values[0]=urn:li:sponsoredCampaignGroup:{{campaigngroup_id}}",
+                    "host": [
+                      "{{baseUrl}}"
+                    ],
+                    "path": [
+                      "adAccounts",
+                      "{{adAccountsId}}",
+                      "adCampaigns"
+                    ],
+                    "query": [
+                      {
+                        "key": "q",
+                        "value": "search"
+                      },
+                      {
+                        "key": "search.campaignGroup.values[0]",
+                        "value": "urn:li:sponsoredCampaignGroup:{{campaigngroup_id}}"
+                      }
+                    ]
+                  }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "X-RestLi-Protocol-Version",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "Date",
+                    "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+                  },
+                  {
+                    "key": "Transfer-Encoding",
+                    "value": "chunked"
+                  },
+                  {
+                    "key": "Connection",
+                    "value": "keep-alive"
+                  },
+                  {
+                    "key": "X-Li-Fabric",
+                    "value": "prod-lva1"
+                  },
+                  {
+                    "key": "X-Li-Pop",
+                    "value": "prod-lva1-x"
+                  },
+                  {
+                    "key": "X-LI-Proto",
+                    "value": "http/1.1"
+                  },
+                  {
+                    "key": "X-LI-UUID",
+                    "value": "AAYDeP50GndIRiDUNqZFNA=="
+                  },
+                  {
+                    "key": "Set-Cookie",
+                    "value": "lidc=\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  },
+                  {
+                    "key": "X-LI-Route-Key",
+                    "value": "\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  }
+                ],
+                "cookie": [ ],
+                "responseTime": null,
+                "body": "{\n    \"elements\": [\n        {\n            \"targetingCriteria\": {\n                \"include\": {\n                    \"and\": [\n                        {\n                            \"or\": {\n                                \"urn:li:adTargetingFacet:employers\": [\n                                    \"urn:li:company:1035\"\n                                ]\n                            }\n                        },\n                        {\n                            \"or\": {\n                                \"urn:li:adTargetingFacet:locations\": [\n                                    \"urn:li:geo:103644278\"\n                                ]\n                            }\n                        },\n                        {\n                            \"or\": {\n                                \"urn:li:adTargetingFacet:interfaceLocales\": [\n                                    \"urn:li:locale:en_US\"\n                                ]\n                            }\n                        }\n                    ]\n                }\n            },\n            \"servingStatuses\": [\n                \"ACCOUNT_SERVING_HOLD\"\n            ],\n            \"type\": \"SPONSORED_UPDATES\",\n            \"locale\": {\n                \"country\": \"US\",\n                \"language\": \"en\"\n            },\n            \"version\": {\n                \"versionTag\": \"1\"\n            },\n            \"associatedEntity\": \"urn:li:organization:2414183\",\n            \"test\": false,\n            \"runSchedule\": {\n                \"end\": 9876543210123,\n                \"start\": 1234567890987\n            },\n            \"targeting\": {\n                \"includedTargetingFacets\": {\n                    \"employers\": [\n                        \"urn:li:organization:1035\"\n                    ],\n                    \"locations\": [\n                        \"urn:li:geo:103644278\"\n                    ],\n                    \"interfaceLocales\": [\n                        {\n                            \"country\": \"US\",\n                            \"language\": \"en\"\n                        }\n                    ]\n                }\n            },\n            \"optimizationPreference\": {\n                \"frequencyOptimizationPreference\": {\n                    \"timeSpan\": {\n                        \"duration\": 7,\n                        \"unit\": \"DAY\"\n                    },\n                    \"optimizationType\": \"MAX_FREQUENCY\",\n                    \"frequency\": 10\n                }\n            },\n            \"optimizationTargetType\": \"NONE\",\n            \"changeAuditStamps\": {\n                \"created\": {\n                    \"time\": 1543365082000\n                },\n                \"lastModified\": {\n                    \"time\": 1543365082000\n                }\n            },\n            \"campaignGroup\": \"urn:li:sponsoredCampaignGroup:603030884\",\n            \"dailyBudget\": {\n                \"amount\": \"18\",\n                \"currencyCode\": \"USD\"\n            },\n            \"unitCost\": {\n                \"amount\": \"15\",\n                \"currencyCode\": \"USD\"\n            },\n            \"creativeSelection\": \"OPTIMIZED\",\n            \"costType\": \"CPC\",\n            \"name\": \"Campaign Sponsored update B\",\n            \"offsiteDeliveryEnabled\": false,\n            \"id\": 145282384,\n            \"audienceExpansionEnabled\": false,\n            \"account\": \"urn:li:sponsoredAccount:506333826\",\n            \"status\": \"ACTIVE\"\n        }\n    ],\n    \"metadata\": {\n        \"nextPageToken\": \"DgGerr1iVQreCJVjZDOW_grcp63nueBDipsS4DJpvJo\"\n    }\n}"
+              }
+            ],
+            "folders": [ ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       }
     },
@@ -563,6 +1138,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "account"
+              }
             }
           },
           {
@@ -570,6 +1150,11 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "List(urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}})"
+              }
             }
           },
           {
@@ -577,6 +1162,11 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{insert_version}}"
+              }
             }
           },
           {
@@ -584,51 +1174,133 @@
             "in": "header",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              }
             }
           }
         ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "X-RestLi-Protocol-Version": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "2.0.0"
+                  }
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+                  }
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "chunked"
+                  }
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "keep-alive"
+                  }
+                }
+              },
+              "X-Li-Fabric": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "prod-lva1"
+                  }
+                }
+              },
+              "X-Li-Pop": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "prod-lva1-x"
+                  }
+                }
+              },
+              "X-LI-Proto": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "http/1.1"
+                  }
+                }
+              },
+              "X-LI-UUID": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "AAYDeP50GndIRiDUNqZFNA=="
+                  }
+                }
+              },
+              "Set-Cookie": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "lidc=\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  }
+                }
+              },
+              "X-LI-Route-Key": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  }
+                }
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "required": [
-                    "elements"
-                  ],
                   "type": "object",
                   "properties": {
                     "elements": {
                       "type": "array",
                       "items": {
-                        "required": [
-                          "approximateMemberCount",
-                          "created",
-                          "name",
-                          "versionTag",
-                          "id",
-                          "lastModified",
-                          "type",
-                          "account",
-                          "status"
-                        ],
                         "type": "object",
                         "properties": {
                           "approximateMemberCount": {
                             "type": "integer"
                           },
                           "created": {
-                            "required": [
-                              "actor",
-                              "time"
-                            ],
                             "type": "object",
                             "properties": {
                               "actor": {
@@ -643,16 +1315,12 @@
                             "type": "string"
                           },
                           "versionTag": {
-                            "type": "integer"
+                            "type": "string"
                           },
                           "id": {
                             "type": "integer"
                           },
                           "lastModified": {
-                            "required": [
-                              "actor",
-                              "time"
-                            ],
                             "type": "object",
                             "properties": {
                               "actor": {
@@ -671,9 +1339,73 @@
                           },
                           "status": {
                             "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
                           }
                         }
                       }
+                    }
+                  }
+                },
+                "examples": {
+                  "Fetch_existing_ad_segments_based_on_ad_account": {
+                    "summary": "Fetch existing ad segments based on ad account",
+                    "value": {
+                      "elements": [
+                        {
+                          "approximateMemberCount": 230000,
+                          "created": {
+                            "actor": "urn:li:unknown:0",
+                            "time": 1651129031000
+                          },
+                          "name": "DMP Segment 1",
+                          "versionTag": "81433811311",
+                          "id": 11422166,
+                          "lastModified": {
+                            "actor": "urn:li:unknown:0",
+                            "time": 1654271097000
+                          },
+                          "type": "MARKET_AUTOMATION",
+                          "account": "urn:li:sponsoredAccount:509090297",
+                          "status": "ARCHIVED"
+                        },
+                        {
+                          "approximateMemberCount": 0,
+                          "created": {
+                            "actor": "urn:li:unknown:0",
+                            "time": 1651486505000
+                          },
+                          "name": "DMP segment for CSV uploads",
+                          "versionTag": "78913777069",
+                          "id": 11462646,
+                          "lastModified": {
+                            "actor": "urn:li:unknown:0",
+                            "time": 1651972148000
+                          },
+                          "type": "BULK",
+                          "account": "urn:li:sponsoredAccount:509090297",
+                          "status": "READY"
+                        },
+                        {
+                          "approximateMemberCount": 0,
+                          "created": {
+                            "actor": "urn:li:unknown:0",
+                            "time": 1657199237000
+                          },
+                          "name": "Bulk AdSegment created by self service, and go through state transitions",
+                          "description": "description for AdSegment Bulk",
+                          "versionTag": "84646462865",
+                          "id": 12554466,
+                          "lastModified": {
+                            "actor": "urn:li:unknown:0",
+                            "time": 1657238293000
+                          },
+                          "type": "RETARGETING",
+                          "account": "urn:li:sponsoredAccount:509090297",
+                          "status": "READY"
+                        }
+                      ]
                     }
                   }
                 }
@@ -683,33 +1415,227 @@
         },
         "security": [
           { }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Fetch existing ad segments based on ad account",
+            "id": "690b3db5-c932-4b3a-a16f-0c101eec4acd",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "LinkedIn-Version",
+                  "value": "{{insert_version}}"
+                },
+                {
+                  "key": "X-Restli-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "{{insert_token}}",
+                  "disabled": true
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/adSegments?q=account&accounts=List(urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}})",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "adSegments"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "account"
+                  },
+                  {
+                    "key": "accounts",
+                    "value": "List(urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}})"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "id": "dbddcb21-9aff-4cba-91e1-3cccbc5fb833",
+                "name": "Fetch existing ad segments based on ad account",
+                "originalRequest": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "LinkedIn-Version",
+                      "value": "{{insert_version}}"
+                    },
+                    {
+                      "key": "X-Restli-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Authorization",
+                      "value": "{{insert_token}}"
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{baseUrl}}/adSegments?q=account&accounts=List(urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}})",
+                    "host": [
+                      "{{baseUrl}}"
+                    ],
+                    "path": [
+                      "adSegments"
+                    ],
+                    "query": [
+                      {
+                        "key": "q",
+                        "value": "account"
+                      },
+                      {
+                        "key": "accounts",
+                        "value": "List(urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}})"
+                      }
+                    ]
+                  }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "X-RestLi-Protocol-Version",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "Date",
+                    "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+                  },
+                  {
+                    "key": "Transfer-Encoding",
+                    "value": "chunked"
+                  },
+                  {
+                    "key": "Connection",
+                    "value": "keep-alive"
+                  },
+                  {
+                    "key": "X-Li-Fabric",
+                    "value": "prod-lva1"
+                  },
+                  {
+                    "key": "X-Li-Pop",
+                    "value": "prod-lva1-x"
+                  },
+                  {
+                    "key": "X-LI-Proto",
+                    "value": "http/1.1"
+                  },
+                  {
+                    "key": "X-LI-UUID",
+                    "value": "AAYDeP50GndIRiDUNqZFNA=="
+                  },
+                  {
+                    "key": "Set-Cookie",
+                    "value": "lidc=\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  },
+                  {
+                    "key": "X-LI-Route-Key",
+                    "value": "\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  }
+                ],
+                "cookie": [ ],
+                "responseTime": null,
+                "body": "{\n   \"elements\": [\n       {\n           \"approximateMemberCount\": 230000,\n           \"created\": {\n               \"actor\": \"urn:li:unknown:0\",\n               \"time\": 1651129031000\n           },\n           \"name\": \"DMP Segment 1\",\n           \"versionTag\": \"81433811311\",\n           \"id\": 11422166,\n           \"lastModified\": {\n               \"actor\": \"urn:li:unknown:0\",\n               \"time\": 1654271097000\n           },\n           \"type\": \"MARKET_AUTOMATION\",\n           \"account\": \"urn:li:sponsoredAccount:509090297\",\n           \"status\": \"ARCHIVED\"\n       },\n       {\n           \"approximateMemberCount\": 0,\n           \"created\": {\n               \"actor\": \"urn:li:unknown:0\",\n               \"time\": 1651486505000\n           },\n           \"name\": \"DMP segment for CSV uploads\",\n           \"versionTag\": \"78913777069\",\n           \"id\": 11462646,\n           \"lastModified\": {\n               \"actor\": \"urn:li:unknown:0\",\n               \"time\": 1651972148000\n           },\n           \"type\": \"BULK\",\n           \"account\": \"urn:li:sponsoredAccount:509090297\",\n           \"status\": \"READY\"\n       },\n       {\n           \"approximateMemberCount\": 0,\n           \"created\": {\n               \"actor\": \"urn:li:unknown:0\",\n               \"time\": 1657199237000\n           },\n           \"name\": \"Bulk AdSegment created by self service, and go through state transitions\",\n           \"description\": \"description for AdSegment Bulk\",\n           \"versionTag\": \"84646462865\",\n           \"id\": 12554466,\n           \"lastModified\": {\n               \"actor\": \"urn:li:unknown:0\",\n               \"time\": 1657238293000\n           },\n           \"type\": \"RETARGETING\",\n           \"account\": \"urn:li:sponsoredAccount:509090297\",\n           \"status\": \"READY\"\n       }\n   ]\n}"
+              }
+            ],
+            "folders": [ ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       }
     },
     "/accountIntelligence": {
       "get": {
-        "summary": "Fetch account intelligence data using campaign filter",
-        "operationId": "FetchAccountIntelligenceDataUsingCampaignFilter",
+        "summary": "Fetch account intelligence data using lookback window filter",
+        "operationId": "FetchAccountIntelligenceDataUsingLookbackWindowFilter",
         "parameters": [
           {
             "name": "q",
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "account"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "account"
+              },
+              "example1_3": {
+                "summary": "example1",
+                "value": "account"
+              }
             }
           },
           {
             "name": "start",
             "in": "query",
             "schema": {
-              "type": "integer"
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "0"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "0"
+              },
+              "example1_3": {
+                "summary": "example1",
+                "value": "0"
+              }
             }
           },
           {
             "name": "count",
             "in": "query",
             "schema": {
-              "type": "integer"
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "10"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "10"
+              },
+              "example1_3": {
+                "summary": "example1",
+                "value": "10"
+              }
             }
           },
           {
@@ -717,6 +1643,19 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+              },
+              "example1_3": {
+                "summary": "example1",
+                "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+              }
             }
           },
           {
@@ -724,6 +1663,19 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "(lookbackWindow:LAST_7_DAYS)"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "(lookbackWindow:LAST_7_DAYS,adSegments:List(urn%3Ali%3AadSegment%3A{{adsegment_id1}},urn%3Ali%3AadSegment%3A{{adsegement_id2}}))"
+              },
+              "example1_3": {
+                "summary": "example1",
+                "value": "(lookbackWindow:LAST_30_DAYS,campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}})"
+              }
             }
           },
           {
@@ -731,6 +1683,19 @@
             "in": "header",
             "schema": {
               "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "{{insert_version}}"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "{{insert_version}}"
+              },
+              "example1_3": {
+                "summary": "example1",
+                "value": "{{insert_version}}"
+              }
             }
           },
           {
@@ -738,42 +1703,759 @@
             "in": "header",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "2.0.0"
+              },
+              "example1_2": {
+                "summary": "example1",
+                "value": "2.0.0"
+              },
+              "example1_3": {
+                "summary": "example1",
+                "value": "2.0.0"
+              }
             }
           }
         ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "X-RestLi-Protocol-Version": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "2.0.0"
+                  },
+                  "example1_2": {
+                    "summary": "example1",
+                    "value": "2.0.0"
+                  },
+                  "example1_3": {
+                    "summary": "example1",
+                    "value": "2.0.0"
+                  }
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+                  },
+                  "example1_2": {
+                    "summary": "example1",
+                    "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+                  },
+                  "example1_3": {
+                    "summary": "example1",
+                    "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+                  }
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "chunked"
+                  },
+                  "example1_2": {
+                    "summary": "example1",
+                    "value": "chunked"
+                  },
+                  "example1_3": {
+                    "summary": "example1",
+                    "value": "chunked"
+                  }
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "keep-alive"
+                  },
+                  "example1_2": {
+                    "summary": "example1",
+                    "value": "keep-alive"
+                  },
+                  "example1_3": {
+                    "summary": "example1",
+                    "value": "keep-alive"
+                  }
+                }
+              },
+              "X-Li-Fabric": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "prod-lva1"
+                  },
+                  "example1_2": {
+                    "summary": "example1",
+                    "value": "prod-lva1"
+                  },
+                  "example1_3": {
+                    "summary": "example1",
+                    "value": "prod-lva1"
+                  }
+                }
+              },
+              "X-Li-Pop": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "prod-lva1-x"
+                  },
+                  "example1_2": {
+                    "summary": "example1",
+                    "value": "prod-lva1-x"
+                  },
+                  "example1_3": {
+                    "summary": "example1",
+                    "value": "prod-lva1-x"
+                  }
+                }
+              },
+              "X-LI-Proto": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "http/1.1"
+                  },
+                  "example1_2": {
+                    "summary": "example1",
+                    "value": "http/1.1"
+                  },
+                  "example1_3": {
+                    "summary": "example1",
+                    "value": "http/1.1"
+                  }
+                }
+              },
+              "X-LI-UUID": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "AAYDeP50GndIRiDUNqZFNA=="
+                  },
+                  "example1_2": {
+                    "summary": "example1",
+                    "value": "AAYDeP50GndIRiDUNqZFNA=="
+                  },
+                  "example1_3": {
+                    "summary": "example1",
+                    "value": "AAYDeP50GndIRiDUNqZFNA=="
+                  }
+                }
+              },
+              "Set-Cookie": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "lidc=\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  },
+                  "example1_2": {
+                    "summary": "example1",
+                    "value": "lidc=\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  },
+                  "example1_3": {
+                    "summary": "example1",
+                    "value": "lidc=\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  }
+                }
+              },
+              "X-LI-Route-Key": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  },
+                  "example1_2": {
+                    "summary": "example1",
+                    "value": "\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  },
+                  "example1_3": {
+                    "summary": "example1",
+                    "value": "\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  }
+                }
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string"
-                }
+                  "x-postman-invalid-json": true
+                },
+                "x-postman-raw-body": "{\n    \"elements\": [\n        {\n            \"companyPageUrl\":    \"https://www.linkedin.com/company/microsoft\",\n \"companyWebsite\" : \"http://www.microsoft.com\",\n            \"paidClicks\": 20,\n            \"organicEngagements\": 50,\n            \"companyName\": \"Microsoft\",\n            \"paidLeads\": 40,\n            \"paidEngagements\": 300,\n            \"paidImpressions\": 133,\n            \"organicImpressions\": 50,\n            \"engagementLevel\": \"VERY_LOW\"\n        },\n        ...\n    ],\n    \"paging\": {\n        \"count\": 10,\n        \"start\": 0,\n        \"total\": 30,\n        \"links\": [\n            {\n                \"rel\": \"next\",\n                \"type\": \"application/json\",\n                \"href\": \"/partnerApiAccountIntelligence?q=account&filterCriteria=(lookbackWindow:LAST_7_DAYS,adSegments:List())&start=10&count=10&account=urn%3Ali%3AsponsoredAccount%3A123456789\"\n            }\n        ]\n    }\n}\n"
               }
             }
           }
         },
         "security": [
-          { }
+          { },
+          {
+            "authorizationAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "{baseUrl}",
+            "variables": {
+              "baseUrl": {
+                "default": "",
+                "description": "Unresolved Postman variable 'baseUrl'. Supply its environment value before calling this API."
+              }
+            }
+          }
+        ],
+        "x-postman-warnings": [
+          "Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+          "Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+          "Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Fetch account intelligence data using lookback window filter",
+            "id": "2502956c-b4ce-49df-896e-7b52c1d9195e",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "LinkedIn-Version",
+                  "value": "{{insert_version}}"
+                },
+                {
+                  "key": "X-Restli-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "{{insert_token}}",
+                  "disabled": true
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/accountIntelligence?q=account&start=0&count=10&account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}&filterCriteria=(lookbackWindow:LAST_7_DAYS)",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "accountIntelligence"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "account"
+                  },
+                  {
+                    "key": "start",
+                    "value": "0"
+                  },
+                  {
+                    "key": "count",
+                    "value": "10"
+                  },
+                  {
+                    "key": "account",
+                    "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                  },
+                  {
+                    "key": "filterCriteria",
+                    "value": "(lookbackWindow:LAST_7_DAYS)"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "id": "d7ff082c-b781-43f0-9e41-b2065c08b5e7",
+                "name": "Fetch account intelligence data using lookback window filter",
+                "originalRequest": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "LinkedIn-Version",
+                      "value": "{{insert_version}}"
+                    },
+                    {
+                      "key": "X-Restli-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Authorization",
+                      "value": "{{insert_token}}",
+                      "disabled": true
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{baseUrl}}/accountIntelligence?q=account&start=0&count=10&account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}&filterCriteria=(lookbackWindow:LAST_7_DAYS)",
+                    "host": [
+                      "{{baseUrl}}"
+                    ],
+                    "path": [
+                      "accountIntelligence"
+                    ],
+                    "query": [
+                      {
+                        "key": "q",
+                        "value": "account"
+                      },
+                      {
+                        "key": "start",
+                        "value": "0"
+                      },
+                      {
+                        "key": "count",
+                        "value": "10"
+                      },
+                      {
+                        "key": "account",
+                        "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                      },
+                      {
+                        "key": "filterCriteria",
+                        "value": "(lookbackWindow:LAST_7_DAYS)"
+                      }
+                    ]
+                  }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "X-RestLi-Protocol-Version",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "Date",
+                    "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+                  },
+                  {
+                    "key": "Transfer-Encoding",
+                    "value": "chunked"
+                  },
+                  {
+                    "key": "Connection",
+                    "value": "keep-alive"
+                  },
+                  {
+                    "key": "X-Li-Fabric",
+                    "value": "prod-lva1"
+                  },
+                  {
+                    "key": "X-Li-Pop",
+                    "value": "prod-lva1-x"
+                  },
+                  {
+                    "key": "X-LI-Proto",
+                    "value": "http/1.1"
+                  },
+                  {
+                    "key": "X-LI-UUID",
+                    "value": "AAYDeP50GndIRiDUNqZFNA=="
+                  },
+                  {
+                    "key": "Set-Cookie",
+                    "value": "lidc=\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  },
+                  {
+                    "key": "X-LI-Route-Key",
+                    "value": "\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  }
+                ],
+                "cookie": [ ],
+                "responseTime": null,
+                "body": "{\n    \"elements\": [\n        {\n            \"companyPageUrl\":    \"https://www.linkedin.com/company/microsoft\",\n \"companyWebsite\" : \"http://www.microsoft.com\",\n            \"paidClicks\": 20,\n            \"organicEngagements\": 50,\n            \"companyName\": \"Microsoft\",\n            \"paidLeads\": 40,\n            \"paidEngagements\": 300,\n            \"paidImpressions\": 133,\n            \"organicImpressions\": 50,\n            \"engagementLevel\": \"VERY_LOW\"\n        },\n        ...\n    ],\n    \"paging\": {\n        \"count\": 10,\n        \"start\": 0,\n        \"total\": 30,\n        \"links\": [\n            {\n                \"rel\": \"next\",\n                \"type\": \"application/json\",\n                \"href\": \"/partnerApiAccountIntelligence?q=account&filterCriteria=(lookbackWindow:LAST_7_DAYS,adSegments:List())&start=10&count=10&account=urn%3Ali%3AsponsoredAccount%3A123456789\"\n            }\n        ]\n    }\n}\n"
+              }
+            ],
+            "folders": [ ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Fetch account intelligence data using ad segment filter",
+            "id": "e4fa9c7f-3105-4adf-b89c-11bd1ab99232",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "LinkedIn-Version",
+                  "value": "{{insert_version}}"
+                },
+                {
+                  "key": "X-Restli-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "{{insert_token}}",
+                  "disabled": true
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/accountIntelligence?q=account&start=0&count=10&account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}&filterCriteria=(lookbackWindow:LAST_7_DAYS,adSegments:List(urn%3Ali%3AadSegment%3A{{adsegment_id1}},urn%3Ali%3AadSegment%3A{{adsegement_id2}}))",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "accountIntelligence"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "account"
+                  },
+                  {
+                    "key": "start",
+                    "value": "0"
+                  },
+                  {
+                    "key": "count",
+                    "value": "10"
+                  },
+                  {
+                    "key": "account",
+                    "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                  },
+                  {
+                    "key": "filterCriteria",
+                    "value": "(lookbackWindow:LAST_7_DAYS,adSegments:List(urn%3Ali%3AadSegment%3A{{adsegment_id1}},urn%3Ali%3AadSegment%3A{{adsegement_id2}}))"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "id": "dff99a25-1ce0-4faa-9730-813c1c5a81a5",
+                "name": "Fetch account intelligence data using ad segment filter",
+                "originalRequest": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "LinkedIn-Version",
+                      "value": "{{insert_version}}"
+                    },
+                    {
+                      "key": "X-Restli-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Authorization",
+                      "value": "{{insert_token}}"
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{baseUrl}}/accountIntelligence?q=account&start=0&count=10&account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}&filterCriteria=(lookbackWindow:LAST_7_DAYS,adSegments:List(urn%3Ali%3AadSegment%3A{{adsegment_id1}},urn%3Ali%3AadSegment%3A{{adsegement_id2}}))",
+                    "host": [
+                      "{{baseUrl}}"
+                    ],
+                    "path": [
+                      "accountIntelligence"
+                    ],
+                    "query": [
+                      {
+                        "key": "q",
+                        "value": "account"
+                      },
+                      {
+                        "key": "start",
+                        "value": "0"
+                      },
+                      {
+                        "key": "count",
+                        "value": "10"
+                      },
+                      {
+                        "key": "account",
+                        "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                      },
+                      {
+                        "key": "filterCriteria",
+                        "value": "(lookbackWindow:LAST_7_DAYS,adSegments:List(urn%3Ali%3AadSegment%3A{{adsegment_id1}},urn%3Ali%3AadSegment%3A{{adsegement_id2}}))"
+                      }
+                    ]
+                  }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "X-RestLi-Protocol-Version",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "Date",
+                    "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+                  },
+                  {
+                    "key": "Transfer-Encoding",
+                    "value": "chunked"
+                  },
+                  {
+                    "key": "Connection",
+                    "value": "keep-alive"
+                  },
+                  {
+                    "key": "X-Li-Fabric",
+                    "value": "prod-lva1"
+                  },
+                  {
+                    "key": "X-Li-Pop",
+                    "value": "prod-lva1-x"
+                  },
+                  {
+                    "key": "X-LI-Proto",
+                    "value": "http/1.1"
+                  },
+                  {
+                    "key": "X-LI-UUID",
+                    "value": "AAYDeP50GndIRiDUNqZFNA=="
+                  },
+                  {
+                    "key": "Set-Cookie",
+                    "value": "lidc=\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  },
+                  {
+                    "key": "X-LI-Route-Key",
+                    "value": "\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  }
+                ],
+                "cookie": [ ],
+                "responseTime": null,
+                "body": "{\n    \"elements\": [\n        {\n            \"companyPageUrl\":    \"https://www.linkedin.com/company/microsoft\",\n \"companyWebsite\" : \"http://www.microsoft.com\",\n            \"paidClicks\": 20,\n            \"organicEngagements\": 50,\n            \"companyName\": \"Microsoft\",\n            \"paidLeads\": 40,\n            \"paidEngagements\": 300,\n            \"paidImpressions\": 133,\n            \"organicImpressions\": 50,\n            \"engagementLevel\": \"VERY_LOW\"\n        },\n        ...\n    ],\n    \"paging\": {\n        \"count\": 10,\n        \"start\": 0,\n        \"total\": 30,\n        \"links\": [\n            {\n                \"rel\": \"next\",\n                \"type\": \"application/json\",\n                \"href\": \"/partnerApiAccountIntelligence?q=account&filterCriteria=(lookbackWindow:LAST_7_DAYS,adSegments:List())&start=10&count=10&account=urn%3Ali%3AsponsoredAccount%3A123456789\"\n            }\n        ]\n    }\n}\n"
+              }
+            ],
+            "folders": [ ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          },
+          {
+            "name": "Fetch account intelligence data using campaign filter",
+            "id": "eaf94ad7-ef07-41dd-a0be-bbf2ffe4c05a",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "LinkedIn-Version",
+                  "value": "{{insert_version}}"
+                },
+                {
+                  "key": "X-Restli-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "{{insert_token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/accountIntelligence?q=account&start=0&count=10&account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}&filterCriteria=(lookbackWindow:LAST_30_DAYS,campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}})",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "accountIntelligence"
+                ],
+                "query": [
+                  {
+                    "key": "q",
+                    "value": "account"
+                  },
+                  {
+                    "key": "start",
+                    "value": "0"
+                  },
+                  {
+                    "key": "count",
+                    "value": "10"
+                  },
+                  {
+                    "key": "account",
+                    "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                  },
+                  {
+                    "key": "filterCriteria",
+                    "value": "(lookbackWindow:LAST_30_DAYS,campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}})"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "id": "5224b6f1-6776-4395-abe3-b77ef8ff8c4a",
+                "name": "Fetch account intelligence data using campaign filter",
+                "originalRequest": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "LinkedIn-Version",
+                      "value": "{{insert_version}}"
+                    },
+                    {
+                      "key": "X-Restli-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Authorization",
+                      "value": "{{insert_token}}",
+                      "disabled": true
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{baseUrl}}/accountIntelligence?q=account&start=0&count=10&account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}&filterCriteria=(lookbackWindow:LAST_30_DAYS,campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}})",
+                    "host": [
+                      "{{baseUrl}}"
+                    ],
+                    "path": [
+                      "accountIntelligence"
+                    ],
+                    "query": [
+                      {
+                        "key": "q",
+                        "value": "account"
+                      },
+                      {
+                        "key": "start",
+                        "value": "0"
+                      },
+                      {
+                        "key": "count",
+                        "value": "10"
+                      },
+                      {
+                        "key": "account",
+                        "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                      },
+                      {
+                        "key": "filterCriteria",
+                        "value": "(lookbackWindow:LAST_30_DAYS,campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}})"
+                      }
+                    ]
+                  }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "X-RestLi-Protocol-Version",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "Date",
+                    "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+                  },
+                  {
+                    "key": "Transfer-Encoding",
+                    "value": "chunked"
+                  },
+                  {
+                    "key": "Connection",
+                    "value": "keep-alive"
+                  },
+                  {
+                    "key": "X-Li-Fabric",
+                    "value": "prod-lva1"
+                  },
+                  {
+                    "key": "X-Li-Pop",
+                    "value": "prod-lva1-x"
+                  },
+                  {
+                    "key": "X-LI-Proto",
+                    "value": "http/1.1"
+                  },
+                  {
+                    "key": "X-LI-UUID",
+                    "value": "AAYDeP50GndIRiDUNqZFNA=="
+                  },
+                  {
+                    "key": "Set-Cookie",
+                    "value": "lidc=\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  },
+                  {
+                    "key": "X-LI-Route-Key",
+                    "value": "\"b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\""
+                  }
+                ],
+                "cookie": [ ],
+                "responseTime": null,
+                "body": "{\n    \"elements\": [\n        {\n            \"companyPageUrl\":    \"https://www.linkedin.com/company/microsoft\",\n \"companyWebsite\" : \"http://www.microsoft.com\",\n            \"paidClicks\": 20,\n            \"organicEngagements\": 50,\n            \"companyName\": \"Microsoft\",\n            \"paidLeads\": 40,\n            \"paidEngagements\": 300,\n            \"paidImpressions\": 133,\n            \"organicImpressions\": 50,\n            \"engagementLevel\": \"VERY_LOW\"\n        },\n        ...\n    ],\n    \"paging\": {\n        \"count\": 10,\n        \"start\": 0,\n        \"total\": 30,\n        \"links\": [\n            {\n                \"rel\": \"next\",\n                \"type\": \"application/json\",\n                \"href\": \"/partnerApiAccountIntelligence?q=account&filterCriteria=(lookbackWindow:LAST_7_DAYS,adSegments:List())&start=10&count=10&account=urn%3Ali%3AsponsoredAccount%3A123456789\"\n            }\n        ]\n    }\n}\n"
+              }
+            ],
+            "folders": [ ],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            }
+          }
         ]
       }
     }
   },
   "components": {
     "securitySchemes": {
-      "authorizationHeader": {
+      "authorizationAuth": {
         "type": "apiKey",
-        "description": "Authorization header inferred from the Postman collection.",
         "name": "Authorization",
         "in": "header"
       }
     }
-  }
+  },
+  "x-postman-warnings": [
+    "Fetch all ad accounts of the authenticated user: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Fetch all ad accounts of the authenticated user: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "Search for campaigns using search criteria: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Search for campaigns using search criteria: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "Fetch existing ad segments based on ad account: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Fetch existing ad segments based on ad account: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "Fetch account intelligence data using lookback window filter: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Fetch account intelligence data using lookback window filter: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "Fetch account intelligence data using lookback window filter: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Fetch account intelligence data using ad segment filter: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Fetch account intelligence data using ad segment filter: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "Fetch account intelligence data using ad segment filter: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema.",
+    "Fetch account intelligence data using lookback window filter: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+    "Fetch account intelligence data using campaign filter: Postman protocol profile behavior has no OpenAPI equivalent.",
+    "Fetch account intelligence data using campaign filter: Server variable 'baseUrl' is unresolved. Supply it through PostmanConversionOptions.Variables.",
+    "Fetch account intelligence data using campaign filter: Body is declared as JSON but cannot be parsed, even as a Postman template. Its raw text is preserved without inventing a schema."
+  ]
 }

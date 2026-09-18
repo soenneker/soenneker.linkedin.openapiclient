@@ -47,7 +47,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts
         {
         }
         /// <summary>
-        /// Use the `q=search` parameter with the adAccountsV2 API to [search for accounts](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#search-for-accounts) by ID, name, reference, type, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all accounts the caller has access to are returned in the response. This example searches for accounts by the type(BUSINESS).
+        /// Use the `q=search` parameter with the adAccountsV2 API to [search for ad accounts](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#search-for-accounts) by ID, name, reference, type, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all accounts the caller has access to are returned in the response. This example searches for accounts by the Status(DRAFT).Use the `q=search` parameter with the adAccountsV2 API to [search for accounts](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#search-for-accounts) by ID, name, reference, type, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all accounts the caller has access to are returned in the response. This example searches for accounts by the type(BUSINESS).
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This API example [creates a &quot;test&quot; ad account](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#creating-a-test-ad-account) by including an additional boolean `test` flag to `true` on the payload.
+        /// This example API [creates an Ad Account](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#create-ad-account)This API example [creates a &quot;test&quot; ad account](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#creating-a-test-ad-account) by including an additional boolean `test` flag to `true` on the payload.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -73,11 +73,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateATestAdAccountRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateAnAdAccountRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateATestAdAccountRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateAnAdAccountRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -85,7 +85,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use the `q=search` parameter with the adAccountsV2 API to [search for accounts](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#search-for-accounts) by ID, name, reference, type, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all accounts the caller has access to are returned in the response. This example searches for accounts by the type(BUSINESS).
+        /// Use the `q=search` parameter with the adAccountsV2 API to [search for ad accounts](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#search-for-accounts) by ID, name, reference, type, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all accounts the caller has access to are returned in the response. This example searches for accounts by the Status(DRAFT).Use the `q=search` parameter with the adAccountsV2 API to [search for accounts](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#search-for-accounts) by ID, name, reference, type, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all accounts the caller has access to are returned in the response. This example searches for accounts by the type(BUSINESS).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,18 +103,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts
             return requestInfo;
         }
         /// <summary>
-        /// This API example [creates a &quot;test&quot; ad account](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#creating-a-test-ad-account) by including an additional boolean `test` flag to `true` on the payload.
+        /// This example API [creates an Ad Account](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#create-ad-account)This API example [creates a &quot;test&quot; ad account](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#creating-a-test-ad-account) by including an additional boolean `test` flag to `true` on the payload.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateATestAdAccountRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateAnAdAccountRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateATestAdAccountRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateAnAdAccountRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -133,7 +133,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts
             return new global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.AdAccountsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Use the `q=search` parameter with the adAccountsV2 API to [search for accounts](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#search-for-accounts) by ID, name, reference, type, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all accounts the caller has access to are returned in the response. This example searches for accounts by the type(BUSINESS).
+        /// Use the `q=search` parameter with the adAccountsV2 API to [search for ad accounts](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#search-for-accounts) by ID, name, reference, type, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all accounts the caller has access to are returned in the response. This example searches for accounts by the Status(DRAFT).Use the `q=search` parameter with the adAccountsV2 API to [search for accounts](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#search-for-accounts) by ID, name, reference, type, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all accounts the caller has access to are returned in the response. This example searches for accounts by the type(BUSINESS).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdAccountsRequestBuilderGetQueryParameters 
