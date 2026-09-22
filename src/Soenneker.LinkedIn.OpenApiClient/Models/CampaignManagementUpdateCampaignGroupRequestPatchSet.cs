@@ -14,6 +14,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The runSchedule property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCampaignGroupRequestPatchSetRunSchedule? RunSchedule { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCampaignGroupRequestPatchSetRunSchedule RunSchedule { get; set; }
+#endif
         /// <summary>The totalBudget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +55,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "runSchedule", n => { RunSchedule = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCampaignGroupRequestPatchSetRunSchedule>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCampaignGroupRequestPatchSetRunSchedule.CreateFromDiscriminatorValue); } },
                 { "totalBudget", n => { TotalBudget = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCampaignGroupRequestPatchSetTotalBudget>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCampaignGroupRequestPatchSetTotalBudget.CreateFromDiscriminatorValue); } },
             };
         }
@@ -57,6 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCampaignGroupRequestPatchSetRunSchedule>("runSchedule", RunSchedule);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCampaignGroupRequestPatchSetTotalBudget>("totalBudget", TotalBudget);
             writer.WriteAdditionalData(AdditionalData);
         }
