@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,20 +36,20 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AudienceCounts
         /// <summary>
         /// View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting?tabs=http&amp;view=li-lms-unversioned) to understand more on Ads Targeting APIs.Facets are high-level categories of the types of targeting available to you. Use facets to narrow down your intended audience. The adTargetingFacets API returns available targeting facets.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFindAudienceCountByTargetingCriteria200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AudienceCounts.AudienceCountsRequestBuilder.AudienceCountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFindAudienceCountByTargetingCriteria200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AudienceCounts.AudienceCountsRequestBuilder.AudienceCountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AudienceCounts.AudienceCountsRequestBuilder.AudienceCountsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFindAudienceCountByTargetingCriteria200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AudienceCounts.AudienceCountsRequestBuilder.AudienceCountsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFindAudienceCountByTargetingCriteria200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFindAudienceCountByTargetingCriteria200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting?tabs=http&amp;view=li-lms-unversioned) to understand more on Ads Targeting APIs.Facets are high-level categories of the types of targeting available to you. Use facets to narrow down your intended audience. The adTargetingFacets API returns available targeting facets.
@@ -66,6 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AudienceCounts
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

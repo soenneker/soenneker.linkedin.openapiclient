@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Creatives.Item;
+using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Creatives.Urn3Ali3AsponsoredCreative3A1138847954;
 using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -18,6 +19,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreativesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The urn3Ali3AsponsoredCreative3A1138847954 property</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Creatives.Urn3Ali3AsponsoredCreative3A1138847954.Urn3Ali3AsponsoredCreative3A1138847954RequestBuilder Urn3Ali3AsponsoredCreative3A1138847954
+        {
+            get => new global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Creatives.Urn3Ali3AsponsoredCreative3A1138847954.Urn3Ali3AsponsoredCreative3A1138847954RequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.campaignManagement.adAccounts.item.creatives.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Creatives.Item.WithCreativeItemRequestBuilder"/></returns>
@@ -35,7 +41,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CreativesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccounts%2Did}/creatives{?ids*,q*,search%2Ecampaign%2Evalues%5B0%5D*}", pathParameters)
+        public CreativesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccounts%2Did}/creatives{?campaigns*,ids*,pageSize*,q*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +49,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CreativesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccounts%2Did}/creatives{?ids*,q*,search%2Ecampaign%2Evalues%5B0%5D*}", rawUrl)
+        public CreativesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccounts%2Did}/creatives{?campaigns*,ids*,pageSize*,q*}", rawUrl)
         {
         }
         /// <summary>
@@ -67,20 +73,20 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
         /// <summary>
         /// Search Creative using Criteria
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Creatives.CreativesRequestBuilder.CreativesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Creatives.CreativesRequestBuilder.CreativesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Creatives.CreativesRequestBuilder.CreativesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Creatives.CreativesRequestBuilder.CreativesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a Creative
@@ -136,6 +142,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -197,6 +204,32 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
+            [QueryParameter("campaigns")]
+            public string? Campaigns { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("campaigns")]
+            public string Campaigns { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("pageSize")]
+            public string? PageSize { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("pageSize")]
+            public string PageSize { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("q")]
             public string? Q { get; set; }
             #pragma warning restore CS1591
@@ -205,19 +238,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
             #pragma warning disable CS1591
             [QueryParameter("q")]
             public string Q { get; set; }
-            #pragma warning restore CS1591
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            #pragma warning disable CS1591
-            [QueryParameter("search%2Ecampaign%2Evalues%5B0%5D")]
-            public string? SearchCampaignValues0 { get; set; }
-            #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("search%2Ecampaign%2Evalues%5B0%5D")]
-            public string SearchCampaignValues0 { get; set; }
             #pragma warning restore CS1591
 #endif
         }

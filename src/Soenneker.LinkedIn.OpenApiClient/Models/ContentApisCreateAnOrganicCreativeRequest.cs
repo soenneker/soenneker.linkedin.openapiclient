@@ -30,6 +30,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestContent Content { get; set; }
 #endif
+        /// <summary>The creative property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreative? Creative { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreative Creative { get; set; }
+#endif
         /// <summary>The intendedStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +73,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "campaign", n => { Campaign = n.GetStringValue(); } },
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestContent>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestContent.CreateFromDiscriminatorValue); } },
+                { "creative", n => { Creative = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreative>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreative.CreateFromDiscriminatorValue); } },
                 { "intendedStatus", n => { IntendedStatus = n.GetStringValue(); } },
             };
         }
@@ -77,6 +86,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("campaign", Campaign);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestContent>("content", Content);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreative>("creative", Creative);
             writer.WriteStringValue("intendedStatus", IntendedStatus);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -15,6 +15,7 @@ using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AudienceCounts;
 using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Creatives;
 using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Documents;
 using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Item;
+using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Me;
 using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.OrganizationAcls;
 using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Posts;
 using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Shares;
@@ -85,6 +86,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement
         public global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Documents.DocumentsRequestBuilder Documents
         {
             get => new global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Documents.DocumentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The me property</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Me.MeRequestBuilder Me
+        {
+            get => new global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Me.MeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The organizationAcls property</summary>
         public global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.OrganizationAcls.OrganizationAclsRequestBuilder OrganizationAcls

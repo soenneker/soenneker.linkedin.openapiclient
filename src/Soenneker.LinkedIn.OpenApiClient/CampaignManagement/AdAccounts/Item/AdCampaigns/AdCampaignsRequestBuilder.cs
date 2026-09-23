@@ -4,6 +4,8 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaigns.Item;
+using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaigns.NineZeroZeroOneFiveFiveSevenSevenFour;
+using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaigns.OneNineFiveFiveTwoEightFourOneFour;
 using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -18,6 +20,16 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Ad
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AdCampaignsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The NineZeroZeroOneFiveFiveSevenSevenFour property</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaigns.NineZeroZeroOneFiveFiveSevenSevenFour.NineZeroZeroOneFiveFiveSevenSevenFourRequestBuilder NineZeroZeroOneFiveFiveSevenSevenFour
+        {
+            get => new global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaigns.NineZeroZeroOneFiveFiveSevenSevenFour.NineZeroZeroOneFiveFiveSevenSevenFourRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The OneNineFiveFiveTwoEightFourOneFour property</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaigns.OneNineFiveFiveTwoEightFourOneFour.OneNineFiveFiveTwoEightFourOneFourRequestBuilder OneNineFiveFiveTwoEightFourOneFour
+        {
+            get => new global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaigns.OneNineFiveFiveTwoEightFourOneFour.OneNineFiveFiveTwoEightFourOneFourRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.campaignManagement.adAccounts.item.adCampaigns.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaigns.Item.WithCampaignItemRequestBuilder"/></returns>
@@ -85,22 +97,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Ad
         /// <summary>
         /// Create Campaign (SPONSORED_UPDATES)
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaigns.AdCampaignsRequestBuilder.AdCampaignsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaigns.AdCampaignsRequestBuilder.AdCampaignsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaigns.AdCampaignsRequestBuilder.AdCampaignsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaigns.AdCampaignsRequestBuilder.AdCampaignsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete multiple campaigns using BATCH

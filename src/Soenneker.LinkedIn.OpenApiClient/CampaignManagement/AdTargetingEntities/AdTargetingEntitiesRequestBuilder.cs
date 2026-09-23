@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,20 +36,20 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdTargetingEntitie
         /// <summary>
         /// To understand more about the Ad Targeting Entities refer to our public documentation [here](https://docs.microsoft.com/linkedin/shared/references/v2/ads/adtargetingentities?context=linkedin/marketing/contex&amp;view=li-lms-unversioned).  Once you&apos;ve identified the facet type(s) you&apos;d like to target, you can fetch their entity values. This API example fetches the Entities by facet Seniorities.To understand more about the Ad Targeting Entities refer to our public documentation [here](https://docs.microsoft.com/linkedin/shared/references/v2/ads/adtargetingentities?context=linkedin/marketing/contex&amp;view=li-lms-unversioned).  Once you&apos;ve identified the facet type(s) you&apos;d like to target, you can fetch their entity values. This API fetches the Entities by a similar entity.To understand more about the Ad Targeting Entities refer to our public documentation [here](https://docs.microsoft.com/linkedin/shared/references/v2/ads/adtargetingentities?context=linkedin/marketing/contex&amp;view=li-lms-unversioned).  Once you&apos;ve identified the facet type(s) you&apos;d like to target, you can fetch their entity values. This API example fetches the Entities using the typeahead suggestions.To understand more about the Ad Targeting Entities refer to our public documentation [here](https://docs.microsoft.com/linkedin/shared/references/v2/ads/adtargetingentities?context=linkedin/marketing/contex&amp;view=li-lms-unversioned).  Once you&apos;ve identified the facet type(s) you&apos;d like to target, you can fetch their entity values. This API example fetches the Entities by URNs.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFindEntitiesByFacetSeniorities200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdTargetingEntities.AdTargetingEntitiesRequestBuilder.AdTargetingEntitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFindEntitiesByFacetSeniorities200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdTargetingEntities.AdTargetingEntitiesRequestBuilder.AdTargetingEntitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdTargetingEntities.AdTargetingEntitiesRequestBuilder.AdTargetingEntitiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFindEntitiesByFacetSeniorities200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdTargetingEntities.AdTargetingEntitiesRequestBuilder.AdTargetingEntitiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFindEntitiesByFacetSeniorities200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFindEntitiesByFacetSeniorities200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To understand more about the Ad Targeting Entities refer to our public documentation [here](https://docs.microsoft.com/linkedin/shared/references/v2/ads/adtargetingentities?context=linkedin/marketing/contex&amp;view=li-lms-unversioned).  Once you&apos;ve identified the facet type(s) you&apos;d like to target, you can fetch their entity values. This API example fetches the Entities by facet Seniorities.To understand more about the Ad Targeting Entities refer to our public documentation [here](https://docs.microsoft.com/linkedin/shared/references/v2/ads/adtargetingentities?context=linkedin/marketing/contex&amp;view=li-lms-unversioned).  Once you&apos;ve identified the facet type(s) you&apos;d like to target, you can fetch their entity values. This API fetches the Entities by a similar entity.To understand more about the Ad Targeting Entities refer to our public documentation [here](https://docs.microsoft.com/linkedin/shared/references/v2/ads/adtargetingentities?context=linkedin/marketing/contex&amp;view=li-lms-unversioned).  Once you&apos;ve identified the facet type(s) you&apos;d like to target, you can fetch their entity values. This API example fetches the Entities using the typeahead suggestions.To understand more about the Ad Targeting Entities refer to our public documentation [here](https://docs.microsoft.com/linkedin/shared/references/v2/ads/adtargetingentities?context=linkedin/marketing/contex&amp;view=li-lms-unversioned).  Once you&apos;ve identified the facet type(s) you&apos;d like to target, you can fetch their entity values. This API example fetches the Entities by URNs.
@@ -66,6 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdTargetingEntitie
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

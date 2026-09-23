@@ -14,13 +14,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The variables property</summary>
+        /// <summary>The intendedStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCreativeUsingCreativeIdRequestPatchSetVariables? Variables { get; set; }
+        public string? IntendedStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCreativeUsingCreativeIdRequestPatchSetVariables Variables { get; set; }
+        public string IntendedStatus { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCreativeUsingCreativeIdRequestPatchSet"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "variables", n => { Variables = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCreativeUsingCreativeIdRequestPatchSetVariables>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCreativeUsingCreativeIdRequestPatchSetVariables.CreateFromDiscriminatorValue); } },
+                { "intendedStatus", n => { IntendedStatus = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementUpdateCreativeUsingCreativeIdRequestPatchSetVariables>("variables", Variables);
+            writer.WriteStringValue("intendedStatus", IntendedStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.Item.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \content-apis\posts\{encodedUgcPostUrnShareUrn-id}\{ugcPostsId}
+    /// Builds and executes requests for operations under \content-apis\posts\{imageShare-id}\{ugcPostsId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithUgcPostsItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.Item.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUgcPostsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/content-apis/posts/{encodedUgcPostUrnShareUrn%2Did}/{ugcPostsId}", pathParameters)
+        public WithUgcPostsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/content-apis/posts/{imageShare%2Did}/{ugcPostsId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.Item.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUgcPostsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/content-apis/posts/{encodedUgcPostUrnShareUrn%2Did}/{ugcPostsId}", rawUrl)
+        public WithUgcPostsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/content-apis/posts/{imageShare%2Did}/{ugcPostsId}", rawUrl)
         {
         }
         /// <summary>

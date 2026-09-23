@@ -2,9 +2,11 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.AdAccounts;
 using Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Images;
 using Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.InMailContents;
 using Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Posts;
+using Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Videos;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +19,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RestRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The adAccounts property</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.AdAccounts.AdAccountsRequestBuilder AdAccounts
+        {
+            get => new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.AdAccounts.AdAccountsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The images property</summary>
         public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Images.ImagesRequestBuilder Images
         {
@@ -31,6 +38,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest
         public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Posts.PostsRequestBuilder Posts
         {
             get => new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Posts.PostsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The videos property</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Videos.VideosRequestBuilder Videos
+        {
+            get => new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Videos.VideosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.RestRequestBuilder"/> and sets the default values.

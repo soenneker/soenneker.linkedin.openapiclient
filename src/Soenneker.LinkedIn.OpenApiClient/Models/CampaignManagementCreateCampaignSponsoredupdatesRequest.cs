@@ -82,6 +82,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #endif
         /// <summary>The offsiteDeliveryEnabled property</summary>
         public bool? OffsiteDeliveryEnabled { get; set; }
+        /// <summary>The politicalIntent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PoliticalIntent { get; set; }
+#nullable restore
+#else
+        public string PoliticalIntent { get; set; }
+#endif
         /// <summary>The runSchedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,6 +165,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestLocale.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "offsiteDeliveryEnabled", n => { OffsiteDeliveryEnabled = n.GetBoolValue(); } },
+                { "politicalIntent", n => { PoliticalIntent = n.GetStringValue(); } },
                 { "runSchedule", n => { RunSchedule = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestRunSchedule>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestRunSchedule.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "targetingCriteria", n => { TargetingCriteria = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestTargetingCriteria>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestTargetingCriteria.CreateFromDiscriminatorValue); } },
@@ -181,6 +190,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestLocale>("locale", Locale);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("offsiteDeliveryEnabled", OffsiteDeliveryEnabled);
+            writer.WriteStringValue("politicalIntent", PoliticalIntent);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestRunSchedule>("runSchedule", RunSchedule);
             writer.WriteStringValue("status", Status);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestTargetingCriteria>("targetingCriteria", TargetingCriteria);

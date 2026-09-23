@@ -25,10 +25,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The targetEntities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? TargetEntities { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateImageContentRequestDistributionTargetEntitiesItem>? TargetEntities { get; set; }
 #nullable restore
 #else
-        public UntypedNode TargetEntities { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateImageContentRequestDistributionTargetEntitiesItem> TargetEntities { get; set; }
 #endif
         /// <summary>The thirdPartyDistributionChannels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "feedDistribution", n => { FeedDistribution = n.GetStringValue(); } },
-                { "targetEntities", n => { TargetEntities = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "targetEntities", n => { TargetEntities = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateImageContentRequestDistributionTargetEntitiesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateImageContentRequestDistributionTargetEntitiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "thirdPartyDistributionChannels", n => { ThirdPartyDistributionChannels = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
@@ -76,7 +76,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("feedDistribution", FeedDistribution);
-            writer.WriteObjectValue<UntypedNode>("targetEntities", TargetEntities);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateImageContentRequestDistributionTargetEntitiesItem>("targetEntities", TargetEntities);
             writer.WriteObjectValue<UntypedNode>("thirdPartyDistributionChannels", ThirdPartyDistributionChannels);
             writer.WriteAdditionalData(AdditionalData);
         }

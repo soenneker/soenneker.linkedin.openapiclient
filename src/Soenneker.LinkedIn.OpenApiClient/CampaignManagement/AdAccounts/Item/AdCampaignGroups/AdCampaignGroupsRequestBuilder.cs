@@ -5,7 +5,6 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.Item;
 using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.OneTwoOneFourZeroSixSevenTwoZeroFour;
-using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.OneTwoOneOneEightNineSevenTwoNineFour;
 using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -24,11 +23,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Ad
         public global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.OneTwoOneFourZeroSixSevenTwoZeroFour.OneTwoOneFourZeroSixSevenTwoZeroFourRequestBuilder OneTwoOneFourZeroSixSevenTwoZeroFour
         {
             get => new global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.OneTwoOneFourZeroSixSevenTwoZeroFour.OneTwoOneFourZeroSixSevenTwoZeroFourRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The OneTwoOneOneEightNineSevenTwoNineFour property</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.OneTwoOneOneEightNineSevenTwoNineFour.OneTwoOneOneEightNineSevenTwoNineFourRequestBuilder OneTwoOneOneEightNineSevenTwoNineFour
-        {
-            get => new global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.OneTwoOneOneEightNineSevenTwoNineFour.OneTwoOneOneEightNineSevenTwoNineFourRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.campaignManagement.adAccounts.item.adCampaignGroups.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

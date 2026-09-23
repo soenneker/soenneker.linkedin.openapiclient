@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.LinkedIn.OpenApiClient.ContentApis.Videos.Item;
 using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Videos
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VideosRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.contentApis.videos.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Videos.Item.WithVideoItemRequestBuilder"/></returns>
+        public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Videos.Item.WithVideoItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("videoId", position);
+                return new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Videos.Item.WithVideoItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Videos.VideosRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -36,22 +49,22 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Videos
         /// <summary>
         /// Use the `initializeUpload` action to register the upload. When you initialize, you declare the upcoming upload. Use the upload URL from the `uploadInstructions` to upload the video.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeVideoUpload200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeVideoUploadRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Videos.VideosRequestBuilder.VideosRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeVideoUpload200Response?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeVideoUploadRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Videos.VideosRequestBuilder.VideosRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeVideoUploadRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Videos.VideosRequestBuilder.VideosRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeVideoUpload200Response> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeVideoUploadRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Videos.VideosRequestBuilder.VideosRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeVideoUpload200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeVideoUpload200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Use the `initializeUpload` action to register the upload. When you initialize, you declare the upcoming upload. Use the upload URL from the `uploadInstructions` to upload the video.
@@ -71,6 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Videos
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

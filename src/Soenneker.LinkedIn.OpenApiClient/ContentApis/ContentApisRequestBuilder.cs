@@ -3,10 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.LinkedIn.OpenApiClient.ContentApis.AdAccounts;
 using Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds;
 using Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives;
+using Soenneker.LinkedIn.OpenApiClient.ContentApis.DmsUploads;
 using Soenneker.LinkedIn.OpenApiClient.ContentApis.Documents;
 using Soenneker.LinkedIn.OpenApiClient.ContentApis.Images;
+using Soenneker.LinkedIn.OpenApiClient.ContentApis.InMailContents;
 using Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts;
 using Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest;
 using Soenneker.LinkedIn.OpenApiClient.ContentApis.Videos;
@@ -23,6 +26,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContentApisRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The adAccounts property</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.AdAccounts.AdAccountsRequestBuilder AdAccounts
+        {
+            get => new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.AdAccounts.AdAccountsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The conversationAds property</summary>
         public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.ConversationAdsRequestBuilder ConversationAds
         {
@@ -33,6 +41,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis
         {
             get => new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives.CreativesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The dmsUploads property</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.DmsUploads.DmsUploadsRequestBuilder DmsUploads
+        {
+            get => new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.DmsUploads.DmsUploadsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The documents property</summary>
         public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Documents.DocumentsRequestBuilder Documents
         {
@@ -42,6 +55,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis
         public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Images.ImagesRequestBuilder Images
         {
             get => new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Images.ImagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The inMailContents property</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.InMailContents.InMailContentsRequestBuilder InMailContents
+        {
+            get => new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.InMailContents.InMailContentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The posts property</summary>
         public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.PostsRequestBuilder Posts
@@ -75,39 +93,44 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis
         {
         }
         /// <summary>
-        /// This is a generic Upload URL call without init.This is a generic API to upload the data.
+        /// This is a generic API to upload the data.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
+        /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PutAsync(Stream body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PutAsync(Stream body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToPutRequestInformation(requestConfiguration);
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This is a generic Upload URL call without init.This is a generic API to upload the data.
+        /// This is a generic API to upload the data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Binary request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(Stream body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(Stream body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.SetStreamContent(body, "application/octet-stream");
             return requestInfo;
         }
         /// <summary>

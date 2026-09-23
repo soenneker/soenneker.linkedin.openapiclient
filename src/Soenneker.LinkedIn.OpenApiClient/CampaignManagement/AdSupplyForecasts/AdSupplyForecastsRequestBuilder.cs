@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdSupplyForecasts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdSupplyForecastsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adSupplyForecasts{?account*,campaignType*,competingBid*,q*,targetingCriteria*,timeRange*,totalBudget*}", pathParameters)
+        public AdSupplyForecastsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adSupplyForecasts{?account*,campaignType*,competingBid*,objectiveType*,q*,targetingCriteria*,timeRange*,totalBudget*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,26 +30,26 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdSupplyForecasts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdSupplyForecastsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adSupplyForecasts{?account*,campaignType*,competingBid*,q*,targetingCriteria*,timeRange*,totalBudget*}", rawUrl)
+        public AdSupplyForecastsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adSupplyForecasts{?account*,campaignType*,competingBid*,objectiveType*,q*,targetingCriteria*,timeRange*,totalBudget*}", rawUrl)
         {
         }
         /// <summary>
         /// The Ad Supply Forecasts API enables you to forecast impressions, spending, and other metrics based on:\*   Targeting criteria\*   Campaign settings such as campaign type and objective type\*   Bid and spending settings\*   Time period
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdSupplyForecasts.AdSupplyForecastsRequestBuilder.AdSupplyForecastsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdSupplyForecasts.AdSupplyForecastsRequestBuilder.AdSupplyForecastsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdSupplyForecasts.AdSupplyForecastsRequestBuilder.AdSupplyForecastsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdSupplyForecasts.AdSupplyForecastsRequestBuilder.AdSupplyForecastsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The Ad Supply Forecasts API enables you to forecast impressions, spending, and other metrics based on:\*   Targeting criteria\*   Campaign settings such as campaign type and objective type\*   Bid and spending settings\*   Time period
@@ -66,6 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdSupplyForecasts
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -120,6 +122,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdSupplyForecasts
             #pragma warning disable CS1591
             [QueryParameter("competingBid")]
             public string CompetingBid { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("objectiveType")]
+            public string? ObjectiveType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("objectiveType")]
+            public string ObjectiveType { get; set; }
             #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
